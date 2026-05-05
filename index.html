@@ -32,12 +32,12 @@
             text-align: center;
             color: #888;
             font-size: 14px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-style: italic;
         }
         
         .search-box {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         input {
@@ -53,9 +53,42 @@
             border-color: #007bff;
         }
         
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .controls label {
+            font-size: 14px;
+            color: #555;
+        }
+        
+        select, button {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: white;
+            cursor: pointer;
+        }
+        
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
         .results-info {
             margin-bottom: 20px;
             color: #666;
+            font-size: 14px;
         }
         
         .product-grid {
@@ -129,6 +162,10 @@
             .product-grid {
                 grid-template-columns: 1fr;
             }
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
     </style>
 </head>
@@ -141,12 +178,34 @@
             <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción...">
         </div>
         
+        <div class="controls">
+            <div>
+                <label>📊 Mostrar: </label>
+                <select id="filterStock">
+                    <option value="all">Todos los productos</option>
+                    <option value="available">Solo disponibles ✅</option>
+                    <option value="unavailable">Solo no disponibles ❌</option>
+                </select>
+            </div>
+            <div>
+                <label>🔄 Ordenar por: </label>
+                <select id="sortBy">
+                    <option value="sku_asc">SKU (A a Z)</option>
+                    <option value="sku_desc">SKU (Z a A)</option>
+                </select>
+            </div>
+            <button id="applyFilters">Aplicar</button>
+        </div>
+        
         <div id="results" class="results-info"></div>
         <div id="productGrid" class="product-grid"></div>
     </div>
 
     <script>
     let productos = [];
+    let currentSearchTerm = '';
+    let currentFilter = 'all';
+    let currentSort = 'sku_asc';
 
     function aString(valor) {
         if (valor === null || valor === undefined) return '';
@@ -230,8 +289,7 @@
         for (let producto of productosFiltrados) {
             const sku = aString(producto.SKU || producto.sku || producto.Name || '');
             const descripcion = aString(producto.Description || producto.description || '');
-            const disponible = producto.Available !== undefined ? producto.Available : producto.available;
-            const estaDisponible = disponible == 1 || disponible == true;
+            const estaDisponible = producto.Available === 1 || producto.Available === true;
             const idFoto = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
             
             html += `
@@ -247,7 +305,7 @@
         }
         
         grid.innerHTML = html;
-        document.getElementById('results').innerHTML = `🔍 ${productosFiltrados.length} resultados encontrados`;
+        document.getElementById('results').innerHTML = `🔍 Encontrados: ${productosFiltrados.length} productos`;
         
         setTimeout(() => {
             for (let producto of productosFiltrados) {
@@ -261,12 +319,39 @@
         }, 50);
     }
 
-    const searchInput = document.getElementById('searchInput');
-    let timeoutId = null;
+    function aplicarFiltrosYOrden(resultados) {
+        let procesados = [...resultados];
+        
+        // Filtrar por stock
+        if (currentFilter === 'available') {
+            procesados = procesados.filter(p => p.Available === 1 || p.Available === true);
+        } else if (currentFilter === 'unavailable') {
+            procesados = procesados.filter(p => p.Available === 0 || p.Available === false);
+        }
+        
+        // Ordenar por SKU
+        if (currentSort === 'sku_asc') {
+            procesados.sort((a, b) => {
+                const skuA = aString(a.SKU || a.sku || a.Name || '').toLowerCase();
+                const skuB = aString(b.SKU || b.sku || b.Name || '').toLowerCase();
+                return skuA.localeCompare(skuB);
+            });
+        } else if (currentSort === 'sku_desc') {
+            procesados.sort((a, b) => {
+                const skuA = aString(a.SKU || a.sku || a.Name || '').toLowerCase();
+                const skuB = aString(b.SKU || b.sku || b.Name || '').toLowerCase();
+                return skuB.localeCompare(skuA);
+            });
+        }
+        
+        mostrarProductos(procesados);
+    }
 
     function buscar(termino) {
+        currentSearchTerm = termino;
+        
         if (termino === '') {
-            mostrarProductos([]);
+            aplicarFiltrosYOrden(productos);
             return;
         }
         
@@ -281,7 +366,7 @@
             return sku.includes(termino) || descripcion.includes(termino);
         });
         
-        mostrarProductos(filtrados);
+        aplicarFiltrosYOrden(filtrados);
     }
 
     function cargarYBuscar(termino) {
@@ -305,6 +390,14 @@
             });
     }
 
+    // Event listeners
+    const searchInput = document.getElementById('searchInput');
+    const filterSelect = document.getElementById('filterStock');
+    const sortSelect = document.getElementById('sortBy');
+    const applyBtn = document.getElementById('applyFilters');
+    
+    let timeoutId = null;
+
     if (searchInput) {
         searchInput.addEventListener('input', function(e) {
             const termino = e.target.value.toLowerCase().trim();
@@ -313,6 +406,14 @@
             timeoutId = setTimeout(() => {
                 cargarYBuscar(termino);
             }, 500);
+        });
+    }
+    
+    if (applyBtn) {
+        applyBtn.addEventListener('click', function() {
+            currentFilter = filterSelect.value;
+            currentSort = sortSelect.value;
+            buscar(currentSearchTerm);
         });
     }
     </script>
