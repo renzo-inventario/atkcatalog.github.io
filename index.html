@@ -80,14 +80,34 @@
         
         .product-description {
             font-size: 16px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #333;
+        }
+        
+        .product-stock {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .stock-1 {
+            color: #2e7d32;
+            background-color: #e8f5e9;
+        }
+        
+        .stock-0 {
+            color: #c62828;
+            background-color: #ffebee;
         }
         
         .product-photos {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
+            margin-top: 10px;
         }
         
         .product-photos img {
@@ -210,12 +230,17 @@
         for (let producto of productosFiltrados) {
             const sku = aString(producto.SKU || producto.sku || producto.Name || '');
             const descripcion = aString(producto.Description || producto.description || '');
+            const disponible = producto.Available !== undefined ? producto.Available : producto.available;
+            const estaDisponible = disponible == 1 || disponible == true;
             const idFoto = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
             
             html += `
                 <div class="product-card">
                     <div class="product-sku">🔖 SKU: ${sku}</div>
                     <div class="product-description">📝 ${descripcion || 'Sin descripción'}</div>
+                    <div class="product-stock stock-${estaDisponible ? 1 : 0}">
+                        ${estaDisponible ? '✅ Disponible' : '❌ No disponible'}
+                    </div>
                     <div class="product-photos" id="${idFoto}"></div>
                 </div>
             `;
