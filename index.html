@@ -5,453 +5,163 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATK Products Catalog</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        h1 {
-            text-align: center;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .ayuda {
-            text-align: center;
-            color: #888;
-            font-size: 14px;
-            margin-bottom: 20px;
-            font-style: italic;
-        }
-        
-        .search-box {
-            margin-bottom: 20px;
-        }
-        
-        input {
-            width: 100%;
-            padding: 15px;
-            font-size: 18px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            outline: none;
-        }
-        
-        input:focus {
-            border-color: #007bff;
-        }
-        
-        .controls {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        
-        .controls label {
-            font-size: 14px;
-            color: #555;
-        }
-        
-        select, button {
-            padding: 8px 12px;
-            font-size: 14px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            background: white;
-            cursor: pointer;
-        }
-        
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-        }
-        
-        button:hover {
-            background-color: #0056b3;
-        }
-        
-        .results-info {
-            margin-bottom: 20px;
-            color: #666;
-            font-size: 14px;
-        }
-        
-        .search-terms {
-            background-color: #e8f0fe;
-            padding: 8px 12px;
-            border-radius: 6px;
-            margin-bottom: 15px;
-            font-size: 13px;
-            color: #1a73e8;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .product-sku {
-            color: #007bff;
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .product-description {
-            font-size: 16px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .product-stock {
-            font-size: 14px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .stock-1 {
-            color: #2e7d32;
-            background-color: #e8f5e9;
-        }
-        
-        .stock-0 {
-            color: #c62828;
-            background-color: #ffebee;
-        }
-        
-        .product-photos {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 10px;
-        }
-        
-        .product-photos img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-        }
-        
-        .no-results {
-            text-align: center;
-            padding: 50px;
-            color: #666;
-            font-size: 18px;
-        }
-        
-        @media (max-width: 768px) {
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            .controls {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, Helvetica, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { text-align: center; margin-bottom: 10px; color: #333; }
+        .ayuda { text-align: center; color: #888; font-size: 14px; margin-bottom: 20px; font-style: italic; }
+        .search-box { margin-bottom: 20px; }
+        input { width: 100%; padding: 15px; font-size: 18px; border: 2px solid #ddd; border-radius: 8px; outline: none; }
+        input:focus { border-color: #007bff; }
+        .controls { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
+        .controls label { font-size: 14px; color: #555; }
+        select, button { padding: 8px 12px; font-size: 14px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; }
+        button { background-color: #007bff; color: white; border: none; }
+        button:hover { background-color: #0056b3; }
+        .results-info { margin-bottom: 20px; color: #666; font-size: 14px; }
+        .search-terms { background-color: #e8f0fe; padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; color: #1a73e8; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .product-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .product-sku { color: #007bff; font-size: 14px; font-weight: bold; margin-bottom: 5px; }
+        .product-description { font-size: 16px; margin-bottom: 10px; color: #333; }
+        .product-stock { font-size: 14px; font-weight: bold; margin-bottom: 15px; padding: 4px 8px; border-radius: 4px; display: inline-block; }
+        .stock-1 { color: #2e7d32; background-color: #e8f5e9; }
+        .stock-0 { color: #c62828; background-color: #ffebee; }
+        .product-photos { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        .product-photos img { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; }
+        .no-results { text-align: center; padding: 50px; color: #666; font-size: 18px; }
+        @media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; } .controls { flex-direction: column; align-items: stretch; } }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🔍 ATK Products Catalog</h1>
-        <div class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>
-        🔎 Puedes buscar múltiples palabras separadas por espacios (ej: "overhaul bmw")</div>
-        
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para ver todos)">
-        </div>
-        
+        <div class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Puedes buscar múltiples palabras separadas por espacios (ej: "overhaul bmw")</div>
+        <div class="search-box"><input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para ver todos)"></div>
         <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
-        
         <div class="controls">
-            <div>
-                <label>📊 Mostrar: </label>
-                <select id="filterStock">
-                    <option value="all">Todos los productos</option>
-                    <option value="available">Solo disponibles ✅</option>
-                    <option value="unavailable">Solo no disponibles ❌</option>
-                </select>
-            </div>
-            <div>
-                <label>🔄 Ordenar por: </label>
-                <select id="sortBy">
-                    <option value="sku_asc">SKU (A a Z)</option>
-                    <option value="sku_desc">SKU (Z a A)</option>
-                </select>
-            </div>
+            <div><label>📊 Mostrar: </label><select id="filterStock"><option value="all">Todos los productos</option><option value="available">Solo disponibles ✅</option><option value="unavailable">Solo no disponibles ❌</option></select></div>
+            <div><label>🔄 Ordenar por: </label><select id="sortBy"><option value="sku_asc">SKU (A a Z)</option><option value="sku_desc">SKU (Z a A)</option></select></div>
             <button id="applyFilters">Aplicar</button>
         </div>
-        
         <div id="results" class="results-info"></div>
         <div id="productGrid" class="product-grid"></div>
     </div>
-
     <script>
     let productos = [];
     let currentSearchTerm = '';
     let currentFilter = 'all';
     let currentSort = 'sku_asc';
 
-    function aString(valor) {
-        if (valor === null || valor === undefined) return '';
-        return String(valor);
-    }
+    function aString(v) { if (v === null || v === undefined) return ''; return String(v); }
 
     function cargarFotos(sku, container) {
-        container.innerHTML = '<div style="font-size: 12px; color: #999;">⏳ Buscando fotos...</div>';
-        
-        let fotosUrls = [];
-        let peticionesCompletadas = 0;
-        let finalizado = false;
-        
+        container.innerHTML = '<div style="font-size:12px;color:#999;">⏳ Buscando fotos...</div>';
+        let fotosUrls = [], peticiones = 0, finalizado = false;
         function finalizar() {
             if (finalizado) return;
             finalizado = true;
-            
             if (fotosUrls.length > 0) {
                 let html = '';
-                for (let url of fotosUrls) {
-                    html += `<img src="${url}" style="width: 80px; height: 80px; object-fit: cover; margin: 5px; border: 1px solid #ddd; border-radius: 4px;">`;
-                }
+                for (let url of fotosUrls) html += `<img src="${url}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;">`;
                 container.innerHTML = html;
-            } else {
-                container.innerHTML = '<div style="font-size: 12px; color: #999;">📁 No hay fotos disponibles para ' + sku + '</div>';
-            }
+            } else { container.innerHTML = '<div style="font-size:12px;color:#999;">📁 No hay fotos para ' + sku + '</div>'; }
         }
-        
         for (let i = 1; i <= 9; i++) {
-            const numero = i.toString().padStart(2, '0');
-            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${numero}.png`;
-            
+            const n = i.toString().padStart(2,'0');
+            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${n}.png`;
             const img = new Image();
             let respondido = false;
-            
-            const timeoutId = setTimeout(() => {
-                if (!respondido) {
-                    respondido = true;
-                    peticionesCompletadas++;
-                    if (peticionesCompletadas === 9) finalizar();
-                }
-            }, 3000);
-            
-            img.onload = function() {
-                if (!respondido) {
-                    respondido = true;
-                    clearTimeout(timeoutId);
-                    fotosUrls.push(url);
-                    peticionesCompletadas++;
-                    if (peticionesCompletadas === 9) finalizar();
-                }
-            };
-            
-            img.onerror = function() {
-                if (!respondido) {
-                    respondido = true;
-                    clearTimeout(timeoutId);
-                    peticionesCompletadas++;
-                    if (peticionesCompletadas === 9) finalizar();
-                }
-            };
-            
+            const tid = setTimeout(() => { if (!respondido) { respondido = true; peticiones++; if (peticiones === 9) finalizar(); } }, 3000);
+            img.onload = () => { if (!respondido) { respondido = true; clearTimeout(tid); fotosUrls.push(url); peticiones++; if (peticiones === 9) finalizar(); } };
+            img.onerror = () => { if (!respondido) { respondido = true; clearTimeout(tid); peticiones++; if (peticiones === 9) finalizar(); } };
             img.src = url;
         }
-        
-        setTimeout(() => {
-            finalizar();
-        }, 5000);
+        setTimeout(() => finalizar(), 5000);
     }
 
-    function mostrarProductos(productosFiltrados, palabrasBusqueda = null) {
+    function mostrarProductos(lista, palabras = null) {
         const grid = document.getElementById('productGrid');
-        const searchTermsDiv = document.getElementById('searchTermsDisplay');
-        
-        if (!productosFiltrados || productosFiltrados.length === 0) {
+        const termsDiv = document.getElementById('searchTermsDisplay');
+        if (!lista || lista.length === 0) {
             grid.innerHTML = '<div class="no-results">😕 No se encontraron productos</div>';
             document.getElementById('results').innerHTML = '🔍 0 resultados';
-            if (searchTermsDiv) searchTermsDiv.style.display = 'none';
+            if (termsDiv) termsDiv.style.display = 'none';
             return;
         }
-        
-        if (palabrasBusqueda && palabrasBusqueda.length > 0) {
-            searchTermsDiv.style.display = 'block';
-            searchTermsDiv.innerHTML = `🔎 Buscando: <strong>${palabrasBusqueda.join(' + ')}</strong>`;
-        } else {
-            searchTermsDiv.style.display = 'none';
-        }
-        
+        if (palabras && palabras.length > 0) {
+            termsDiv.style.display = 'block';
+            termsDiv.innerHTML = `🔎 Buscando: <strong>${palabras.join(' + ')}</strong>`;
+        } else { termsDiv.style.display = 'none'; }
         let html = '';
-        for (let producto of productosFiltrados) {
-            const sku = aString(producto.SKU || producto.sku || producto.Name || '');
-            const descripcion = aString(producto.Description || producto.description || '');
-            const estaDisponible = producto.Available === 1 || producto.Available === true;
+        for (let p of lista) {
+            const sku = aString(p.SKU || p.sku || p.Name || '');
+            const desc = aString(p.Description || p.description || '');
+            const disp = (p.Available === 1 || p.Available === true);
             const idFoto = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
-            
-            html += `
-                <div class="product-card">
-                    <div class="product-sku">🔖 SKU: ${sku}</div>
-                    <div class="product-description">📝 ${descripcion || 'Sin descripción'}</div>
-                    <div class="product-stock stock-${estaDisponible ? 1 : 0}">
-                        ${estaDisponible ? '✅ Disponible' : '❌ No disponible'}
-                    </div>
-                    <div class="product-photos" id="${idFoto}"></div>
-                </div>
-            `;
+            html += `<div class="product-card"><div class="product-sku">🔖 SKU: ${sku}</div><div class="product-description">📝 ${desc || 'Sin descripción'}</div><div class="product-stock stock-${disp?1:0}">${disp?'✅ Disponible':'❌ No disponible'}</div><div class="product-photos" id="${idFoto}"></div></div>`;
         }
-        
         grid.innerHTML = html;
-        document.getElementById('results').innerHTML = `🔍 Encontrados: ${productosFiltrados.length} productos`;
-        
+        document.getElementById('results').innerHTML = `🔍 Encontrados: ${lista.length} productos`;
         setTimeout(() => {
-            for (let producto of productosFiltrados) {
-                const sku = aString(producto.SKU || producto.sku || producto.Name || '');
-                const idFoto = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
-                const container = document.getElementById(idFoto);
-                if (container) {
-                    cargarFotos(sku, container);
-                }
+            for (let p of lista) {
+                const sku = aString(p.SKU || p.sku || p.Name || '');
+                const id = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
+                const c = document.getElementById(id);
+                if (c) cargarFotos(sku, c);
             }
         }, 50);
     }
 
-    function aplicarFiltrosYOrden(resultados, palabrasBusqueda = null) {
-        let procesados = [...resultados];
-        
-        if (currentFilter === 'available') {
-            procesados = procesados.filter(p => p.Available === 1 || p.Available === true);
-        } else if (currentFilter === 'unavailable') {
-            procesados = procesados.filter(p => p.Available === 0 || p.Available === false);
-        }
-        
-        if (currentSort === 'sku_asc') {
-            procesados.sort((a, b) => {
-                const skuA = aString(a.SKU || a.sku || a.Name || '').toLowerCase();
-                const skuB = aString(b.SKU || b.sku || b.Name || '').toLowerCase();
-                return skuA.localeCompare(skuB);
-            });
-        } else if (currentSort === 'sku_desc') {
-            procesados.sort((a, b) => {
-                const skuA = aString(a.SKU || a.sku || a.Name || '').toLowerCase();
-                const skuB = aString(b.SKU || b.sku || b.Name || '').toLowerCase();
-                return skuB.localeCompare(skuA);
-            });
-        }
-        
-        mostrarProductos(procesados, palabrasBusqueda);
+    function aplicarFiltrosYOrden(resultados, palabras = null) {
+        let proce = [...resultados];
+        if (currentFilter === 'available') proce = proce.filter(p => p.Available === 1 || p.Available === true);
+        else if (currentFilter === 'unavailable') proce = proce.filter(p => p.Available === 0 || p.Available === false);
+        if (currentSort === 'sku_asc') proce.sort((a,b) => aString(a.SKU||a.sku||a.Name||'').localeCompare(aString(b.SKU||b.sku||b.Name||'')));
+        else if (currentSort === 'sku_desc') proce.sort((a,b) => aString(b.SKU||b.sku||b.Name||'').localeCompare(aString(a.SKU||a.sku||a.Name||'')));
+        mostrarProductos(proce, palabras);
     }
 
     function buscar(termino) {
         currentSearchTerm = termino;
-        
-        if (termino === '') {
-            aplicarFiltrosYOrden(productos);
-            return;
-        }
-        
-        if (productos.length === 0) {
-            document.getElementById('results').innerHTML = '⏳ Cargando productos...';
-            return;
-        }
-        
+        if (termino === '') { aplicarFiltrosYOrden(productos); return; }
+        if (productos.length === 0) { document.getElementById('results').innerHTML = '⏳ Cargando productos...'; return; }
         const palabras = termino.toLowerCase().split(/\s+/).filter(p => p.length > 0);
-        
-        const filtrados = productos.filter(producto => {
-            const sku = aString(producto.SKU || producto.sku || producto.Name || '').toLowerCase();
-            const descripcion = aString(producto.Description || producto.description || '').toLowerCase();
-            const textoCompleto = sku + ' ' + descripcion;
-            return palabras.every(palabra => textoCompleto.includes(palabra));
+        const filtrados = productos.filter(p => {
+            const sku = aString(p.SKU || p.sku || p.Name || '').toLowerCase();
+            const desc = aString(p.Description || p.description || '').toLowerCase();
+            const texto = sku + ' ' + desc;
+            return palabras.every(palabra => texto.includes(palabra));
         });
-        
         aplicarFiltrosYOrden(filtrados, palabras);
     }
 
-    function cargarYBuscar(termino) {
-        if (productos.length > 0) {
-            buscar(termino);
-            return;
-        }
-        
-        document.getElementById('results').innerHTML = '⏳ Cargando productos por primera vez...';
-        
-        fetch('datos.json')
-            .then(response => response.json())
-            .then(data => {
-                productos = data;
-                document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`;
-                buscar(termino);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('productGrid').innerHTML = '<div class="no-results">❌ Error cargando datos.json</div>';
-            });
+    function cargarYBuscar(t) {
+        if (productos.length > 0) { buscar(t); return; }
+        document.getElementById('results').innerHTML = '⏳ Cargando productos...';
+        fetch('datos.json').then(r => r.json()).then(d => { productos = d; document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`; buscar(t); }).catch(e => { console.error(e); document.getElementById('productGrid').innerHTML = '<div class="no-results">❌ Error cargando datos.json</div>'; });
     }
 
     const searchInput = document.getElementById('searchInput');
     const filterSelect = document.getElementById('filterStock');
     const sortSelect = document.getElementById('sortBy');
     const applyBtn = document.getElementById('applyFilters');
-    
     let timeoutId = null;
 
     if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
-            const termino = e.target.value.toLowerCase().trim();
-            
+        searchInput.addEventListener('input', e => {
+            const term = e.target.value.toLowerCase().trim();
             if (timeoutId) clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => {
-                cargarYBuscar(termino);
-            }, 500);
+            timeoutId = setTimeout(() => cargarYBuscar(term), 500);
         });
-        
-        searchInput.addEventListener('keypress', function(e) {
+        searchInput.addEventListener('keypress', e => {
             if (e.key === 'Enter') {
-                const termino = e.target.value.trim();
-                if (termino === '') {
-                    e.preventDefault();
-                    if (productos.length > 0) {
-                        aplicarFiltrosYOrden(productos);
-                        document.getElementById('searchTermsDisplay').style.display = 'none';
-                    } else {
-                        cargarYBuscar('');
-                    }
-                }
+                const term = e.target.value.trim();
+                if (term === '') { e.preventDefault(); if (productos.length) aplicarFiltrosYOrden(productos); else cargarYBuscar(''); }
             }
         });
     }
-    
-    if (applyBtn) {
-        applyBtn.addEventListener('click', function() {
-            currentFilter = filterSelect.value;
-            currentSort = sortSelect.value;
-            buscar(currentSearchTerm);
-        });
-    }
+    if (applyBtn) applyBtn.addEventListener('click', () => { currentFilter = filterSelect.value; currentSort = sortSelect.value; buscar(currentSearchTerm); });
     </script>
 </body>
 </html>
