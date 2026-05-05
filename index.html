@@ -6,7 +6,7 @@
     <title>ATK Products Catalog</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, Helvetica, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
         .container { max-width: 1200px; margin: 0 auto; }
         h1 { text-align: center; margin-bottom: 10px; color: #333; }
         .ayuda { text-align: center; color: #888; font-size: 14px; margin-bottom: 20px; font-style: italic; }
@@ -53,59 +53,59 @@
     let currentFilter = 'all';
     let currentSort = 'sku_asc';
 
-    function aString(v) { if (v === null || v === undefined) return ''; return String(v); }
+    function aString(v) { return (v === null || v === undefined) ? '' : String(v); }
 
-    function cargarFotos(sku, container) {
-        container.innerHTML = '<div style="font-size:12px;color:#999;">⏳ Buscando fotos...</div>';
-        let fotosUrls = [], peticiones = 0, finalizado = false;
-        function finalizar() {
-            if (finalizado) return;
-            finalizado = true;
-            if (fotosUrls.length > 0) {
-                let html = '';
-                for (let url of fotosUrls) html += `<img src="${url}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;">`;
-                container.innerHTML = html;
-            } else { container.innerHTML = '<div style="font-size:12px;color:#999;">📁 No hay fotos para ' + sku + '</div>'; }
-        }
+    function cargarFotos(sku, contenedor) {
+        contenedor.innerHTML = '<div style="font-size:12px;color:#999;">⏳ Buscando fotos...</div>';
+        let fotos = [], completadas = 0, terminado = false;
+        const finalizar = () => {
+            if (terminado) return;
+            terminado = true;
+            if (fotos.length) {
+                let h = '';
+                for (let u of fotos) h += `<img src="${u}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;">`;
+                contenedor.innerHTML = h;
+            } else contenedor.innerHTML = `<div style="font-size:12px;color:#999;">📁 Sin fotos para ${sku}</div>`;
+        };
         for (let i = 1; i <= 9; i++) {
-            const n = i.toString().padStart(2,'0');
+            const n = i.toString().padStart(2, '0');
             const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${n}.png`;
             const img = new Image();
             let respondido = false;
-            const tid = setTimeout(() => { if (!respondido) { respondido = true; peticiones++; if (peticiones === 9) finalizar(); } }, 3000);
-            img.onload = () => { if (!respondido) { respondido = true; clearTimeout(tid); fotosUrls.push(url); peticiones++; if (peticiones === 9) finalizar(); } };
-            img.onerror = () => { if (!respondido) { respondido = true; clearTimeout(tid); peticiones++; if (peticiones === 9) finalizar(); } };
+            const timeout = setTimeout(() => { if (!respondido) { respondido = true; completadas++; if (completadas === 9) finalizar(); } }, 3000);
+            img.onload = () => { if (!respondido) { respondido = true; clearTimeout(timeout); fotos.push(url); completadas++; if (completadas === 9) finalizar(); } };
+            img.onerror = () => { if (!respondido) { respondido = true; clearTimeout(timeout); completadas++; if (completadas === 9) finalizar(); } };
             img.src = url;
         }
-        setTimeout(() => finalizar(), 5000);
+        setTimeout(finalizar, 5000);
     }
 
-    function mostrarProductos(lista, palabras = null) {
+    function mostrarResultados(lista, palabras = null) {
         const grid = document.getElementById('productGrid');
         const termsDiv = document.getElementById('searchTermsDisplay');
-        if (!lista || lista.length === 0) {
+        if (!lista || !lista.length) {
             grid.innerHTML = '<div class="no-results">😕 No se encontraron productos</div>';
             document.getElementById('results').innerHTML = '🔍 0 resultados';
             if (termsDiv) termsDiv.style.display = 'none';
             return;
         }
-        if (palabras && palabras.length > 0) {
+        if (palabras && palabras.length) {
             termsDiv.style.display = 'block';
             termsDiv.innerHTML = `🔎 Buscando: <strong>${palabras.join(' + ')}</strong>`;
-        } else { termsDiv.style.display = 'none'; }
+        } else termsDiv.style.display = 'none';
         let html = '';
-        for (let p of lista) {
-            const sku = aString(p.SKU || p.sku || p.Name || '');
-            const desc = aString(p.Description || p.description || '');
-            const disp = (p.Available === 1 || p.Available === true);
+        for (const p of lista) {
+            const sku = aString(p.SKU || p.sku || p.Name);
+            const desc = aString(p.Description || p.description);
+            const disponible = (p.Available === 1 || p.Available === true);
             const idFoto = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
-            html += `<div class="product-card"><div class="product-sku">🔖 SKU: ${sku}</div><div class="product-description">📝 ${desc || 'Sin descripción'}</div><div class="product-stock stock-${disp?1:0}">${disp?'✅ Disponible':'❌ No disponible'}</div><div class="product-photos" id="${idFoto}"></div></div>`;
+            html += `<div class="product-card"><div class="product-sku">🔖 SKU: ${sku}</div><div class="product-description">📝 ${desc || 'Sin descripción'}</div><div class="product-stock stock-${disponible?1:0}">${disponible?'✅ Disponible':'❌ No disponible'}</div><div class="product-photos" id="${idFoto}"></div></div>`;
         }
         grid.innerHTML = html;
         document.getElementById('results').innerHTML = `🔍 Encontrados: ${lista.length} productos`;
         setTimeout(() => {
-            for (let p of lista) {
-                const sku = aString(p.SKU || p.sku || p.Name || '');
+            for (const p of lista) {
+                const sku = aString(p.SKU || p.sku || p.Name);
                 const id = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
                 const c = document.getElementById(id);
                 if (c) cargarFotos(sku, c);
@@ -113,55 +113,56 @@
         }, 50);
     }
 
-    function aplicarFiltrosYOrden(resultados, palabras = null) {
-        let proce = [...resultados];
-        if (currentFilter === 'available') proce = proce.filter(p => p.Available === 1 || p.Available === true);
-        else if (currentFilter === 'unavailable') proce = proce.filter(p => p.Available === 0 || p.Available === false);
-        if (currentSort === 'sku_asc') proce.sort((a,b) => aString(a.SKU||a.sku||a.Name||'').localeCompare(aString(b.SKU||b.sku||b.Name||'')));
-        else if (currentSort === 'sku_desc') proce.sort((a,b) => aString(b.SKU||b.sku||b.Name||'').localeCompare(aString(a.SKU||a.sku||a.Name||'')));
-        mostrarProductos(proce, palabras);
+    function aplicarFiltrosYOrden(datos, palabras = null) {
+        let resultado = [...datos];
+        if (currentFilter === 'available') resultado = resultado.filter(p => p.Available === 1 || p.Available === true);
+        else if (currentFilter === 'unavailable') resultado = resultado.filter(p => p.Available === 0 || p.Available === false);
+        if (currentSort === 'sku_asc') resultado.sort((a,b) => aString(a.SKU||a.sku||a.Name).localeCompare(aString(b.SKU||b.sku||b.Name)));
+        else if (currentSort === 'sku_desc') resultado.sort((a,b) => aString(b.SKU||b.sku||b.Name).localeCompare(aString(a.SKU||a.sku||a.Name)));
+        mostrarResultados(resultado, palabras);
     }
 
     function buscar(termino) {
         currentSearchTerm = termino;
-        if (termino === '') { aplicarFiltrosYOrden(productos); return; }
-        if (productos.length === 0) { document.getElementById('results').innerHTML = '⏳ Cargando productos...'; return; }
-        const palabras = termino.toLowerCase().split(/\s+/).filter(p => p.length > 0);
+        if (!termino) { aplicarFiltrosYOrden(productos); return; }
+        if (!productos.length) { document.getElementById('results').innerHTML = '⏳ Cargando productos...'; return; }
+        const palabras = termino.toLowerCase().split(/\s+/).filter(w => w.length);
         const filtrados = productos.filter(p => {
-            const sku = aString(p.SKU || p.sku || p.Name || '').toLowerCase();
-            const desc = aString(p.Description || p.description || '').toLowerCase();
+            const sku = aString(p.SKU || p.sku || p.Name).toLowerCase();
+            const desc = aString(p.Description || p.description).toLowerCase();
             const texto = sku + ' ' + desc;
-            return palabras.every(palabra => texto.includes(palabra));
+            return palabras.every(w => texto.includes(w));
         });
         aplicarFiltrosYOrden(filtrados, palabras);
     }
 
-    function cargarYBuscar(t) {
-        if (productos.length > 0) { buscar(t); return; }
+    function cargarYBuscar(termino) {
+        if (productos.length) { buscar(termino); return; }
         document.getElementById('results').innerHTML = '⏳ Cargando productos...';
-        fetch('datos.json').then(r => r.json()).then(d => { productos = d; document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`; buscar(t); }).catch(e => { console.error(e); document.getElementById('productGrid').innerHTML = '<div class="no-results">❌ Error cargando datos.json</div>'; });
+        fetch('datos.json').then(r => r.json()).then(d => { productos = d; document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`; buscar(termino); }).catch(e => { console.error(e); document.getElementById('productGrid').innerHTML = '<div class="no-results">❌ Error cargando datos.json</div>'; });
     }
 
-    const searchInput = document.getElementById('searchInput');
-    const filterSelect = document.getElementById('filterStock');
-    const sortSelect = document.getElementById('sortBy');
-    const applyBtn = document.getElementById('applyFilters');
-    let timeoutId = null;
+    const input = document.getElementById('searchInput');
+    const filtroSelect = document.getElementById('filterStock');
+    const ordenSelect = document.getElementById('sortBy');
+    const botonAplicar = document.getElementById('applyFilters');
+    let timer = null;
 
-    if (searchInput) {
-        searchInput.addEventListener('input', e => {
+    if (input) {
+        input.addEventListener('input', e => {
             const term = e.target.value.toLowerCase().trim();
-            if (timeoutId) clearTimeout(timeoutId);
-            timeoutId = setTimeout(() => cargarYBuscar(term), 500);
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(() => cargarYBuscar(term), 500);
         });
-        searchInput.addEventListener('keypress', e => {
-            if (e.key === 'Enter') {
-                const term = e.target.value.trim();
-                if (term === '') { e.preventDefault(); if (productos.length) aplicarFiltrosYOrden(productos); else cargarYBuscar(''); }
+        input.addEventListener('keypress', e => {
+            if (e.key === 'Enter' && !e.target.value.trim()) {
+                e.preventDefault();
+                if (productos.length) aplicarFiltrosYOrden(productos);
+                else cargarYBuscar('');
             }
         });
     }
-    if (applyBtn) applyBtn.addEventListener('click', () => { currentFilter = filterSelect.value; currentSort = sortSelect.value; buscar(currentSearchTerm); });
+    if (botonAplicar) botonAplicar.addEventListener('click', () => { currentFilter = filtroSelect.value; currentSort = ordenSelect.value; buscar(currentSearchTerm); });
     </script>
 </body>
 </html>
