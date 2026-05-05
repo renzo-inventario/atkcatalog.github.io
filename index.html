@@ -182,7 +182,7 @@
     <div class="container">
         <h1>🔍 ATK Products Catalog</h1>
         <div class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>
-        🔎 Puedes buscar múltiples palabras separadas por espacios (ej: "overhaul aw")</div>
+        🔎 Puedes buscar múltiples palabras separadas por espacios (ej: "overhaul bmw")</div>
         
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para ver todos)">
@@ -299,7 +299,6 @@
             return;
         }
         
-        // Mostrar términos de búsqueda si existen
         if (palabrasBusqueda && palabrasBusqueda.length > 0) {
             searchTermsDiv.style.display = 'block';
             searchTermsDiv.innerHTML = `🔎 Buscando: <strong>${palabrasBusqueda.join(' + ')}</strong>`;
@@ -344,14 +343,12 @@
     function aplicarFiltrosYOrden(resultados, palabrasBusqueda = null) {
         let procesados = [...resultados];
         
-        // Filtrar por stock
         if (currentFilter === 'available') {
             procesados = procesados.filter(p => p.Available === 1 || p.Available === true);
         } else if (currentFilter === 'unavailable') {
             procesados = procesados.filter(p => p.Available === 0 || p.Available === false);
         }
         
-        // Ordenar por SKU
         if (currentSort === 'sku_asc') {
             procesados.sort((a, b) => {
                 const skuA = aString(a.SKU || a.sku || a.Name || '').toLowerCase();
@@ -382,22 +379,12 @@
             return;
         }
         
-        // Dividir el término en palabras (separadas por espacios)
         const palabras = termino.toLowerCase().split(/\s+/).filter(p => p.length > 0);
         
         const filtrados = productos.filter(producto => {
             const sku = aString(producto.SKU || producto.sku || producto.Name || '').toLowerCase();
             const descripcion = aString(producto.Description || producto.description || '').toLowerCase();
-            
-            // Buscar en SKU o descripción
             const textoCompleto = sku + ' ' + descripcion;
-            
-            // Si es una sola palabra, búsqueda normal
-            if (palabras.length === 1) {
-                return textoCompleto.includes(palabras[0]);
-            }
-            
-            // Si son múltiples palabras, deben estar TODAS en el texto
             return palabras.every(palabra => textoCompleto.includes(palabra));
         });
         
@@ -425,7 +412,6 @@
             });
     }
 
-    // Event listeners
     const searchInput = document.getElementById('searchInput');
     const filterSelect = document.getElementById('filterStock');
     const sortSelect = document.getElementById('sortBy');
@@ -434,7 +420,6 @@
     let timeoutId = null;
 
     if (searchInput) {
-        // Búsqueda en tiempo real (mientras escribe)
         searchInput.addEventListener('input', function(e) {
             const termino = e.target.value.toLowerCase().trim();
             
@@ -444,7 +429,6 @@
             }, 500);
         });
         
-        // Al presionar Enter sin texto, mostrar todos los productos
         searchInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 const termino = e.target.value.trim();
