@@ -91,6 +91,15 @@
             font-size: 14px;
         }
         
+        .search-terms {
+            background-color: #e8f0fe;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #1a73e8;
+        }
+        
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -172,11 +181,14 @@
 <body>
     <div class="container">
         <h1>🔍 ATK Products Catalog</h1>
-        <div class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página</div>
+        <div class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>
+        🔎 Puedes buscar múltiples palabras separadas por espacios (ej: "overhaul aw")</div>
         
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para ver todos)">
         </div>
+        
+        <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
         
         <div class="controls">
             <div>
@@ -276,13 +288,23 @@
         }, 5000);
     }
 
-    function mostrarProductos(productosFiltrados) {
+    function mostrarProductos(productosFiltrados, palabrasBusqueda = null) {
         const grid = document.getElementById('productGrid');
+        const searchTermsDiv = document.getElementById('searchTermsDisplay');
         
         if (!productosFiltrados || productosFiltrados.length === 0) {
             grid.innerHTML = '<div class="no-results">😕 No se encontraron productos</div>';
             document.getElementById('results').innerHTML = '🔍 0 resultados';
+            if (searchTermsDiv) searchTermsDiv.style.display = 'none';
             return;
+        }
+        
+        // Mostrar términos de búsqueda si existen
+        if (palabrasBusqueda && palabrasBusqueda.length > 0) {
+            searchTermsDiv.style.display = 'block';
+            searchTermsDiv.innerHTML = `🔎 Buscando: <strong>${palabrasBusqueda.join(' + ')}</strong>`;
+        } else {
+            searchTermsDiv.style.display = 'none';
         }
         
         let html = '';
@@ -319,7 +341,7 @@
         }, 50);
     }
 
-    function aplicarFiltrosYOrden(resultados) {
+    function aplicarFiltrosYOrden(resultados, palabrasBusqueda = null) {
         let procesados = [...resultados];
         
         // Filtrar por stock
@@ -344,7 +366,7 @@
             });
         }
         
-        mostrarProductos(procesados);
+        mostrarProductos(procesados, palabrasBusqueda);
     }
 
     function buscar(termino) {
@@ -360,13 +382,26 @@
             return;
         }
         
+        // Dividir el término en palabras (separadas por espacios)
+        const palabras = termino.toLowerCase().split(/\s+/).filter(p => p.length > 0);
+        
         const filtrados = productos.filter(producto => {
             const sku = aString(producto.SKU || producto.sku || producto.Name || '').toLowerCase();
             const descripcion = aString(producto.Description || producto.description || '').toLowerCase();
-            return sku.includes(termino) || descripcion.includes(termino);
+            
+            // Buscar en SKU o descripción
+            const textoCompleto = sku + ' ' + descripcion;
+            
+            // Si es una sola palabra, búsqueda normal
+            if (palabras.length === 1) {
+                return textoCompleto.includes(palabras[0]);
+            }
+            
+            // Si son múltiples palabras, deben estar TODAS en el texto
+            return palabras.every(palabra => textoCompleto.includes(palabra));
         });
         
-        aplicarFiltrosYOrden(filtrados);
+        aplicarFiltrosYOrden(filtrados, palabras);
     }
 
     function cargarYBuscar(termino) {
@@ -417,6 +452,7 @@
                     e.preventDefault();
                     if (productos.length > 0) {
                         aplicarFiltrosYOrden(productos);
+                        document.getElementById('searchTermsDisplay').style.display = 'none';
                     } else {
                         cargarYBuscar('');
                     }
