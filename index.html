@@ -175,7 +175,7 @@
         <div class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página</div>
         
         <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción...">
+            <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para ver todos)">
         </div>
         
         <div class="controls">
@@ -399,6 +399,7 @@
     let timeoutId = null;
 
     if (searchInput) {
+        // Búsqueda en tiempo real (mientras escribe)
         searchInput.addEventListener('input', function(e) {
             const termino = e.target.value.toLowerCase().trim();
             
@@ -406,6 +407,21 @@
             timeoutId = setTimeout(() => {
                 cargarYBuscar(termino);
             }, 500);
+        });
+        
+        // Al presionar Enter sin texto, mostrar todos los productos
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const termino = e.target.value.trim();
+                if (termino === '') {
+                    e.preventDefault();
+                    if (productos.length > 0) {
+                        aplicarFiltrosYOrden(productos);
+                    } else {
+                        cargarYBuscar('');
+                    }
+                }
+            }
         });
     }
     
