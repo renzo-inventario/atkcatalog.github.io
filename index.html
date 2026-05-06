@@ -58,29 +58,67 @@
 
     function cargarFotos(sku, contenedor) {
         contenedor.innerHTML = '<div style="font-size:12px;color:#999;">⏳ Buscando fotos...</div>';
-        let fotos = [], completadas = 0, terminado = false;
-        const finalizar = () => {
-            if (terminado) return;
-            terminado = true;
-            if (fotos.length) {
-                let h = '';
-                for (let u of fotos) {
-                    h += `<a href="${u}" target="_blank" style="text-decoration: none;"><img src="${u}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;cursor:pointer;"></a>`;
-                }
-                contenedor.innerHTML = h;
-            } else contenedor.innerHTML = `<div style="font-size:12px;color:#999;">📁 Sin fotos para ${sku}</div>`;
-        };
-        for (let i = 1; i <= 9; i++) {
-            const n = i.toString().padStart(2, '0');
-            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${n}.png`;
+        
+        let fotosEncontradas = [];
+        let totalFotos = 9;
+        let fotosCargadas = 0;
+        
+        for (let i = 1; i <= totalFotos; i++) {
+            const numero = i.toString().padStart(2, '0');
+            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${numero}.png`;
+            
             const img = new Image();
+            const index = i;
             let respondido = false;
-            const timeout = setTimeout(() => { if (!respondido) { respondido = true; completadas++; if (completadas === 9) finalizar(); } }, 3000);
-            img.onload = () => { if (!respondido) { respondido = true; clearTimeout(timeout); fotos.push(url); completadas++; if (completadas === 9) finalizar(); } };
-            img.onerror = () => { if (!respondido) { respondido = true; clearTimeout(timeout); completadas++; if (completadas === 9) finalizar(); } };
+            
+            const timeoutId = setTimeout(() => {
+                if (!respondido) {
+                    respondido = true;
+                    fotosCargadas++;
+                    if (fotosCargadas === totalFotos) mostrarGaleria();
+                }
+            }, 3000);
+            
+            img.onload = () => {
+                if (!respondido) {
+                    respondido = true;
+                    clearTimeout(timeoutId);
+                    fotosEncontradas[index] = url;
+                    fotosCargadas++;
+                    if (fotosCargadas === totalFotos) mostrarGaleria();
+                }
+            };
+            
+            img.onerror = () => {
+                if (!respondido) {
+                    respondido = true;
+                    clearTimeout(timeoutId);
+                    fotosCargadas++;
+                    if (fotosCargadas === totalFotos) mostrarGaleria();
+                }
+            };
+            
             img.src = url;
         }
-        setTimeout(finalizar, 5000);
+        
+        function mostrarGaleria() {
+            let html = '';
+            let hayFotos = false;
+            
+            for (let i = 1; i <= totalFotos; i++) {
+                if (fotosEncontradas[i]) {
+                    hayFotos = true;
+                    const url = fotosEncontradas[i];
+                    html += `<a href="${url}" target="_blank" style="text-decoration: none;"><img src="${url}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;cursor:pointer;"></a>`;
+                }
+            }
+            
+            if (hayFotos) {
+                contenedor.innerHTML = html;
+            } else {
+                contenedor.innerHTML = `<div style="font-size:12px;color:#999;">📁 Sin fotos para ${sku}</div>`;
+            }
+        }
     }
 
     function mostrarResultados(lista, palabras = null) {
