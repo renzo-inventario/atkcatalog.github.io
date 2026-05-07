@@ -121,49 +121,61 @@
         }
     }
 
-    // Función para filtrar productos según la selección del usuario
-    function filtrarPorDisponibilidad(productosFiltrados) {
+    // Función principal que aplica filtros, orden y muestra resultados
+    function actualizarVista() {
+        // PASO 1: Obtener productos según la búsqueda
+        let productosParaMostrar = productos;
+        
+        if (currentSearchTerm && currentSearchTerm.trim() !== '') {
+            const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w.length);
+            productosParaMostrar = productos.filter(p => {
+                const sku = aString(p.SKU || p.sku || p.Name).toLowerCase();
+                const desc = aString(p.Description || p.description).toLowerCase();
+                const texto = sku + ' ' + desc;
+                return palabras.every(w => texto.includes(w));
+            });
+        }
+        
+        // PASO 2: Aplicar filtro de disponibilidad
         if (currentFilter === 'available') {
-            return productosFiltrados.filter(p => p.Available === 1 || p.Available === true);
+            productosParaMostrar = productosParaMostrar.filter(p => p.Available === 1 || p.Available === true);
         } else if (currentFilter === 'unavailable') {
-            return productosFiltrados.filter(p => p.Available === 0 || p.Available === false);
-        } else {
-            return productosFiltrados; // 'all' - todos
+            productosParaMostrar = productosParaMostrar.filter(p => p.Available === 0 || p.Available === false);
         }
-    }
-
-    function ordenarProductos(productosFiltrados) {
-        const productosOrdenados = [...productosFiltrados];
+        
+        // PASO 3: Aplicar orden
         if (currentSort === 'sku_asc') {
-            productosOrdenados.sort((a, b) => aString(a.SKU || a.sku || a.Name).localeCompare(aString(b.SKU || b.sku || b.Name)));
+            productosParaMostrar.sort((a, b) => aString(a.SKU || a.sku || a.Name).localeCompare(aString(b.SKU || b.sku || b.Name)));
         } else if (currentSort === 'sku_desc') {
-            productosOrdenados.sort((a, b) => aString(b.SKU || b.sku || b.Name).localeCompare(aString(a.SKU || a.sku || a.Name)));
+            productosParaMostrar.sort((a, b) => aString(b.SKU || b.sku || b.Name).localeCompare(aString(a.SKU || a.sku || a.Name)));
         }
-        return productosOrdenados;
-    }
-
-    function mostrarResultados(productosFiltrados, palabras = null) {
+        
+        // PASO 4: Mostrar resultados
         const grid = document.getElementById('productGrid');
         const termsDiv = document.getElementById('searchTermsDisplay');
         
-        // Primero ordenar
-        let productosProcesados = ordenarProductos(productosFiltrados);
-        
-        // Luego mostrar
-        if (!productosProcesados || !productosProcesados.length) {
+        if (!productosParaMostrar || !productosParaMostrar.length) {
             grid.innerHTML = '<div class="no-results">😕 No se encontraron productos</div>';
             document.getElementById('results').innerHTML = '🔍 0 resultados';
             if (termsDiv) termsDiv.style.display = 'none';
             return;
         }
         
-        if (palabras && palabras.length) {
-            termsDiv.style.display = 'block';
-            termsDiv.innerHTML = `🔎 Buscando: <strong>${palabras.join(' + ')}</strong>`;
-        } else termsDiv.style.display = 'none';
+        // Mostrar términos de búsqueda si existe
+        if (currentSearchTerm && currentSearchTerm.trim() !== '') {
+            const palabrasMostrar = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w.length);
+            if (palabrasMostrar.length) {
+                termsDiv.style.display = 'block';
+                termsDiv.innerHTML = `🔎 Buscando: <strong>${palabrasMostrar.join(' + ')}</strong>`;
+            } else {
+                termsDiv.style.display = 'none';
+            }
+        } else {
+            termsDiv.style.display = 'none';
+        }
         
         let html = '';
-        for (const p of productosProcesados) {
+        for (const p of productosParaMostrar) {
             const sku = aString(p.SKU || p.sku || p.Name);
             const desc = aString(p.Description || p.description);
             const disponible = (p.Available === 1 || p.Available === true);
@@ -171,10 +183,10 @@
             html += `<div class="product-card"><div class="product-sku">🔖 SKU: ${sku}</div><div class="product-description">📝 ${desc || 'Sin descripción'}</div><div class="product-stock stock-${disponible?1:0}">${disponible?'✅ Disponible':'❌ No disponible'}</div><div class="product-photos" id="${idFoto}"></div></div>`;
         }
         grid.innerHTML = html;
-        document.getElementById('results').innerHTML = `🔍 Encontrados: ${productosProcesados.length} productos`;
+        document.getElementById('results').innerHTML = `🔍 Encontrados: ${productosParaMostrar.length} productos`;
         
         setTimeout(() => {
-            for (const p of productosProcesados) {
+            for (const p of productosParaMostrar) {
                 const sku = aString(p.SKU || p.sku || p.Name);
                 const id = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
                 const c = document.getElementById(id);
@@ -183,42 +195,12 @@
         }, 50);
     }
 
-    function aplicarFiltrosYOrden(resultadosBusqueda, palabras = null) {
-        // Aplicar filtro de disponibilidad
-        const productosConFiltro = filtrarPorDisponibilidad(resultadosBusqueda);
-        // Ya se ordenarán dentro de mostrarResultados
-        mostrarResultados(productosConFiltro, palabras);
-    }
-
-    function buscar(termino) {
-        currentSearchTerm = termino;
+    // Función para cargar datos y actualizar vista
+    function cargarDatosYActualizar(termino) {
+        currentSearchTerm = termino || '';
         
-        if (!termino) {
-            // Mostrar todos los productos (con filtros y orden aplicados)
-            aplicarFiltrosYOrden(productos);
-            return;
-        }
-        
-        if (!productos.length) {
-            document.getElementById('results').innerHTML = '⏳ Cargando productos...';
-            return;
-        }
-        
-        const palabras = termino.toLowerCase().split(/\s+/).filter(w => w.length);
-        const filtradosPorBusqueda = productos.filter(p => {
-            const sku = aString(p.SKU || p.sku || p.Name).toLowerCase();
-            const desc = aString(p.Description || p.description).toLowerCase();
-            const texto = sku + ' ' + desc;
-            return palabras.every(w => texto.includes(w));
-        });
-        
-        // Aplicar filtros de disponibilidad y orden a los resultados de la búsqueda
-        aplicarFiltrosYOrden(filtradosPorBusqueda, palabras);
-    }
-
-    function cargarYBuscar(termino) {
         if (productos.length) {
-            buscar(termino);
+            actualizarVista();
             return;
         }
         
@@ -228,7 +210,7 @@
             .then(d => { 
                 productos = d; 
                 document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`; 
-                buscar(termino);
+                actualizarVista();
             })
             .catch(e => { 
                 console.error(e); 
@@ -236,6 +218,7 @@
             });
     }
 
+    // Event Listeners
     const input = document.getElementById('searchInput');
     const filtroSelect = document.getElementById('filterStock');
     const ordenSelect = document.getElementById('sortBy');
@@ -244,18 +227,17 @@
 
     if (input) {
         input.addEventListener('input', e => {
-            const term = e.target.value.toLowerCase().trim();
+            const term = e.target.value.trim();
             if (timer) clearTimeout(timer);
-            timer = setTimeout(() => cargarYBuscar(term), 200);
+            timer = setTimeout(() => cargarDatosYActualizar(term), 300);
         });
+        
         input.addEventListener('keypress', e => {
-            if (e.key === 'Enter' && !e.target.value.trim()) {
-                e.preventDefault();
-                if (productos.length) {
-                    currentSearchTerm = '';
-                    buscar('');
-                } else {
-                    cargarYBuscar('');
+            if (e.key === 'Enter') {
+                const term = e.target.value.trim();
+                if (term === '') {
+                    e.preventDefault();
+                    cargarDatosYActualizar('');
                 }
             }
         });
@@ -265,14 +247,12 @@
         botonAplicar.addEventListener('click', () => {
             currentFilter = filtroSelect.value;
             currentSort = ordenSelect.value;
-            // Re-ejecutar la búsqueda actual con los nuevos filtros
-            if (currentSearchTerm === undefined || currentSearchTerm === '') {
-                aplicarFiltrosYOrden(productos);
-            } else {
-                buscar(currentSearchTerm);
-            }
+            actualizarVista();
         });
     }
+    
+    // Inicializar la página
+    cargarDatosYActualizar('');
     </script>
 </body>
 </html>
