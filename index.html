@@ -55,194 +55,146 @@
     let currentSort = 'sku_asc';
     let currentSearchTerm = '';
 
-    // FUNCIONES AUXILIARES
-    function aString(valor) {
-        return (valor === null || valor === undefined) ? '' : String(valor);
-    }
+    function aString(v) { return (v === null || v === undefined) ? '' : String(v); }
 
     function cargarFotos(sku, contenedor) {
         contenedor.innerHTML = '<div style="font-size:12px;color:#999;">⏳ Buscando fotos...</div>';
+        let fotos = [];
+        let total = 9;
+        let cargadas = 0;
         
-        let fotosEncontradas = [];
-        let totalFotos = 9;
-        let fotosCargadas = 0;
-        
-        for (let i = 1; i <= totalFotos; i++) {
-            const numero = i.toString().padStart(2, '0');
-            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${numero}.png`;
+        for (let i = 1; i <= total; i++) {
+            const num = i.toString().padStart(2, '0');
+            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${num}.png`;
             const img = new Image();
-            const index = i;
+            const idx = i;
             let respondido = false;
-            
-            const timeoutId = setTimeout(() => {
-                if (!respondido) {
-                    respondido = true;
-                    fotosCargadas++;
-                    if (fotosCargadas === totalFotos) mostrarGaleria();
-                }
+            const tid = setTimeout(() => {
+                if (!respondido) { respondido = true; cargadas++; if (cargadas === total) mostrar(); }
             }, 3000);
-            
             img.onload = () => {
-                if (!respondido) {
-                    respondido = true;
-                    clearTimeout(timeoutId);
-                    fotosEncontradas[index] = url;
-                    fotosCargadas++;
-                    if (fotosCargadas === totalFotos) mostrarGaleria();
-                }
+                if (!respondido) { respondido = true; clearTimeout(tid); fotos[idx] = url; cargadas++; if (cargadas === total) mostrar(); }
             };
-            
             img.onerror = () => {
-                if (!respondido) {
-                    respondido = true;
-                    clearTimeout(timeoutId);
-                    fotosCargadas++;
-                    if (fotosCargadas === totalFotos) mostrarGaleria();
-                }
+                if (!respondido) { respondido = true; clearTimeout(tid); cargadas++; if (cargadas === total) mostrar(); }
             };
-            
             img.src = url;
         }
         
-        function mostrarGaleria() {
+        function mostrar() {
             let html = '';
-            let hayFotos = false;
-            for (let i = 1; i <= totalFotos; i++) {
-                if (fotosEncontradas[i]) {
-                    hayFotos = true;
-                    const url = fotosEncontradas[i];
-                    html += `<a href="${url}" target="_blank" style="text-decoration: none;"><img src="${url}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;cursor:pointer;"></a>`;
+            let hay = false;
+            for (let i = 1; i <= total; i++) {
+                if (fotos[i]) {
+                    hay = true;
+                    html += `<a href="${fotos[i]}" target="_blank" style="text-decoration:none;"><img src="${fotos[i]}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;cursor:pointer;"></a>`;
                 }
             }
-            if (hayFotos) contenedor.innerHTML = html;
-            else contenedor.innerHTML = `<div style="font-size:12px;color:#999;">📁 Sin fotos para ${sku}</div>`;
+            contenedor.innerHTML = hay ? html : `<div style="font-size:12px;color:#999;">📁 Sin fotos para ${sku}</div>`;
         }
-        
-        setTimeout(() => mostrarGaleria(), 5000);
+        setTimeout(mostrar, 5000);
     }
 
-    // FUNCIÓN PRINCIPAL QUE FILTRA Y MUESTRA
-    function aplicarFiltrosYMostrar() {
+    function actualizarVista() {
         if (!productos.length) return;
         
-        // 1. Filtrar por búsqueda
-        let resultados = productos;
-        if (currentSearchTerm && currentSearchTerm.trim() !== '') {
-            const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(p => p);
+        let resultados = [...productos];
+        
+        // Búsqueda
+        if (currentSearchTerm && currentSearchTerm.trim()) {
+            const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
             resultados = resultados.filter(p => {
                 const sku = aString(p.SKU).toLowerCase();
                 const desc = aString(p.Description).toLowerCase();
                 const texto = sku + ' ' + desc;
-                return palabras.every(palabra => texto.includes(palabra));
+                return palabras.every(w => texto.includes(w));
             });
         }
         
-        // 2. Filtrar por disponibilidad
+        // Filtro disponibilidad (CORREGIDO)
         if (currentFilter === 'available') {
             resultados = resultados.filter(p => p.Available === 1 || p.Available === true);
         } else if (currentFilter === 'unavailable') {
             resultados = resultados.filter(p => p.Available === 0 || p.Available === false);
         }
         
-        // 3. Ordenar
+        // Orden
         if (currentSort === 'sku_asc') {
             resultados.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU)));
         } else if (currentSort === 'sku_desc') {
             resultados.sort((a, b) => aString(b.SKU).localeCompare(aString(a.SKU)));
         }
         
-        // 4. Mostrar
         const grid = document.getElementById('productGrid');
         const termsDiv = document.getElementById('searchTermsDisplay');
         
-        if (resultados.length === 0) {
+        if (!resultados.length) {
             grid.innerHTML = '<div class="no-results">😕 No se encontraron productos</div>';
             document.getElementById('results').innerHTML = '🔍 0 resultados';
             termsDiv.style.display = 'none';
             return;
         }
         
-        // Mostrar términos de búsqueda
-        if (currentSearchTerm && currentSearchTerm.trim() !== '') {
-            const palabrasMostrar = currentSearchTerm.toLowerCase().split(/\s+/).filter(p => p);
+        if (currentSearchTerm && currentSearchTerm.trim()) {
+            const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
             termsDiv.style.display = 'block';
-            termsDiv.innerHTML = `🔎 Buscando: <strong>${palabrasMostrar.join(' + ')}</strong>`;
+            termsDiv.innerHTML = `🔎 Buscando: <strong>${palabras.join(' + ')}</strong>`;
         } else {
             termsDiv.style.display = 'none';
         }
         
-        // Generar HTML (mostrar los primeros 200 por rendimiento)
         const mostrar = resultados.slice(0, 200);
         let html = '';
         for (const p of mostrar) {
             const sku = aString(p.SKU);
             const desc = aString(p.Description);
-            const disponible = (p.Available === 1 || p.Available === true);
-            const idFoto = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
+            const disp = (p.Available === 1 || p.Available === true);
             html += `<div class="product-card">
                 <div class="product-sku">🔖 SKU: ${sku}</div>
                 <div class="product-description">📝 ${desc || 'Sin descripción'}</div>
-                <div class="product-stock stock-${disponible?1:0}">${disponible?'✅ Disponible':'❌ No disponible'}</div>
-                <div class="product-photos" id="${idFoto}"></div>
+                <div class="product-stock stock-${disp?1:0}">${disp?'✅ Disponible':'❌ No disponible'}</div>
+                <div class="product-photos" id="fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}"></div>
             </div>`;
         }
         grid.innerHTML = html;
         document.getElementById('results').innerHTML = `🔍 Encontrados: ${resultados.length} productos ${mostrar.length < resultados.length ? `(mostrando ${mostrar.length})` : ''}`;
         
-        // Cargar fotos
         setTimeout(() => {
             for (const p of mostrar) {
                 const sku = aString(p.SKU);
                 const id = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
-                const contenedor = document.getElementById(id);
-                if (contenedor) cargarFotos(sku, contenedor);
+                const c = document.getElementById(id);
+                if (c) cargarFotos(sku, c);
             }
         }, 100);
     }
 
-    // EVENTOS Y CARGA INICIAL
-    function init() {
-        document.getElementById('results').innerHTML = '⏳ Cargando productos...';
-        fetch('datos.json')
-            .then(res => res.json())
-            .then(data => {
-                productos = data;
-                document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`;
-                aplicarFiltrosYMostrar();
-            })
-            .catch(err => {
-                console.error('Error:', err);
-                document.getElementById('productGrid').innerHTML = '<div class="no-results">❌ Error cargando datos.json</div>';
-            });
-    }
-
-    // Configurar listeners
-    const input = document.getElementById('searchInput');
-    const filterSelect = document.getElementById('filterStock');
-    const sortSelect = document.getElementById('sortBy');
-    const applyBtn = document.getElementById('applyFilters');
+    // Inicialización
+    document.getElementById('results').innerHTML = '⏳ Cargando productos...';
+    fetch('datos.json')
+        .then(r => r.json())
+        .then(data => {
+            productos = data;
+            document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`;
+            actualizarVista();
+        })
+        .catch(e => console.error('Error:', e));
+    
+    // Eventos
     let timer;
-
-    if (input) {
-        input.addEventListener('input', (e) => {
-            if (timer) clearTimeout(timer);
-            timer = setTimeout(() => {
-                currentSearchTerm = e.target.value.trim();
-                aplicarFiltrosYMostrar();
-            }, 300);
-        });
-    }
+    document.getElementById('searchInput').addEventListener('input', e => {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+            currentSearchTerm = e.target.value.trim();
+            actualizarVista();
+        }, 300);
+    });
     
-    if (applyBtn) {
-        applyBtn.addEventListener('click', () => {
-            currentFilter = filterSelect.value;
-            currentSort = sortSelect.value;
-            aplicarFiltrosYMostrar();
-        });
-    }
-    
-    // Iniciar
-    init();
+    document.getElementById('applyFilters').addEventListener('click', () => {
+        currentFilter = document.getElementById('filterStock').value;
+        currentSort = document.getElementById('sortBy').value;
+        actualizarVista();
+    });
     </script>
 </body>
 </html>
