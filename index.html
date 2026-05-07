@@ -63,48 +63,9 @@
         let totalFotos = 9;
         let fotosCargadas = 0;
         
-        for (let i = 1; i <= totalFotos; i++) {
-            const numero = i.toString().padStart(2, '0');
-            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${numero}.png`;
-            
-            const img = new Image();
-            const index = i;
-            let respondido = false;
-            
-            const timeoutId = setTimeout(() => {
-                if (!respondido) {
-                    respondido = true;
-                    fotosCargadas++;
-                    if (fotosCargadas === totalFotos) mostrarGaleria();
-                }
-            }, 3000);
-            
-            img.onload = () => {
-                if (!respondido) {
-                    respondido = true;
-                    clearTimeout(timeoutId);
-                    fotosEncontradas[index] = url;
-                    fotosCargadas++;
-                    if (fotosCargadas === totalFotos) mostrarGaleria();
-                }
-            };
-            
-            img.onerror = () => {
-                if (!respondido) {
-                    respondido = true;
-                    clearTimeout(timeoutId);
-                    fotosCargadas++;
-                    if (fotosCargadas === totalFotos) mostrarGaleria();
-                }
-            };
-            
-            img.src = url;
-        }
-        
         function mostrarGaleria() {
             let html = '';
             let hayFotos = false;
-            
             for (let i = 1; i <= totalFotos; i++) {
                 if (fotosEncontradas[i]) {
                     hayFotos = true;
@@ -112,23 +73,37 @@
                     html += `<a href="${url}" target="_blank" style="text-decoration: none;"><img src="${url}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;cursor:pointer;"></a>`;
                 }
             }
-            
-            if (hayFotos) {
-                contenedor.innerHTML = html;
-            } else {
-                contenedor.innerHTML = `<div style="font-size:12px;color:#999;">📁 Sin fotos para ${sku}</div>`;
-            }
+            if (hayFotos) contenedor.innerHTML = html;
+            else contenedor.innerHTML = `<div style="font-size:12px;color:#999;">📁 Sin fotos para ${sku}</div>`;
         }
+        
+        for (let i = 1; i <= totalFotos; i++) {
+            const numero = i.toString().padStart(2, '0');
+            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${numero}.png`;
+            const img = new Image();
+            const index = i;
+            let respondido = false;
+            const timeoutId = setTimeout(() => {
+                if (!respondido) { respondido = true; fotosCargadas++; if (fotosCargadas === totalFotos) mostrarGaleria(); }
+            }, 3000);
+            img.onload = () => {
+                if (!respondido) { respondido = true; clearTimeout(timeoutId); fotosEncontradas[index] = url; fotosCargadas++; if (fotosCargadas === totalFotos) mostrarGaleria(); }
+            };
+            img.onerror = () => {
+                if (!respondido) { respondido = true; clearTimeout(timeoutId); fotosCargadas++; if (fotosCargadas === totalFotos) mostrarGaleria(); }
+            };
+            img.src = url;
+        }
+        setTimeout(() => mostrarGaleria(), 5000);
     }
 
-    // Función principal que aplica filtros, orden y muestra resultados
+    // Función principal que actualiza la vista
     function actualizarVista() {
-        // PASO 1: Obtener productos según la búsqueda
-        let productosParaMostrar = productos;
-        
+        // 1. Aplicar búsqueda
+        let resultados = productos;
         if (currentSearchTerm && currentSearchTerm.trim() !== '') {
             const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w.length);
-            productosParaMostrar = productos.filter(p => {
+            resultados = productos.filter(p => {
                 const sku = aString(p.SKU || p.sku || p.Name).toLowerCase();
                 const desc = aString(p.Description || p.description).toLowerCase();
                 const texto = sku + ' ' + desc;
@@ -136,89 +111,87 @@
             });
         }
         
-        // PASO 2: Aplicar filtro de disponibilidad
+        // 2. Aplicar filtro de disponibilidad
         if (currentFilter === 'available') {
-            productosParaMostrar = productosParaMostrar.filter(p => p.Available === 1 || p.Available === true);
+            resultados = resultados.filter(p => p.Available === 1 || p.Available === true);
         } else if (currentFilter === 'unavailable') {
-            productosParaMostrar = productosParaMostrar.filter(p => p.Available === 0 || p.Available === false);
+            resultados = resultados.filter(p => p.Available === 0 || p.Available === false);
         }
         
-        // PASO 3: Aplicar orden
+        // 3. Aplicar orden
         if (currentSort === 'sku_asc') {
-            productosParaMostrar.sort((a, b) => aString(a.SKU || a.sku || a.Name).localeCompare(aString(b.SKU || b.sku || b.Name)));
+            resultados.sort((a, b) => aString(a.SKU || a.sku || a.Name).localeCompare(aString(b.SKU || b.sku || b.Name)));
         } else if (currentSort === 'sku_desc') {
-            productosParaMostrar.sort((a, b) => aString(b.SKU || b.sku || b.Name).localeCompare(aString(a.SKU || a.sku || a.Name)));
+            resultados.sort((a, b) => aString(b.SKU || b.sku || b.Name).localeCompare(aString(a.SKU || a.sku || a.Name)));
         }
         
-        // PASO 4: Mostrar resultados
+        // 4. Mostrar resultados (solo primeros 200 por rendimiento)
         const grid = document.getElementById('productGrid');
         const termsDiv = document.getElementById('searchTermsDisplay');
         
-        if (!productosParaMostrar || !productosParaMostrar.length) {
+        if (!resultados.length) {
             grid.innerHTML = '<div class="no-results">😕 No se encontraron productos</div>';
             document.getElementById('results').innerHTML = '🔍 0 resultados';
             if (termsDiv) termsDiv.style.display = 'none';
             return;
         }
         
-        // Mostrar términos de búsqueda si existe
         if (currentSearchTerm && currentSearchTerm.trim() !== '') {
             const palabrasMostrar = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w.length);
             if (palabrasMostrar.length) {
                 termsDiv.style.display = 'block';
                 termsDiv.innerHTML = `🔎 Buscando: <strong>${palabrasMostrar.join(' + ')}</strong>`;
-            } else {
-                termsDiv.style.display = 'none';
-            }
-        } else {
-            termsDiv.style.display = 'none';
-        }
+            } else termsDiv.style.display = 'none';
+        } else termsDiv.style.display = 'none';
         
+        // Limitar a 200 productos para no saturar el navegador
+        const productosAMostrar = resultados.slice(0, 200);
         let html = '';
-        for (const p of productosParaMostrar) {
+        for (const p of productosAMostrar) {
             const sku = aString(p.SKU || p.sku || p.Name);
             const desc = aString(p.Description || p.description);
             const disponible = (p.Available === 1 || p.Available === true);
             const idFoto = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
-            html += `<div class="product-card"><div class="product-sku">🔖 SKU: ${sku}</div><div class="product-description">📝 ${desc || 'Sin descripción'}</div><div class="product-stock stock-${disponible?1:0}">${disponible?'✅ Disponible':'❌ No disponible'}</div><div class="product-photos" id="${idFoto}"></div></div>`;
+            html += `<div class="product-card">
+                <div class="product-sku">🔖 SKU: ${sku}</div>
+                <div class="product-description">📝 ${desc || 'Sin descripción'}</div>
+                <div class="product-stock stock-${disponible?1:0}">${disponible?'✅ Disponible':'❌ No disponible'}</div>
+                <div class="product-photos" id="${idFoto}"></div>
+            </div>`;
         }
         grid.innerHTML = html;
-        document.getElementById('results').innerHTML = `🔍 Encontrados: ${productosParaMostrar.length} productos`;
+        
+        const totalEncontrados = resultados.length;
+        const mostrados = productosAMostrar.length;
+        document.getElementById('results').innerHTML = `🔍 Encontrados: ${totalEncontrados} productos ${mostrados < totalEncontrados ? `(mostrando ${mostrados})` : ''}`;
         
         setTimeout(() => {
-            for (const p of productosParaMostrar) {
+            for (const p of productosAMostrar) {
                 const sku = aString(p.SKU || p.sku || p.Name);
                 const id = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
                 const c = document.getElementById(id);
                 if (c) cargarFotos(sku, c);
             }
-        }, 50);
+        }, 100);
     }
 
-    // Función para cargar datos y actualizar vista
-    function cargarDatosYActualizar(termino) {
-        currentSearchTerm = termino || '';
-        
-        if (productos.length) {
-            actualizarVista();
-            return;
-        }
-        
+    // Cargar datos al iniciar
+    function init() {
         document.getElementById('results').innerHTML = '⏳ Cargando productos...';
         fetch('datos.json')
             .then(r => r.json())
-            .then(d => { 
-                productos = d; 
-                document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`; 
+            .then(data => {
+                productos = data;
+                document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`;
                 actualizarVista();
             })
-            .catch(e => { 
-                console.error(e); 
+            .catch(e => {
+                console.error('Error:', e);
                 document.getElementById('productGrid').innerHTML = '<div class="no-results">❌ Error cargando datos.json</div>';
             });
     }
 
-    // Event Listeners
+    // Event listeners
     const input = document.getElementById('searchInput');
     const filtroSelect = document.getElementById('filterStock');
     const ordenSelect = document.getElementById('sortBy');
@@ -227,18 +200,16 @@
 
     if (input) {
         input.addEventListener('input', e => {
-            const term = e.target.value.trim();
             if (timer) clearTimeout(timer);
-            timer = setTimeout(() => cargarDatosYActualizar(term), 300);
+            timer = setTimeout(() => {
+                currentSearchTerm = e.target.value.trim();
+                actualizarVista();
+            }, 300);
         });
-        
         input.addEventListener('keypress', e => {
-            if (e.key === 'Enter') {
-                const term = e.target.value.trim();
-                if (term === '') {
-                    e.preventDefault();
-                    cargarDatosYActualizar('');
-                }
+            if (e.key === 'Enter' && !e.target.value.trim()) {
+                currentSearchTerm = '';
+                actualizarVista();
             }
         });
     }
@@ -251,8 +222,8 @@
         });
     }
     
-    // Inicializar la página
-    cargarDatosYActualizar('');
+    // Iniciar!
+    init();
     </script>
 </body>
 </html>
