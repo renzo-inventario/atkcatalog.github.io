@@ -31,14 +31,48 @@
         .product-photos img { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; cursor: pointer; }
         .product-photos img:hover { opacity: 0.8; transform: scale(1.05); transition: all 0.2s; }
         .no-results { text-align: center; padding: 50px; color: #666; font-size: 18px; }
-        @media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; } .controls { flex-direction: column; align-items: stretch; } }
+        
+        /* Estilos para la paginación */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 20px;
+            flex-wrap: wrap;
+        }
+        .pagination button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .pagination button:hover:not(:disabled) {
+            background-color: #0056b3;
+        }
+        .pagination button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .pagination .page-info {
+            color: #555;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .product-grid { grid-template-columns: 1fr; }
+            .controls { flex-direction: column; align-items: stretch; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🔍 ATK Products Catalog</h1>
-        <div class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Puedes buscar múltiples palabras separadas por espacios (ej: "overhaul bmw")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo</div>
-        <div class="search-box"><input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para ver todos)"></div>
+        <div class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: "overhaul bmw")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo</div>
+        <div class="search-box"><input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)"></div>
         <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
         <div class="controls">
             <div><label>📊 Mostrar: </label><select id="filterStock"><option value="all">Todos los productos</option><option value="available">Solo disponibles ✅</option><option value="unavailable">Solo no disponibles ❌</option></select></div>
@@ -47,6 +81,7 @@
         </div>
         <div id="results" class="results-info"></div>
         <div id="productGrid" class="product-grid"></div>
+        <div id="pagination" class="pagination" style="display: none;"></div>
     </div>
     <script>
     // VARIABLES GLOBALES
@@ -54,6 +89,9 @@
     let currentFilter = 'all';
     let currentSort = 'sku_asc';
     let currentSearchTerm = '';
+    let currentPage = 1;
+    let totalPages = 1;
+    const ITEMS_PER_PAGE = 200;
 
     function aString(v) { return (v === null || v === undefined) ? '' : String(v); }
 
@@ -63,25 +101,7 @@
         let total = 9;
         let cargadas = 0;
         
-        for (let i = 1; i <= total; i++) {
-            const num = i.toString().padStart(2, '0');
-            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${num}.png`;
-            const img = new Image();
-            const idx = i;
-            let respondido = false;
-            const tid = setTimeout(() => {
-                if (!respondido) { respondido = true; cargadas++; if (cargadas === total) mostrar(); }
-            }, 3000);
-            img.onload = () => {
-                if (!respondido) { respondido = true; clearTimeout(tid); fotos[idx] = url; cargadas++; if (cargadas === total) mostrar(); }
-            };
-            img.onerror = () => {
-                if (!respondido) { respondido = true; clearTimeout(tid); cargadas++; if (cargadas === total) mostrar(); }
-            };
-            img.src = url;
-        }
-        
-        function mostrar() {
+        function mostrarGaleria() {
             let html = '';
             let hay = false;
             for (let i = 1; i <= total; i++) {
@@ -92,7 +112,25 @@
             }
             contenedor.innerHTML = hay ? html : `<div style="font-size:12px;color:#999;">📁 Sin fotos para ${sku}</div>`;
         }
-        setTimeout(mostrar, 5000);
+        
+        for (let i = 1; i <= total; i++) {
+            const num = i.toString().padStart(2, '0');
+            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${num}.png`;
+            const img = new Image();
+            const idx = i;
+            let respondido = false;
+            const tid = setTimeout(() => {
+                if (!respondido) { respondido = true; cargadas++; if (cargadas === total) mostrarGaleria(); }
+            }, 3000);
+            img.onload = () => {
+                if (!respondido) { respondido = true; clearTimeout(tid); fotos[idx] = url; cargadas++; if (cargadas === total) mostrarGaleria(); }
+            };
+            img.onerror = () => {
+                if (!respondido) { respondido = true; clearTimeout(tid); cargadas++; if (cargadas === total) mostrarGaleria(); }
+            };
+            img.src = url;
+        }
+        setTimeout(mostrarGaleria, 5000);
     }
 
     function actualizarVista() {
@@ -111,7 +149,7 @@
             });
         }
         
-        // Filtro disponibilidad (CORREGIDO)
+        // Filtro disponibilidad
         if (currentFilter === 'available') {
             resultados = resultados.filter(p => p.Available === 1 || p.Available === true);
         } else if (currentFilter === 'unavailable') {
@@ -125,16 +163,19 @@
             resultados.sort((a, b) => aString(b.SKU).localeCompare(aString(a.SKU)));
         }
         
-        const grid = document.getElementById('productGrid');
+        // Calcular páginas
+        totalPages = Math.ceil(resultados.length / ITEMS_PER_PAGE);
+        
+        // Ajustar página actual si está fuera de rango
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages) currentPage = totalPages;
+        
+        const start = (currentPage - 1) * ITEMS_PER_PAGE;
+        const end = start + ITEMS_PER_PAGE;
+        const resultadosPaginados = resultados.slice(start, end);
+        
+        // Mostrar términos de búsqueda
         const termsDiv = document.getElementById('searchTermsDisplay');
-        
-        if (!resultados.length) {
-            grid.innerHTML = '<div class="no-results">😕 No se encontraron productos</div>';
-            document.getElementById('results').innerHTML = '🔍 0 resultados';
-            termsDiv.style.display = 'none';
-            return;
-        }
-        
         if (currentSearchTerm && currentSearchTerm.trim()) {
             const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
             termsDiv.style.display = 'block';
@@ -143,9 +184,17 @@
             termsDiv.style.display = 'none';
         }
         
-        const mostrar = resultados.slice(0, 200);
+        // Mostrar resultados
+        const grid = document.getElementById('productGrid');
+        if (!resultadosPaginados || !resultadosPaginados.length) {
+            grid.innerHTML = '<div class="no-results">😕 No se encontraron productos</div>';
+            document.getElementById('results').innerHTML = '🔍 0 resultados';
+            document.getElementById('pagination').style.display = 'none';
+            return;
+        }
+        
         let html = '';
-        for (const p of mostrar) {
+        for (const p of resultadosPaginados) {
             const sku = aString(p.SKU);
             const desc = aString(p.Description);
             const disp = (p.Available === 1 || p.Available === true);
@@ -157,10 +206,40 @@
             </div>`;
         }
         grid.innerHTML = html;
-        document.getElementById('results').innerHTML = `🔍 Encontrados: ${resultados.length} productos ${mostrar.length < resultados.length ? `(mostrando ${mostrar.length})` : ''}`;
         
+        // Mostrar info de resultados y paginación
+        const totalEncontrados = resultados.length;
+        document.getElementById('results').innerHTML = `🔍 Encontrados: ${totalEncontrados} productos | Mostrando ${start+1}-${Math.min(end, totalEncontrados)} de ${totalEncontrados}`;
+        
+        // Mostrar controles de paginación
+        const paginationDiv = document.getElementById('pagination');
+        if (totalPages > 1) {
+            paginationDiv.style.display = 'flex';
+            paginationDiv.innerHTML = `
+                <button id="prevPage" ${currentPage === 1 ? 'disabled' : ''}>◀ Anterior</button>
+                <span class="page-info">Página ${currentPage} de ${totalPages}</span>
+                <button id="nextPage" ${currentPage === totalPages ? 'disabled' : ''}>Siguiente ▶</button>
+            `;
+            
+            document.getElementById('prevPage')?.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    actualizarVista();
+                }
+            });
+            document.getElementById('nextPage')?.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    actualizarVista();
+                }
+            });
+        } else {
+            paginationDiv.style.display = 'none';
+        }
+        
+        // Cargar fotos
         setTimeout(() => {
-            for (const p of mostrar) {
+            for (const p of resultadosPaginados) {
                 const sku = aString(p.SKU);
                 const id = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
                 const c = document.getElementById(id);
@@ -178,7 +257,10 @@
             document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`;
             actualizarVista();
         })
-        .catch(e => console.error('Error:', e));
+        .catch(e => {
+            console.error('Error:', e);
+            document.getElementById('productGrid').innerHTML = '<div class="no-results">❌ Error cargando datos.json</div>';
+        });
     
     // Eventos
     let timer;
@@ -186,6 +268,7 @@
         if (timer) clearTimeout(timer);
         timer = setTimeout(() => {
             currentSearchTerm = e.target.value.trim();
+            currentPage = 1;  // Resetear a la primera página
             actualizarVista();
         }, 300);
     });
@@ -193,6 +276,7 @@
     document.getElementById('applyFilters').addEventListener('click', () => {
         currentFilter = document.getElementById('filterStock').value;
         currentSort = document.getElementById('sortBy').value;
+        currentPage = 1;  // Resetear a la primera página
         actualizarVista();
     });
     </script>
