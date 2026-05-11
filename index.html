@@ -32,17 +32,31 @@
         .product-photos img:hover { opacity: 0.8; transform: scale(1.05); transition: all 0.2s; }
         .no-results { text-align: center; padding: 50px; color: #666; font-size: 18px; }
         
-        /* Estilos para la paginación */
         .pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 30px 0 20px; flex-wrap: wrap; }
         .pagination button { background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; }
         .pagination button:hover:not(:disabled) { background-color: #0056b3; }
         .pagination button:disabled { background-color: #cccccc; cursor: not-allowed; }
         .pagination .page-info { color: #555; font-size: 14px; }
         
-        /* Botón de idioma */
         .lang-switch { text-align: right; margin-bottom: 15px; }
         .lang-btn { background-color: #28a745; padding: 5px 12px; font-size: 14px; }
         .lang-btn:hover { background-color: #218838; }
+        
+        /* Indicador de atajos */
+        .shortcuts-hint {
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 10px;
+        }
+        .shortcuts-hint kbd {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            padding: 2px 5px;
+            font-family: monospace;
+            font-size: 11px;
+        }
         
         @media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; } .controls { flex-direction: column; align-items: stretch; } }
     </style>
@@ -73,6 +87,9 @@
         <div id="results" class="results-info"></div>
         <div id="productGrid" class="product-grid"></div>
         <div id="pagination" class="pagination" style="display: none;"></div>
+        <div class="shortcuts-hint">
+            💡 <kbd>ESC</kbd> Limpiar búsqueda | <kbd>?</kbd> Ver atajos
+        </div>
     </div>
     <script>
     // VARIABLES
@@ -85,10 +102,15 @@
     let currentLang = 'es';
     const ITEMS_PER_PAGE = 200;
 
+    // CLAVES PARA LOCALSTORAGE
+    const STORAGE_LANG = 'atk_lang';
+    const STORAGE_FILTER = 'atk_filter';
+    const STORAGE_SORT = 'atk_sort';
+
     const texts = {
         es: {
             title: "🔍 ATK Products Catalog",
-            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo",
+            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>⌨️ <kbd>ESC</kbd> Limpiar búsqueda | <kbd>?</kbd> Mostrar atajos",
             placeholder: "Buscar por SKU o descripción... (Enter para todos)",
             showLabel: "📊 Mostrar: ",
             optAll: "Todos los productos",
@@ -116,11 +138,14 @@
             noPhotos: "📁 Sin fotos para {sku}",
             loadingPhotos: "⏳ Buscando fotos...",
             langEs: "🇪🇸 Español",
-            langEn: "🇺🇸 English"
+            langEn: "🇺🇸 English",
+            shortcutsTitle: "🎯 Atajos de teclado",
+            shortcutsEsc: "Limpiar búsqueda y mostrar todos los productos",
+            shortcutsQuestion: "Mostrar esta ayuda"
         },
         en: {
             title: "🔍 ATK Products Catalog",
-            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size",
+            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>⌨️ <kbd>ESC</kbd> Clear search | <kbd>?</kbd> Show shortcuts",
             placeholder: "Search by SKU or description... (Enter for all)",
             showLabel: "📊 Show: ",
             optAll: "All products",
@@ -148,9 +173,17 @@
             noPhotos: "📁 No photos for {sku}",
             loadingPhotos: "⏳ Loading photos...",
             langEs: "🇪🇸 Spanish",
-            langEn: "🇺🇸 English"
+            langEn: "🇺🇸 English",
+            shortcutsTitle: "🎯 Keyboard shortcuts",
+            shortcutsEsc: "Clear search and show all products",
+            shortcutsQuestion: "Show this help"
         }
     };
+
+    function showShortcutsHelp() {
+        const t = texts[currentLang];
+        alert(`${t.shortcutsTitle}\n\n🔹 ESC: ${t.shortcutsEsc}\n🔹 ?: ${t.shortcutsQuestion}`);
+    }
 
     function updateTexts() {
         const t = texts[currentLang];
@@ -168,6 +201,31 @@
         document.getElementById('optDescDesc').innerHTML = t.optDescDesc;
         document.getElementById('applyFilters').innerHTML = t.applyBtn;
         document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
+    }
+
+    function savePreferences() {
+        localStorage.setItem(STORAGE_LANG, currentLang);
+        localStorage.setItem(STORAGE_FILTER, currentFilter);
+        localStorage.setItem(STORAGE_SORT, currentSort);
+    }
+
+    function loadPreferences() {
+        const savedLang = localStorage.getItem(STORAGE_LANG);
+        if (savedLang === 'es' || savedLang === 'en') {
+            currentLang = savedLang;
+        }
+        
+        const savedFilter = localStorage.getItem(STORAGE_FILTER);
+        if (savedFilter === 'all' || savedFilter === 'available' || savedFilter === 'unavailable') {
+            currentFilter = savedFilter;
+            document.getElementById('filterStock').value = currentFilter;
+        }
+        
+        const savedSort = localStorage.getItem(STORAGE_SORT);
+        if (savedSort === 'sku_asc' || savedSort === 'sku_desc' || savedSort === 'desc_asc' || savedSort === 'desc_desc') {
+            currentSort = savedSort;
+            document.getElementById('sortBy').value = currentSort;
+        }
     }
 
     function aString(v) { return (v === null || v === undefined) ? '' : String(v); }
@@ -324,6 +382,9 @@
     }
 
     function init() {
+        loadPreferences();
+        updateTexts();
+        
         const t = texts[currentLang];
         document.getElementById('results').innerHTML = t.loading;
         fetch('datos.json')
@@ -341,7 +402,13 @@
 
     // EVENTOS
     let timer;
-    document.getElementById('searchInput').addEventListener('input', e => {
+    const searchInput = document.getElementById('searchInput');
+    const filterStock = document.getElementById('filterStock');
+    const sortBy = document.getElementById('sortBy');
+    const applyBtn = document.getElementById('applyFilters');
+    const langToggle = document.getElementById('langToggle');
+
+    searchInput.addEventListener('input', e => {
         if (timer) clearTimeout(timer);
         timer = setTimeout(() => {
             currentSearchTerm = e.target.value.trim();
@@ -350,20 +417,38 @@
         }, 300);
     });
     
-    document.getElementById('applyFilters').addEventListener('click', () => {
-        currentFilter = document.getElementById('filterStock').value;
-        currentSort = document.getElementById('sortBy').value;
+    applyBtn.addEventListener('click', () => {
+        currentFilter = filterStock.value;
+        currentSort = sortBy.value;
         currentPage = 1;
+        savePreferences();
         actualizarVista();
     });
     
-    document.getElementById('langToggle').addEventListener('click', () => {
+    langToggle.addEventListener('click', () => {
         currentLang = currentLang === 'es' ? 'en' : 'es';
+        savePreferences();
         updateTexts();
         actualizarVista();
     });
     
-    updateTexts();
+    // ATAJOS DE TECLADO
+    document.addEventListener('keydown', (e) => {
+        // ESC: limpiar búsqueda
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            currentSearchTerm = '';
+            currentPage = 1;
+            searchInput.value = '';
+            actualizarVista();
+        }
+        // ? (Shift + /) mostrar ayuda
+        if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+            e.preventDefault();
+            showShortcutsHelp();
+        }
+    });
+    
     init();
     </script>
 </body>
