@@ -33,50 +33,39 @@
         .no-results { text-align: center; padding: 50px; color: #666; font-size: 18px; }
         
         /* Estilos para la paginación */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin: 30px 0 20px;
-            flex-wrap: wrap;
-        }
-        .pagination button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .pagination button:hover:not(:disabled) {
-            background-color: #0056b3;
-        }
-        .pagination button:disabled {
-            background-color: #cccccc;
-            cursor: not-allowed;
-        }
-        .pagination .page-info {
-            color: #555;
-            font-size: 14px;
-        }
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 30px 0 20px; flex-wrap: wrap; }
+        .pagination button { background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+        .pagination button:hover:not(:disabled) { background-color: #0056b3; }
+        .pagination button:disabled { background-color: #cccccc; cursor: not-allowed; }
+        .pagination .page-info { color: #555; font-size: 14px; }
         
-        @media (max-width: 768px) {
-            .product-grid { grid-template-columns: 1fr; }
-            .controls { flex-direction: column; align-items: stretch; }
-        }
+        /* Botón de idioma */
+        .lang-switch { text-align: right; margin-bottom: 15px; }
+        .lang-btn { background-color: #28a745; padding: 5px 12px; font-size: 14px; }
+        .lang-btn:hover { background-color: #218838; }
+        
+        @media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; } .controls { flex-direction: column; align-items: stretch; } }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🔍 ATK Products Catalog</h1>
-        <div class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: "overhaul bmw")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo</div>
+        <div class="lang-switch">
+            <button id="langToggle" class="lang-btn">🇺🇸 English</button>
+        </div>
+        <h1 id="title">🔍 ATK Products Catalog</h1>
+        <div id="helpText" class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: "overhaul bmw")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo</div>
         <div class="search-box"><input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)"></div>
         <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
         <div class="controls">
-            <div><label>📊 Mostrar: </label><select id="filterStock"><option value="all">Todos los productos</option><option value="available">Solo disponibles ✅</option><option value="unavailable">Solo no disponibles ❌</option></select></div>
-            <div><label>🔄 Ordenar por: </label><select id="sortBy"><option value="sku_asc">SKU (A a Z)</option><option value="sku_desc">SKU (Z a A)</option></select></div>
+            <div><label id="showLabel">📊 Mostrar: </label><select id="filterStock">
+                <option value="all" id="optAll">Todos los productos</option>
+                <option value="available" id="optAvailable">Solo disponibles ✅</option>
+                <option value="unavailable" id="optUnavailable">Solo no disponibles ❌</option>
+            </select></div>
+            <div><label id="sortLabel">🔄 Ordenar por: </label><select id="sortBy">
+                <option value="sku_asc" id="optAsc">SKU (A a Z)</option>
+                <option value="sku_desc" id="optDesc">SKU (Z a A)</option>
+            </select></div>
             <button id="applyFilters">Aplicar</button>
         </div>
         <div id="results" class="results-info"></div>
@@ -84,19 +73,101 @@
         <div id="pagination" class="pagination" style="display: none;"></div>
     </div>
     <script>
-    // VARIABLES GLOBALES
+    // VARIABLES
     let productos = [];
     let currentFilter = 'all';
     let currentSort = 'sku_asc';
     let currentSearchTerm = '';
     let currentPage = 1;
     let totalPages = 1;
+    let currentLang = 'es'; // 'es' o 'en'
     const ITEMS_PER_PAGE = 200;
+
+    // TEXTO POR IDIOMA
+    const texts = {
+        es: {
+            title: "🔍 ATK Products Catalog",
+            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo",
+            placeholder: "Buscar por SKU o descripción... (Enter para todos)",
+            showLabel: "📊 Mostrar: ",
+            optAll: "Todos los productos",
+            optAvailable: "Solo disponibles ✅",
+            optUnavailable: "Solo no disponibles ❌",
+            sortLabel: "🔄 Ordenar por: ",
+            optAsc: "SKU (A a Z)",
+            optDesc: "SKU (Z a A)",
+            applyBtn: "Aplicar",
+            loading: "⏳ Cargando productos...",
+            loaded: "📦 {count} productos cargados",
+            found: "🔍 Encontrados: {total} productos",
+            showing: "Mostrando {start}-{end} de {total}",
+            page: "Página {current} de {total}",
+            prev: "◀ Anterior",
+            next: "Siguiente ▶",
+            noResults: "😕 No se encontraron productos",
+            error: "❌ Error cargando datos.json",
+            searching: "🔎 Buscando: <strong>{words}</strong>",
+            stockAvailable: "✅ Disponible",
+            stockUnavailable: "❌ No disponible",
+            noDesc: "Sin descripción",
+            noPhotos: "📁 Sin fotos para {sku}",
+            loadingPhotos: "⏳ Buscando fotos...",
+            langEs: "🇪🇸 Español",
+            langEn: "🇺🇸 English"
+        },
+        en: {
+            title: "🔍 ATK Products Catalog",
+            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size",
+            placeholder: "Search by SKU or description... (Enter for all)",
+            showLabel: "📊 Show: ",
+            optAll: "All products",
+            optAvailable: "In stock only ✅",
+            optUnavailable: "Out of stock only ❌",
+            sortLabel: "🔄 Sort by: ",
+            optAsc: "SKU (A to Z)",
+            optDesc: "SKU (Z to A)",
+            applyBtn: "Apply",
+            loading: "⏳ Loading products...",
+            loaded: "📦 {count} products loaded",
+            found: "🔍 Found: {total} products",
+            showing: "Showing {start}-{end} of {total}",
+            page: "Page {current} of {total}",
+            prev: "◀ Previous",
+            next: "Next ▶",
+            noResults: "😕 No products found",
+            error: "❌ Error loading datos.json",
+            searching: "🔎 Searching: <strong>{words}</strong>",
+            stockAvailable: "✅ In stock",
+            stockUnavailable: "❌ Out of stock",
+            noDesc: "No description",
+            noPhotos: "📁 No photos for {sku}",
+            loadingPhotos: "⏳ Loading photos...",
+            langEs: "🇪🇸 Spanish",
+            langEn: "🇺🇸 English"
+        }
+    };
+
+    function updateTexts() {
+        const t = texts[currentLang];
+        document.getElementById('title').innerHTML = t.title;
+        document.getElementById('helpText').innerHTML = t.help;
+        document.getElementById('searchInput').placeholder = t.placeholder;
+        document.getElementById('showLabel').innerHTML = t.showLabel;
+        document.getElementById('optAll').innerHTML = t.optAll;
+        document.getElementById('optAvailable').innerHTML = t.optAvailable;
+        document.getElementById('optUnavailable').innerHTML = t.optUnavailable;
+        document.getElementById('sortLabel').innerHTML = t.sortLabel;
+        document.getElementById('optAsc').innerHTML = t.optAsc;
+        document.getElementById('optDesc').innerHTML = t.optDesc;
+        document.getElementById('applyFilters').innerHTML = t.applyBtn;
+        document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
+    }
 
     function aString(v) { return (v === null || v === undefined) ? '' : String(v); }
 
     function cargarFotos(sku, contenedor) {
-        contenedor.innerHTML = '<div style="font-size:12px;color:#999;">⏳ Buscando fotos...</div>';
+        const t = texts[currentLang];
+        contenedor.innerHTML = `<div style="font-size:12px;color:#999;">${t.loadingPhotos}</div>`;
         let fotos = [];
         let total = 9;
         let cargadas = 0;
@@ -110,7 +181,7 @@
                     html += `<a href="${fotos[i]}" target="_blank" style="text-decoration:none;"><img src="${fotos[i]}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;cursor:pointer;"></a>`;
                 }
             }
-            contenedor.innerHTML = hay ? html : `<div style="font-size:12px;color:#999;">📁 Sin fotos para ${sku}</div>`;
+            contenedor.innerHTML = hay ? html : `<div style="font-size:12px;color:#999;">${t.noPhotos.replace('{sku}', sku)}</div>`;
         }
         
         for (let i = 1; i <= total; i++) {
@@ -136,9 +207,10 @@
     function actualizarVista() {
         if (!productos.length) return;
         
+        const t = texts[currentLang];
+        
         let resultados = [...productos];
         
-        // Búsqueda
         if (currentSearchTerm && currentSearchTerm.trim()) {
             const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
             resultados = resultados.filter(p => {
@@ -149,24 +221,19 @@
             });
         }
         
-        // Filtro disponibilidad
         if (currentFilter === 'available') {
             resultados = resultados.filter(p => p.Available === 1 || p.Available === true);
         } else if (currentFilter === 'unavailable') {
             resultados = resultados.filter(p => p.Available === 0 || p.Available === false);
         }
         
-        // Orden
         if (currentSort === 'sku_asc') {
             resultados.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU)));
         } else if (currentSort === 'sku_desc') {
             resultados.sort((a, b) => aString(b.SKU).localeCompare(aString(a.SKU)));
         }
         
-        // Calcular páginas
         totalPages = Math.ceil(resultados.length / ITEMS_PER_PAGE);
-        
-        // Ajustar página actual si está fuera de rango
         if (currentPage < 1) currentPage = 1;
         if (currentPage > totalPages) currentPage = totalPages;
         
@@ -174,21 +241,19 @@
         const end = start + ITEMS_PER_PAGE;
         const resultadosPaginados = resultados.slice(start, end);
         
-        // Mostrar términos de búsqueda
         const termsDiv = document.getElementById('searchTermsDisplay');
         if (currentSearchTerm && currentSearchTerm.trim()) {
             const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
             termsDiv.style.display = 'block';
-            termsDiv.innerHTML = `🔎 Buscando: <strong>${palabras.join(' + ')}</strong>`;
+            termsDiv.innerHTML = t.searching.replace('{words}', palabras.join(' + '));
         } else {
             termsDiv.style.display = 'none';
         }
         
-        // Mostrar resultados
         const grid = document.getElementById('productGrid');
         if (!resultadosPaginados || !resultadosPaginados.length) {
-            grid.innerHTML = '<div class="no-results">😕 No se encontraron productos</div>';
-            document.getElementById('results').innerHTML = '🔍 0 resultados';
+            grid.innerHTML = `<div class="no-results">${t.noResults}</div>`;
+            document.getElementById('results').innerHTML = `🔍 0 ${t.found.split(' ')[1] || 'resultados'}`;
             document.getElementById('pagination').style.display = 'none';
             return;
         }
@@ -200,44 +265,30 @@
             const disp = (p.Available === 1 || p.Available === true);
             html += `<div class="product-card">
                 <div class="product-sku">🔖 SKU: ${sku}</div>
-                <div class="product-description">📝 ${desc || 'Sin descripción'}</div>
-                <div class="product-stock stock-${disp?1:0}">${disp?'✅ Disponible':'❌ No disponible'}</div>
+                <div class="product-description">📝 ${desc || t.noDesc}</div>
+                <div class="product-stock stock-${disp?1:0}">${disp ? t.stockAvailable : t.stockUnavailable}</div>
                 <div class="product-photos" id="fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}"></div>
             </div>`;
         }
         grid.innerHTML = html;
         
-        // Mostrar info de resultados y paginación
         const totalEncontrados = resultados.length;
-        document.getElementById('results').innerHTML = `🔍 Encontrados: ${totalEncontrados} productos | Mostrando ${start+1}-${Math.min(end, totalEncontrados)} de ${totalEncontrados}`;
+        document.getElementById('results').innerHTML = `${t.found.replace('{total}', totalEncontrados)} | ${t.showing.replace('{start}', start+1).replace('{end}', Math.min(end, totalEncontrados)).replace('{total}', totalEncontrados)}`;
         
-        // Mostrar controles de paginación
         const paginationDiv = document.getElementById('pagination');
         if (totalPages > 1) {
             paginationDiv.style.display = 'flex';
             paginationDiv.innerHTML = `
-                <button id="prevPage" ${currentPage === 1 ? 'disabled' : ''}>◀ Anterior</button>
-                <span class="page-info">Página ${currentPage} de ${totalPages}</span>
-                <button id="nextPage" ${currentPage === totalPages ? 'disabled' : ''}>Siguiente ▶</button>
+                <button id="prevPage" ${currentPage === 1 ? 'disabled' : ''}>${t.prev}</button>
+                <span class="page-info">${t.page.replace('{current}', currentPage).replace('{total}', totalPages)}</span>
+                <button id="nextPage" ${currentPage === totalPages ? 'disabled' : ''}>${t.next}</button>
             `;
-            
-            document.getElementById('prevPage')?.addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    actualizarVista();
-                }
-            });
-            document.getElementById('nextPage')?.addEventListener('click', () => {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    actualizarVista();
-                }
-            });
+            document.getElementById('prevPage')?.addEventListener('click', () => { if (currentPage > 1) { currentPage--; actualizarVista(); } });
+            document.getElementById('nextPage')?.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; actualizarVista(); } });
         } else {
             paginationDiv.style.display = 'none';
         }
         
-        // Cargar fotos
         setTimeout(() => {
             for (const p of resultadosPaginados) {
                 const sku = aString(p.SKU);
@@ -248,27 +299,29 @@
         }, 100);
     }
 
-    // Inicialización
-    document.getElementById('results').innerHTML = '⏳ Cargando productos...';
-    fetch('datos.json')
-        .then(r => r.json())
-        .then(data => {
-            productos = data;
-            document.getElementById('results').innerHTML = `📦 ${productos.length} productos cargados`;
-            actualizarVista();
-        })
-        .catch(e => {
-            console.error('Error:', e);
-            document.getElementById('productGrid').innerHTML = '<div class="no-results">❌ Error cargando datos.json</div>';
-        });
-    
-    // Eventos
+    function init() {
+        const t = texts[currentLang];
+        document.getElementById('results').innerHTML = t.loading;
+        fetch('datos.json')
+            .then(r => r.json())
+            .then(data => {
+                productos = data;
+                document.getElementById('results').innerHTML = t.loaded.replace('{count}', productos.length);
+                actualizarVista();
+            })
+            .catch(e => {
+                console.error(e);
+                document.getElementById('productGrid').innerHTML = `<div class="no-results">${t.error}</div>`;
+            });
+    }
+
+    // EVENTOS
     let timer;
     document.getElementById('searchInput').addEventListener('input', e => {
         if (timer) clearTimeout(timer);
         timer = setTimeout(() => {
             currentSearchTerm = e.target.value.trim();
-            currentPage = 1;  // Resetear a la primera página
+            currentPage = 1;
             actualizarVista();
         }, 300);
     });
@@ -276,9 +329,18 @@
     document.getElementById('applyFilters').addEventListener('click', () => {
         currentFilter = document.getElementById('filterStock').value;
         currentSort = document.getElementById('sortBy').value;
-        currentPage = 1;  // Resetear a la primera página
+        currentPage = 1;
         actualizarVista();
     });
+    
+    document.getElementById('langToggle').addEventListener('click', () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        updateTexts();
+        actualizarVista();
+    });
+    
+    updateTexts();
+    init();
     </script>
 </body>
 </html>
