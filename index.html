@@ -63,8 +63,10 @@
                 <option value="unavailable" id="optUnavailable">Solo no disponibles ❌</option>
             </select></div>
             <div><label id="sortLabel">🔄 Ordenar por: </label><select id="sortBy">
-                <option value="sku_asc" id="optAsc">SKU (A a Z)</option>
-                <option value="sku_desc" id="optDesc">SKU (Z a A)</option>
+                <option value="sku_asc" id="optSkuAsc">SKU (A a Z)</option>
+                <option value="sku_desc" id="optSkuDesc">SKU (Z a A)</option>
+                <option value="desc_asc" id="optDescAsc">Descripción (A a Z)</option>
+                <option value="desc_desc" id="optDescDesc">Descripción (Z a A)</option>
             </select></div>
             <button id="applyFilters">Aplicar</button>
         </div>
@@ -80,10 +82,9 @@
     let currentSearchTerm = '';
     let currentPage = 1;
     let totalPages = 1;
-    let currentLang = 'es'; // 'es' o 'en'
+    let currentLang = 'es';
     const ITEMS_PER_PAGE = 200;
 
-    // TEXTO POR IDIOMA
     const texts = {
         es: {
             title: "🔍 ATK Products Catalog",
@@ -94,8 +95,10 @@
             optAvailable: "Solo disponibles ✅",
             optUnavailable: "Solo no disponibles ❌",
             sortLabel: "🔄 Ordenar por: ",
-            optAsc: "SKU (A a Z)",
-            optDesc: "SKU (Z a A)",
+            optSkuAsc: "SKU (A a Z)",
+            optSkuDesc: "SKU (Z a A)",
+            optDescAsc: "Descripción (A a Z)",
+            optDescDesc: "Descripción (Z a A)",
             applyBtn: "Aplicar",
             loading: "⏳ Cargando productos...",
             loaded: "📦 {count} productos cargados",
@@ -124,8 +127,10 @@
             optAvailable: "In stock only ✅",
             optUnavailable: "Out of stock only ❌",
             sortLabel: "🔄 Sort by: ",
-            optAsc: "SKU (A to Z)",
-            optDesc: "SKU (Z to A)",
+            optSkuAsc: "SKU (A to Z)",
+            optSkuDesc: "SKU (Z to A)",
+            optDescAsc: "Description (A to Z)",
+            optDescDesc: "Description (Z to A)",
             applyBtn: "Apply",
             loading: "⏳ Loading products...",
             loaded: "📦 {count} products loaded",
@@ -157,8 +162,10 @@
         document.getElementById('optAvailable').innerHTML = t.optAvailable;
         document.getElementById('optUnavailable').innerHTML = t.optUnavailable;
         document.getElementById('sortLabel').innerHTML = t.sortLabel;
-        document.getElementById('optAsc').innerHTML = t.optAsc;
-        document.getElementById('optDesc').innerHTML = t.optDesc;
+        document.getElementById('optSkuAsc').innerHTML = t.optSkuAsc;
+        document.getElementById('optSkuDesc').innerHTML = t.optSkuDesc;
+        document.getElementById('optDescAsc').innerHTML = t.optDescAsc;
+        document.getElementById('optDescDesc').innerHTML = t.optDescDesc;
         document.getElementById('applyFilters').innerHTML = t.applyBtn;
         document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
     }
@@ -204,6 +211,27 @@
         setTimeout(mostrarGaleria, 5000);
     }
 
+    function ordenarProductos(productosArray) {
+        const sorted = [...productosArray];
+        switch(currentSort) {
+            case 'sku_asc':
+                sorted.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU)));
+                break;
+            case 'sku_desc':
+                sorted.sort((a, b) => aString(b.SKU).localeCompare(aString(a.SKU)));
+                break;
+            case 'desc_asc':
+                sorted.sort((a, b) => aString(a.Description).localeCompare(aString(b.Description)));
+                break;
+            case 'desc_desc':
+                sorted.sort((a, b) => aString(b.Description).localeCompare(aString(a.Description)));
+                break;
+            default:
+                sorted.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU)));
+        }
+        return sorted;
+    }
+
     function actualizarVista() {
         if (!productos.length) return;
         
@@ -227,15 +255,11 @@
             resultados = resultados.filter(p => p.Available === 0 || p.Available === false);
         }
         
-        if (currentSort === 'sku_asc') {
-            resultados.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU)));
-        } else if (currentSort === 'sku_desc') {
-            resultados.sort((a, b) => aString(b.SKU).localeCompare(aString(a.SKU)));
-        }
+        resultados = ordenarProductos(resultados);
         
         totalPages = Math.ceil(resultados.length / ITEMS_PER_PAGE);
         if (currentPage < 1) currentPage = 1;
-        if (currentPage > totalPages) currentPage = totalPages;
+        if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
         
         const start = (currentPage - 1) * ITEMS_PER_PAGE;
         const end = start + ITEMS_PER_PAGE;
