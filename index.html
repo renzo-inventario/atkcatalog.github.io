@@ -20,8 +20,20 @@
         button:hover { background-color: #0056b3; }
         .results-info { margin-bottom: 20px; color: #666; font-size: 14px; }
         .search-terms { background-color: #e8f0fe; padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; color: #1a73e8; }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        
+        /* Estilos para vista MATRIZ (por defecto) */
+        .product-grid.grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
         .product-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        /* Estilos para vista LISTA */
+        .product-grid.list-view { display: flex; flex-direction: column; gap: 10px; }
+        .product-grid.list-view .product-card { display: flex; align-items: center; gap: 15px; padding: 12px 15px; }
+        .product-grid.list-view .product-card .product-photos { margin-top: 0; flex-shrink: 0; }
+        .product-grid.list-view .product-card .product-photos img { width: 50px; height: 50px; margin: 0; }
+        .product-grid.list-view .product-card .product-sku { font-size: 12px; margin-bottom: 0; min-width: 100px; }
+        .product-grid.list-view .product-card .product-description { flex: 1; margin-bottom: 0; font-size: 14px; }
+        .product-grid.list-view .product-card .product-stock { margin-bottom: 0; margin-left: auto; text-align: center; min-width: 110px; }
+        
         .product-sku { color: #007bff; font-size: 14px; font-weight: bold; margin-bottom: 5px; }
         .product-description { font-size: 16px; margin-bottom: 10px; color: #333; }
         .product-stock { font-size: 14px; font-weight: bold; margin-bottom: 15px; padding: 4px 8px; border-radius: 4px; display: inline-block; }
@@ -42,23 +54,37 @@
         .lang-btn { background-color: #28a745; padding: 5px 12px; font-size: 14px; }
         .lang-btn:hover { background-color: #218838; }
         
-        /* Indicador de atajos */
-        .shortcuts-hint {
-            text-align: center;
-            font-size: 12px;
-            color: #aaa;
-            margin-top: 10px;
-        }
-        .shortcuts-hint kbd {
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 2px 5px;
-            font-family: monospace;
-            font-size: 11px;
-        }
+        .shortcuts-hint { text-align: center; font-size: 12px; color: #aaa; margin-top: 10px; }
+        .shortcuts-hint kbd { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 3px; padding: 2px 5px; font-family: monospace; font-size: 11px; }
         
-        @media (max-width: 768px) { .product-grid { grid-template-columns: 1fr; } .controls { flex-direction: column; align-items: stretch; } }
+        /* Botón flotante "Subir arriba" */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        .scroll-top-btn:hover { background-color: #0056b3; transform: scale(1.1); }
+        
+        @media (max-width: 768px) { 
+            .product-grid.grid-view { grid-template-columns: 1fr; }
+            .product-grid.list-view .product-card { flex-wrap: wrap; }
+            .product-grid.list-view .product-card .product-stock { margin-left: 0; }
+            .controls { flex-direction: column; align-items: stretch; }
+        }
     </style>
 </head>
 <body>
@@ -82,15 +108,29 @@
                 <option value="desc_asc" id="optDescAsc">Descripción (A a Z)</option>
                 <option value="desc_desc" id="optDescDesc">Descripción (Z a A)</option>
             </select></div>
+            <div><label id="viewLabel">📐 Vista: </label><select id="viewMode">
+                <option value="grid" id="optGrid">📦 Matriz</option>
+                <option value="list" id="optList">📋 Lista</option>
+            </select></div>
+            <div><label id="perPageLabel">▶ Mostrar: </label><select id="perPage">
+                <option value="25">25</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200" selected>200</option>
+            </select></div>
             <button id="applyFilters">Aplicar</button>
         </div>
         <div id="results" class="results-info"></div>
-        <div id="productGrid" class="product-grid"></div>
+        <div id="productGrid" class="product-grid grid-view"></div>
         <div id="pagination" class="pagination" style="display: none;"></div>
         <div class="shortcuts-hint">
             💡 <kbd>ESC</kbd> Limpiar búsqueda | <kbd>?</kbd> Ver atajos
         </div>
     </div>
+    
+    <!-- Botón flotante "Subir arriba" -->
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Subir arriba">⬆️</button>
+
     <script>
     // VARIABLES
     let productos = [];
@@ -100,12 +140,15 @@
     let currentPage = 1;
     let totalPages = 1;
     let currentLang = 'es';
-    const ITEMS_PER_PAGE = 200;
+    let currentView = 'grid';
+    let itemsPerPage = 200;
 
     // CLAVES PARA LOCALSTORAGE
     const STORAGE_LANG = 'atk_lang';
     const STORAGE_FILTER = 'atk_filter';
     const STORAGE_SORT = 'atk_sort';
+    const STORAGE_VIEW = 'atk_view';
+    const STORAGE_PER_PAGE = 'atk_per_page';
 
     const texts = {
         es: {
@@ -121,6 +164,10 @@
             optSkuDesc: "SKU (Z a A)",
             optDescAsc: "Descripción (A a Z)",
             optDescDesc: "Descripción (Z a A)",
+            viewLabel: "📐 Vista: ",
+            optGrid: "📦 Matriz",
+            optList: "📋 Lista",
+            perPageLabel: "▶ Mostrar: ",
             applyBtn: "Aplicar",
             loading: "⏳ Cargando productos...",
             loaded: "📦 {count} productos cargados",
@@ -156,6 +203,10 @@
             optSkuDesc: "SKU (Z to A)",
             optDescAsc: "Description (A to Z)",
             optDescDesc: "Description (Z to A)",
+            viewLabel: "📐 View: ",
+            optGrid: "📦 Grid",
+            optList: "📋 List",
+            perPageLabel: "▶ Show: ",
             applyBtn: "Apply",
             loading: "⏳ Loading products...",
             loaded: "📦 {count} products loaded",
@@ -199,6 +250,10 @@
         document.getElementById('optSkuDesc').innerHTML = t.optSkuDesc;
         document.getElementById('optDescAsc').innerHTML = t.optDescAsc;
         document.getElementById('optDescDesc').innerHTML = t.optDescDesc;
+        document.getElementById('viewLabel').innerHTML = t.viewLabel;
+        document.getElementById('optGrid').innerHTML = t.optGrid;
+        document.getElementById('optList').innerHTML = t.optList;
+        document.getElementById('perPageLabel').innerHTML = t.perPageLabel;
         document.getElementById('applyFilters').innerHTML = t.applyBtn;
         document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
     }
@@ -207,13 +262,13 @@
         localStorage.setItem(STORAGE_LANG, currentLang);
         localStorage.setItem(STORAGE_FILTER, currentFilter);
         localStorage.setItem(STORAGE_SORT, currentSort);
+        localStorage.setItem(STORAGE_VIEW, currentView);
+        localStorage.setItem(STORAGE_PER_PAGE, itemsPerPage);
     }
 
     function loadPreferences() {
         const savedLang = localStorage.getItem(STORAGE_LANG);
-        if (savedLang === 'es' || savedLang === 'en') {
-            currentLang = savedLang;
-        }
+        if (savedLang === 'es' || savedLang === 'en') currentLang = savedLang;
         
         const savedFilter = localStorage.getItem(STORAGE_FILTER);
         if (savedFilter === 'all' || savedFilter === 'available' || savedFilter === 'unavailable') {
@@ -225,6 +280,29 @@
         if (savedSort === 'sku_asc' || savedSort === 'sku_desc' || savedSort === 'desc_asc' || savedSort === 'desc_desc') {
             currentSort = savedSort;
             document.getElementById('sortBy').value = currentSort;
+        }
+        
+        const savedView = localStorage.getItem(STORAGE_VIEW);
+        if (savedView === 'grid' || savedView === 'list') {
+            currentView = savedView;
+            document.getElementById('viewMode').value = currentView;
+        }
+        
+        const savedPerPage = localStorage.getItem(STORAGE_PER_PAGE);
+        if (savedPerPage && [25,50,100,200].includes(parseInt(savedPerPage))) {
+            itemsPerPage = parseInt(savedPerPage);
+            document.getElementById('perPage').value = itemsPerPage;
+        }
+    }
+
+    function applyViewMode() {
+        const grid = document.getElementById('productGrid');
+        if (currentView === 'grid') {
+            grid.classList.remove('list-view');
+            grid.classList.add('grid-view');
+        } else {
+            grid.classList.remove('grid-view');
+            grid.classList.add('list-view');
         }
     }
 
@@ -272,20 +350,11 @@
     function ordenarProductos(productosArray) {
         const sorted = [...productosArray];
         switch(currentSort) {
-            case 'sku_asc':
-                sorted.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU)));
-                break;
-            case 'sku_desc':
-                sorted.sort((a, b) => aString(b.SKU).localeCompare(aString(a.SKU)));
-                break;
-            case 'desc_asc':
-                sorted.sort((a, b) => aString(a.Description).localeCompare(aString(b.Description)));
-                break;
-            case 'desc_desc':
-                sorted.sort((a, b) => aString(b.Description).localeCompare(aString(a.Description)));
-                break;
-            default:
-                sorted.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU)));
+            case 'sku_asc': sorted.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU))); break;
+            case 'sku_desc': sorted.sort((a, b) => aString(b.SKU).localeCompare(aString(a.SKU))); break;
+            case 'desc_asc': sorted.sort((a, b) => aString(a.Description).localeCompare(aString(b.Description))); break;
+            case 'desc_desc': sorted.sort((a, b) => aString(b.Description).localeCompare(aString(a.Description))); break;
+            default: sorted.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU)));
         }
         return sorted;
     }
@@ -294,7 +363,6 @@
         if (!productos.length) return;
         
         const t = texts[currentLang];
-        
         let resultados = [...productos];
         
         if (currentSearchTerm && currentSearchTerm.trim()) {
@@ -307,20 +375,17 @@
             });
         }
         
-        if (currentFilter === 'available') {
-            resultados = resultados.filter(p => p.Available === 1 || p.Available === true);
-        } else if (currentFilter === 'unavailable') {
-            resultados = resultados.filter(p => p.Available === 0 || p.Available === false);
-        }
+        if (currentFilter === 'available') resultados = resultados.filter(p => p.Available === 1 || p.Available === true);
+        else if (currentFilter === 'unavailable') resultados = resultados.filter(p => p.Available === 0 || p.Available === false);
         
         resultados = ordenarProductos(resultados);
         
-        totalPages = Math.ceil(resultados.length / ITEMS_PER_PAGE);
+        totalPages = Math.ceil(resultados.length / itemsPerPage);
         if (currentPage < 1) currentPage = 1;
         if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
         
-        const start = (currentPage - 1) * ITEMS_PER_PAGE;
-        const end = start + ITEMS_PER_PAGE;
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
         const resultadosPaginados = resultados.slice(start, end);
         
         const termsDiv = document.getElementById('searchTermsDisplay');
@@ -328,14 +393,12 @@
             const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
             termsDiv.style.display = 'block';
             termsDiv.innerHTML = t.searching.replace('{words}', palabras.join(' + '));
-        } else {
-            termsDiv.style.display = 'none';
-        }
+        } else termsDiv.style.display = 'none';
         
         const grid = document.getElementById('productGrid');
         if (!resultadosPaginados || !resultadosPaginados.length) {
             grid.innerHTML = `<div class="no-results">${t.noResults}</div>`;
-            document.getElementById('results').innerHTML = `🔍 0 ${t.found.split(' ')[1] || 'resultados'}`;
+            document.getElementById('results').innerHTML = `🔍 0 resultados`;
             document.getElementById('pagination').style.display = 'none';
             return;
         }
@@ -353,6 +416,7 @@
             </div>`;
         }
         grid.innerHTML = html;
+        applyViewMode();
         
         const totalEncontrados = resultados.length;
         document.getElementById('results').innerHTML = `${t.found.replace('{total}', totalEncontrados)} | ${t.showing.replace('{start}', start+1).replace('{end}', Math.min(end, totalEncontrados)).replace('{total}', totalEncontrados)}`;
@@ -367,9 +431,7 @@
             `;
             document.getElementById('prevPage')?.addEventListener('click', () => { if (currentPage > 1) { currentPage--; actualizarVista(); } });
             document.getElementById('nextPage')?.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; actualizarVista(); } });
-        } else {
-            paginationDiv.style.display = 'none';
-        }
+        } else paginationDiv.style.display = 'none';
         
         setTimeout(() => {
             for (const p of resultadosPaginados) {
@@ -384,6 +446,7 @@
     function init() {
         loadPreferences();
         updateTexts();
+        applyViewMode();
         
         const t = texts[currentLang];
         document.getElementById('results').innerHTML = t.loading;
@@ -400,11 +463,23 @@
             });
     }
 
+    // Botón flotante "Subir arriba"
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) scrollBtn.style.display = 'flex';
+        else scrollBtn.style.display = 'none';
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
     // EVENTOS
     let timer;
     const searchInput = document.getElementById('searchInput');
     const filterStock = document.getElementById('filterStock');
     const sortBy = document.getElementById('sortBy');
+    const viewMode = document.getElementById('viewMode');
+    const perPage = document.getElementById('perPage');
     const applyBtn = document.getElementById('applyFilters');
     const langToggle = document.getElementById('langToggle');
 
@@ -420,6 +495,8 @@
     applyBtn.addEventListener('click', () => {
         currentFilter = filterStock.value;
         currentSort = sortBy.value;
+        currentView = viewMode.value;
+        itemsPerPage = parseInt(perPage.value);
         currentPage = 1;
         savePreferences();
         actualizarVista();
@@ -432,9 +509,7 @@
         actualizarVista();
     });
     
-    // ATAJOS DE TECLADO
     document.addEventListener('keydown', (e) => {
-        // ESC: limpiar búsqueda
         if (e.key === 'Escape') {
             e.preventDefault();
             currentSearchTerm = '';
@@ -442,7 +517,6 @@
             searchInput.value = '';
             actualizarVista();
         }
-        // ? (Shift + /) mostrar ayuda
         if (e.key === '?' || (e.shiftKey && e.key === '/')) {
             e.preventDefault();
             showShortcutsHelp();
