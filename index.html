@@ -13,29 +13,33 @@
         .search-box { margin-bottom: 20px; }
         input { width: 100%; padding: 15px; font-size: 18px; border: 2px solid #ddd; border-radius: 8px; outline: none; }
         input:focus { border-color: #007bff; }
-        .controls { display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap; align-items: center; }
-        .controls label { font-size: 14px; color: #555; }
-        select, button { padding: 8px 12px; font-size: 14px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; }
+        
+        .controls-row { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+        .controls-left { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; }
+        .controls-right { display: flex; gap: 10px; }
+        .controls-group { display: flex; align-items: center; gap: 8px; background: #f8f8f8; padding: 5px 12px; border-radius: 6px; }
+        .controls-group label { font-size: 13px; color: #555; font-weight: 500; }
+        
+        select, button { padding: 6px 10px; font-size: 13px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; }
         button { background-color: #007bff; color: white; border: none; }
         button:hover { background-color: #0056b3; }
+        
         .results-info { margin-bottom: 20px; color: #666; font-size: 14px; }
         .search-terms { background-color: #e8f0fe; padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; color: #1a73e8; }
         
-        /* Estilos para vista MATRIZ (por defecto) */
+        /* Estilos para vista MATRIZ */
         .product-grid.grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-        .product-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         
         /* Estilos para vista LISTA */
         .product-grid.list-view { display: flex; flex-direction: column; gap: 10px; }
         .product-grid.list-view .product-card { display: flex; align-items: center; gap: 15px; padding: 12px 15px; }
         .product-grid.list-view .product-card .product-photos { margin-top: 0; flex-shrink: 0; }
         .product-grid.list-view .product-card .product-photos img { width: 50px; height: 50px; margin: 0; }
-        /* Estilo cuando NO se muestran fotos en lista */
-        .product-grid.list-view.no-photos .product-card .product-photos { display: none; }
         .product-grid.list-view .product-card .product-sku { font-size: 12px; margin-bottom: 0; min-width: 100px; }
         .product-grid.list-view .product-card .product-description { flex: 1; margin-bottom: 0; font-size: 14px; }
         .product-grid.list-view .product-card .product-stock { margin-bottom: 0; margin-left: auto; text-align: center; min-width: 110px; }
         
+        .product-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .product-sku { color: #007bff; font-size: 14px; font-weight: bold; margin-bottom: 5px; }
         .product-description { font-size: 16px; margin-bottom: 10px; color: #333; }
         .product-stock { font-size: 14px; font-weight: bold; margin-bottom: 15px; padding: 4px 8px; border-radius: 4px; display: inline-block; }
@@ -47,30 +51,30 @@
         .no-results { text-align: center; padding: 50px; color: #666; font-size: 18px; }
         
         .pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 30px 0 20px; flex-wrap: wrap; }
-        .pagination button { background-color: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 14px; }
+        .pagination button { background-color: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; }
         .pagination button:hover:not(:disabled) { background-color: #0056b3; }
         .pagination button:disabled { background-color: #cccccc; cursor: not-allowed; }
-        .pagination .page-info { color: #555; font-size: 14px; }
+        .pagination .page-info { color: #555; font-size: 13px; }
         
         .lang-switch { text-align: right; margin-bottom: 15px; }
-        .lang-btn { background-color: #28a745; padding: 5px 12px; font-size: 14px; }
+        .lang-btn { background-color: #28a745; padding: 5px 12px; font-size: 13px; }
         .lang-btn:hover { background-color: #218838; }
         
-        .shortcuts-hint { text-align: center; font-size: 12px; color: #aaa; margin-top: 10px; }
-        .shortcuts-hint kbd { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 3px; padding: 2px 5px; font-family: monospace; font-size: 11px; }
+        .shortcuts-hint { text-align: center; font-size: 11px; color: #aaa; margin-top: 10px; }
+        .shortcuts-hint kbd { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 3px; padding: 2px 5px; font-family: monospace; font-size: 10px; }
         
         /* Botón flotante "Subir arriba" */
         .scroll-top-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background-color: #007bff;
             color: white;
             border: none;
             border-radius: 50%;
-            font-size: 24px;
+            font-size: 22px;
             cursor: pointer;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             display: none;
@@ -81,26 +85,13 @@
         }
         .scroll-top-btn:hover { background-color: #0056b3; transform: scale(1.1); }
         
-        /* Checkbox para mostrar fotos */
-        .checkbox-label {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            color: #555;
-        }
-        .checkbox-label input {
-            width: auto;
-            margin: 0;
-            cursor: pointer;
-        }
-        
         @media (max-width: 768px) { 
             .product-grid.grid-view { grid-template-columns: 1fr; }
             .product-grid.list-view .product-card { flex-wrap: wrap; }
             .product-grid.list-view .product-card .product-stock { margin-left: 0; }
-            .controls { flex-direction: column; align-items: stretch; }
+            .controls-row { flex-direction: column; align-items: stretch; }
+            .controls-left { flex-direction: column; align-items: stretch; }
+            .controls-group { justify-content: space-between; }
         }
     </style>
 </head>
@@ -113,33 +104,48 @@
         <div id="helpText" class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: "overhaul bmw")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo</div>
         <div class="search-box"><input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)"></div>
         <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
-        <div class="controls">
-            <div><label id="showLabel">📊 Mostrar: </label><select id="filterStock">
-                <option value="all" id="optAll">Todos los productos</option>
-                <option value="available" id="optAvailable">Solo disponibles ✅</option>
-                <option value="unavailable" id="optUnavailable">Solo no disponibles ❌</option>
-            </select></div>
-            <div><label id="sortLabel">🔄 Ordenar por: </label><select id="sortBy">
-                <option value="sku_asc" id="optSkuAsc">SKU (A a Z)</option>
-                <option value="sku_desc" id="optSkuDesc">SKU (Z a A)</option>
-                <option value="desc_asc" id="optDescAsc">Descripción (A a Z)</option>
-                <option value="desc_desc" id="optDescDesc">Descripción (Z a A)</option>
-            </select></div>
-            <div><label id="viewLabel">📐 Vista: </label><select id="viewMode">
-                <option value="grid" id="optGrid">📦 Matriz</option>
-                <option value="list" id="optList">📋 Lista</option>
-            </select></div>
-            <div><label class="checkbox-label" id="showPhotosLabel">
-                <input type="checkbox" id="showPhotosCheck"> 🖼️ Mostrar fotos
-            </label></div>
-            <div><label id="perPageLabel">▶ Mostrar: </label><select id="perPage">
-                <option value="25">25</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="200" selected>200</option>
-            </select></div>
-            <button id="applyFilters">Aplicar</button>
+        
+        <div class="controls-row">
+            <div class="controls-left">
+                <div class="controls-group">
+                    <label id="showLabel">📊 Mostrar:</label>
+                    <select id="filterStock">
+                        <option value="all" id="optAll">Todos</option>
+                        <option value="available" id="optAvailable">Disponibles</option>
+                        <option value="unavailable" id="optUnavailable">No disponibles</option>
+                    </select>
+                </div>
+                <div class="controls-group">
+                    <label id="sortLabel">🔄 Ordenar:</label>
+                    <select id="sortBy">
+                        <option value="sku_asc" id="optSkuAsc">SKU (A-Z)</option>
+                        <option value="sku_desc" id="optSkuDesc">SKU (Z-A)</option>
+                        <option value="desc_asc" id="optDescAsc">Descripción (A-Z)</option>
+                        <option value="desc_desc" id="optDescDesc">Descripción (Z-A)</option>
+                    </select>
+                </div>
+                <div class="controls-group">
+                    <label id="viewLabel">📐 Vista:</label>
+                    <select id="viewMode">
+                        <option value="grid" id="optGrid">📦 Matriz</option>
+                        <option value="list" id="optList">📋 Lista</option>
+                    </select>
+                </div>
+                <div class="controls-group">
+                    <label id="perPageLabel">📄 Por página:</label>
+                    <select id="perPage">
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200" selected>200</option>
+                    </select>
+                </div>
+            </div>
+            <div class="controls-right">
+                <button id="applyFilters">Aplicar</button>
+            </div>
         </div>
+        
         <div id="results" class="results-info"></div>
         <div id="productGrid" class="product-grid grid-view"></div>
         <div id="pagination" class="pagination" style="display: none;"></div>
@@ -161,7 +167,6 @@
     let totalPages = 1;
     let currentLang = 'es';
     let currentView = 'grid';
-    let showPhotos = true;
     let itemsPerPage = 200;
 
     // CLAVES PARA LOCALSTORAGE
@@ -169,28 +174,26 @@
     const STORAGE_FILTER = 'atk_filter';
     const STORAGE_SORT = 'atk_sort';
     const STORAGE_VIEW = 'atk_view';
-    const STORAGE_SHOW_PHOTOS = 'atk_show_photos';
     const STORAGE_PER_PAGE = 'atk_per_page';
 
     const texts = {
         es: {
             title: "🔍 ATK Products Catalog",
-            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>⌨️ <kbd>ESC</kbd> Limpiar búsqueda | <kbd>?</kbd> Mostrar atajos",
+            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo",
             placeholder: "Buscar por SKU o descripción... (Enter para todos)",
-            showLabel: "📊 Mostrar: ",
-            optAll: "Todos los productos",
-            optAvailable: "Solo disponibles ✅",
-            optUnavailable: "Solo no disponibles ❌",
-            sortLabel: "🔄 Ordenar por: ",
-            optSkuAsc: "SKU (A a Z)",
-            optSkuDesc: "SKU (Z a A)",
-            optDescAsc: "Descripción (A a Z)",
-            optDescDesc: "Descripción (Z a A)",
-            viewLabel: "📐 Vista: ",
+            showLabel: "📊 Mostrar:",
+            optAll: "Todos",
+            optAvailable: "Disponibles",
+            optUnavailable: "No disponibles",
+            sortLabel: "🔄 Ordenar:",
+            optSkuAsc: "SKU (A-Z)",
+            optSkuDesc: "SKU (Z-A)",
+            optDescAsc: "Descripción (A-Z)",
+            optDescDesc: "Descripción (Z-A)",
+            viewLabel: "📐 Vista:",
             optGrid: "📦 Matriz",
             optList: "📋 Lista",
-            showPhotosLabel: "🖼️ Mostrar fotos",
-            perPageLabel: "▶ Mostrar: ",
+            perPageLabel: "📄 Por página:",
             applyBtn: "Aplicar",
             loading: "⏳ Cargando productos...",
             loaded: "📦 {count} productos cargados",
@@ -215,22 +218,21 @@
         },
         en: {
             title: "🔍 ATK Products Catalog",
-            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>⌨️ <kbd>ESC</kbd> Clear search | <kbd>?</kbd> Show shortcuts",
+            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size",
             placeholder: "Search by SKU or description... (Enter for all)",
-            showLabel: "📊 Show: ",
-            optAll: "All products",
-            optAvailable: "In stock only ✅",
-            optUnavailable: "Out of stock only ❌",
-            sortLabel: "🔄 Sort by: ",
-            optSkuAsc: "SKU (A to Z)",
-            optSkuDesc: "SKU (Z to A)",
-            optDescAsc: "Description (A to Z)",
-            optDescDesc: "Description (Z to A)",
-            viewLabel: "📐 View: ",
+            showLabel: "📊 Show:",
+            optAll: "All",
+            optAvailable: "In stock",
+            optUnavailable: "Out of stock",
+            sortLabel: "🔄 Sort:",
+            optSkuAsc: "SKU (A-Z)",
+            optSkuDesc: "SKU (Z-A)",
+            optDescAsc: "Description (A-Z)",
+            optDescDesc: "Description (Z-A)",
+            viewLabel: "📐 View:",
             optGrid: "📦 Grid",
             optList: "📋 List",
-            showPhotosLabel: "🖼️ Show photos",
-            perPageLabel: "▶ Show: ",
+            perPageLabel: "📄 Per page:",
             applyBtn: "Apply",
             loading: "⏳ Loading products...",
             loaded: "📦 {count} products loaded",
@@ -277,7 +279,6 @@
         document.getElementById('viewLabel').innerHTML = t.viewLabel;
         document.getElementById('optGrid').innerHTML = t.optGrid;
         document.getElementById('optList').innerHTML = t.optList;
-        document.getElementById('showPhotosLabel').innerHTML = t.showPhotosLabel;
         document.getElementById('perPageLabel').innerHTML = t.perPageLabel;
         document.getElementById('applyFilters').innerHTML = t.applyBtn;
         document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
@@ -288,7 +289,6 @@
         localStorage.setItem(STORAGE_FILTER, currentFilter);
         localStorage.setItem(STORAGE_SORT, currentSort);
         localStorage.setItem(STORAGE_VIEW, currentView);
-        localStorage.setItem(STORAGE_SHOW_PHOTOS, showPhotos);
         localStorage.setItem(STORAGE_PER_PAGE, itemsPerPage);
     }
 
@@ -314,12 +314,6 @@
             document.getElementById('viewMode').value = currentView;
         }
         
-        const savedShowPhotos = localStorage.getItem(STORAGE_SHOW_PHOTOS);
-        if (savedShowPhotos !== null) {
-            showPhotos = savedShowPhotos === 'true';
-            document.getElementById('showPhotosCheck').checked = showPhotos;
-        }
-        
         const savedPerPage = localStorage.getItem(STORAGE_PER_PAGE);
         if (savedPerPage && [25,50,100,200].includes(parseInt(savedPerPage))) {
             itemsPerPage = parseInt(savedPerPage);
@@ -332,15 +326,9 @@
         if (currentView === 'grid') {
             grid.classList.remove('list-view');
             grid.classList.add('grid-view');
-            grid.classList.remove('no-photos');
         } else {
             grid.classList.remove('grid-view');
             grid.classList.add('list-view');
-            if (!showPhotos) {
-                grid.classList.add('no-photos');
-            } else {
-                grid.classList.remove('no-photos');
-            }
         }
     }
 
@@ -471,18 +459,14 @@
             document.getElementById('nextPage')?.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; actualizarVista(); } });
         } else paginationDiv.style.display = 'none';
         
-        // Solo cargar fotos si estamos en vista matriz, o en lista con showPhotos activado
-        const debeCargarFotos = (currentView === 'grid') || (currentView === 'list' && showPhotos);
-        if (debeCargarFotos) {
-            setTimeout(() => {
-                for (const p of resultadosPaginados) {
-                    const sku = aString(p.SKU);
-                    const id = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
-                    const c = document.getElementById(id);
-                    if (c) cargarFotos(sku, c);
-                }
-            }, 100);
-        }
+        setTimeout(() => {
+            for (const p of resultadosPaginados) {
+                const sku = aString(p.SKU);
+                const id = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
+                const c = document.getElementById(id);
+                if (c) cargarFotos(sku, c);
+            }
+        }, 100);
     }
 
     function init() {
@@ -521,7 +505,6 @@
     const filterStock = document.getElementById('filterStock');
     const sortBy = document.getElementById('sortBy');
     const viewMode = document.getElementById('viewMode');
-    const showPhotosCheck = document.getElementById('showPhotosCheck');
     const perPage = document.getElementById('perPage');
     const applyBtn = document.getElementById('applyFilters');
     const langToggle = document.getElementById('langToggle');
@@ -539,7 +522,6 @@
         currentFilter = filterStock.value;
         currentSort = sortBy.value;
         currentView = viewMode.value;
-        showPhotos = showPhotosCheck.checked;
         itemsPerPage = parseInt(perPage.value);
         currentPage = 1;
         savePreferences();
