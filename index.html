@@ -16,13 +16,17 @@
         
         .controls-row { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: space-between; margin-bottom: 20px; }
         .controls-left { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; }
-        .controls-right { display: flex; gap: 10px; }
+        .controls-right { display: flex; gap: 10px; align-items: center; }
         .controls-group { display: flex; align-items: center; gap: 8px; background: #f8f8f8; padding: 5px 12px; border-radius: 6px; }
         .controls-group label { font-size: 13px; color: #555; font-weight: 500; }
         
         select, button { padding: 6px 10px; font-size: 13px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; }
         button { background-color: #007bff; color: white; border: none; }
         button:hover { background-color: #0056b3; }
+        
+        .checkbox-group { display: flex; align-items: center; gap: 8px; background: #f8f8f8; padding: 5px 12px; border-radius: 6px; }
+        .checkbox-group label { font-size: 13px; color: #555; font-weight: 500; cursor: pointer; }
+        .checkbox-group input { width: 16px; height: 16px; margin: 0; cursor: pointer; }
         
         .results-info { margin-bottom: 20px; color: #666; font-size: 14px; }
         .search-terms { background-color: #e8f0fe; padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; color: #1a73e8; }
@@ -38,6 +42,9 @@
         .product-grid.list-view .product-card .product-sku { font-size: 12px; margin-bottom: 0; min-width: 100px; }
         .product-grid.list-view .product-card .product-description { flex: 1; margin-bottom: 0; font-size: 14px; }
         .product-grid.list-view .product-card .product-stock { margin-bottom: 0; margin-left: auto; text-align: center; min-width: 110px; }
+        
+        /* Ocultar fotos en vista lista */
+        .product-grid.list-view.hide-photos .product-photos { display: none; }
         
         .product-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .product-sku { color: #007bff; font-size: 14px; font-weight: bold; margin-bottom: 5px; }
@@ -140,6 +147,10 @@
                         <option value="200" selected>200</option>
                     </select>
                 </div>
+                <div class="checkbox-group" id="hidePhotosGroup" style="display: none;">
+                    <input type="checkbox" id="hidePhotosCheckbox">
+                    <label id="hidePhotosLabel">🖼️ Ocultar fotos</label>
+                </div>
             </div>
             <div class="controls-right">
                 <button id="applyFilters">Aplicar</button>
@@ -168,6 +179,7 @@
     let currentLang = 'es';
     let currentView = 'grid';
     let itemsPerPage = 200;
+    let hidePhotosInList = false;
 
     // CLAVES PARA LOCALSTORAGE
     const STORAGE_LANG = 'atk_lang';
@@ -175,6 +187,7 @@
     const STORAGE_SORT = 'atk_sort';
     const STORAGE_VIEW = 'atk_view';
     const STORAGE_PER_PAGE = 'atk_per_page';
+    const STORAGE_HIDE_PHOTOS = 'atk_hide_photos';
 
     const texts = {
         es: {
@@ -194,6 +207,7 @@
             optGrid: "📦 Matriz",
             optList: "📋 Lista",
             perPageLabel: "📄 Por página:",
+            hidePhotosLabel: "🖼️ Ocultar fotos",
             applyBtn: "Aplicar",
             loading: "⏳ Cargando productos...",
             loaded: "📦 {count} productos cargados",
@@ -233,6 +247,7 @@
             optGrid: "📦 Grid",
             optList: "📋 List",
             perPageLabel: "📄 Per page:",
+            hidePhotosLabel: "🖼️ Hide photos",
             applyBtn: "Apply",
             loading: "⏳ Loading products...",
             loaded: "📦 {count} products loaded",
@@ -280,6 +295,7 @@
         document.getElementById('optGrid').innerHTML = t.optGrid;
         document.getElementById('optList').innerHTML = t.optList;
         document.getElementById('perPageLabel').innerHTML = t.perPageLabel;
+        document.getElementById('hidePhotosLabel').innerHTML = t.hidePhotosLabel;
         document.getElementById('applyFilters').innerHTML = t.applyBtn;
         document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
     }
@@ -290,6 +306,7 @@
         localStorage.setItem(STORAGE_SORT, currentSort);
         localStorage.setItem(STORAGE_VIEW, currentView);
         localStorage.setItem(STORAGE_PER_PAGE, itemsPerPage);
+        localStorage.setItem(STORAGE_HIDE_PHOTOS, hidePhotosInList);
     }
 
     function loadPreferences() {
@@ -319,16 +336,41 @@
             itemsPerPage = parseInt(savedPerPage);
             document.getElementById('perPage').value = itemsPerPage;
         }
+        
+        const savedHidePhotos = localStorage.getItem(STORAGE_HIDE_PHOTOS);
+        hidePhotosInList = savedHidePhotos === 'true';
+        document.getElementById('hidePhotosCheckbox').checked = hidePhotosInList;
     }
 
     function applyViewMode() {
         const grid = document.getElementById('productGrid');
+        const hidePhotosGroup = document.getElementById('hidePhotosGroup');
+        
         if (currentView === 'grid') {
             grid.classList.remove('list-view');
             grid.classList.add('grid-view');
+            grid.classList.remove('hide-photos');
+            hidePhotosGroup.style.display = 'none';
         } else {
             grid.classList.remove('grid-view');
             grid.classList.add('list-view');
+            hidePhotosGroup.style.display = 'flex';
+            if (hidePhotosInList) {
+                grid.classList.add('hide-photos');
+            } else {
+                grid.classList.remove('hide-photos');
+            }
+        }
+    }
+
+    function applyHidePhotos() {
+        const grid = document.getElementById('productGrid');
+        if (currentView === 'list') {
+            if (hidePhotosInList) {
+                grid.classList.add('hide-photos');
+            } else {
+                grid.classList.remove('hide-photos');
+            }
         }
     }
 
@@ -506,6 +548,7 @@
     const sortBy = document.getElementById('sortBy');
     const viewMode = document.getElementById('viewMode');
     const perPage = document.getElementById('perPage');
+    const hidePhotosCheckbox = document.getElementById('hidePhotosCheckbox');
     const applyBtn = document.getElementById('applyFilters');
     const langToggle = document.getElementById('langToggle');
 
@@ -526,6 +569,12 @@
         currentPage = 1;
         savePreferences();
         actualizarVista();
+    });
+    
+    hidePhotosCheckbox.addEventListener('change', () => {
+        hidePhotosInList = hidePhotosCheckbox.checked;
+        savePreferences();
+        applyHidePhotos();
     });
     
     langToggle.addEventListener('click', () => {
