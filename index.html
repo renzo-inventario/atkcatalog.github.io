@@ -33,14 +33,14 @@
         
         .container { max-width: 1400px; margin: 0 auto; }
         
-        /* HEADER PROFESIONAL */
+        /* HEADER CON DEGRADADO AZUL */
         .header {
-            background: white;
+            background: linear-gradient(90deg, #e8f0fe 0%, #d4e4fc 100%);
             border-radius: 20px;
             padding: 20px 30px;
             margin-bottom: 30px;
             box-shadow: var(--shadow-md);
-            border-bottom: 3px solid var(--primary-color);
+            border: none;
         }
         
         .header-top {
@@ -108,7 +108,7 @@
         .lang-switch {
             text-align: right;
             padding-top: 10px;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid rgba(0,86,179,0.15);
         }
         
         .lang-btn {
@@ -127,7 +127,7 @@
             transform: translateY(-1px);
         }
         
-        /* TÍTULO (oculto, se usa el header) */
+        /* TÍTULO (oculto) */
         h1 { display: none; }
         
         .ayuda { 
@@ -253,6 +253,37 @@
             flex-wrap: wrap; 
         }
         
+        /* Botón copiar SKU (sin viñeta, a la izquierda) */
+        .copy-sku-btn {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            font-size: 13px;
+            padding: 4px 10px;
+            border-radius: 30px;
+            transition: var(--transition);
+            color: var(--text-gray);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .copy-sku-btn::before {
+            content: "📋";
+            font-size: 12px;
+        }
+        .copy-sku-btn:hover { 
+            background-color: var(--primary-light); 
+            border-color: var(--primary-color); 
+        }
+        .copy-sku-btn.copied { 
+            background-color: #28a745; 
+            color: white; 
+            border-color: #28a745; 
+        }
+        .copy-sku-btn.copied::before {
+            content: "✅";
+        }
+        
         .product-description { font-size: 15px; margin-bottom: 12px; color: var(--text-dark); line-height: 1.4; }
         
         .product-stock { 
@@ -271,19 +302,6 @@
         .product-photos img:hover { transform: scale(1.05); box-shadow: var(--shadow-sm); }
         
         .no-results { text-align: center; padding: 60px; color: var(--text-gray); font-size: 18px; background: white; border-radius: 24px; }
-        
-        .copy-sku-btn {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            cursor: pointer;
-            font-size: 13px;
-            padding: 4px 12px;
-            border-radius: 30px;
-            transition: var(--transition);
-            color: var(--text-gray);
-        }
-        .copy-sku-btn:hover { background-color: var(--primary-light); border-color: var(--primary-color); }
-        .copy-sku-btn.copied { background-color: #28a745; color: white; border-color: #28a745; }
         
         .pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 35px 0 25px; flex-wrap: wrap; }
         .pagination button { background-color: white; color: var(--primary-color); border: 1px solid var(--border-color); padding: 8px 20px; border-radius: 40px; font-weight: 500; }
@@ -342,7 +360,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- HEADER PROFESIONAL CON LOGO Y CONTACTO -->
+        <!-- HEADER CON DEGRADADO AZUL -->
         <div class="header">
             <div class="header-top">
                 <div class="logo-area">
@@ -362,7 +380,7 @@
             </div>
         </div>
         
-        <div id="helpText" class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: "overhaul bmw")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el icono 📋 para copiar el SKU</div>
+        <div id="helpText" class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: "overhaul bmw")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el botón 📋 para copiar el SKU</div>
         
         <div class="search-box"><input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)"></div>
         <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
@@ -416,7 +434,7 @@
         <div id="productGrid" class="product-grid grid-view"></div>
         <div id="pagination" class="pagination" style="display: none;"></div>
         
-        <!-- FOOTER PROFESIONAL -->
+        <!-- FOOTER -->
         <div class="footer">
             <p>© 2025 ATK Products - All Rights Reserved</p>
             <p>📞 (350) 593-0980 | 📧 <a href="mailto:ventas@atkits.com">ventas@atkits.com</a> | 📍 6311 NW 99th Avenue, Unit 28, Doral, FL 33172 USA</p>
@@ -427,7 +445,6 @@
     <button id="scrollTopBtn" class="scroll-top-btn" title="Subir arriba">⬆️</button>
 
     <script>
-    // (El código JavaScript se mantiene igual que en la versión anterior funcional)
     // VARIABLES
     let productos = [];
     let currentFilter = 'all';
@@ -449,8 +466,7 @@
 
     const texts = {
         es: {
-            title: "ATK Products Catalog",
-            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el icono 📋 para copiar el SKU",
+            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el botón 📋 para copiar el SKU",
             placeholder: "Buscar por SKU o descripción... (Enter para todos)",
             showLabel: "📊 Mostrar:",
             optAll: "Todos",
@@ -490,8 +506,7 @@
             shortcutsQuestion: "Mostrar esta ayuda"
         },
         en: {
-            title: "ATK Products Catalog",
-            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>📋 Click the 📋 icon to copy the SKU",
+            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>📋 Click the 📋 button to copy the SKU",
             placeholder: "Search by SKU or description... (Enter for all)",
             showLabel: "📊 Show:",
             optAll: "All",
@@ -637,10 +652,10 @@
         navigator.clipboard.writeText(sku).then(() => {
             const t = texts[currentLang];
             const originalText = buttonElement.textContent;
-            buttonElement.textContent = '✅';
+            buttonElement.innerHTML = '✅ Copiado';
             buttonElement.classList.add('copied');
             setTimeout(() => {
-                buttonElement.textContent = originalText;
+                buttonElement.innerHTML = 'Copiar SKU';
                 buttonElement.classList.remove('copied');
             }, 1500);
             
@@ -758,8 +773,8 @@
             const disp = (p.Available === 1 || p.Available === true);
             html += `<div class="product-card">
                 <div class="product-sku">
-                    🔖 SKU: ${sku}
-                    <button class="copy-sku-btn" onclick="copyToClipboard('${sku.replace(/'/g, "\\'")}', this)" title="Copiar SKU">📋</button>
+                    <button class="copy-sku-btn" onclick="copyToClipboard('${sku.replace(/'/g, "\\'")}', this)">Copiar SKU</button>
+                    ${sku}
                 </div>
                 <div class="product-description">📝 ${desc || t.noDesc}</div>
                 <div class="product-stock stock-${disp?1:0}">${disp ? t.stockAvailable : t.stockUnavailable}</div>
