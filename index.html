@@ -4,131 +4,366 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATK Products Catalog</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        h1 { text-align: center; margin-bottom: 10px; color: #333; }
-        .ayuda { text-align: center; color: #888; font-size: 14px; margin-bottom: 20px; font-style: italic; }
-        .search-box { margin-bottom: 20px; }
-        input { width: 100%; padding: 15px; font-size: 18px; border: 2px solid #ddd; border-radius: 8px; outline: none; }
-        input:focus { border-color: #007bff; }
         
-        .controls-row { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+        /* VARIABLES CORPORATIVAS */
+        :root {
+            --primary-color: #0056b3;
+            --primary-dark: #003d80;
+            --primary-light: #e8f0fe;
+            --secondary-color: #28a745;
+            --text-dark: #1a1a2e;
+            --text-gray: #555;
+            --text-light: #888;
+            --border-color: #e0e0e0;
+            --bg-light: #f8f9fa;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+            --transition: all 0.2s ease;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; 
+            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f7 100%);
+            padding: 20px; 
+            min-height: 100vh;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        /* HEADER PROFESIONAL */
+        .header {
+            background: white;
+            border-radius: 20px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .brand {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.3px;
+        }
+        
+        .brand-slogan {
+            font-size: 13px;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+        
+        .contact-info {
+            text-align: right;
+        }
+        
+        .contact-phone {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+        
+        .contact-phone::before {
+            content: "📞 ";
+            font-size: 14px;
+        }
+        
+        .contact-address {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+        
+        .lang-switch {
+            text-align: right;
+            padding-top: 10px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .lang-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 6px 18px;
+            font-size: 13px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .lang-btn:hover {
+            background-color: #1e7e34;
+            transform: translateY(-1px);
+        }
+        
+        /* TÍTULO (oculto, se usa el header) */
+        h1 { display: none; }
+        
+        .ayuda { 
+            text-align: center; 
+            color: var(--text-gray); 
+            font-size: 13px; 
+            margin-bottom: 25px; 
+            background: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .search-box { margin-bottom: 25px; }
+        
+        input { 
+            width: 100%; 
+            padding: 14px 20px; 
+            font-size: 16px; 
+            border: 2px solid var(--border-color); 
+            border-radius: 50px; 
+            outline: none; 
+            transition: var(--transition);
+            background: white;
+        }
+        input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0,86,179,0.1); }
+        
+        /* CONTROLES */
+        .controls-row { 
+            background: white; 
+            padding: 15px 20px; 
+            border-radius: 50px; 
+            margin-bottom: 25px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 15px; 
+            align-items: center; 
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+        }
         .controls-left { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; }
-        .controls-right { display: flex; gap: 10px; align-items: center; }
-        .controls-group { display: flex; align-items: center; gap: 8px; background: #f8f8f8; padding: 5px 12px; border-radius: 6px; }
-        .controls-group label { font-size: 13px; color: #555; font-weight: 500; }
+        .controls-right { display: flex; gap: 10px; }
+        .controls-group { display: flex; align-items: center; gap: 8px; background: var(--bg-light); padding: 5px 14px; border-radius: 40px; }
+        .controls-group label { font-size: 13px; color: var(--text-gray); font-weight: 500; }
         
-        select, button { padding: 6px 10px; font-size: 13px; border: 1px solid #ddd; border-radius: 6px; background: white; cursor: pointer; }
-        button { background-color: #007bff; color: white; border: none; }
-        button:hover { background-color: #0056b3; }
+        select, button { 
+            padding: 6px 12px; 
+            font-size: 13px; 
+            border: 1px solid var(--border-color); 
+            border-radius: 30px; 
+            background: white; 
+            cursor: pointer; 
+            transition: var(--transition);
+        }
+        select:hover { border-color: var(--primary-color); }
         
-        .checkbox-group { display: flex; align-items: center; gap: 8px; background: #f8f8f8; padding: 5px 12px; border-radius: 6px; }
-        .checkbox-group label { font-size: 13px; color: #555; font-weight: 500; cursor: pointer; }
+        button { 
+            background-color: var(--primary-color); 
+            color: white; 
+            border: none;
+            font-weight: 500;
+        }
+        button:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+        
+        .checkbox-group { display: flex; align-items: center; gap: 8px; background: var(--bg-light); padding: 5px 14px; border-radius: 40px; }
+        .checkbox-group label { font-size: 13px; color: var(--text-gray); cursor: pointer; }
         .checkbox-group input { width: 16px; height: 16px; margin: 0; cursor: pointer; }
         
-        .results-info { margin-bottom: 20px; color: #666; font-size: 14px; }
-        .search-terms { background-color: #e8f0fe; padding: 8px 12px; border-radius: 6px; margin-bottom: 15px; font-size: 13px; color: #1a73e8; }
+        .results-info { 
+            margin-bottom: 20px; 
+            color: var(--text-gray); 
+            font-size: 13px; 
+            background: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            display: inline-block;
+            box-shadow: var(--shadow-sm);
+        }
         
-        /* Estilos para vista MATRIZ */
-        .product-grid.grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .search-terms { background-color: var(--primary-light); padding: 8px 18px; border-radius: 40px; margin-bottom: 20px; font-size: 13px; color: var(--primary-color); display: inline-block; }
         
-        /* Estilos para vista LISTA */
-        .product-grid.list-view { display: flex; flex-direction: column; gap: 10px; }
-        .product-grid.list-view .product-card { display: flex; align-items: center; gap: 15px; padding: 12px 15px; }
+        /* VISTA MATRIZ */
+        .product-grid.grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        
+        /* VISTA LISTA */
+        .product-grid.list-view { display: flex; flex-direction: column; gap: 12px; }
+        .product-grid.list-view .product-card { display: flex; align-items: center; gap: 15px; padding: 12px 20px; border-radius: 14px; }
         .product-grid.list-view .product-card .product-photos { margin-top: 0; flex-shrink: 0; }
         .product-grid.list-view .product-card .product-photos img { width: 50px; height: 50px; margin: 0; }
         .product-grid.list-view .product-card .product-sku { font-size: 12px; margin-bottom: 0; min-width: 100px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
         .product-grid.list-view .product-card .product-description { flex: 1; margin-bottom: 0; font-size: 14px; }
         .product-grid.list-view .product-card .product-stock { margin-bottom: 0; margin-left: auto; text-align: center; min-width: 110px; }
         
-        /* Ocultar fotos en vista lista */
         .product-grid.list-view.hide-photos .product-photos { display: none; }
         
-        .product-card { background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .product-sku { color: #007bff; font-size: 14px; font-weight: bold; margin-bottom: 5px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-        .product-description { font-size: 16px; margin-bottom: 10px; color: #333; }
-        .product-stock { font-size: 14px; font-weight: bold; margin-bottom: 15px; padding: 4px 8px; border-radius: 4px; display: inline-block; }
+        /* TARJETAS */
+        .product-card { 
+            background: white; 
+            border-radius: 20px; 
+            padding: 20px; 
+            box-shadow: var(--shadow-sm); 
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .product-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+        
+        .product-sku { 
+            color: var(--primary-color); 
+            font-size: 14px; 
+            font-weight: 700; 
+            margin-bottom: 8px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            flex-wrap: wrap; 
+        }
+        
+        .product-description { font-size: 15px; margin-bottom: 12px; color: var(--text-dark); line-height: 1.4; }
+        
+        .product-stock { 
+            font-size: 13px; 
+            font-weight: 600; 
+            margin-bottom: 15px; 
+            padding: 4px 14px; 
+            border-radius: 30px; 
+            display: inline-block; 
+        }
         .stock-1 { color: #2e7d32; background-color: #e8f5e9; }
         .stock-0 { color: #c62828; background-color: #ffebee; }
+        
         .product-photos { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
-        .product-photos img { width: 80px; height: 80px; object-fit: cover; border-radius: 4px; border: 1px solid #ddd; cursor: pointer; }
-        .product-photos img:hover { opacity: 0.8; transform: scale(1.05); transition: all 0.2s; }
-        .no-results { text-align: center; padding: 50px; color: #666; font-size: 18px; }
+        .product-photos img { width: 75px; height: 75px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); cursor: pointer; transition: var(--transition); }
+        .product-photos img:hover { transform: scale(1.05); box-shadow: var(--shadow-sm); }
         
-        /* Botón copiar SKU */
+        .no-results { text-align: center; padding: 60px; color: var(--text-gray); font-size: 18px; background: white; border-radius: 24px; }
+        
         .copy-sku-btn {
-            background: none;
-            border: none;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
             cursor: pointer;
-            font-size: 16px;
-            padding: 4px 8px;
-            border-radius: 4px;
-            transition: all 0.2s;
-            color: #666;
+            font-size: 13px;
+            padding: 4px 12px;
+            border-radius: 30px;
+            transition: var(--transition);
+            color: var(--text-gray);
         }
-        .copy-sku-btn:hover {
-            background-color: #f0f0f0;
-            transform: scale(1.1);
-        }
-        .copy-sku-btn.copied {
-            color: #28a745;
-            background-color: #e8f5e9;
-        }
+        .copy-sku-btn:hover { background-color: var(--primary-light); border-color: var(--primary-color); }
+        .copy-sku-btn.copied { background-color: #28a745; color: white; border-color: #28a745; }
         
-        .pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 30px 0 20px; flex-wrap: wrap; }
-        .pagination button { background-color: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; }
-        .pagination button:hover:not(:disabled) { background-color: #0056b3; }
-        .pagination button:disabled { background-color: #cccccc; cursor: not-allowed; }
-        .pagination .page-info { color: #555; font-size: 13px; }
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 35px 0 25px; flex-wrap: wrap; }
+        .pagination button { background-color: white; color: var(--primary-color); border: 1px solid var(--border-color); padding: 8px 20px; border-radius: 40px; font-weight: 500; }
+        .pagination button:hover:not(:disabled) { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
+        .pagination button:disabled { background-color: var(--bg-light); color: #ccc; cursor: not-allowed; }
+        .pagination .page-info { color: var(--text-gray); font-size: 13px; background: white; padding: 6px 20px; border-radius: 40px; }
         
-        .lang-switch { text-align: right; margin-bottom: 15px; }
-        .lang-btn { background-color: #28a745; padding: 5px 12px; font-size: 13px; }
-        .lang-btn:hover { background-color: #218838; }
-        
-        .shortcuts-hint { text-align: center; font-size: 11px; color: #aaa; margin-top: 10px; }
-        .shortcuts-hint kbd { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 3px; padding: 2px 5px; font-family: monospace; font-size: 10px; }
-        
-        /* Botón flotante "Subir arriba" */
         .scroll-top-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 45px;
-            height: 45px;
-            background-color: #007bff;
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary-color);
             color: white;
             border: none;
             border-radius: 50%;
-            font-size: 22px;
+            font-size: 24px;
             cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: var(--shadow-md);
             display: none;
             justify-content: center;
             align-items: center;
             z-index: 1000;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
-        .scroll-top-btn:hover { background-color: #0056b3; transform: scale(1.1); }
+        .scroll-top-btn:hover { background-color: var(--primary-dark); transform: scale(1.1); }
+        
+        .footer {
+            margin-top: 50px;
+            padding: 25px 20px;
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        .footer a { color: var(--primary-color); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .shortcuts-hint { margin-top: 10px; font-size: 11px; color: var(--text-light); }
+        .shortcuts-hint kbd { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 10px; }
         
         @media (max-width: 768px) { 
             .product-grid.grid-view { grid-template-columns: 1fr; }
             .product-grid.list-view .product-card { flex-wrap: wrap; }
             .product-grid.list-view .product-card .product-stock { margin-left: 0; }
-            .controls-row { flex-direction: column; align-items: stretch; }
+            .controls-row { flex-direction: column; align-items: stretch; border-radius: 20px; }
             .controls-left { flex-direction: column; align-items: stretch; }
             .controls-group { justify-content: space-between; }
+            .header-top { flex-direction: column; text-align: center; }
+            .logo-area { justify-content: center; }
+            .contact-info { text-align: center; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="lang-switch">
-            <button id="langToggle" class="lang-btn">🇺🇸 English</button>
+        <!-- HEADER PROFESIONAL CON LOGO Y CONTACTO -->
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-area">
+                    <img src="logo.png" alt="ATK Logo" class="logo" onerror="this.style.display='none'">
+                    <div class="brand">
+                        <span class="brand-name">ATK Products</span>
+                        <span class="brand-slogan">Better Parts, Great Solutions</span>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-phone">(350) 593-0980</div>
+                    <div class="contact-address">6311 NW 99th Avenue, Unit 28<br>Doral, FL 33172 USA</div>
+                </div>
+            </div>
+            <div class="lang-switch">
+                <button id="langToggle" class="lang-btn">🇺🇸 English</button>
+            </div>
         </div>
-        <h1 id="title">🔍 ATK Products Catalog</h1>
+        
         <div id="helpText" class="ayuda">💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: "overhaul bmw")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el icono 📋 para copiar el SKU</div>
+        
         <div class="search-box"><input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)"></div>
         <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
         
@@ -180,15 +415,19 @@
         <div id="results" class="results-info"></div>
         <div id="productGrid" class="product-grid grid-view"></div>
         <div id="pagination" class="pagination" style="display: none;"></div>
-        <div class="shortcuts-hint">
-            💡 <kbd>ESC</kbd> Limpiar búsqueda | <kbd>?</kbd> Ver atajos | <kbd>📋</kbd> Copiar SKU
+        
+        <!-- FOOTER PROFESIONAL -->
+        <div class="footer">
+            <p>© 2025 ATK Products - All Rights Reserved</p>
+            <p>📞 (350) 593-0980 | 📧 <a href="mailto:ventas@atkits.com">ventas@atkits.com</a> | 📍 6311 NW 99th Avenue, Unit 28, Doral, FL 33172 USA</p>
+            <div class="shortcuts-hint">💡 <kbd>ESC</kbd> Clear search | <kbd>?</kbd> Show shortcuts | 📋 Click to copy SKU</div>
         </div>
     </div>
     
-    <!-- Botón flotante "Subir arriba" -->
     <button id="scrollTopBtn" class="scroll-top-btn" title="Subir arriba">⬆️</button>
 
     <script>
+    // (El código JavaScript se mantiene igual que en la versión anterior funcional)
     // VARIABLES
     let productos = [];
     let currentFilter = 'all';
@@ -201,7 +440,6 @@
     let itemsPerPage = 200;
     let hidePhotosInList = false;
 
-    // CLAVES PARA LOCALSTORAGE
     const STORAGE_LANG = 'atk_lang';
     const STORAGE_FILTER = 'atk_filter';
     const STORAGE_SORT = 'atk_sort';
@@ -211,7 +449,7 @@
 
     const texts = {
         es: {
-            title: "🔍 ATK Products Catalog",
+            title: "ATK Products Catalog",
             help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el icono 📋 para copiar el SKU",
             placeholder: "Buscar por SKU o descripción... (Enter para todos)",
             showLabel: "📊 Mostrar:",
@@ -252,7 +490,7 @@
             shortcutsQuestion: "Mostrar esta ayuda"
         },
         en: {
-            title: "🔍 ATK Products Catalog",
+            title: "ATK Products Catalog",
             help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>📋 Click the 📋 icon to copy the SKU",
             placeholder: "Search by SKU or description... (Enter for all)",
             showLabel: "📊 Show:",
@@ -296,12 +534,11 @@
 
     function showShortcutsHelp() {
         const t = texts[currentLang];
-        alert(`${t.shortcutsTitle}\n\n🔹 ESC: ${t.shortcutsEsc}\n🔹 ?: ${t.shortcutsQuestion}\n🔹 📋: ${t.copied}`);
+        alert(`${t.shortcutsTitle}\n\n🔹 ESC: ${t.shortcutsEsc}\n🔹 ?: ${t.shortcutsQuestion}`);
     }
 
     function updateTexts() {
         const t = texts[currentLang];
-        document.getElementById('title').innerHTML = t.title;
         document.getElementById('helpText').innerHTML = t.help;
         document.getElementById('searchInput').placeholder = t.placeholder;
         document.getElementById('showLabel').innerHTML = t.showLabel;
@@ -407,7 +644,6 @@
                 buttonElement.classList.remove('copied');
             }, 1500);
             
-            // Mostrar notificación opcional
             const notification = document.createElement('div');
             notification.textContent = t.copied + ': ' + sku;
             notification.style.cssText = 'position:fixed; bottom:100px; right:30px; background:#28a745; color:white; padding:10px 20px; border-radius:8px; z-index:1001; font-size:14px; box-shadow:0 2px 10px rgba(0,0,0,0.2);';
@@ -578,7 +814,6 @@
             });
     }
 
-    // Botón flotante "Subir arriba"
     const scrollBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) scrollBtn.style.display = 'flex';
@@ -588,7 +823,6 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // EVENTOS
     let timer;
     const searchInput = document.getElementById('searchInput');
     const filterStock = document.getElementById('filterStock');
