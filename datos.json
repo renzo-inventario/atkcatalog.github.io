@@ -37285,11 +37285,6 @@
     "Available": 0
   },
   {
-    "SKU": "140639BW",
-    "Description": "SPRAG, LOW SPRAG ASSEMBLY, GM 6L45, 6L50 CADILLAC, BMW (30 ELEMENTS) (OEM# 24240431) (BORG WARNER)",
-    "Available": 0
-  },
-  {
     "SKU": "FD-O-30",
     "Description": "SEAL, PISTON SEAL, FORD 6R80, 260MM (LATE), 6R80, 280MM (LATE) (SPECS: MATERIAL: PTFE, SEAL STYLE: SOLID, WIDTH: 0.103\", HEIGHT: 0.160\", OUTER DIA.: 3.511\")",
     "Available": 0
@@ -38605,11 +38600,6 @@
     "Available": 1
   },
   {
-    "SKU": "57704M",
-    "Description": "COVER, REAR COVER, TOYOTA U340, U341, USED",
-    "Available": 1
-  },
-  {
     "SKU": "KP28900A",
     "Description": "OVERHAUL KIT, POWERGLIDE ALUMINUM",
     "Available": 1
@@ -39480,6 +39470,11 @@
     "Available": 1
   },
   {
+    "SKU": "AFL-G2-TK",
+    "Description": "TOOL KIT, UNIVERSAL ACTUATOR FEED LIMIT AND SOLENOID REGULTAOR, REAMER AND GUIDE FOR GEN2 AND GEN3 SHIFT KITS FORD GM 6SPD (FOR USE WITH SK-6T70-G2, SK-6F35-G2, SK-6T40-G2, SK-6T40-G3, SK-8L90)",
+    "Available": 1
+  },
+  {
     "SKU": "24230820",
     "Description": "PLATE, BACKING PLATE, 1-2-3-4 CLUTCH (19 T)",
     "Available": 1
@@ -40252,6 +40247,21 @@
   {
     "SKU": "ZF8-TCREG-TK",
     "Description": "TOOL KIT, ZF8-TCREG-OS AND OPTIONAL FOR SK-8HP",
+    "Available": 1
+  },
+  {
+    "SKU": "8L90-S4LATE-TK",
+    "Description": "TOOL KIT, FOR USE WITH 8L90-S4LATE-OS",
+    "Available": 1
+  },
+  {
+    "SKU": "8L90-REG-TK",
+    "Description": "TOOL KIT, FOR USE WITH 8L90-REG-OS",
+    "Available": 1
+  },
+  {
+    "SKU": "8L90-S1REG-TK",
+    "Description": "TOOL KIT, FOR USE WITH 8L90-S1REG-OS",
     "Available": 1
   },
   {
@@ -41960,11 +41970,6 @@
     "Available": 1
   },
   {
-    "SKU": "AFL-G2-TK",
-    "Description": "TOOL KIT, UNIVERSAL ACTUATOR FEED LIMIT AND SOLENOID REGULTAOR, REAMER AND GUIDE FOR GEN2 AND GEN3 SHIFT KITS FORD GM 6SPD (FOR USE WITH SK-6T70-G2, SK-6F35-G2, SK-6T40-G2, SK-6T40-G3, SK-8L90)",
-    "Available": 1
-  },
-  {
     "SKU": "45822-3B850",
     "Description": "DIFFERENTIAL COVER, HYUNDAI SANTA FE 2010+, KIA SORENTO 2010+ 2.2L-R GASOLINE (AFTERMARKET)",
     "Available": 1
@@ -42505,18 +42510,8 @@
     "Available": 1
   },
   {
-    "SKU": "8L90-S4LATE-TK",
-    "Description": "TOOL KIT, FOR USE WITH 8L90-S4LATE-OS",
-    "Available": 1
-  },
-  {
-    "SKU": "8L90-REG-TK",
-    "Description": "TOOL KIT, FOR USE WITH 8L90-REG-OS",
-    "Available": 1
-  },
-  {
-    "SKU": "8L90-S1REG-TK",
-    "Description": "TOOL KIT, FOR USE WITH 8L90-S1REG-OS",
+    "SKU": "8L90-S1REG-OS",
+    "Description": "VALVE, OVERSIZED S1/S5 REGULATOR VALVE, GM 8L45, 8L90 (2015-ON) (REQUIRES 8L90-S1REG-TK)",
     "Available": 1
   },
   {
@@ -43890,6 +43885,11 @@
     "Available": 1
   },
   {
+    "SKU": "8L90-S4LATE-OS",
+    "Description": "VALVE, OVERSIZSE LATE S4 REGULATOR VALVE, GM 8L45, 8L90 LATE 2-LAND S4 VALVE (2018-ON)",
+    "Available": 1
+  },
+  {
     "SKU": "4L60E-PRO",
     "Description": "REPROGRAMMING KIT, GM 4L60E, 4L65E, 4L70E (1996-2018) (DOES NOT FIT 1993-1995, 2005 CORVETTER OR HYBRIDS)",
     "Available": 1
@@ -45015,8 +45015,8 @@
     "Available": 1
   },
   {
-    "SKU": "8L90-S1REG-OS",
-    "Description": "VALVE, OVERSIZED S1/S5 REGULATOR VALVE, GM 8L45, 8L90 (2015-ON) (REQUIRES 8L90-S1REG-TK)",
+    "SKU": "8L90-REG-OS",
+    "Description": "VALVE, OVERSIZED TCC/S2/S3/EARLY S4 REGULATOR VALVE, GM 8L45, 8L90 (2015-ON) (REQUIRES 8L90-REG-TK)",
     "Available": 1
   },
   {
@@ -47395,6 +47395,16 @@
     "Available": 1
   },
   {
+    "SKU": "8L90-PDP-TKC",
+    "Description": "TOOL KIT, PULSE DAMPENER GM 8L90, 8L45 (FOR USE WITH 8L90-PDP-OS)",
+    "Available": 1
+  },
+  {
+    "SKU": "8L90-PDP-OS",
+    "Description": "ACCUMULATORS, PULSE DAMPENERS, GM 8L45, 8L90 (07 PCS) (REQUIRES TOOL 8L90-PDP-TKC)",
+    "Available": 1
+  },
+  {
     "SKU": "209142C",
     "Description": "FILTER, 6DCT360 FOR ZOTYE T600 T700 DAMAI X7 SR9 FOR CHEETAH CS10 HANTENG X7 COOLPAD (INTERNAL)",
     "Available": 1
@@ -47477,16 +47487,6 @@
   {
     "SKU": "000531",
     "Description": "ST MODULE, CHRYSLER A518 (GAS) (1990-1997)",
-    "Available": 1
-  },
-  {
-    "SKU": "8L90-S4LATE-OS",
-    "Description": "VALVE, OVERSIZSE LATE S4 REGULATOR VALVE, GM 8L45, 8L90 LATE 2-LAND S4 VALVE (2018-ON)",
-    "Available": 1
-  },
-  {
-    "SKU": "8L90-REG-OS",
-    "Description": "VALVE, OVERSIZED TCC/S2/S3/EARLY S4 REGULATOR VALVE, GM 8L45, 8L90 (2015-ON) (REQUIRES 8L90-REG-TK)",
     "Available": 1
   },
   {
@@ -47910,11 +47910,6 @@
     "Available": 1
   },
   {
-    "SKU": "8L90-PDP-TKC",
-    "Description": "TOOL KIT, PULSE DAMPENER GM 8L90, 8L45 (FOR USE WITH 8L90-PDP-OS)",
-    "Available": 1
-  },
-  {
     "SKU": "19702XA",
     "Description": "PAN GASKET, BTR M11 DSI (2010-2018) (MOLDED RUBBER)",
     "Available": 1
@@ -48262,11 +48257,6 @@
   {
     "SKU": "46308-3A050",
     "Description": "WIRE HARNESS, MITSUBISHI HYUNDAI F4A41, FA42, F4A51 & F4A4B (2005-UP) (OEM# 46308-3A050)",
-    "Available": 1
-  },
-  {
-    "SKU": "8L90-PDP-OS",
-    "Description": "ACCUMULATORS, PULSE DAMPENERS, GM 8L45, 8L90 (07 PCS) (REQUIRES TOOL 8L90-PDP-TKC)",
     "Available": 1
   },
   {
@@ -49975,6 +49965,11 @@
     "Available": 1
   },
   {
+    "SKU": "140639BW",
+    "Description": "SPRAG, LOW SPRAG ASSEMBLY, GM 6L45, 6L50 CADILLAC, BMW (30 ELEMENTS) (OEM# 24240431, 2423733) (BORG WARNER)",
+    "Available": 1
+  },
+  {
     "SKU": "37705B",
     "Description": "GASKET, EXTENSION HOUSING, FORD 4R70W, 4R75E, 4R75W (SILICONE BEADED) (96-06) (OEM# F6AZ-7086-A)",
     "Available": 1
@@ -51567,6 +51562,11 @@
   {
     "SKU": "42710Y",
     "Description": "FILTER MITSUBISHI 3FA-T, VERICA 1200CC 99-UP (OEM# MB919852)",
+    "Available": 1
+  },
+  {
+    "SKU": "57704M",
+    "Description": "COVER, REAR COVER, TOYOTA U340, U341, USED",
     "Available": 1
   },
   {
@@ -55015,6 +55015,11 @@
     "Available": 1
   },
   {
+    "SKU": "SK-8L90",
+    "Description": "SHIFT KIT, GM 8L45, 8L90E (2015-UP)",
+    "Available": 1
+  },
+  {
     "SKU": "292708-160",
     "Description": "FR PLATE, NISSAN JF009E, RE0F08A, FORWARD (OD: 4.892\" - 30T)",
     "Available": 1
@@ -55192,11 +55197,6 @@
   {
     "SKU": "88716",
     "Description": "FILTER, HONDA CIVIC 2003-2005 (SPIN ON) (OEM# 25430-PZA-003)",
-    "Available": 1
-  },
-  {
-    "SKU": "SK-8L90",
-    "Description": "SHIFT KIT, GM 8L45, 8L90E (2015-UP)",
     "Available": 1
   },
   {
@@ -57942,7 +57942,7 @@
   {
     "SKU": "137710",
     "Description": "FILTER, NISSAN RE7R01A, RE7R01H JATCO JR710, JR711E, JR712E JR RWD 7 SPEED INFINITI EX37(09-ON), FX30(11-ON), FX35(09-ON), FX50(09-ON), FX56(11-ON), G37(09-ON), M35(09-ON), M37(11-ON), M45(10-ON), M56(11-ON), Q30(11-ON), QX56(10-ON) NISSAN 370Z(09-ON) (OEM# 31705-X185D, 31705-X622B)",
-    "Available": 0
+    "Available": 1
   },
   {
     "SKU": "174704A162",
@@ -57987,7 +57987,7 @@
   {
     "SKU": "89710Q",
     "Description": "FILTER, TOYOTA U540 (BIG SQUARE HOLE) (OEM# 35303-67206)",
-    "Available": 0
+    "Available": 1
   },
   {
     "SKU": "512090",
@@ -63062,7 +63062,7 @@
   {
     "SKU": "46710",
     "Description": "FILTER, 4F27E, FN4A-EL, (1999-ON) (OEM# XS4Z-7A098AB, FN01-21-500)",
-    "Available": 0
+    "Available": 1
   },
   {
     "SKU": "92716",
