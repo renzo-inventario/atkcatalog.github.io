@@ -1122,24 +1122,24 @@
     }
 
     function init() {
-        loadPreferences();
-        updateTexts();
-        applyViewMode();
-        
-        const t = texts[currentLang];
-        document.getElementById('results').innerHTML = t.loading;
-        fetch('datos.json')
-            .then(r => r.json())
-            .then(data => {
-                productos = data;
-                document.getElementById('results').innerHTML = t.loaded.replace('{count}', productos.length);
-                actualizarVista();
-            })
-            .catch(e => {
-                console.error(e);
-                document.getElementById('productGrid').innerHTML = `<div class="no-results">${t.error}</div>`;
-            });
-    }
+    loadPreferences();
+    updateTexts();
+    applyViewMode();
+    
+    const t = texts[currentLang];
+    document.getElementById('results').innerHTML = t.loading;
+    fetch('https://raw.githubusercontent.com/renzo-inventario/atkcatalog.github.io/main/datos.json')
+        .then(r => r.json())
+        .then(data => {
+            productos = data;
+            document.getElementById('results').innerHTML = t.loaded.replace('{count}', productos.length);
+            actualizarVista();
+        })
+        .catch(e => {
+            console.error('Error:', e);
+            document.getElementById('productGrid').innerHTML = `<div class="no-results">${t.error}</div>`;
+        });
+}
 
     const scrollBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => {
