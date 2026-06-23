@@ -434,9 +434,9 @@
             <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)">
         </div>
         
-        <!-- HISTORIAL DE BÚSQUEDAS -->
+        <!-- HISTORIAL DE BÚSQUEDAS (BILINGÜE) -->
         <div id="searchHistory" class="search-history">
-            <span class="search-history-label">🔍 Recientes:</span>
+            <span id="historyLabel" class="search-history-label">🔍 Recientes:</span>
             <span id="historyTags"></span>
             <button id="clearHistory" class="history-clear">✕ Limpiar</button>
         </div>
@@ -637,6 +637,9 @@
         document.getElementById('applyFilters').innerHTML = t.applyBtn;
         document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
         
+        // Actualizar historial (bilingüe)
+        document.getElementById('historyLabel').innerHTML = t.historyLabel;
+        document.getElementById('clearHistory').innerHTML = t.clearHistory;
         renderHistory();
     }
 
@@ -681,7 +684,6 @@
         hidePhotosInList = savedHidePhotos === 'true';
         document.getElementById('hidePhotosCheckbox').checked = hidePhotosInList;
         
-        // Cargar historial
         const savedHistory = localStorage.getItem(STORAGE_HISTORY);
         if (savedHistory) {
             try {
@@ -693,7 +695,6 @@
     }
 
     function renderHistory() {
-        const t = texts[currentLang];
         const container = document.getElementById('historyTags');
         const clearBtn = document.getElementById('clearHistory');
         
@@ -934,7 +935,6 @@
         loadPreferences();
         updateTexts();
         applyViewMode();
-        renderHistory();
         
         const t = texts[currentLang];
         document.getElementById('results').innerHTML = t.loading;
