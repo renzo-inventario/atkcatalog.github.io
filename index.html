@@ -434,7 +434,6 @@
             <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)">
         </div>
         
-        <!-- HISTORIAL DE BÚSQUEDAS (BILINGÜE) -->
         <div id="searchHistory" class="search-history">
             <span id="historyLabel" class="search-history-label">🔍 Recientes:</span>
             <span id="historyTags"></span>
@@ -637,7 +636,6 @@
         document.getElementById('applyFilters').innerHTML = t.applyBtn;
         document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
         
-        // Actualizar historial (bilingüe)
         document.getElementById('historyLabel').innerHTML = t.historyLabel;
         document.getElementById('clearHistory').innerHTML = t.clearHistory;
         renderHistory();
@@ -770,6 +768,7 @@
         }
     }
 
+    // 🔄 FUNCIÓN COPY ACTUALIZADA: copia el SKU Y lo agrega al historial
     function copyToClipboard(sku, buttonElement) {
         const t = texts[currentLang];
         const originalText = buttonElement.textContent;
@@ -780,6 +779,9 @@
                 buttonElement.textContent = originalText;
                 buttonElement.classList.remove('copied');
             }, 1500);
+            
+            // ✅ AGREGAR SKU AL HISTORIAL (nuevo)
+            addToHistory(sku);
             
             const notification = document.createElement('div');
             notification.textContent = t.copiedMsg + ': ' + sku;
