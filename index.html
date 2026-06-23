@@ -156,7 +156,7 @@
         }
         input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0,86,179,0.1); }
         
-        /* HISTORIAL DE BÚSQUEDAS RESALTADO */
+        /* HISTORIAL DE BÚSQUEDAS */
         .search-history {
             display: flex;
             flex-wrap: wrap;
@@ -214,6 +214,33 @@
             color: #c62828;
         }
         
+        /* Botón "Ver Selección" */
+        .btn-selection {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 4px 16px;
+            font-size: 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            margin-left: 5px;
+        }
+        
+        .btn-selection:hover {
+            background: #1e7e34;
+            transform: translateY(-1px);
+        }
+        
+        .btn-selection.active {
+            background: #ff6f00;
+        }
+        
+        .btn-selection.active:hover {
+            background: #e65100;
+        }
+        
         .controls-row { 
             background: white; 
             padding: 15px 20px; 
@@ -227,9 +254,19 @@
             box-shadow: var(--shadow-sm);
         }
         .controls-left { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; }
-        .controls-right { display: flex; gap: 10px; }
+        .controls-right { display: flex; gap: 10px; align-items: center; }
         .controls-group { display: flex; align-items: center; gap: 8px; background: var(--bg-light); padding: 5px 14px; border-radius: 40px; }
         .controls-group label { font-size: 13px; color: var(--text-gray); font-weight: 500; }
+        
+        .selection-badge {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            padding: 2px 10px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
         
         select, button { 
             padding: 6px 12px; 
@@ -438,6 +475,7 @@
         <div id="searchHistory" class="search-history">
             <span id="historyLabel" class="search-history-label">🔍 Recientes:</span>
             <span id="historyTags"></span>
+            <button id="btnSelection" class="btn-selection">📋 Ver Selección (0)</button>
             <button id="clearHistory" class="history-clear">✕ Limpiar</button>
         </div>
         
@@ -485,6 +523,7 @@
             </div>
             <div class="controls-right">
                 <button id="applyFilters">Aplicar</button>
+                <button id="btnBackToAll" style="display: none; background-color: #6c757d;">⬅️ Volver</button>
             </div>
         </div>
         
@@ -513,6 +552,7 @@
     let itemsPerPage = 200;
     let hidePhotosInList = false;
     let history = [];
+    let selectionMode = false; // true = mostrar solo SKUs seleccionados
 
     const STORAGE_LANG = 'atk_lang';
     const STORAGE_FILTER = 'atk_filter';
@@ -521,10 +561,11 @@
     const STORAGE_PER_PAGE = 'atk_per_page';
     const STORAGE_HIDE_PHOTOS = 'atk_hide_photos';
     const STORAGE_HISTORY = 'atk_history';
+    const STORAGE_SELECTION = 'atk_selection';
 
     const texts = {
         es: {
-            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el botón 📋 para copiar el SKU",
+            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el botón 📋 para copiar el SKU y agregarlo a tu selección",
             placeholder: "Buscar por SKU o descripción... (Enter para todos)",
             showLabel: "📊 Mostrar:",
             optAll: "Todos",
@@ -541,6 +582,11 @@
             perPageLabel: "📄 Por página:",
             hidePhotosLabel: "🖼️ Ocultar fotos",
             applyBtn: "Aplicar",
+            backBtn: "⬅️ Volver a todos",
+            selectionTitle: "📋 Productos Seleccionados",
+            selectionEmpty: "No has seleccionado ningún SKU aún. Copia SKUs para agregarlos.",
+            selectionBtn: "📋 Ver Selección ({count})",
+            clearHistory: "✕ Limpiar",
             loading: "⏳ Cargando productos...",
             loaded: "📦 {count} productos cargados",
             found: "🔍 Encontrados: {total} productos",
@@ -563,11 +609,10 @@
             shortcutsTitle: "🎯 Atajos de teclado",
             shortcutsEsc: "Limpiar búsqueda y mostrar todos los productos",
             shortcutsQuestion: "Mostrar esta ayuda",
-            historyLabel: "🔍 Recientes:",
-            clearHistory: "✕ Limpiar"
+            historyLabel: "🔍 Recientes:"
         },
         en: {
-            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>📋 Click the 📋 button to copy the SKU",
+            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>📋 Click the 📋 button to copy the SKU and add it to your selection",
             placeholder: "Search by SKU or description... (Enter for all)",
             showLabel: "📊 Show:",
             optAll: "All",
@@ -584,6 +629,11 @@
             perPageLabel: "📄 Per page:",
             hidePhotosLabel: "🖼️ Hide photos",
             applyBtn: "Apply",
+            backBtn: "⬅️ Back to all",
+            selectionTitle: "📋 Selected Products",
+            selectionEmpty: "You haven't selected any SKU yet. Copy SKUs to add them.",
+            selectionBtn: "📋 View Selection ({count})",
+            clearHistory: "✕ Clear",
             loading: "⏳ Loading products...",
             loaded: "📦 {count} products loaded",
             found: "🔍 Found: {total} products",
@@ -606,8 +656,7 @@
             shortcutsTitle: "🎯 Keyboard shortcuts",
             shortcutsEsc: "Clear search and show all products",
             shortcutsQuestion: "Show this help",
-            historyLabel: "🔍 Recent:",
-            clearHistory: "✕ Clear"
+            historyLabel: "🔍 Recent:"
         }
     };
 
@@ -639,6 +688,10 @@
         
         document.getElementById('historyLabel').innerHTML = t.historyLabel;
         document.getElementById('clearHistory').innerHTML = t.clearHistory;
+        
+        // Actualizar botón de selección
+        updateSelectionButton();
+        updateBackButton();
         renderHistory();
     }
 
@@ -649,6 +702,9 @@
         localStorage.setItem(STORAGE_VIEW, currentView);
         localStorage.setItem(STORAGE_PER_PAGE, itemsPerPage);
         localStorage.setItem(STORAGE_HIDE_PHOTOS, hidePhotosInList);
+        // Guardar selección
+        const selectionSKUs = history.filter(sku => sku.startsWith('SKU_SEL_')).map(sku => sku.replace('SKU_SEL_', ''));
+        localStorage.setItem(STORAGE_SELECTION, JSON.stringify(selectionSKUs));
     }
 
     function loadPreferences() {
@@ -683,13 +739,31 @@
         hidePhotosInList = savedHidePhotos === 'true';
         document.getElementById('hidePhotosCheckbox').checked = hidePhotosInList;
         
+        // Cargar selección guardada
+        const savedSelection = localStorage.getItem(STORAGE_SELECTION);
+        if (savedSelection) {
+            try {
+                const selectionSKUs = JSON.parse(savedSelection);
+                // Agregar SKUs de selección al historial con prefijo especial
+                for (const sku of selectionSKUs) {
+                    if (!history.includes('SKU_SEL_' + sku)) {
+                        history.push('SKU_SEL_' + sku);
+                    }
+                }
+            } catch(e) {}
+        }
+        
         const savedHistory = localStorage.getItem(STORAGE_HISTORY);
         if (savedHistory) {
             try {
-                history = JSON.parse(savedHistory);
-            } catch(e) {
-                history = [];
-            }
+                const hist = JSON.parse(savedHistory);
+                // Fusionar historial guardado con selección
+                for (const item of hist) {
+                    if (!history.includes(item)) {
+                        history.push(item);
+                    }
+                }
+            } catch(e) {}
         }
     }
 
@@ -697,14 +771,20 @@
         const container = document.getElementById('historyTags');
         const clearBtn = document.getElementById('clearHistory');
         
-        if (history.length === 0) {
+        // Mostrar solo los tags que no son de selección (los que no empiezan con SKU_SEL_)
+        const displayHistory = history.filter(item => !item.startsWith('SKU_SEL_'));
+        const selectionCount = history.filter(item => item.startsWith('SKU_SEL_')).length;
+        
+        if (displayHistory.length === 0 && selectionCount === 0) {
             container.innerHTML = '<span style="color: #ccc; font-size: 12px; padding: 4px 10px;">Sin búsquedas recientes</span>';
             clearBtn.style.display = 'none';
+            updateSelectionButton();
             return;
         }
         
         let html = '';
-        for (const term of history) {
+        // Mostrar tags de búsqueda (no selección)
+        for (const term of displayHistory) {
             html += `<span class="history-tag" data-term="${term.replace(/"/g, '&quot;')}">${term}</span>`;
         }
         container.innerHTML = html;
@@ -716,25 +796,76 @@
                 document.getElementById('searchInput').value = term;
                 currentSearchTerm = term;
                 currentPage = 1;
+                selectionMode = false;
                 actualizarVista();
             });
         });
+        
+        updateSelectionButton();
+    }
+
+    function updateSelectionButton() {
+        const t = texts[currentLang];
+        const selectionCount = history.filter(item => item.startsWith('SKU_SEL_')).length;
+        const btn = document.getElementById('btnSelection');
+        btn.innerHTML = t.selectionBtn.replace('{count}', selectionCount);
+        if (selectionMode) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+        // Guardar selección
+        savePreferences();
+    }
+
+    function updateBackButton() {
+        const t = texts[currentLang];
+        const backBtn = document.getElementById('btnBackToAll');
+        if (selectionMode) {
+            backBtn.style.display = 'inline-block';
+            backBtn.innerHTML = t.backBtn;
+        } else {
+            backBtn.style.display = 'none';
+        }
     }
 
     function addToHistory(term) {
         if (!term || term.trim() === '') return;
         const cleanTerm = term.trim();
-        history = history.filter(t => t !== cleanTerm);
+        // Si estamos en modo selección, no agregar al historial normal
+        if (selectionMode) return;
+        history = history.filter(t => t !== cleanTerm && !t.startsWith('SKU_SEL_'));
         history.unshift(cleanTerm);
         if (history.length > 10) history = history.slice(0, 10);
         localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
         renderHistory();
     }
 
+    function addToSelection(sku) {
+        if (!sku || sku.trim() === '') return;
+        const cleanSku = sku.trim();
+        const selectionKey = 'SKU_SEL_' + cleanSku;
+        // Eliminar si ya existe para moverlo al frente
+        history = history.filter(item => item !== selectionKey);
+        history.unshift(selectionKey);
+        localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
+        renderHistory();
+        updateSelectionButton();
+        // Si estamos en modo selección, refrescar vista
+        if (selectionMode) {
+            actualizarVista();
+        }
+    }
+
     function clearHistory() {
         history = [];
         localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
         renderHistory();
+        updateSelectionButton();
+        if (selectionMode) {
+            selectionMode = false;
+            actualizarVista();
+        }
     }
 
     function applyViewMode() {
@@ -779,7 +910,8 @@
                 buttonElement.textContent = originalText;
                 buttonElement.classList.remove('copied');
             }, 1500);
-            addToHistory(sku);
+            // Agregar a la selección
+            addToSelection(sku);
             const notification = document.createElement('div');
             notification.textContent = t.copiedMsg + ': ' + sku;
             notification.style.cssText = 'position:fixed; bottom:100px; right:30px; background:#28a745; color:white; padding:10px 20px; border-radius:8px; z-index:1001; font-size:14px; box-shadow:0 2px 10px rgba(0,0,0,0.2);';
@@ -846,19 +978,45 @@
     function actualizarVista() {
         if (!productos.length) return;
         
-        const t = texts[currentLang];
-        let resultados = [...productos];
+        const t = textos[currentLang];
+        let resultados = [];
         
-        if (currentSearchTerm && currentSearchTerm.trim()) {
-            const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
-            resultados = resultados.filter(p => {
-                const sku = aString(p.SKU).toLowerCase();
-                const desc = aString(p.Description).toLowerCase();
-                const texto = sku + ' ' + desc;
-                return palabras.every(w => texto.includes(w));
+        // Si estamos en modo selección, filtrar solo los SKUs seleccionados
+        if (selectionMode) {
+            const selectionSKUs = history
+                .filter(item => item.startsWith('SKU_SEL_'))
+                .map(item => item.replace('SKU_SEL_', ''));
+            
+            if (selectionSKUs.length === 0) {
+                const grid = document.getElementById('productGrid');
+                grid.innerHTML = `<div class="no-results">${t.selectionEmpty}</div>`;
+                document.getElementById('results').innerHTML = `📋 0 ${t.found.split(' ')[1] || 'resultados'}`;
+                document.getElementById('pagination').style.display = 'none';
+                document.getElementById('searchTermsDisplay').style.display = 'none';
+                updateBackButton();
+                return;
+            }
+            
+            resultados = productos.filter(p => {
+                const sku = aString(p.SKU);
+                return selectionSKUs.includes(sku);
             });
+        } else {
+            // Modo normal: aplicar búsqueda
+            resultados = [...productos];
+            
+            if (currentSearchTerm && currentSearchTerm.trim()) {
+                const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
+                resultados = resultados.filter(p => {
+                    const sku = aString(p.SKU).toLowerCase();
+                    const desc = aString(p.Description).toLowerCase();
+                    const texto = sku + ' ' + desc;
+                    return palabras.every(w => texto.includes(w));
+                });
+            }
         }
         
+        // Aplicar filtros
         if (currentFilter === 'available') resultados = resultados.filter(p => p.Available === 1 || p.Available === true);
         else if (currentFilter === 'unavailable') resultados = resultados.filter(p => p.Available === 0 || p.Available === false);
         
@@ -873,17 +1031,23 @@
         const resultadosPaginados = resultados.slice(start, end);
         
         const termsDiv = document.getElementById('searchTermsDisplay');
-        if (currentSearchTerm && currentSearchTerm.trim()) {
+        if (!selectionMode && currentSearchTerm && currentSearchTerm.trim()) {
             const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
             termsDiv.style.display = 'block';
             termsDiv.innerHTML = t.searching.replace('{words}', palabras.join(' + '));
-        } else termsDiv.style.display = 'none';
+        } else if (selectionMode) {
+            termsDiv.style.display = 'block';
+            termsDiv.innerHTML = t.selectionTitle;
+        } else {
+            termsDiv.style.display = 'none';
+        }
         
         const grid = document.getElementById('productGrid');
         if (!resultadosPaginados || !resultadosPaginados.length) {
             grid.innerHTML = `<div class="no-results">${t.noResults}</div>`;
-            document.getElementById('results').innerHTML = `🔍 0 resultados`;
+            document.getElementById('results').innerHTML = `🔍 0 ${t.found.split(' ')[1] || 'resultados'}`;
             document.getElementById('pagination').style.display = 'none';
+            updateBackButton();
             return;
         }
         
@@ -928,6 +1092,33 @@
                 if (c) cargarFotos(sku, c);
             }
         }, 100);
+        
+        updateBackButton();
+    }
+
+    function toggleSelectionMode() {
+        const t = texts[currentLang];
+        selectionMode = !selectionMode;
+        if (selectionMode) {
+            // Verificar que haya SKUs seleccionados
+            const count = history.filter(item => item.startsWith('SKU_SEL_')).length;
+            if (count === 0) {
+                alert(t.selectionEmpty);
+                selectionMode = false;
+                updateSelectionButton();
+                return;
+            }
+        }
+        currentPage = 1;
+        updateSelectionButton();
+        actualizarVista();
+    }
+
+    function backToAll() {
+        selectionMode = false;
+        currentPage = 1;
+        updateSelectionButton();
+        actualizarVista();
     }
 
     function init() {
@@ -969,12 +1160,16 @@
     const applyBtn = document.getElementById('applyFilters');
     const langToggle = document.getElementById('langToggle');
     const clearHistoryBtn = document.getElementById('clearHistory');
+    const btnSelection = document.getElementById('btnSelection');
+    const btnBackToAll = document.getElementById('btnBackToAll');
 
     searchInput.addEventListener('input', e => {
         if (timer) clearTimeout(timer);
         timer = setTimeout(() => {
             currentSearchTerm = e.target.value.trim();
             currentPage = 1;
+            selectionMode = false;
+            updateSelectionButton();
             actualizarVista();
         }, 300);
     });
@@ -984,6 +1179,9 @@
             const term = e.target.value.trim();
             if (term !== '') {
                 addToHistory(term);
+                selectionMode = false;
+                updateSelectionButton();
+                actualizarVista();
             }
         }
     });
@@ -1013,12 +1211,17 @@
     
     clearHistoryBtn.addEventListener('click', clearHistory);
     
+    btnSelection.addEventListener('click', toggleSelectionMode);
+    btnBackToAll.addEventListener('click', backToAll);
+    
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             e.preventDefault();
             currentSearchTerm = '';
             currentPage = 1;
             searchInput.value = '';
+            selectionMode = false;
+            updateSelectionButton();
             actualizarVista();
         }
         if (e.key === '?' || (e.shiftKey && e.key === '/')) {
