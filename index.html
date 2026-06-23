@@ -156,7 +156,7 @@
         }
         input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0,86,179,0.1); }
         
-        /* HISTORIAL DE BÚSQUEDAS */
+        /* HISTORIAL DE BÚSQUEDAS RESALTADO */
         .search-history {
             display: flex;
             flex-wrap: wrap;
@@ -172,20 +172,21 @@
         
         .search-history-label {
             font-size: 12px;
-            color: var(--text-light);
-            font-weight: 500;
+            color: var(--primary-color);
+            font-weight: 600;
             margin-right: 5px;
         }
         
         .history-tag {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
+            background: var(--primary-light);
+            border: 1px solid var(--primary-color);
             border-radius: 30px;
             padding: 4px 14px;
             font-size: 12px;
             cursor: pointer;
             transition: var(--transition);
-            color: var(--text-gray);
+            color: var(--primary-color);
+            font-weight: 500;
             text-decoration: none;
             display: inline-block;
         }
@@ -768,7 +769,6 @@
         }
     }
 
-    // 🔄 FUNCIÓN COPY ACTUALIZADA: copia el SKU Y lo agrega al historial
     function copyToClipboard(sku, buttonElement) {
         const t = texts[currentLang];
         const originalText = buttonElement.textContent;
@@ -779,10 +779,7 @@
                 buttonElement.textContent = originalText;
                 buttonElement.classList.remove('copied');
             }, 1500);
-            
-            // ✅ AGREGAR SKU AL HISTORIAL (nuevo)
             addToHistory(sku);
-            
             const notification = document.createElement('div');
             notification.textContent = t.copiedMsg + ': ' + sku;
             notification.style.cssText = 'position:fixed; bottom:100px; right:30px; background:#28a745; color:white; padding:10px 20px; border-radius:8px; z-index:1001; font-size:14px; box-shadow:0 2px 10px rgba(0,0,0,0.2);';
