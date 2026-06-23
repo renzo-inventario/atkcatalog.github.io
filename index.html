@@ -156,18 +156,32 @@
         }
         input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0,86,179,0.1); }
         
-        /* HISTORIAL DE BÚSQUEDAS */
+        /* HISTORIAL DE BÚSQUEDAS - DOS FILAS */
         .search-history {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 8px;
-            margin-bottom: 20px;
             padding: 10px 15px;
             background: white;
             border-radius: 40px;
             box-shadow: var(--shadow-sm);
+            margin-bottom: 20px;
+        }
+        
+        .history-row {
+            display: flex;
+            flex-wrap: wrap;
             align-items: center;
-            min-height: 45px;
+            gap: 8px;
+        }
+        
+        .history-row:first-child {
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .selection-row {
+            padding-top: 4px;
         }
         
         .search-history-label {
@@ -225,7 +239,7 @@
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
-            margin-left: 5px;
+            margin-right: 8px;
         }
         
         .btn-selection:hover {
@@ -239,6 +253,23 @@
         
         .btn-selection.active:hover {
             background: #e65100;
+        }
+        
+        .btn-back {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 4px 16px;
+            font-size: 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .btn-back:hover {
+            background-color: #5a6268;
+            transform: translateY(-1px);
         }
         
         .controls-row { 
@@ -472,11 +503,19 @@
             <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)">
         </div>
         
+        <!-- HISTORIAL DE BÚSQUEDAS - DOS FILAS -->
         <div id="searchHistory" class="search-history">
-            <span id="historyLabel" class="search-history-label">🔍 Recientes:</span>
-            <span id="historyTags"></span>
-            <button id="btnSelection" class="btn-selection">📋 Ver Selección (0)</button>
-            <button id="clearHistory" class="history-clear">✕ Limpiar</button>
+            <!-- Fila 1: Historial de búsquedas -->
+            <div class="history-row">
+                <span id="historyLabel" class="search-history-label">🔍 Recientes:</span>
+                <span id="historyTags"></span>
+                <button id="clearHistory" class="history-clear">✕ Limpiar</button>
+            </div>
+            <!-- Fila 2: Botón de selección -->
+            <div class="history-row selection-row">
+                <button id="btnSelection" class="btn-selection">📋 Ver Selección (0)</button>
+                <button id="btnBackToAll" class="btn-back" style="display: none;">⬅️ Volver</button>
+            </div>
         </div>
         
         <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
@@ -523,7 +562,6 @@
             </div>
             <div class="controls-right">
                 <button id="applyFilters">Aplicar</button>
-                <button id="btnBackToAll" style="display: none; background-color: #6c757d;">⬅️ Volver</button>
             </div>
         </div>
         
@@ -541,6 +579,7 @@
     <button id="scrollTopBtn" class="scroll-top-btn" title="Subir arriba">⬆️</button>
 
     <script>
+    // VARIABLES GLOBALES
     let productos = [];
     let currentFilter = 'all';
     let currentSort = 'sku_asc';
@@ -552,7 +591,7 @@
     let itemsPerPage = 200;
     let hidePhotosInList = false;
     let history = [];
-    let selectionMode = false; // true = mostrar solo SKUs seleccionados
+    let selectionMode = false;
 
     const STORAGE_LANG = 'atk_lang';
     const STORAGE_FILTER = 'atk_filter';
@@ -563,6 +602,7 @@
     const STORAGE_HISTORY = 'atk_history';
     const STORAGE_SELECTION = 'atk_selection';
 
+    // TRADUCCIONES (bilingüe)
     const texts = {
         es: {
             help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el botón 📋 para copiar el SKU y agregarlo a tu selección",
@@ -660,6 +700,7 @@
         }
     };
 
+    // FUNCIONES
     function showShortcutsHelp() {
         const t = texts[currentLang];
         alert(`${t.shortcutsTitle}\n\n🔹 ESC: ${t.shortcutsEsc}\n🔹 ?: ${t.shortcutsQuestion}`);
@@ -689,7 +730,6 @@
         document.getElementById('historyLabel').innerHTML = t.historyLabel;
         document.getElementById('clearHistory').innerHTML = t.clearHistory;
         
-        // Actualizar botón de selección
         updateSelectionButton();
         updateBackButton();
         renderHistory();
@@ -702,7 +742,6 @@
         localStorage.setItem(STORAGE_VIEW, currentView);
         localStorage.setItem(STORAGE_PER_PAGE, itemsPerPage);
         localStorage.setItem(STORAGE_HIDE_PHOTOS, hidePhotosInList);
-        // Guardar selección
         const selectionSKUs = history.filter(sku => sku.startsWith('SKU_SEL_')).map(sku => sku.replace('SKU_SEL_', ''));
         localStorage.setItem(STORAGE_SELECTION, JSON.stringify(selectionSKUs));
     }
@@ -739,12 +778,10 @@
         hidePhotosInList = savedHidePhotos === 'true';
         document.getElementById('hidePhotosCheckbox').checked = hidePhotosInList;
         
-        // Cargar selección guardada
         const savedSelection = localStorage.getItem(STORAGE_SELECTION);
         if (savedSelection) {
             try {
                 const selectionSKUs = JSON.parse(savedSelection);
-                // Agregar SKUs de selección al historial con prefijo especial
                 for (const sku of selectionSKUs) {
                     if (!history.includes('SKU_SEL_' + sku)) {
                         history.push('SKU_SEL_' + sku);
@@ -757,7 +794,6 @@
         if (savedHistory) {
             try {
                 const hist = JSON.parse(savedHistory);
-                // Fusionar historial guardado con selección
                 for (const item of hist) {
                     if (!history.includes(item)) {
                         history.push(item);
@@ -770,8 +806,6 @@
     function renderHistory() {
         const container = document.getElementById('historyTags');
         const clearBtn = document.getElementById('clearHistory');
-        
-        // Mostrar solo los tags que no son de selección (los que no empiezan con SKU_SEL_)
         const displayHistory = history.filter(item => !item.startsWith('SKU_SEL_'));
         const selectionCount = history.filter(item => item.startsWith('SKU_SEL_')).length;
         
@@ -783,7 +817,6 @@
         }
         
         let html = '';
-        // Mostrar tags de búsqueda (no selección)
         for (const term of displayHistory) {
             html += `<span class="history-tag" data-term="${term.replace(/"/g, '&quot;')}">${term}</span>`;
         }
@@ -814,7 +847,6 @@
         } else {
             btn.classList.remove('active');
         }
-        // Guardar selección
         savePreferences();
     }
 
@@ -832,7 +864,6 @@
     function addToHistory(term) {
         if (!term || term.trim() === '') return;
         const cleanTerm = term.trim();
-        // Si estamos en modo selección, no agregar al historial normal
         if (selectionMode) return;
         history = history.filter(t => t !== cleanTerm && !t.startsWith('SKU_SEL_'));
         history.unshift(cleanTerm);
@@ -845,13 +876,11 @@
         if (!sku || sku.trim() === '') return;
         const cleanSku = sku.trim();
         const selectionKey = 'SKU_SEL_' + cleanSku;
-        // Eliminar si ya existe para moverlo al frente
         history = history.filter(item => item !== selectionKey);
         history.unshift(selectionKey);
         localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
         renderHistory();
         updateSelectionButton();
-        // Si estamos en modo selección, refrescar vista
         if (selectionMode) {
             actualizarVista();
         }
@@ -910,7 +939,6 @@
                 buttonElement.textContent = originalText;
                 buttonElement.classList.remove('copied');
             }, 1500);
-            // Agregar a la selección
             addToSelection(sku);
             const notification = document.createElement('div');
             notification.textContent = t.copiedMsg + ': ' + sku;
@@ -981,7 +1009,6 @@
         const t = texts[currentLang];
         let resultados = [];
         
-        // Si estamos en modo selección, filtrar solo los SKUs seleccionados
         if (selectionMode) {
             const selectionSKUs = history
                 .filter(item => item.startsWith('SKU_SEL_'))
@@ -1002,7 +1029,6 @@
                 return selectionSKUs.includes(sku);
             });
         } else {
-            // Modo normal: aplicar búsqueda
             resultados = [...productos];
             
             if (currentSearchTerm && currentSearchTerm.trim()) {
@@ -1016,7 +1042,6 @@
             }
         }
         
-        // Aplicar filtros
         if (currentFilter === 'available') resultados = resultados.filter(p => p.Available === 1 || p.Available === true);
         else if (currentFilter === 'unavailable') resultados = resultados.filter(p => p.Available === 0 || p.Available === false);
         
@@ -1100,7 +1125,6 @@
         const t = texts[currentLang];
         selectionMode = !selectionMode;
         if (selectionMode) {
-            // Verificar que haya SKUs seleccionados
             const count = history.filter(item => item.startsWith('SKU_SEL_')).length;
             if (count === 0) {
                 alert(t.selectionEmpty);
@@ -1122,25 +1146,29 @@
     }
 
     function init() {
-    loadPreferences();
-    updateTexts();
-    applyViewMode();
-    
-    const t = texts[currentLang];
-    document.getElementById('results').innerHTML = t.loading;
-    fetch('https://raw.githubusercontent.com/renzo-inventario/atkcatalog.github.io/main/datos.json')
-        .then(r => r.json())
-        .then(data => {
-            productos = data;
-            document.getElementById('results').innerHTML = t.loaded.replace('{count}', productos.length);
-            actualizarVista();
-        })
-        .catch(e => {
-            console.error('Error:', e);
-            document.getElementById('productGrid').innerHTML = `<div class="no-results">${t.error}</div>`;
-        });
-}
+        loadPreferences();
+        updateTexts();
+        applyViewMode();
+        
+        const t = texts[currentLang];
+        document.getElementById('results').innerHTML = t.loading;
+        fetch('https://raw.githubusercontent.com/renzo-inventario/atkcatalog.github.io/main/datos.json')
+            .then(r => {
+                if (!r.ok) throw new Error('HTTP error ' + r.status);
+                return r.json();
+            })
+            .then(data => {
+                productos = data;
+                document.getElementById('results').innerHTML = t.loaded.replace('{count}', productos.length);
+                actualizarVista();
+            })
+            .catch(e => {
+                console.error('Error:', e);
+                document.getElementById('productGrid').innerHTML = `<div class="no-results">${t.error}</div>`;
+            });
+    }
 
+    // EVENTOS
     const scrollBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) scrollBtn.style.display = 'flex';
