@@ -142,7 +142,7 @@
             box-shadow: var(--shadow-sm);
         }
         
-        .search-box { margin-bottom: 25px; }
+        .search-box { margin-bottom: 15px; }
         
         input { 
             width: 100%; 
@@ -155,6 +155,63 @@
             background: white;
         }
         input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0,86,179,0.1); }
+        
+        /* HISTORIAL DE BÚSQUEDAS */
+        .search-history {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 40px;
+            box-shadow: var(--shadow-sm);
+            align-items: center;
+            min-height: 45px;
+        }
+        
+        .search-history-label {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-right: 5px;
+        }
+        
+        .history-tag {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 4px 14px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-gray);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .history-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .history-clear {
+            font-size: 11px;
+            color: var(--text-light);
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 2px 8px;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+        
+        .history-clear:hover {
+            background: #ffebee;
+            color: #c62828;
+        }
         
         .controls-row { 
             background: white; 
@@ -362,7 +419,7 @@
                     </div>
                 </div>
                 <div class="contact-info">
-                    <div class="contact-phone">(305) 593-0980</div>
+                    <div class="contact-phone">(350) 593-0980</div>
                     <div class="contact-address">6311 NW 99th Avenue, Unit 28<br>Doral, FL 33172 USA</div>
                 </div>
             </div>
@@ -372,7 +429,18 @@
         </div>
         
         <div id="helpText" class="ayuda"></div>
-        <div class="search-box"><input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)"></div>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)">
+        </div>
+        
+        <!-- HISTORIAL DE BÚSQUEDAS -->
+        <div id="searchHistory" class="search-history">
+            <span class="search-history-label">🔍 Recientes:</span>
+            <span id="historyTags"></span>
+            <button id="clearHistory" class="history-clear">✕ Limpiar</button>
+        </div>
+        
         <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
         
         <div class="controls-row">
@@ -426,7 +494,7 @@
         
         <div class="footer">
             <p>© 2025 ATK Products - All Rights Reserved</p>
-            <p>📞 (305) 593-0980 | 📧 <a href="mailto:sales@atkits.com">sales@atkits.com</a> | 📍 6311 NW 99th Avenue, Unit 28, Doral, FL 33172 USA</p>
+            <p>📞 (350) 593-0980 | 📧 <a href="mailto:ventas@atkits.com">ventas@atkits.com</a> | 📍 6311 NW 99th Avenue, Unit 28, Doral, FL 33172 USA</p>
             <div class="shortcuts-hint">💡 <kbd>ESC</kbd> Clear search | <kbd>?</kbd> Show shortcuts | 📋 Click to copy SKU</div>
         </div>
     </div>
@@ -444,6 +512,7 @@
     let currentView = 'grid';
     let itemsPerPage = 200;
     let hidePhotosInList = false;
+    let history = [];
 
     const STORAGE_LANG = 'atk_lang';
     const STORAGE_FILTER = 'atk_filter';
@@ -451,6 +520,7 @@
     const STORAGE_VIEW = 'atk_view';
     const STORAGE_PER_PAGE = 'atk_per_page';
     const STORAGE_HIDE_PHOTOS = 'atk_hide_photos';
+    const STORAGE_HISTORY = 'atk_history';
 
     const texts = {
         es: {
@@ -492,7 +562,9 @@
             langEn: "🇺🇸 English",
             shortcutsTitle: "🎯 Atajos de teclado",
             shortcutsEsc: "Limpiar búsqueda y mostrar todos los productos",
-            shortcutsQuestion: "Mostrar esta ayuda"
+            shortcutsQuestion: "Mostrar esta ayuda",
+            historyLabel: "🔍 Recientes:",
+            clearHistory: "✕ Limpiar"
         },
         en: {
             help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>📋 Click the 📋 button to copy the SKU",
@@ -533,7 +605,9 @@
             langEn: "🇺🇸 English",
             shortcutsTitle: "🎯 Keyboard shortcuts",
             shortcutsEsc: "Clear search and show all products",
-            shortcutsQuestion: "Show this help"
+            shortcutsQuestion: "Show this help",
+            historyLabel: "🔍 Recent:",
+            clearHistory: "✕ Clear"
         }
     };
 
@@ -562,6 +636,8 @@
         document.getElementById('hidePhotosLabel').innerHTML = t.hidePhotosLabel;
         document.getElementById('applyFilters').innerHTML = t.applyBtn;
         document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
+        
+        renderHistory();
     }
 
     function savePreferences() {
@@ -604,6 +680,61 @@
         const savedHidePhotos = localStorage.getItem(STORAGE_HIDE_PHOTOS);
         hidePhotosInList = savedHidePhotos === 'true';
         document.getElementById('hidePhotosCheckbox').checked = hidePhotosInList;
+        
+        // Cargar historial
+        const savedHistory = localStorage.getItem(STORAGE_HISTORY);
+        if (savedHistory) {
+            try {
+                history = JSON.parse(savedHistory);
+            } catch(e) {
+                history = [];
+            }
+        }
+    }
+
+    function renderHistory() {
+        const t = texts[currentLang];
+        const container = document.getElementById('historyTags');
+        const clearBtn = document.getElementById('clearHistory');
+        
+        if (history.length === 0) {
+            container.innerHTML = '<span style="color: #ccc; font-size: 12px; padding: 4px 10px;">Sin búsquedas recientes</span>';
+            clearBtn.style.display = 'none';
+            return;
+        }
+        
+        let html = '';
+        for (const term of history) {
+            html += `<span class="history-tag" data-term="${term.replace(/"/g, '&quot;')}">${term}</span>`;
+        }
+        container.innerHTML = html;
+        clearBtn.style.display = 'inline-block';
+        
+        document.querySelectorAll('.history-tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                const term = this.dataset.term;
+                document.getElementById('searchInput').value = term;
+                currentSearchTerm = term;
+                currentPage = 1;
+                actualizarVista();
+            });
+        });
+    }
+
+    function addToHistory(term) {
+        if (!term || term.trim() === '') return;
+        const cleanTerm = term.trim();
+        history = history.filter(t => t !== cleanTerm);
+        history.unshift(cleanTerm);
+        if (history.length > 10) history = history.slice(0, 10);
+        localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
+        renderHistory();
+    }
+
+    function clearHistory() {
+        history = [];
+        localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
+        renderHistory();
     }
 
     function applyViewMode() {
@@ -803,6 +934,7 @@
         loadPreferences();
         updateTexts();
         applyViewMode();
+        renderHistory();
         
         const t = texts[currentLang];
         document.getElementById('results').innerHTML = t.loading;
@@ -837,6 +969,7 @@
     const hidePhotosCheckbox = document.getElementById('hidePhotosCheckbox');
     const applyBtn = document.getElementById('applyFilters');
     const langToggle = document.getElementById('langToggle');
+    const clearHistoryBtn = document.getElementById('clearHistory');
 
     searchInput.addEventListener('input', e => {
         if (timer) clearTimeout(timer);
@@ -845,6 +978,15 @@
             currentPage = 1;
             actualizarVista();
         }, 300);
+    });
+    
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const term = e.target.value.trim();
+            if (term !== '') {
+                addToHistory(term);
+            }
+        }
     });
     
     applyBtn.addEventListener('click', () => {
@@ -869,6 +1011,8 @@
         updateTexts();
         actualizarVista();
     });
+    
+    clearHistoryBtn.addEventListener('click', clearHistory);
     
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
