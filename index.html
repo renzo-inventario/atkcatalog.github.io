@@ -212,6 +212,18 @@
             transform: translateY(-1px);
         }
         
+        .history-tag.selection-tag {
+            background: #e8f5e9;
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+        
+        .history-tag.selection-tag:hover {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+        
         .history-clear {
             font-size: 11px;
             color: var(--text-light);
@@ -505,7 +517,7 @@
         
         <!-- HISTORIAL DE BÚSQUEDAS - DOS FILAS -->
         <div id="searchHistory" class="search-history">
-            <!-- Fila 1: Historial de búsquedas -->
+            <!-- Fila 1: Historial de búsquedas + SKUs copiados -->
             <div class="history-row">
                 <span id="historyLabel" class="search-history-label">🔍 Recientes:</span>
                 <span id="historyTags"></span>
@@ -602,7 +614,7 @@
     const STORAGE_HISTORY = 'atk_history';
     const STORAGE_SELECTION = 'atk_selection';
 
-    // TRADUCCIONES (bilingüe)
+    // TRADUCCIONES
     const texts = {
         es: {
             help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el botón 📋 para copiar el SKU y agregarlo a tu selección",
@@ -806,10 +818,13 @@
     function renderHistory() {
         const container = document.getElementById('historyTags');
         const clearBtn = document.getElementById('clearHistory');
-        const displayHistory = history.filter(item => !item.startsWith('SKU_SEL_'));
-        const selectionCount = history.filter(item => item.startsWith('SKU_SEL_')).length;
         
-        if (displayHistory.length === 0 && selectionCount === 0) {
+        // Mostrar TODOS los tags (búsquedas + SKUs copiados)
+        const allTags = history.filter(item => !item.startsWith('SKU_SEL_'));
+        const selectionTags = history.filter(item => item.startsWith('SKU_SEL_')).map(item => item.replace('SKU_SEL_', ''));
+        const selectionCount = selectionTags.length;
+        
+        if (allTags.length === 0 && selectionCount === 0) {
             container.innerHTML = '<span style="color: #ccc; font-size: 12px; padding: 4px 10px;">Sin búsquedas recientes</span>';
             clearBtn.style.display = 'none';
             updateSelectionButton();
@@ -817,8 +832,13 @@
         }
         
         let html = '';
-        for (const term of displayHistory) {
+        // Mostrar tags de búsqueda (azules)
+        for (const term of allTags) {
             html += `<span class="history-tag" data-term="${term.replace(/"/g, '&quot;')}">${term}</span>`;
+        }
+        // Mostrar tags de SKUs copiados (verdes)
+        for (const sku of selectionTags) {
+            html += `<span class="history-tag selection-tag" data-term="${sku.replace(/"/g, '&quot;')}">📋 ${sku}</span>`;
         }
         container.innerHTML = html;
         clearBtn.style.display = 'inline-block';
@@ -865,6 +885,7 @@
         if (!term || term.trim() === '') return;
         const cleanTerm = term.trim();
         if (selectionMode) return;
+        // Eliminar si ya existe (para moverlo al frente)
         history = history.filter(t => t !== cleanTerm && !t.startsWith('SKU_SEL_'));
         history.unshift(cleanTerm);
         if (history.length > 10) history = history.slice(0, 10);
@@ -876,6 +897,7 @@
         if (!sku || sku.trim() === '') return;
         const cleanSku = sku.trim();
         const selectionKey = 'SKU_SEL_' + cleanSku;
+        // Eliminar si ya existe para moverlo al frente
         history = history.filter(item => item !== selectionKey);
         history.unshift(selectionKey);
         localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
@@ -939,6 +961,7 @@
                 buttonElement.textContent = originalText;
                 buttonElement.classList.remove('copied');
             }, 1500);
+            // ✅ Agregar a la selección (se mostrará en el historial)
             addToSelection(sku);
             const notification = document.createElement('div');
             notification.textContent = t.copiedMsg + ': ' + sku;
