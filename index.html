@@ -8,7 +8,6 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* VARIABLES POR DEFECTO (CLARO) */
         :root {
             --primary-color: #0056b3;
             --primary-dark: #003d80;
@@ -26,7 +25,6 @@
             --card-bg: white;
         }
         
-        /* VARIABLES PARA MODO OSCURO */
         body.dark-mode {
             --primary-color: #4a9eff;
             --primary-dark: #1a6bc4;
@@ -232,7 +230,6 @@
         }
         input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0,86,179,0.1); }
         
-        /* HISTORIAL DE BÚSQUEDAS - DOS FILAS */
         .search-history {
             display: flex;
             flex-direction: column;
@@ -330,7 +327,6 @@
             color: #c62828;
         }
         
-        /* Botón "Ver Selección" */
         .btn-selection {
             background: var(--secondary-color);
             color: white;
@@ -686,7 +682,6 @@
     <button id="scrollTopBtn" class="scroll-top-btn" title="Subir arriba">⬆️</button>
 
     <script>
-    // VARIABLES GLOBALES
     let productos = [];
     let currentFilter = 'all';
     let currentSort = 'sku_asc';
@@ -710,7 +705,6 @@
     const STORAGE_HISTORY = 'atk_history';
     const STORAGE_SELECTION = 'atk_selection';
 
-    // TRADUCCIONES
     const texts = {
         es: {
             help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el botón 📋 para copiar el SKU y agregarlo a tu selección",
@@ -758,6 +752,7 @@
             shortcutsEsc: "Limpiar búsqueda y mostrar todos los productos",
             shortcutsQuestion: "Mostrar esta ayuda",
             historyLabel: "🔍 Recientes:",
+            noHistory: "Sin búsquedas recientes",
             darkToggle: "🌙 Modo Oscuro",
             lightToggle: "☀️ Modo Claro",
             exportBtn: "📥 Exportar Selección",
@@ -809,6 +804,7 @@
             shortcutsEsc: "Clear search and show all products",
             shortcutsQuestion: "Show this help",
             historyLabel: "🔍 Recent:",
+            noHistory: "No recent searches",
             darkToggle: "🌙 Dark Mode",
             lightToggle: "☀️ Light Mode",
             exportBtn: "📥 Export Selection",
@@ -816,7 +812,6 @@
         }
     };
 
-    // FUNCIONES
     function showShortcutsHelp() {
         const t = texts[currentLang];
         alert(`${t.shortcutsTitle}\n\n🔹 ESC: ${t.shortcutsEsc}\n🔹 ?: ${t.shortcutsQuestion}`);
@@ -846,7 +841,6 @@
         document.getElementById('historyLabel').innerHTML = t.historyLabel;
         document.getElementById('clearHistory').innerHTML = t.clearHistory;
         
-        // Botón de modo oscuro
         const darkBtn = document.getElementById('darkToggle');
         darkBtn.innerHTML = darkMode ? t.lightToggle : t.darkToggle;
         if (darkMode) {
@@ -855,7 +849,6 @@
             darkBtn.classList.remove('active');
         }
         
-        // Botón exportar
         document.getElementById('exportBtn').innerHTML = t.exportBtn;
         
         updateSelectionButton();
@@ -907,7 +900,6 @@
         hidePhotosInList = savedHidePhotos === 'true';
         document.getElementById('hidePhotosCheckbox').checked = hidePhotosInList;
         
-        // Cargar modo oscuro
         const savedDark = localStorage.getItem('atk_dark_mode');
         if (savedDark === 'true') {
             darkMode = true;
@@ -945,13 +937,14 @@
     function renderHistory() {
         const container = document.getElementById('historyTags');
         const clearBtn = document.getElementById('clearHistory');
+        const t = texts[currentLang];
         
         const allTags = history.filter(item => !item.startsWith('SKU_SEL_'));
         const selectionTags = history.filter(item => item.startsWith('SKU_SEL_')).map(item => item.replace('SKU_SEL_', ''));
         const selectionCount = selectionTags.length;
         
         if (allTags.length === 0 && selectionCount === 0) {
-            container.innerHTML = '<span style="color: var(--text-light); font-size: 12px; padding: 4px 10px;">Sin búsquedas recientes</span>';
+            container.innerHTML = `<span style="color: var(--text-light); font-size: 12px; padding: 4px 10px;">${t.noHistory}</span>`;
             clearBtn.style.display = 'none';
             updateSelectionButton();
             return;
@@ -1124,7 +1117,6 @@
             return;
         }
         
-        // Buscar los productos completos
         const selectedProducts = productos.filter(p => {
             const sku = aString(p.SKU);
             return selectionSKUs.includes(sku);
@@ -1135,7 +1127,6 @@
             return;
         }
         
-        // Crear contenido CSV
         let csvContent = 'SKU,Description,Available\n';
         for (const p of selectedProducts) {
             const sku = aString(p.SKU);
@@ -1144,7 +1135,6 @@
             csvContent += `${sku},"${desc}",${avail}\n`;
         }
         
-        // Descargar
         const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
         const link = document.createElement('a');
         link.href = URL.createObjectURL(blob);
@@ -1382,7 +1372,6 @@
             });
     }
 
-    // EVENTOS
     const scrollBtn = document.getElementById('scrollTopBtn');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) scrollBtn.style.display = 'flex';
