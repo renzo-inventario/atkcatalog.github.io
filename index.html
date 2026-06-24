@@ -8,6 +8,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        /* VARIABLES POR DEFECTO (CLARO) */
         :root {
             --primary-color: #0056b3;
             --primary-dark: #003d80;
@@ -18,27 +19,48 @@
             --text-light: #888;
             --border-color: #e0e0e0;
             --bg-light: #f8f9fa;
+            --bg-body: linear-gradient(135deg, #f5f7fc 0%, #eef2f7 100%);
             --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
             --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
             --transition: all 0.2s ease;
+            --card-bg: white;
+        }
+        
+        /* VARIABLES PARA MODO OSCURO */
+        body.dark-mode {
+            --primary-color: #4a9eff;
+            --primary-dark: #1a6bc4;
+            --primary-light: #1a2a4a;
+            --secondary-color: #34c759;
+            --text-dark: #e8e8e8;
+            --text-gray: #b0b0b0;
+            --text-light: #888;
+            --border-color: #444;
+            --bg-light: #2a2a2a;
+            --bg-body: linear-gradient(135deg, #1a1a2e 0%, #2a2a3e 100%);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+            --card-bg: #2d2d3d;
         }
         
         body { 
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; 
-            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f7 100%);
+            background: var(--bg-body);
             padding: 20px; 
             min-height: 100vh;
+            color: var(--text-dark);
+            transition: var(--transition);
         }
         
         .container { max-width: 1400px; margin: 0 auto; }
         
         .header {
-            background: linear-gradient(90deg, #e8f0fe 0%, #d4e4fc 100%);
+            background: var(--card-bg);
             border-radius: 20px;
             padding: 20px 30px;
             margin-bottom: 30px;
             box-shadow: var(--shadow-md);
-            border: none;
+            border-bottom: 3px solid var(--primary-color);
         }
         
         .header-top {
@@ -103,10 +125,23 @@
             line-height: 1.4;
         }
         
+        .header-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
         .lang-switch {
             text-align: right;
             padding-top: 10px;
-            border-top: 1px solid rgba(0,86,179,0.15);
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: flex-end;
+            align-items: center;
         }
         
         .lang-btn {
@@ -125,6 +160,46 @@
             transform: translateY(-1px);
         }
         
+        .dark-toggle {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 6px 18px;
+            font-size: 13px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .dark-toggle:hover {
+            background-color: #5a6268;
+            transform: translateY(-1px);
+        }
+        
+        .dark-toggle.active {
+            background-color: #ff6f00;
+        }
+        
+        .dark-toggle.active:hover {
+            background-color: #e65100;
+        }
+        
+        .export-btn {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            padding: 6px 18px;
+            font-size: 13px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .export-btn:hover {
+            background-color: #138496;
+            transform: translateY(-1px);
+        }
+        
         h1 { display: none; }
         
         .ayuda { 
@@ -132,7 +207,7 @@
             color: var(--text-gray); 
             font-size: 13px; 
             margin-bottom: 25px; 
-            background: white;
+            background: var(--card-bg);
             padding: 10px 20px;
             border-radius: 40px;
             display: inline-block;
@@ -152,7 +227,8 @@
             border-radius: 50px; 
             outline: none; 
             transition: var(--transition);
-            background: white;
+            background: var(--card-bg);
+            color: var(--text-dark);
         }
         input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0,86,179,0.1); }
         
@@ -162,7 +238,7 @@
             flex-direction: column;
             gap: 8px;
             padding: 10px 15px;
-            background: white;
+            background: var(--card-bg);
             border-radius: 40px;
             box-shadow: var(--shadow-sm);
             margin-bottom: 20px;
@@ -299,7 +375,7 @@
         }
         
         .controls-row { 
-            background: white; 
+            background: var(--card-bg); 
             padding: 15px 20px; 
             border-radius: 50px; 
             margin-bottom: 25px; 
@@ -330,11 +406,13 @@
             font-size: 13px; 
             border: 1px solid var(--border-color); 
             border-radius: 30px; 
-            background: white; 
+            background: var(--card-bg); 
             cursor: pointer; 
             transition: var(--transition);
+            color: var(--text-dark);
         }
         select:hover { border-color: var(--primary-color); }
+        select option { background: var(--card-bg); color: var(--text-dark); }
         
         button { 
             background-color: var(--primary-color); 
@@ -352,7 +430,7 @@
             margin-bottom: 20px; 
             color: var(--text-gray); 
             font-size: 13px; 
-            background: white;
+            background: var(--card-bg);
             padding: 8px 18px;
             border-radius: 40px;
             display: inline-block;
@@ -374,7 +452,7 @@
         .product-grid.list-view.hide-photos .product-photos { display: none; }
         
         .product-card { 
-            background: white; 
+            background: var(--card-bg); 
             border-radius: 20px; 
             padding: 20px; 
             box-shadow: var(--shadow-sm); 
@@ -445,13 +523,13 @@
         .product-photos img { width: 75px; height: 75px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); cursor: pointer; transition: var(--transition); }
         .product-photos img:hover { transform: scale(1.05); box-shadow: var(--shadow-sm); }
         
-        .no-results { text-align: center; padding: 60px; color: var(--text-gray); font-size: 18px; background: white; border-radius: 24px; }
+        .no-results { text-align: center; padding: 60px; color: var(--text-gray); font-size: 18px; background: var(--card-bg); border-radius: 24px; }
         
         .pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 35px 0 25px; flex-wrap: wrap; }
-        .pagination button { background-color: white; color: var(--primary-color); border: 1px solid var(--border-color); padding: 8px 20px; border-radius: 40px; font-weight: 500; }
+        .pagination button { background-color: var(--card-bg); color: var(--primary-color); border: 1px solid var(--border-color); padding: 8px 20px; border-radius: 40px; font-weight: 500; }
         .pagination button:hover:not(:disabled) { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
         .pagination button:disabled { background-color: var(--bg-light); color: #ccc; cursor: not-allowed; }
-        .pagination .page-info { color: var(--text-gray); font-size: 13px; background: white; padding: 6px 20px; border-radius: 40px; }
+        .pagination .page-info { color: var(--text-gray); font-size: 13px; background: var(--card-bg); padding: 6px 20px; border-radius: 40px; }
         
         .scroll-top-btn {
             position: fixed;
@@ -478,7 +556,7 @@
             margin-top: 50px;
             padding: 25px 20px;
             text-align: center;
-            background: white;
+            background: var(--card-bg);
             border-radius: 20px;
             box-shadow: var(--shadow-sm);
             font-size: 12px;
@@ -487,7 +565,7 @@
         .footer a { color: var(--primary-color); text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
         .shortcuts-hint { margin-top: 10px; font-size: 11px; color: var(--text-light); }
-        .shortcuts-hint kbd { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 10px; }
+        .shortcuts-hint kbd { background-color: var(--bg-light); border: 1px solid var(--border-color); border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 10px; }
         
         @media (max-width: 768px) { 
             .product-grid.grid-view { grid-template-columns: 1fr; }
@@ -499,6 +577,8 @@
             .header-top { flex-direction: column; text-align: center; }
             .logo-area { justify-content: center; }
             .contact-info { text-align: center; }
+            .header-controls { justify-content: center; }
+            .lang-switch { justify-content: center; }
         }
     </style>
 </head>
@@ -513,12 +593,16 @@
                         <span class="brand-slogan">Better Parts, Great Solutions</span>
                     </div>
                 </div>
-                <div class="contact-info">
-                    <div class="contact-phone">(305) 593-0980</div>
-                    <div class="contact-address">6311 NW 99th Avenue, Unit 28<br>Doral, FL 33172 USA</div>
+                <div class="header-controls">
+                    <div class="contact-info">
+                        <div class="contact-phone">(305) 593-0980</div>
+                        <div class="contact-address">6311 NW 99th Avenue, Unit 28<br>Doral, FL 33172 USA</div>
+                    </div>
                 </div>
             </div>
             <div class="lang-switch">
+                <button id="darkToggle" class="dark-toggle">🌙 Modo Oscuro</button>
+                <button id="exportBtn" class="export-btn">📥 Exportar Selección</button>
                 <button id="langToggle" class="lang-btn">🇺🇸 English</button>
             </div>
         </div>
@@ -615,6 +699,7 @@
     let hidePhotosInList = false;
     let history = [];
     let selectionMode = false;
+    let darkMode = localStorage.getItem('atk_dark_mode') === 'true';
 
     const STORAGE_LANG = 'atk_lang';
     const STORAGE_FILTER = 'atk_filter';
@@ -672,7 +757,11 @@
             shortcutsTitle: "🎯 Atajos de teclado",
             shortcutsEsc: "Limpiar búsqueda y mostrar todos los productos",
             shortcutsQuestion: "Mostrar esta ayuda",
-            historyLabel: "🔍 Recientes:"
+            historyLabel: "🔍 Recientes:",
+            darkToggle: "🌙 Modo Oscuro",
+            lightToggle: "☀️ Modo Claro",
+            exportBtn: "📥 Exportar Selección",
+            exportEmpty: "No hay SKUs seleccionados para exportar"
         },
         en: {
             help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>📋 Click the 📋 button to copy the SKU and add it to your selection",
@@ -719,7 +808,11 @@
             shortcutsTitle: "🎯 Keyboard shortcuts",
             shortcutsEsc: "Clear search and show all products",
             shortcutsQuestion: "Show this help",
-            historyLabel: "🔍 Recent:"
+            historyLabel: "🔍 Recent:",
+            darkToggle: "🌙 Dark Mode",
+            lightToggle: "☀️ Light Mode",
+            exportBtn: "📥 Export Selection",
+            exportEmpty: "No SKUs selected to export"
         }
     };
 
@@ -753,6 +846,18 @@
         document.getElementById('historyLabel').innerHTML = t.historyLabel;
         document.getElementById('clearHistory').innerHTML = t.clearHistory;
         
+        // Botón de modo oscuro
+        const darkBtn = document.getElementById('darkToggle');
+        darkBtn.innerHTML = darkMode ? t.lightToggle : t.darkToggle;
+        if (darkMode) {
+            darkBtn.classList.add('active');
+        } else {
+            darkBtn.classList.remove('active');
+        }
+        
+        // Botón exportar
+        document.getElementById('exportBtn').innerHTML = t.exportBtn;
+        
         updateSelectionButton();
         updateBackButton();
         renderHistory();
@@ -765,6 +870,7 @@
         localStorage.setItem(STORAGE_VIEW, currentView);
         localStorage.setItem(STORAGE_PER_PAGE, itemsPerPage);
         localStorage.setItem(STORAGE_HIDE_PHOTOS, hidePhotosInList);
+        localStorage.setItem('atk_dark_mode', darkMode);
         const selectionSKUs = history.filter(sku => sku.startsWith('SKU_SEL_')).map(sku => sku.replace('SKU_SEL_', ''));
         localStorage.setItem(STORAGE_SELECTION, JSON.stringify(selectionSKUs));
     }
@@ -801,6 +907,16 @@
         hidePhotosInList = savedHidePhotos === 'true';
         document.getElementById('hidePhotosCheckbox').checked = hidePhotosInList;
         
+        // Cargar modo oscuro
+        const savedDark = localStorage.getItem('atk_dark_mode');
+        if (savedDark === 'true') {
+            darkMode = true;
+            document.body.classList.add('dark-mode');
+        } else {
+            darkMode = false;
+            document.body.classList.remove('dark-mode');
+        }
+        
         const savedSelection = localStorage.getItem(STORAGE_SELECTION);
         if (savedSelection) {
             try {
@@ -835,7 +951,7 @@
         const selectionCount = selectionTags.length;
         
         if (allTags.length === 0 && selectionCount === 0) {
-            container.innerHTML = '<span style="color: #ccc; font-size: 12px; padding: 4px 10px;">Sin búsquedas recientes</span>';
+            container.innerHTML = '<span style="color: var(--text-light); font-size: 12px; padding: 4px 10px;">Sin búsquedas recientes</span>';
             clearBtn.style.display = 'none';
             updateSelectionButton();
             return;
@@ -997,11 +1113,51 @@
         });
     }
 
+    function exportSelection() {
+        const t = texts[currentLang];
+        const selectionSKUs = history
+            .filter(item => item.startsWith('SKU_SEL_'))
+            .map(item => item.replace('SKU_SEL_', ''));
+        
+        if (selectionSKUs.length === 0) {
+            alert(t.exportEmpty);
+            return;
+        }
+        
+        // Buscar los productos completos
+        const selectedProducts = productos.filter(p => {
+            const sku = aString(p.SKU);
+            return selectionSKUs.includes(sku);
+        });
+        
+        if (selectedProducts.length === 0) {
+            alert(t.exportEmpty);
+            return;
+        }
+        
+        // Crear contenido CSV
+        let csvContent = 'SKU,Description,Available\n';
+        for (const p of selectedProducts) {
+            const sku = aString(p.SKU);
+            const desc = aString(p.Description).replace(/,/g, ';');
+            const avail = p.Available === 1 || p.Available === true ? 'Yes' : 'No';
+            csvContent += `${sku},"${desc}",${avail}\n`;
+        }
+        
+        // Descargar
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = `seleccion_${new Date().toISOString().slice(0,10)}.csv`;
+        link.click();
+        URL.revokeObjectURL(link.href);
+    }
+
     function aString(v) { return (v === null || v === undefined) ? '' : String(v); }
 
     function cargarFotos(sku, contenedor) {
         const t = texts[currentLang];
-        contenedor.innerHTML = `<div style="font-size:12px;color:#999;">${t.loadingPhotos}</div>`;
+        contenedor.innerHTML = `<div style="font-size:12px;color:var(--text-light);">${t.loadingPhotos}</div>`;
         let fotos = [];
         let total = 9;
         let cargadas = 0;
@@ -1012,10 +1168,10 @@
             for (let i = 1; i <= total; i++) {
                 if (fotos[i]) {
                     hay = true;
-                    html += `<a href="${fotos[i]}" target="_blank" style="text-decoration:none;"><img src="${fotos[i]}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;cursor:pointer;"></a>`;
+                    html += `<a href="${fotos[i]}" target="_blank" style="text-decoration:none;"><img src="${fotos[i]}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid var(--border-color);border-radius:4px;cursor:pointer;"></a>`;
                 }
             }
-            contenedor.innerHTML = hay ? html : `<div style="font-size:12px;color:#999;">${t.noPhotos.replace('{sku}', sku)}</div>`;
+            contenedor.innerHTML = hay ? html : `<div style="font-size:12px;color:var(--text-light);">${t.noPhotos.replace('{sku}', sku)}</div>`;
         }
         
         for (let i = 1; i <= total; i++) {
@@ -1192,6 +1348,17 @@
         actualizarVista();
     }
 
+    function toggleDarkMode() {
+        darkMode = !darkMode;
+        if (darkMode) {
+            document.body.classList.add('dark-mode');
+        } else {
+            document.body.classList.remove('dark-mode');
+        }
+        savePreferences();
+        updateTexts();
+    }
+
     function init() {
         loadPreferences();
         updateTexts();
@@ -1237,6 +1404,8 @@
     const clearHistoryBtn = document.getElementById('clearHistory');
     const btnSelection = document.getElementById('btnSelection');
     const btnBackToAll = document.getElementById('btnBackToAll');
+    const darkToggle = document.getElementById('darkToggle');
+    const exportBtn = document.getElementById('exportBtn');
 
     searchInput.addEventListener('input', e => {
         if (timer) clearTimeout(timer);
@@ -1288,6 +1457,10 @@
     
     btnSelection.addEventListener('click', toggleSelectionMode);
     btnBackToAll.addEventListener('click', backToAll);
+    
+    darkToggle.addEventListener('click', toggleDarkMode);
+    
+    exportBtn.addEventListener('click', exportSelection);
     
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
