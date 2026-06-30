@@ -13225,6 +13225,11 @@
     "Available": 0
   },
   {
+    "SKU": "K46900L",
+    "Description": "OVERHAUL KIT, A46DE",
+    "Available": 0
+  },
+  {
     "SKU": "K4800 W/O",
     "Description": "BANNER KIT HONDA PRELUDE, CIVIC 73-80",
     "Available": 0
@@ -13867,6 +13872,11 @@
   {
     "SKU": "K79900K",
     "Description": "OVERHAUL KIT, AW81-40LE W/PISTONS",
+    "Available": 0
+  },
+  {
+    "SKU": "K79900N",
+    "Description": "OVERHAUL KIT, AW55-50, AW55-51,  AW55-40, AF23",
     "Available": 0
   },
   {
@@ -17280,11 +17290,6 @@
     "Available": 0
   },
   {
-    "SKU": "K77764",
-    "Description": "PISTON KIT, GM 4L60E (03 PISTONS)",
-    "Available": 0
-  },
-  {
     "SKU": "K7900E",
     "Description": "MASTER KIT AW60-40LE 1995-2004",
     "Available": 0
@@ -18322,6 +18327,11 @@
   {
     "SKU": "33076",
     "Description": "MCS, EXTENSION HOUSING, GM 6L80E, 6L90E (AWD) ID: 3.08\", ID: 1.980\")  (OEM# 24238076)",
+    "Available": 0
+  },
+  {
+    "SKU": "33886",
+    "Description": "MCS, EXTENSION HOUSING, GM 6L80E (2WD), 8L90E (ALL EXCEPT CORV ETTE), 10L80, 10L90   (OD: 2.708\", ID: 1.810) (W/O BOOT) (OEM# 24228886) *** WHEN OUT USE X195403",
     "Available": 0
   },
   {
@@ -20196,7 +20206,7 @@
   },
   {
     "SKU": "54755-HP",
-    "Description": "5R110W REAR PLANET COMPLETE",
+    "Description": "PLANET, FORD 5R110W, REAR (COMPLETE) (05-07)",
     "Available": 0
   },
   {
@@ -20761,7 +20771,7 @@
   },
   {
     "SKU": "K36700",
-    "Description": "REAR PLANET FORD 5R110W",
+    "Description": "PLANET, FORD 5R110W, REAR (05-07)",
     "Available": 0
   },
   {
@@ -20962,6 +20972,11 @@
   {
     "SKU": "K77900EE",
     "Description": "OVERHAUL KIT, HYUNDAI A6LF1, A6LF2, A6LF3 WITH PISTONS",
+    "Available": 0
+  },
+  {
+    "SKU": "K52900Z-99",
+    "Description": "PISTON KIT 6T40, 6T45, 6T50 07-17 (07 PCS)",
     "Available": 0
   },
   {
@@ -22805,6 +22820,11 @@
     "Available": 0
   },
   {
+    "SKU": "79401",
+    "Description": "MCS PUMP TF-80, TF-80 (AF40) / TF-81SC (AF21) 2005-12, VOLVO / GM / FORD / MAZDA / OPEL / LANCIA / PEUGEOT",
+    "Available": 0
+  },
+  {
     "SKU": "56028196AD",
     "Description": "GOVERNOR PRESSURE SENSOR A500/A518 00-ON OEM (22955A)",
     "Available": 0
@@ -23346,7 +23366,7 @@
   },
   {
     "SKU": "K98900EX",
-    "Description": "*** USE K98900E *** OVERHAUL KIT, HONDA BZKA, MNZA W/O PISTONS",
+    "Description": "OVERHAUL KIT, HONDA BZKA, MNZA W/O PISTONS",
     "Available": 0
   },
   {
@@ -23940,6 +23960,11 @@
     "Available": 0
   },
   {
+    "SKU": "31703LXD",
+    "Description": "PAN GASKET 62TE CHRYSLER 07-15 (FARPAK)",
+    "Available": 0
+  },
+  {
     "SKU": "211752",
     "Description": "*** DISCONTINUED *** FR MODULE VW 0B5, DL501 2007-UP",
     "Available": 0
@@ -24417,6 +24442,11 @@
   {
     "SKU": "33700LXD",
     "Description": "*** USE 42218 *** PAN GASKET 4L60E 93-UP FARPAK",
+    "Available": 0
+  },
+  {
+    "SKU": "31700LXD",
+    "Description": "PAN GASKET  CHRYSLER A604 FARPAK",
     "Available": 0
   },
   {
@@ -25870,6 +25900,11 @@
     "Available": 0
   },
   {
+    "SKU": "98088",
+    "Description": "PISTON, HONDA SWRA",
+    "Available": 0
+  },
+  {
     "SKU": "37136",
     "Description": "*** USE 37136A *** PUMP GASKET, FORD AODE, 4R70W, 4R75W (92-14) (OEM# F2VY-7A136-A)",
     "Available": 0
@@ -26682,6 +26717,11 @@
   {
     "SKU": "K9800DW/O",
     "Description": "BANNER KIT, HONDA GNBA, M5PA, MP5A, SMMA, SP5A, SPAA, MPCA (06-11), SPCA (06-11), SXEA",
+    "Available": 0
+  },
+  {
+    "SKU": "37701LXD",
+    "Description": "PAN GASKET 6R60, 6R75, 6R80 (FARPAK)",
     "Available": 0
   },
   {
@@ -30206,7 +30246,7 @@
   },
   {
     "SKU": "FRMSUZUK03",
-    "Description": "FR MODULE, AISIN WARNER TW-40LS/E/R4A12 (00-14)",
+    "Description": "*** OBSOLETE *** FR MODULE, AISIN WARNER TW-40LS/E/R4A12 (00-14)",
     "Available": 0
   },
   {
@@ -30822,6 +30862,11 @@
   {
     "SKU": "68371508AA",
     "Description": "SOLENOID BLOCK, 62TE 06-UP (REPLACES 68376696AA, 5078709AB)",
+    "Available": 0
+  },
+  {
+    "SKU": "K277586A",
+    "Description": "PLANET SET, TOYOTA U660, U760, UNDERDRIVE (INCLUDES PLANET, RING GEAR, SUN GEAR)",
     "Available": 0
   },
   {
@@ -32095,6 +32140,11 @@
     "Available": 0
   },
   {
+    "SKU": "30902GSX",
+    "Description": "OVERHAUL KIT, SSANG YONG QR019CHA/CHB CVT",
+    "Available": 0
+  },
+  {
     "SKU": "42621-02100",
     "Description": "SENSOR, SPEED, HYUNDAI KAPPA (OEM# 42621-02100)",
     "Available": 0
@@ -32615,6 +32665,11 @@
     "Available": 0
   },
   {
+    "SKU": "33702XA",
+    "Description": "PAN GASKET, GM 6L80E (MOLDED RUBBER) (OEM# 24224781)",
+    "Available": 0
+  },
+  {
     "SKU": "U86582AK",
     "Description": "PLANET SET, FORD AX4N",
     "Available": 0
@@ -32727,6 +32782,11 @@
   {
     "SKU": "K7700JJW/O",
     "Description": "BANNER KIT, HYUNDAI A4CF0",
+    "Available": 0
+  },
+  {
+    "SKU": "74960K",
+    "Description": "PISTON KIT, GM 4L60E (1997-UP) (3 PISTONS) (HI-PER BLUE)",
     "Available": 0
   },
   {
@@ -33322,6 +33382,11 @@
   {
     "SKU": "KP5200CC",
     "Description": "MASTER KIT, GM 6T31 / 6T35 (3RD GEN) 2016-2019 W/PISTONS",
+    "Available": 0
+  },
+  {
+    "SKU": "K82900DD-99",
+    "Description": "PISTON KIT, ZF8HP50, CHRYSLER 850RE",
     "Available": 0
   },
   {
@@ -34715,6 +34780,11 @@
     "Available": 0
   },
   {
+    "SKU": "181752DX",
+    "Description": "FR MODULE, JF015E, RE0F11A 01+",
+    "Available": 0
+  },
+  {
     "SKU": "74379",
     "Description": "MCS, EXTENSION HOUSING, ALLISON LCT100, LCT2000, LCT2400 (2001-2015) (OEM# 29536379)",
     "Available": 0
@@ -35275,6 +35345,11 @@
     "Available": 0
   },
   {
+    "SKU": "31704LXD",
+    "Description": "GASKET, SIDE PAN (VALVE BODY COVER) , CHRYSLER 62TE (07-15)",
+    "Available": 0
+  },
+  {
     "SKU": "24248559",
     "Description": "RING SET, GM 6L80E, 6L90E STATOR (UPDATED,W/ANTI-ROTATIONAL TAB) (W/BACK-UP O-RINGS) 2009-UP (CONTAINS: 3 VESPEL RINGS, AND 3 O-RINGS) (OEM# 24248559)",
     "Available": 0
@@ -35582,6 +35657,11 @@
   {
     "SKU": "STMTOYTA62",
     "Description": "ST MODULE, TOYOTA UA80E (2017-ON)",
+    "Available": 0
+  },
+  {
+    "SKU": "K75900Z-99",
+    "Description": "PISTON KIT, TOYOTA UA80E/F",
     "Available": 0
   },
   {
@@ -37390,6 +37470,11 @@
     "Available": 0
   },
   {
+    "SKU": "K40900A",
+    "Description": "OVERHAUL KIT, VW 010 W/O FINAL DRIVE",
+    "Available": 0
+  },
+  {
     "SKU": "SK-10L80-G2",
     "Description": "SHIFT KIT, GM GEN 2, 10L60, 10L80, 10L90 (REQUIRES TOOL KIT AFL-G2-TK)",
     "Available": 0
@@ -37397,6 +37482,11 @@
   {
     "SKU": "29542692",
     "Description": "NEUTRAL SWITCH, ALLISON 10L1000 (OEM# 29542692)",
+    "Available": 0
+  },
+  {
+    "SKU": "K6200TX",
+    "Description": "MASTER KIT, NISSAN JR711E, RE7R01B (7 SPEED) W/O PISTONS",
     "Available": 0
   },
   {
@@ -37427,6 +37517,66 @@
   {
     "SKU": "GM-RK-688WC",
     "Description": "CONVERTER KIT, GM 6L80, 6L90, JMBX PERFORMANCE CONVERTER KIT",
+    "Available": 0
+  },
+  {
+    "SKU": "FRMNISSN33",
+    "Description": "FR MODULE, NISSAN RE4R01A (1995-ON)",
+    "Available": 0
+  },
+  {
+    "SKU": "RCP96-123",
+    "Description": "FR MODULE, TOYOTA U240",
+    "Available": 0
+  },
+  {
+    "SKU": "RCP96-170",
+    "Description": "FR MODULE HYUNDAI A4BF3 ACCENT 99-ON",
+    "Available": 0
+  },
+  {
+    "SKU": "RCP96-199",
+    "Description": "FR MODULE, AW80-40LE, AW81-40LE (U440, U441) 04+",
+    "Available": 0
+  },
+  {
+    "SKU": "RCP96-242",
+    "Description": "FR MODULE, MITSUBISHI FUSO, ISUZU TRUCKS, AS68RC 07-ON (K2: 32T)",
+    "Available": 0
+  },
+  {
+    "SKU": "RCP96-263",
+    "Description": "FR MODULE HYUNDAI A4CF1, A4CF2 06-08",
+    "Available": 0
+  },
+  {
+    "SKU": "RCP96-267",
+    "Description": "FR MODULE, HYUNDAI A6MF1, A6MF2 09-UP",
+    "Available": 0
+  },
+  {
+    "SKU": "RCP96-270",
+    "Description": "FR MODULE, ACURA MCTA 2005 GPX",
+    "Available": 0
+  },
+  {
+    "SKU": "RCP96-284",
+    "Description": "FR MODULE, HONDA B5RA, B5SA (2012-ON)",
+    "Available": 0
+  },
+  {
+    "SKU": "K7300RW/O",
+    "Description": "BANNER KIT, NISSAN RE0F09A (JF010E) CVT 02-UP W/PISTONS",
+    "Available": 0
+  },
+  {
+    "SKU": "U16584BA",
+    "Description": "PLANET, FORD 5R110W, REAR W/MECHANICAL DIODE (06 PLATES) (09-17)",
+    "Available": 0
+  },
+  {
+    "SKU": "82960",
+    "Description": "MCS, PUMP, ZF9HP48, 948TE (ALL, EXC CHRYSLER 6 CYL ) (OEM# 4752960AA)",
     "Available": 0
   },
   {
@@ -37622,7 +37772,7 @@
   {
     "SKU": "42288B",
     "Description": "PUMP REPAIR KIT 4L60E (13 VANE)",
-    "Available": 1
+    "Available": 0
   },
   {
     "SKU": "44710A",
@@ -37707,6 +37857,11 @@
   {
     "SKU": "76877E",
     "Description": "REVERSE DRUM 4R75W",
+    "Available": 1
+  },
+  {
+    "SKU": "77710G",
+    "Description": "FILTER 4L60E 97-UP CHEV CORVETTE W/O FIN WITH SUCTION TUBE (METAL/PLASTIC) (OEM# 24208149)",
     "Available": 1
   },
   {
@@ -37815,6 +37970,11 @@
     "Available": 1
   },
   {
+    "SKU": "K40900QX",
+    "Description": "OVERHAUL KIT, VW 02E/DSG W/O PISTONS",
+    "Available": 1
+  },
+  {
     "SKU": "K41900JB-99",
     "Description": "PISTON KIT 4L40E/5L40E/5L50E 1999-09 (EXC-AWD) (11 Pistons)",
     "Available": 1
@@ -37877,6 +38037,11 @@
   {
     "SKU": "K83900F-99",
     "Description": "PISTON KIT ZF5HP18 91-99 (2PCS)",
+    "Available": 1
+  },
+  {
+    "SKU": "K83900L-99",
+    "Description": "PISTON KIT ZF4HP20( 3 PIECES)",
     "Available": 1
   },
   {
@@ -38042,6 +38207,11 @@
   {
     "SKU": "K98900R",
     "Description": "OVERHAUL KIT, HONDA MURA",
+    "Available": 1
+  },
+  {
+    "SKU": "K79900GBX",
+    "Description": "OVERHAUL KIT TF-81SC (AF21/B, AWF21, AW6A/X-EL) W/O PISTONS (2006-2012)",
     "Available": 1
   },
   {
@@ -38670,6 +38840,11 @@
     "Available": 1
   },
   {
+    "SKU": "42620-26001",
+    "Description": "SENSOR, SPEED ASSEMBLY HYUNDAI ELANTRA 1.8L (2011-2015) (RED/YELLOW) (REPLACES 42620-26000)",
+    "Available": 1
+  },
+  {
     "SKU": "42620-3B311",
     "Description": "SENSOR, SPEED A6LF1 (OEM) (BLACK/GREEN) (REPLACES 42620-3B310)",
     "Available": 1
@@ -39005,6 +39180,11 @@
     "Available": 1
   },
   {
+    "SKU": "RCP96-204",
+    "Description": "FR MODULE, TOYOTA A750E/F 03-UP",
+    "Available": 1
+  },
+  {
     "SKU": "SUB-K8389",
     "Description": "SUB KIT, VALVE BODY ORIFICES ZF5HP19/FL/FLA",
     "Available": 1
@@ -39067,11 +39247,6 @@
   {
     "SKU": "K78900G-99",
     "Description": "PISTON KIT, CHRSYLER AS68RC",
-    "Available": 1
-  },
-  {
-    "SKU": "K277586A",
-    "Description": "PLANET SET, TOYOTA U660, U760, UNDERDRIVE (INCLUDES PLANET, RING GEAR, SUN GEAR)",
     "Available": 1
   },
   {
@@ -39308,11 +39483,6 @@
     "SKU": "K82900DDX",
     "Description": "OVERHAUL KIT, ZF8HP50, CHRYSLER 850RE W/O PISTONS",
     "Available": 1
-  },
-  {
-    "SKU": "K82900DD-99",
-    "Description": "PISTON KIT, ZF8HP50, CHRYSLER 850RE",
-    "Available": 0
   },
   {
     "SKU": "163740B",
@@ -39597,11 +39767,6 @@
   {
     "SKU": "RCP96-527",
     "Description": "FR MODULE, TOYOTA UA80E (2017-ON)",
-    "Available": 1
-  },
-  {
-    "SKU": "K75900Z-99",
-    "Description": "PISTON KIT, TOYOTA UA80E/F",
     "Available": 1
   },
   {
@@ -40015,11 +40180,6 @@
     "Available": 1
   },
   {
-    "SKU": "K40900A",
-    "Description": "OVERHAUL KIT, VW 010 W/O FINAL DRIVE",
-    "Available": 1
-  },
-  {
     "SKU": "8L90-S4LATE-TK",
     "Description": "TOOL KIT, FOR USE WITH 8L90-S4LATE-OS",
     "Available": 1
@@ -40040,18 +40200,8 @@
     "Available": 1
   },
   {
-    "SKU": "K6200TX",
-    "Description": "MASTER KIT, NISSAN JR711E, RE7R01B (7 SPEED) W/O PISTONS",
-    "Available": 1
-  },
-  {
     "SKU": "SK-F4AEL",
     "Description": "SHIFT KIT, FORD MAZDA, 4EAT-F, F4A-EL (ALL W/4 AND 5 SOLENOIDS)",
-    "Available": 1
-  },
-  {
-    "SKU": "JL3Z-7H351-B",
-    "Description": "DRUM, C-D-F, FORD 10R80, GM 10L80, 10L90 (2017-2022) (OEM# JL3Z-7H351-B, 24049868)",
     "Available": 1
   },
   {
@@ -40063,6 +40213,11 @@
     "SKU": "33741F-01K",
     "Description": "VALVE KIT, OVERSIZED SECONDARY PULLEY/PRESSURE REGULATOR VALVE KIT, NISSAN JF015E (RE0F11A), MITSUBISHI FICJB (REQUIRES F-33741F-TL)",
     "Available": 1
+  },
+  {
+    "SKU": "1102-271-007",
+    "Description": "HUB, E-CLUTCH, ZF8HP55, ZF8HP65, ZF8HP70, ZF8HP75 (GEN 2) (48T) (OEM# 1102.271.007)",
+    "Available": 0
   },
   {
     "SKU": "025521",
@@ -40450,8 +40605,8 @@
     "Available": 1
   },
   {
-    "SKU": "K40900QX",
-    "Description": "OVERHAUL KIT, VW 02E/DSG W/O PISTONS",
+    "SKU": "K36900GRX",
+    "Description": "OVERHAUL KIT, FORD E4OD, 4R100 96-04 W/MOLDED PAN GASKET W/O PISTONS.",
     "Available": 1
   },
   {
@@ -40478,11 +40633,6 @@
     "SKU": "K46900K",
     "Description": "OVERHAUL KIT A40D/42D COMBO 77-93",
     "Available": 1
-  },
-  {
-    "SKU": "K46900L",
-    "Description": "OVERHAUL KIT, A46DE",
-    "Available": 0
   },
   {
     "SKU": "K48900D",
@@ -40595,11 +40745,6 @@
     "Available": 1
   },
   {
-    "SKU": "K79900N",
-    "Description": "OVERHAUL KIT, AW55-50, AW55-51,  AW55-40, AF23",
-    "Available": 1
-  },
-  {
     "SKU": "K83900",
     "Description": "OVERHAUL KIT ZF4HP22, ZF4HP24 4 SP RWD",
     "Available": 1
@@ -40612,11 +40757,6 @@
   {
     "SKU": "K83900K-99",
     "Description": "PISTON KIT ZF5HP19/FL/FLA, ZF5HP24/A (01 PISTON)",
-    "Available": 1
-  },
-  {
-    "SKU": "K83900L-99",
-    "Description": "PISTON KIT ZF4HP20( 3 PIECES)",
     "Available": 1
   },
   {
@@ -40810,11 +40950,6 @@
     "Available": 1
   },
   {
-    "SKU": "K79900GBX",
-    "Description": "OVERHAUL KIT TF-81SC (AF21/B, AWF21, AW6A/X-EL) W/O PISTONS (2006-2012)",
-    "Available": 1
-  },
-  {
     "SKU": "45657-02701",
     "Description": "SOLENOID, JF405E (KIA PICANTO, HYUNDAI ATOS)",
     "Available": 1
@@ -40867,7 +41002,7 @@
   {
     "SKU": "512186",
     "Description": "FR PLATE 6L80E , 4-5-6 CLUTCH 2006-UP",
-    "Available": 1
+    "Available": 0
   },
   {
     "SKU": "K40900GX",
@@ -41420,11 +41555,6 @@
     "Available": 1
   },
   {
-    "SKU": "42620-26001",
-    "Description": "SENSOR, SPEED ASSEMBLY HYUNDAI ELANTRA 1.8L (2011-2015) (RED/YELLOW) (REPLACES 42620-26000)",
-    "Available": 1
-  },
-  {
     "SKU": "125421B",
     "Description": "BEARING, NISSAN RE0F10A, JF011E PRIMARY PULLEY (FRONT) (NSK HTFB60-57-G-3NX01, 101 MM OD, 60 MM ID, 17 MM WIDTH) 07-UP",
     "Available": 1
@@ -41685,11 +41815,6 @@
     "Available": 1
   },
   {
-    "SKU": "RCP96-204",
-    "Description": "FR MODULE, TOYOTA A750E/F 03-UP",
-    "Available": 1
-  },
-  {
     "SKU": "RCP96-220",
     "Description": "FR MODULE, AW55-51SN (NISSAN RE5F22A) (W/WAVED DIRECT CLUTCH) (99-07)",
     "Available": 1
@@ -41807,11 +41932,6 @@
   {
     "SKU": "228753",
     "Description": "ST MODULE, SUBARU TR690 CVT GEN 1 AWD (2010-2012)",
-    "Available": 1
-  },
-  {
-    "SKU": "33702XA",
-    "Description": "PAN GASKET, GM 6L80E (MOLDED RUBBER) (OEM# 24224781)",
     "Available": 1
   },
   {
@@ -42015,11 +42135,6 @@
     "Available": 1
   },
   {
-    "SKU": "181752DX",
-    "Description": "FR MODULE, JF015E, RE0F11A 01+",
-    "Available": 1
-  },
-  {
     "SKU": "90420B",
     "Description": "SOLENOID, DUAL SHIFT SOLENOID FOR HONDA CIVIC 1.7L (01-05) (OEM# 28200-PLX-003) (AFTERMARKET)",
     "Available": 1
@@ -42037,6 +42152,11 @@
   {
     "SKU": "77733-51KA",
     "Description": "SLEEVE KIT, INPUT HOUSING OVERRUN SLEEVE KIT, GM 4L60, 4L60E, 4L65E, 4L70E (INCLUDES: OVERRUN PISTON, OVERRUN REINFORCEMENT SLEEVE, OUTER OVERRUN PISTON SEAL, INNER OVERRUN PISTON SEAL)",
+    "Available": 1
+  },
+  {
+    "SKU": "K9800U-1F",
+    "Description": "FR MODULE, HONDA G2AA, GYCA, M3WC, GTAA, JDJC, GPAA, SOMA, G2SA",
     "Available": 1
   },
   {
@@ -42375,11 +42495,6 @@
     "Available": 0
   },
   {
-    "SKU": "PC3Z-7B177-A",
-    "Description": "SHELL, FORD 10R80, C-D-F CLUTCH SHELL (2017-2025) (OEM# PC3Z-7B177-A) (REPLACES OEM# HL3Z-7B177-B, HL3Z-7B177-C, HL3Z-7B177-D)",
-    "Available": 1
-  },
-  {
     "SKU": "026752A",
     "Description": "FR MODULE,FORD C6 76-96",
     "Available": 1
@@ -42402,6 +42517,11 @@
   {
     "SKU": "039752",
     "Description": "FR MODULE, MAZDA RC4AEL, JR405E 2004-UP",
+    "Available": 1
+  },
+  {
+    "SKU": "058752N",
+    "Description": "FR MODULE, HONDA INTEGRA MDMA, MDLA,  M4TA, S4XA 96+",
     "Available": 1
   },
   {
@@ -42492,6 +42612,11 @@
   {
     "SKU": "124752A",
     "Description": "FR MODULE, F4/F5A51, R4/R5A51, V4/V5A51 COMBO (FITS ALL SPEEDS) 97-UP",
+    "Available": 1
+  },
+  {
+    "SKU": "129753",
+    "Description": "ST MODULE, VW/A UDI AW TF-60SN,09G 03+",
     "Available": 1
   },
   {
@@ -42605,11 +42730,6 @@
     "Available": 1
   },
   {
-    "SKU": "77710G",
-    "Description": "FILTER 4L60E 97-UP CHEV CORVETTE W/O FIN WITH SUCTION TUBE (METAL/PLASTIC) (OEM# 24208149)",
-    "Available": 1
-  },
-  {
     "SKU": "77725C",
     "Description": "SPRAG, 4L60E, SKF TYPE (29 ELEMENTS) MADE IN USA (SINGLE CAGE)",
     "Available": 1
@@ -42632,11 +42752,6 @@
   {
     "SKU": "D96956",
     "Description": "AXODE,AX4S,AX4N,4F27E TOT/TFT Sensor 1999-up",
-    "Available": 1
-  },
-  {
-    "SKU": "K36900GRX",
-    "Description": "OVERHAUL KIT, FORD E4OD, 4R100 96-04 W/MOLDED PAN GASKET W/O PISTONS.",
     "Available": 1
   },
   {
@@ -42670,9 +42785,14 @@
     "Available": 1
   },
   {
+    "SKU": "K56900KX",
+    "Description": "OVERHAUL KIT KIT MERCEDES 722.9 W/O PISTONS",
+    "Available": 1
+  },
+  {
     "SKU": "K61900A-99",
     "Description": "PISTON KIT 42RLE 2004-06 (3 PISTONS)",
-    "Available": 1
+    "Available": 0
   },
   {
     "SKU": "K69900A",
@@ -42922,11 +43042,6 @@
   {
     "SKU": "SK-09G",
     "Description": "SHIFT KIT, VW 09G (ALL UNITS W/ LARGE CAN SOLENOIDS ONLY)",
-    "Available": 1
-  },
-  {
-    "SKU": "K52900Z-99",
-    "Description": "PISTON KIT 6T40, 6T45, 6T50 07-17 (07 PCS)",
     "Available": 1
   },
   {
@@ -43333,6 +43448,11 @@
     "SKU": "116034",
     "Description": "BUSHING, FRONT PUMP BODY ALLISON 1000, 2000, 2400 (00-UP)",
     "Available": 1
+  },
+  {
+    "SKU": "231625B",
+    "Description": "BUSHING KIT, FORD 10R80, GM 10L80, 10L90 (10 SPEED) (11 BUSHINGS)",
+    "Available": 0
   },
   {
     "SKU": "K98900Z",
@@ -44005,6 +44125,16 @@
     "Available": 1
   },
   {
+    "SKU": "K75900ETX",
+    "Description": "OVERHAUL KIT U140E, U150E, U151E  W/ TRANSFER CASE COMPONENTS W/O PISTONS",
+    "Available": 1
+  },
+  {
+    "SKU": "K78900E",
+    "Description": "OVERHAUL KIT A442F TOYOTA 92-95",
+    "Available": 1
+  },
+  {
     "SKU": "K90900H-99",
     "Description": "PISTON KIT, RENAULT AL4/DPO (07 PISTONS)",
     "Available": 1
@@ -44350,6 +44480,11 @@
     "Available": 1
   },
   {
+    "SKU": "KP52900ZAX",
+    "Description": "OVERHAUL KIT, GM 6T40E, 6T45E, 6T50E (06-15) (GEN 1 AND 2) W/O PISTONS",
+    "Available": 1
+  },
+  {
     "SKU": "56510B",
     "Description": "DRUM, REVERSE 5R55E",
     "Available": 1
@@ -44362,6 +44497,11 @@
   {
     "SKU": "RCP96-287",
     "Description": "FR MODULE, FORD 6R80 08-UP (RAYBESTOS)",
+    "Available": 1
+  },
+  {
+    "SKU": "FRMTOYTA58",
+    "Description": "FR MODULE, TOYOTA U760, TM-60LS 08-UP",
     "Available": 1
   },
   {
@@ -44745,6 +44885,11 @@
     "Available": 1
   },
   {
+    "SKU": "K73900KBX-MD",
+    "Description": "OVERHAUL KIT JF015E W/O PISTONS",
+    "Available": 1
+  },
+  {
     "SKU": "350-9000",
     "Description": "WIRE HARNESS, GM 4L80E, INTERNAL & EXTERNAL 91-03 (OEM# 24202161) (IND# 34998)",
     "Available": 1
@@ -44772,6 +44917,11 @@
   {
     "SKU": "56704X",
     "Description": "PAN GASKET, MERCEDES BENZ 722.7 (OEM# 168-371-0280)",
+    "Available": 1
+  },
+  {
+    "SKU": "RHT96-520",
+    "Description": "FR MODULE, FORD 6F35 (GEN 2 AND GEN 3) (2013-2019)",
     "Available": 1
   },
   {
@@ -44907,11 +45057,6 @@
   {
     "SKU": "049753J",
     "Description": "ST MODULE, FORD AODE-W 4R70W 98+, 4R75W 00+",
-    "Available": 1
-  },
-  {
-    "SKU": "058752N",
-    "Description": "FR MODULE, HONDA INTEGRA MDMA, MDLA,  M4TA, S4XA 96+",
     "Available": 1
   },
   {
@@ -45285,11 +45430,6 @@
     "Available": 1
   },
   {
-    "SKU": "K78900E",
-    "Description": "OVERHAUL KIT A442F TOYOTA 92-95",
-    "Available": 1
-  },
-  {
     "SKU": "K83900KX",
     "Description": "OVERHAUL KIT ZF5HP19FL W/O PISTONS 95-04",
     "Available": 1
@@ -45447,6 +45587,11 @@
   {
     "SKU": "181753A",
     "Description": "ST MODULE, JATCO JF011E SUZ, MITS, NISS 2007-UP",
+    "Available": 1
+  },
+  {
+    "SKU": "FRMNISSN40",
+    "Description": "FR MODULE NISSAN RE5R05A (V6) Friction 2002-ON",
     "Available": 1
   },
   {
@@ -45745,11 +45890,6 @@
     "Available": 1
   },
   {
-    "SKU": "98088",
-    "Description": "PISTON, HONDA SWRA",
-    "Available": 1
-  },
-  {
     "SKU": "SUB-K7909A",
     "Description": "GASKET SET, VALVE BODY, AW60-41",
     "Available": 1
@@ -45767,11 +45907,6 @@
   {
     "SKU": "77900LXD",
     "Description": "PAN GASKET, A5HF1, F4A51, F5A51, F4A5A, W4A5A",
-    "Available": 1
-  },
-  {
-    "SKU": "KP52900ZAX",
-    "Description": "OVERHAUL KIT, GM 6T40E, 6T45E, 6T50E (06-15) (GEN 1 AND 2) W/O PISTONS",
     "Available": 1
   },
   {
@@ -45838,6 +45973,11 @@
     "SKU": "45614-3B601",
     "Description": "PISTON, UNDERDRIVE, HYUNDAI A6MF1 (ALUMINIUM) (OEM# 45614-3B601)",
     "Available": 1
+  },
+  {
+    "SKU": "K75900V-MD",
+    "Description": "OVERHAUL KIT, TOYOTA K313",
+    "Available": 0
   },
   {
     "SKU": "75710LXD",
@@ -45945,6 +46085,11 @@
     "Available": 1
   },
   {
+    "SKU": "75706XA",
+    "Description": "PAN GASKET, TOYOTA U660 (MOLDED RUBBER) (OEM# 35168-33080)",
+    "Available": 1
+  },
+  {
     "SKU": "FRMHONDA55",
     "Description": "FR MODULE, HONDA B36A, MJBA, P36A 09-10, B97A 2010-2011",
     "Available": 1
@@ -46030,6 +46175,11 @@
     "Available": 1
   },
   {
+    "SKU": "VACTEST-01K",
+    "Description": "TOOL, VACUUM TEST STAND KIT (INCLUDES: VACUUM TEST STAND, TEST PLATE, VACUUM PLATE SEALING PAD, VACUUM TEST FOAM PAD, PUSH-TO-CONNECT FITTING, ASSORTED TESTING TIPS (6), TUBING) (VACUUM PUMP NOT INCLUDED)",
+    "Available": 1
+  },
+  {
     "SKU": "33510N-03K",
     "Description": "VALVE, OVERSIZED PRIMARY PULLEY REDUCING VALVE KIT, JF016E (RE0F10D) (CONTAINS: VALVE AND END PLUG)",
     "Available": 1
@@ -46057,6 +46207,11 @@
   {
     "SKU": "46313-02280",
     "Description": "SOLENOID, HYUNDAI KAPPA CVT (RED) (USES 1 PER TRANSMISSION) (OEM# 46313-02280)",
+    "Available": 1
+  },
+  {
+    "SKU": "233753",
+    "Description": "ST MODULE, TOYOTA AC60E/F (15-ON)",
     "Available": 1
   },
   {
@@ -46265,6 +46420,11 @@
     "Available": 1
   },
   {
+    "SKU": "KP59900YAX",
+    "Description": "OVERHAUL KIT, FORD 6F15, 6F35 (GEN 2 AND 3)  (2013-2022) W/O PISTONS",
+    "Available": 1
+  },
+  {
     "SKU": "K34901F",
     "Description": "RING KIT, GM 4L80E (1997-2011)",
     "Available": 1
@@ -46405,13 +46565,13 @@
     "Available": 0
   },
   {
-    "SKU": "FRMAISIN20",
-    "Description": "FR MODULE, VW 09G, 09M (07-ON)",
-    "Available": 1
+    "SKU": "K7500Z-1F",
+    "Description": "FR MODULE, TOYOTA UA80E/F",
+    "Available": 0
   },
   {
-    "SKU": "RHT96-520",
-    "Description": "FR MODULE, FORD 6F35 (GEN 2 AND GEN 3) (2013-2019)",
+    "SKU": "FRMAISIN20",
+    "Description": "FR MODULE, VW 09G, 09M (07-ON)",
     "Available": 1
   },
   {
@@ -46501,7 +46661,7 @@
   },
   {
     "SKU": "82972",
-    "Description": "MCS, PUMP, CHRYSLER (6 CYL) ZF9HP48 (OEM# 0734-319-722)",
+    "Description": "MCS, PUMP, CHRYSLER (6 CYL ONLY) ZF9HP48 (OEM# 0734-319-722)",
     "Available": 1
   },
   {
@@ -46755,11 +46915,6 @@
     "Available": 1
   },
   {
-    "SKU": "K56900KX",
-    "Description": "OVERHAUL KIT KIT MERCEDES 722.9 W/O PISTONS",
-    "Available": 1
-  },
-  {
     "SKU": "K71900KPX",
     "Description": "OVERHAUL KIT, MAZDA FN4A-EL(4F27E) 99-03 W/O PISTONS",
     "Available": 1
@@ -46887,11 +47042,6 @@
   {
     "SKU": "46496132",
     "Description": "PAN GASKET E4OD, 4R100, 5R110W 96-ON MOLDED RUBBER",
-    "Available": 1
-  },
-  {
-    "SKU": "FRMNISSN40",
-    "Description": "FR MODULE NISSAN RE5R05A (V6) Friction 2002-ON",
     "Available": 1
   },
   {
@@ -47235,16 +47385,6 @@
     "Available": 1
   },
   {
-    "SKU": "VACTEST-01K",
-    "Description": "TOOL, VACUUM TEST STAND KIT (INCLUDES: VACUUM TEST STAND, TEST PLATE, VACUUM PLATE SEALING PAD, VACUUM TEST FOAM PAD, PUSH-TO-CONNECT FITTING, ASSORTED TESTING TIPS (6), TUBING) (VACUUM PUMP NOT INCLUDED)",
-    "Available": 1
-  },
-  {
-    "SKU": "233753",
-    "Description": "ST MODULE, TOYOTA AC60E/F (15-ON)",
-    "Available": 1
-  },
-  {
     "SKU": "333264A",
     "Description": "BEARING, NISSAN JF016E (RE0F10D), PRIMARY PULLEY (FRONT) (101 MM OD, 55 MM ID, 20 MM WIDTH)",
     "Available": 1
@@ -47310,11 +47450,6 @@
     "Available": 1
   },
   {
-    "SKU": "KP59900YAX",
-    "Description": "OVERHAUL KIT, FORD 6F15, 6F35 (GEN 2 AND 3)  (2013-2022) W/O PISTONS",
-    "Available": 1
-  },
-  {
     "SKU": "K75900BBX",
     "Description": "OVERHAUL KIT, AWF8G30, TOYOTA UB80E/F W/O PISTONS",
     "Available": 1
@@ -47375,11 +47510,6 @@
     "Available": 1
   },
   {
-    "SKU": "K9800U-1F",
-    "Description": "FR MODULE, HONDA G2AA, GYCA, M3WC, GTAA, JDJC, GPAA, SOMA, G2SA",
-    "Available": 1
-  },
-  {
     "SKU": "FRMSUBRU20",
     "Description": "FR MODULE, SUBARU TR580 (11 PLATES)",
     "Available": 1
@@ -47402,11 +47532,6 @@
   {
     "SKU": "33706XA",
     "Description": "PAN GASKET, GM 10L80, 10L90 (2017-2022) (OEM# 24269333)",
-    "Available": 1
-  },
-  {
-    "SKU": "K7500Z-1F",
-    "Description": "FR MODULE, TOYOTA UA80E/F",
     "Available": 1
   },
   {
@@ -47472,6 +47597,16 @@
   {
     "SKU": "45615-2F000",
     "Description": "RETAINER, UNDERDRIVE HYUNDAI (OEM) A6GF1 (REPLACES OEM# 45615-26000) (OEM# 45615-2F000)",
+    "Available": 1
+  },
+  {
+    "SKU": "JL3Z-7H351-B",
+    "Description": "DRUM, C-D-F, FORD 10R80, GM 10L80, 10L90 (2017-2022) (OEM# JL3Z-7H351-B, 24049868)",
+    "Available": 1
+  },
+  {
+    "SKU": "PC3Z-7B177-A",
+    "Description": "SHELL, FORD 10R80, C-D-F CLUTCH SHELL (2017-2025) (OEM# PC3Z-7B177-A) (REPLACES OEM# HL3Z-7B177-B, HL3Z-7B177-C, HL3Z-7B177-D)",
     "Available": 1
   },
   {
@@ -47557,11 +47692,6 @@
   {
     "SKU": "K64900-2",
     "Description": "REPAIR KIT, TORQUE CONVERTER ALLISON MT640/643/650/653 1972-1993",
-    "Available": 1
-  },
-  {
-    "SKU": "K75900ETX",
-    "Description": "OVERHAUL KIT U140E, U150E, U151E  W/ TRANSFER CASE COMPONENTS W/O PISTONS",
     "Available": 1
   },
   {
@@ -47655,6 +47785,11 @@
     "Available": 1
   },
   {
+    "SKU": "K77900EE-99",
+    "Description": "PISTON KIT, HYUNDAI A6LF1, A6LF2, A6LF3",
+    "Available": 1
+  },
+  {
     "SKU": "R84717P",
     "Description": "DRUM, 4T65E 2ND CLUTCH (2ND DESIGN) W/SQUARE LUGS FOR REVERSE SHELL 98-UP (NO OIL GROOVE BETWEEN RINGS)",
     "Available": 1
@@ -47702,6 +47837,11 @@
   {
     "SKU": "46313-3B160",
     "Description": "SOLENOID, HYUNDAI/KIA A6GF1, A6MF1, A6LF1 (3-5-R, UD, OD) (14-UP) (OEM# 46313-3B160)",
+    "Available": 1
+  },
+  {
+    "SKU": "FRMHONDA36",
+    "Description": "FR MODULE, HONDA BCLA, MCLA (2003-05), MRMA, GPPA GPLA, MKYA (2002-ON)",
     "Available": 1
   },
   {
@@ -47765,11 +47905,6 @@
     "Available": 1
   },
   {
-    "SKU": "231625B",
-    "Description": "BUSHING KIT, FORD 10R80, GM 10L80, 10L90 (10 SPEED) (11 BUSHINGS)",
-    "Available": 1
-  },
-  {
     "SKU": "45822-3B450",
     "Description": "DIFFERENTIAL COVER, HYUNDAI SANTA FE 2010+, KIA SORENTO 2010+ 2.2L-R DIESEL (D4HB) ENGINE ONLY OEM (12 HOLES)",
     "Available": 1
@@ -47777,11 +47912,6 @@
   {
     "SKU": "2337",
     "Description": "OVERHAUL KIT CD4E 1993 - UP  W/O PISTONS",
-    "Available": 1
-  },
-  {
-    "SKU": "30902GSX",
-    "Description": "OVERHAUL KIT, SSANG YONG QR019CHA/CHB CVT",
     "Available": 1
   },
   {
@@ -47795,8 +47925,18 @@
     "Available": 1
   },
   {
+    "SKU": "K73900GX-MD",
+    "Description": "OVERHAUL KIT, JF011E (2007-10) W/O PISTONS (FARPAK GASKET)",
+    "Available": 1
+  },
+  {
     "SKU": "186753C",
     "Description": "ST MODULE, TOYOTA K111, K112",
+    "Available": 1
+  },
+  {
+    "SKU": "K77900MMX",
+    "Description": "OVERHAUL KIT A6MF1, A6MF2 W/O PISTONS (2009-2020) (REPLACES K77900DDX)",
     "Available": 1
   },
   {
@@ -47837,11 +47977,6 @@
   {
     "SKU": "K7500AA-1S",
     "Description": "ST MODULE, TOYOTA K120 CVT",
-    "Available": 1
-  },
-  {
-    "SKU": "K73900KBX-MD",
-    "Description": "OVERHAUL KIT JF015E W/O PISTONS",
     "Available": 1
   },
   {
@@ -47940,11 +48075,6 @@
     "Available": 1
   },
   {
-    "SKU": "129753",
-    "Description": "ST MODULE, VW/A UDI AW TF-60SN,09G 03+",
-    "Available": 1
-  },
-  {
     "SKU": "13601",
     "Description": "PAPER GASKET",
     "Available": 1
@@ -48002,6 +48132,11 @@
   {
     "SKU": "73575D",
     "Description": "*** USE 73719 *** FILTER RE0F09A  (CVT) NISSAN",
+    "Available": 1
+  },
+  {
+    "SKU": "79700",
+    "Description": "BAND, VW 010, 087, 089, 090 (OEM# 010-323-461C/H)",
     "Available": 1
   },
   {
@@ -48155,13 +48290,13 @@
     "Available": 1
   },
   {
-    "SKU": "181752X",
-    "Description": "FR MODULE, JATCO RE0F09A, JF010E, RE0F10A, JF011E, RE0F10H, JF018, RF0F10J, JF019 CVT 07-UP",
+    "SKU": "KP13900BX",
+    "Description": "OVERHAUL KIT, CHRYSLER 66RFE, 68RFE W/O PISTONS",
     "Available": 1
   },
   {
-    "SKU": "K77900EE-99",
-    "Description": "PISTON KIT, HYUNDAI A6LF1, A6LF2, A6LF3",
+    "SKU": "181752X",
+    "Description": "FR MODULE, JATCO RE0F09A, JF010E, RE0F10A, JF011E, RE0F10H, JF018, RF0F10J, JF019 CVT 07-UP",
     "Available": 1
   },
   {
@@ -48227,6 +48362,11 @@
   {
     "SKU": "R561617",
     "Description": "FR PLATE, FORD AX4N, LOW, INTERMEDIATE, HIGH ENERGY (95-ON) (IND# 96107) (OEM# 4F1Z-7B164-CA, F6DZ-7B164-A) (H.E.- 59T- OD:5.949\"- 2MP)",
+    "Available": 1
+  },
+  {
+    "SKU": "57917E-01K",
+    "Description": "BOOST VALVE KIT, TOYOTA U140E, U240E, U241E",
     "Available": 1
   },
   {
@@ -48307,6 +48447,11 @@
   {
     "SKU": "46308-3A050",
     "Description": "WIRE HARNESS, MITSUBISHI HYUNDAI F4A41, FA42, F4A51 & F4A4B (2005-UP) (OEM# 46308-3A050)",
+    "Available": 1
+  },
+  {
+    "SKU": "K37901KB-SP",
+    "Description": "RING KIT, FORD 6R80 (2015-2018)",
     "Available": 1
   },
   {
@@ -48690,11 +48835,6 @@
     "Available": 1
   },
   {
-    "SKU": "K75900V-MD",
-    "Description": "OVERHAUL KIT, TOYOTA K313",
-    "Available": 1
-  },
-  {
     "SKU": "SUB-K3721",
     "Description": "SUB KIT, PLASTIC SUPPORT PUMP TO VALVE BODY, FORD 6R60, 6R75, 6R80, ZF6HP26 (INCLUDES: 82718 x1, 82952 x1, 37320 x2, 37330 x2)",
     "Available": 1
@@ -48702,11 +48842,6 @@
   {
     "SKU": "09M927321BX",
     "Description": "SENSOR, INPUT SPEED 09G (WHITE CONNECTOR)",
-    "Available": 1
-  },
-  {
-    "SKU": "FRMHONDA36",
-    "Description": "FR MODULE, HONDA BCLA, MCLA (2003-05), MRMA, GPPA GPLA, MKYA (2002-ON)",
     "Available": 1
   },
   {
@@ -48752,6 +48887,11 @@
   {
     "SKU": "512462",
     "Description": "FR PLATE, GM 4L80E OVERRUN 91+ (TAN- 45T- OD:5.376\"- 2MP)",
+    "Available": 1
+  },
+  {
+    "SKU": "309740",
+    "Description": "FILTER, SSANG YONG QR019CHA/CHB CVT",
     "Available": 1
   },
   {
@@ -49080,11 +49220,6 @@
     "Available": 1
   },
   {
-    "SKU": "79700",
-    "Description": "BAND, VW 010, 087, 089, 090 (OEM# 010-323-461C/H)",
-    "Available": 1
-  },
-  {
     "SKU": "9195779",
     "Description": "SOLENOID, AW 60-40LE, AF13, CORSA (SHIFT)",
     "Available": 1
@@ -49145,11 +49280,6 @@
     "Available": 1
   },
   {
-    "SKU": "33886",
-    "Description": "MCS, EXTENSION HOUSING, GM 6L80E (2WD), 8L90E (ALL EXCEPT CORV ETTE), 10L80, 10L90   (OD: 2.708\", ID: 1.810) (W/O BOOT) (OEM# 24228886) *** WHEN OUT USE X195403",
-    "Available": 1
-  },
-  {
     "SKU": "KP13900AX",
     "Description": "OVERHAUL KIT, CHRYSLER 5-45RFE W/O PISTONS 05-11",
     "Available": 1
@@ -49187,6 +49317,11 @@
   {
     "SKU": "062753B",
     "Description": "SMOD 4T60E 91-92",
+    "Available": 1
+  },
+  {
+    "SKU": "000271",
+    "Description": "FR MODULE GM/ BMW 4L30 98-UP",
     "Available": 1
   },
   {
@@ -49300,11 +49435,6 @@
     "Available": 1
   },
   {
-    "SKU": "79401",
-    "Description": "MCS PUMP TF-80, TF-80 (AF40) / TF-81SC (AF21) 2005-12, VOLVO / GM / FORD / MAZDA / OPEL / LANCIA / PEUGEOT",
-    "Available": 1
-  },
-  {
     "SKU": "5078930AA",
     "Description": "SENSOR, 62TE TRANSFER SHAFT SPEED (2 BLADE ELBOW RECT CONN) (CAST# 930AA) (OEM) (OEM# 5078930AA)",
     "Available": 1
@@ -49322,11 +49452,6 @@
   {
     "SKU": "46831",
     "Description": "DRUM, 4F27E, FN4A-EL, FNR5 (USED) W/SHAFT",
-    "Available": 1
-  },
-  {
-    "SKU": "31703LXD",
-    "Description": "PAN GASKET 62TE CHRYSLER 07-15 (FARPAK)",
     "Available": 1
   },
   {
@@ -49350,11 +49475,6 @@
     "Available": 1
   },
   {
-    "SKU": "31700LXD",
-    "Description": "PAN GASKET  CHRYSLER A604 FARPAK",
-    "Available": 1
-  },
-  {
     "SKU": "90221",
     "Description": "O-RING, PUMP AL4, DPO (OEM# 2212.21)",
     "Available": 1
@@ -49367,11 +49487,6 @@
   {
     "SKU": "75230",
     "Description": "MCS, FRONT PUMP DAIHATSU A4LB-1, A4Q, A3LB-1, A3S",
-    "Available": 1
-  },
-  {
-    "SKU": "KP13900BX",
-    "Description": "OVERHAUL KIT, CHRYSLER 66RFE, 68RFE W/O PISTONS",
     "Available": 1
   },
   {
@@ -49425,18 +49540,8 @@
     "Available": 1
   },
   {
-    "SKU": "FRMTOYTA58",
-    "Description": "FR MODULE, TOYOTA U760, TM-60LS 08-UP",
-    "Available": 1
-  },
-  {
     "SKU": "77010",
     "Description": "MCS, MITSUBISHI OVERDRIVE KM SERIES",
-    "Available": 1
-  },
-  {
-    "SKU": "37701LXD",
-    "Description": "PAN GASKET 6R60, 6R75, 6R80 (FARPAK)",
     "Available": 1
   },
   {
@@ -49555,8 +49660,8 @@
     "Available": 1
   },
   {
-    "SKU": "75706XA",
-    "Description": "PAN GASKET, TOYOTA U660 (MOLDED RUBBER) (OEM# 35168-33080)",
+    "SKU": "310966",
+    "Description": "SOLENOID, TOYOTA K310 ON/OFF, DSU (BUE CONNECTOR) (2011-ON)",
     "Available": 1
   },
   {
@@ -49590,6 +49695,11 @@
     "Available": 1
   },
   {
+    "SKU": "K98900U",
+    "Description": "OVERHAUL KIT, HONDA G2AA, GYCA, M3WC, GTAA, JDJC, GPAA, SOMA, G2SA",
+    "Available": 1
+  },
+  {
     "SKU": "255030",
     "Description": "BUSHING KIT, AW TF-81SC (05-ON). (07 BUSHINGS)",
     "Available": 1
@@ -49607,11 +49717,6 @@
   {
     "SKU": "SUB-K7742A",
     "Description": "SUB KIT",
-    "Available": 1
-  },
-  {
-    "SKU": "57917E-01K",
-    "Description": "BOOST VALVE KIT, TOYOTA U140E, U240E, U241E",
     "Available": 1
   },
   {
@@ -49695,6 +49800,11 @@
     "Available": 1
   },
   {
+    "SKU": "186710",
+    "Description": "FILTER, FORD 8F35, LINCOLN NAUTILUS 2.0L, FORD TRANSIT CONNECT 2.0L, FORD EDGE 2.0L (2019-UP) (OEM# JM5Z-7A098-A)",
+    "Available": 0
+  },
+  {
     "SKU": "512737",
     "Description": "FR PLATE, NISSAN PATH RE4R01A FWD .062\" (TAN)",
     "Available": 1
@@ -49735,11 +49845,6 @@
     "Available": 1
   },
   {
-    "SKU": "K77900MMX",
-    "Description": "OVERHAUL KIT A6MF1, A6MF2 W/O PISTONS (2009-2020) (REPLACES K77900DDX)",
-    "Available": 1
-  },
-  {
     "SKU": "43624-22610X",
     "Description": "SPEEDOMETER DRIVE GEAR, HYUNDAI ACCENT, GETZ, EXCEL (BLACK, 32 TEETH) (AFTERMARKET) (OEM# 43624-22610)",
     "Available": 1
@@ -49752,6 +49857,11 @@
   {
     "SKU": "8L45-8L90-TCC-ZIP",
     "Description": "ZIP KIT, GM 8L45, 8L90, TCC",
+    "Available": 1
+  },
+  {
+    "SKU": "K59900YA-99",
+    "Description": "PISTON KIT, FORD 6F35 (GEN 2 AND GEN 3) (2013-2020)",
     "Available": 1
   },
   {
@@ -49832,11 +49942,6 @@
   {
     "SKU": "13900LXD",
     "Description": "PAN GASKET, FORD C3 (1974-1987) (FARPAK) (OEM# D5ZZ-7A191-B)",
-    "Available": 1
-  },
-  {
-    "SKU": "31704LXD",
-    "Description": "GASKET, SIDE PAN (VALVE BODY COVER) , CHRYSLER 62TE (07-15)",
     "Available": 1
   },
   {
@@ -50085,6 +50190,11 @@
     "Available": 1
   },
   {
+    "SKU": "K79900HGX",
+    "Description": "OVERHAUL KIT 09G W/O PISTONS",
+    "Available": 1
+  },
+  {
     "SKU": "76948-04K",
     "Description": "VALVE ASSY, BYPASS 4R70E, 4R70W, 4R75E, 4R75W, AODE",
     "Available": 1
@@ -50092,6 +50202,11 @@
   {
     "SKU": "FRMAISIN07",
     "Description": "FR MODULE AW TF80SC 2001-UP",
+    "Available": 1
+  },
+  {
+    "SKU": "FRMAISIN06",
+    "Description": "FR MODULE AW55-50SN 2000-UP",
     "Available": 1
   },
   {
@@ -50112,6 +50227,11 @@
   {
     "SKU": "K77900FFX",
     "Description": "OVERHAUL KIT, HYUNDAI A6GF1 W/O PISTONS",
+    "Available": 1
+  },
+  {
+    "SKU": "98992A",
+    "Description": "PRESSURE SWITCH HONDA APXA, APX4, MPXA, MPWA, MPOA, AOYA, BOYA, BAXA, MAXA, ,MP1A, M6HA, MPJA, MDWA, PX4B, BLACK CONNECTOR , 33 PSI, 90-97 (OEM# 28610-RKE-004, 28600-P7Z-003, 28600-P7Z-013, 28610-PCJ-004, 28610-PRH-003, 28610-RAY-003, 28610-RAY-013, 28610-RGR-004)",
     "Available": 1
   },
   {
@@ -50145,11 +50265,6 @@
     "Available": 1
   },
   {
-    "SKU": "310966",
-    "Description": "SOLENOID, TOYOTA K310 ON/OFF, DSU (BUE CONNECTOR) (2011-ON)",
-    "Available": 1
-  },
-  {
     "SKU": "41710U",
     "Description": "FILTER, HYUNDAI A6MF2 , SONATA HYBRID SEDAN 4DR 2.4L (OEM# 46321-3D100)",
     "Available": 1
@@ -50157,6 +50272,11 @@
   {
     "SKU": "98723A",
     "Description": "FILTER, HONDA CVT, CRV, ACCORD, CIVIC BLKA, BLJA (2015-ON) (OEM# 25420-5LJ-003)",
+    "Available": 1
+  },
+  {
+    "SKU": "KP37900PX",
+    "Description": "OVERHAUL KIT, FORD 10R80 W/O PISTONS",
     "Available": 1
   },
   {
@@ -50190,13 +50310,13 @@
     "Available": 1
   },
   {
-    "SKU": "85712",
-    "Description": "FILTER, ZF8HP50, CHRYSLER 850RE (OEM# 68417054AB) (REPLACES OEM# 68417054AA)",
+    "SKU": "511051",
+    "Description": "ST PLATE, HONDA M4TA, MDMA, MDLA, S4XA, SKWA, LOW/HOLD (95-01) (OEM# 22543-PS5-013) (18T- ID:2.800\")",
     "Available": 1
   },
   {
-    "SKU": "K59900YA-99",
-    "Description": "PISTON KIT, FORD 6F35 (GEN 2 AND GEN 3) (2013-2020)",
+    "SKU": "85712",
+    "Description": "FILTER, ZF8HP50, CHRYSLER 850RE (OEM# 68417054AB) (REPLACES OEM# 68417054AA)",
     "Available": 1
   },
   {
@@ -50335,6 +50455,11 @@
     "Available": 1
   },
   {
+    "SKU": "K48900J",
+    "Description": "OVERHAUL KIT, HONDA M4TA, MDMA,MDLA, SDLA, S4XA, SKWA, SP7A, MP7A",
+    "Available": 1
+  },
+  {
     "SKU": "K75900L",
     "Description": "OVERHAUL KIT,U440E,U441E",
     "Available": 1
@@ -50370,11 +50495,6 @@
     "Available": 1
   },
   {
-    "SKU": "000271",
-    "Description": "FR MODULE GM/ BMW 4L30 98-UP",
-    "Available": 1
-  },
-  {
     "SKU": "FRMMITSU11",
     "Description": "FR MODULE MITSUBISHI F4A41/42 96-UP Mirage 1.5L & 1.8L",
     "Available": 1
@@ -50382,11 +50502,6 @@
   {
     "SKU": "000407",
     "Description": "FR MODULE CHRYSLER A604 90-UP",
-    "Available": 1
-  },
-  {
-    "SKU": "FRMAISIN06",
-    "Description": "FR MODULE AW55-50SN 2000-UP",
     "Available": 1
   },
   {
@@ -50450,6 +50565,11 @@
     "Available": 1
   },
   {
+    "SKU": "46313-3B075",
+    "Description": "SOLENOID, HYUNDAI/KIA A6MF1, A6GF1 (2-6) (11-15)  (2 PER TRANSMISSION) (OEM# 46313-3B075) (SUPERSEDED 46313-3B072)",
+    "Available": 1
+  },
+  {
     "SKU": "56320E",
     "Description": "BANDS, A4LD 4.0L, OVERDRIVE (90-UP) OEM# F0TZ-7F196-A AFTERMARKET",
     "Available": 1
@@ -50500,23 +50620,8 @@
     "Available": 1
   },
   {
-    "SKU": "KP37900PX",
-    "Description": "OVERHAUL KIT, FORD 10R80 W/O PISTONS",
-    "Available": 1
-  },
-  {
     "SKU": "000601",
     "Description": "ST MODULE, GM 6L80E 06-ON",
-    "Available": 1
-  },
-  {
-    "SKU": "186710",
-    "Description": "FILTER, FORD 8F35, LINCOLN NAUTILUS 2.0L, FORD TRANSIT CONNECT 2.0L, FORD EDGE 2.0L (2019-UP) (OEM# JM5Z-7A098-A)",
-    "Available": 1
-  },
-  {
-    "SKU": "K73900GX-MD",
-    "Description": "OVERHAUL KIT, JF011E (2007-10) W/O PISTONS (FARPAK GASKET)",
     "Available": 1
   },
   {
@@ -50655,6 +50760,11 @@
     "Available": 1
   },
   {
+    "SKU": "K77900R",
+    "Description": "OVERHAUL KIT, F4A41/ F4A42",
+    "Available": 1
+  },
+  {
     "SKU": "000428",
     "Description": "FR MODULE FORD 4R44E,4R55E, 5R55E 97-UP",
     "Available": 1
@@ -50672,16 +50782,6 @@
   {
     "SKU": "K61900-5",
     "Description": "REPAIR KIT, USE TO CONVERT OHK FROM A606 TO 42RLE",
-    "Available": 1
-  },
-  {
-    "SKU": "98992A",
-    "Description": "PRESSURE SWITCH HONDA APXA, APX4, MPXA, MPWA, MPOA, AOYA, BOYA, BAXA, MAXA, ,MP1A, M6HA, MPJA, MDWA, PX4B, BLACK CONNECTOR , 33 PSI, 90-97 (OEM# 28610-RKE-004, 28600-P7Z-003, 28600-P7Z-013, 28610-PCJ-004, 28610-PRH-003, 28610-RAY-003, 28610-RAY-013, 28610-RGR-004)",
-    "Available": 1
-  },
-  {
-    "SKU": "46313-3B075",
-    "Description": "SOLENOID, HYUNDAI/KIA A6MF1, A6GF1 (2-6) (11-15)  (2 PER TRANSMISSION) (OEM# 46313-3B075) (SUPERSEDED 46313-3B072)",
     "Available": 1
   },
   {
@@ -50795,6 +50895,11 @@
     "Available": 1
   },
   {
+    "SKU": "223710P",
+    "Description": "FILTER, FORD 10R80 MHT, PLUG IN HYBRIDS, FORD RANGER PHEV, 2020-UP FORD EXPLORER PHEV, 2020-UP FORD F150 PHEV, 2021-UP LINCOLN AVIATOR, 2020-UP (2020-ON) (OEM# L1MZ-7A098-B, L1MP-7G186-A, 2377588)",
+    "Available": 1
+  },
+  {
     "SKU": "RFE-SV420-WT",
     "Description": "SWITCH VALVE REPAIR KIT, .420\" DIAMETER WITH TOOLS. FITS ALL 604, 606, 40, 41TE, 42LE, 62TE, 42RLE, 45RFE, 545RFE, 65RFE, 66RFE, 68RFE",
     "Available": 1
@@ -50890,11 +50995,6 @@
     "Available": 1
   },
   {
-    "SKU": "K48900J",
-    "Description": "OVERHAUL KIT, HONDA M4TA, MDMA,MDLA, SDLA, S4XA, SKWA, SP7A, MP7A",
-    "Available": 1
-  },
-  {
     "SKU": "KP53900T",
     "Description": "OVERHAUL KIT, 4R44E, (4 Speed), 5R55E (5 Speed) 97-05",
     "Available": 1
@@ -50907,11 +51007,6 @@
   {
     "SKU": "119829",
     "Description": "PISTON, 095,096,097,098, 01M, 01N, 01P AG4 CENTER SUPPORT CLUTCH. LOW/REVERSE B1 (OEM# 095-323-479, 095323479B)",
-    "Available": 1
-  },
-  {
-    "SKU": "K77900R",
-    "Description": "OVERHAUL KIT, F4A41/ F4A42",
     "Available": 1
   },
   {
@@ -50942,6 +51037,11 @@
   {
     "SKU": "110753AX",
     "Description": "SMOD AW50-42LE 99+",
+    "Available": 1
+  },
+  {
+    "SKU": "KP37900KA",
+    "Description": "OVERHAUL KIT, FORD 6R80 2009-2014",
     "Available": 1
   },
   {
@@ -51077,6 +51177,11 @@
   {
     "SKU": "041711",
     "Description": "ST A4LD REVERSE HIGH, OD 90+",
+    "Available": 1
+  },
+  {
+    "SKU": "049406",
+    "Description": "MCS AODE/4R70W/5R55W/S 2WD EXT HSG LONG BOOT",
     "Available": 1
   },
   {
@@ -51240,6 +51345,11 @@
     "Available": 1
   },
   {
+    "SKU": "K75900F-99",
+    "Description": "PISTON KIT TOYOTA U240E",
+    "Available": 1
+  },
+  {
     "SKU": "107734A",
     "Description": "DRUM, CHRYSLER 62TE, LOW , UPGRAD W/NON-ROTATING SEALING RINGS 1988-ON OEM# 77531 , IND # 107734",
     "Available": 1
@@ -51255,11 +51365,6 @@
     "Available": 1
   },
   {
-    "SKU": "KP37900KA",
-    "Description": "OVERHAUL KIT, FORD 6R80 2009-2014",
-    "Available": 1
-  },
-  {
     "SKU": "70353-G",
     "Description": "PAPER  GASKET CD4E",
     "Available": 1
@@ -51272,6 +51377,11 @@
   {
     "SKU": "79881",
     "Description": "MCS, PUMP SUZUKI SR410 99-03 (OEM# 22881-72B20) AFTERMARKET",
+    "Available": 1
+  },
+  {
+    "SKU": "36611A",
+    "Description": "LATHE CUT, FRONT PUMP E4OD, 4R100, 5R110W",
     "Available": 1
   },
   {
@@ -51625,6 +51735,11 @@
     "Available": 1
   },
   {
+    "SKU": "K63900F",
+    "Description": "OVERHAUL KIT, NISSAN RL4F03A/V, RE4F03A/V, 90-05",
+    "Available": 1
+  },
+  {
     "SKU": "KP22950R",
     "Description": "OVERHAUL KIT, A618 (48RE) 2003-2007 (METAL/RUBBER GASKET)",
     "Available": 1
@@ -51817,11 +51932,6 @@
   {
     "SKU": "K48900ZL",
     "Description": "OVERHAUL KIT, HONDA BCLA, BELA, MELA, MKYA, GPLA, MKZA, GPPA",
-    "Available": 1
-  },
-  {
-    "SKU": "K63900F",
-    "Description": "OVERHAUL KIT, NISSAN RL4F03A/V, RE4F03A/V, 90-05",
     "Available": 1
   },
   {
@@ -52035,6 +52145,16 @@
     "Available": 1
   },
   {
+    "SKU": "K77900T",
+    "Description": "OVERHAUL KIT, R4A51, V4A51, R5A51, V5A51",
+    "Available": 1
+  },
+  {
+    "SKU": "K79900H-99",
+    "Description": "PISTON KIT 09G (TF60SN) 6 speed- FWD (04 PISTONS)",
+    "Available": 1
+  },
+  {
     "SKU": "R56947A",
     "Description": "VALVE BODY A4LD (1SOLENOID) SOLD AS IS NO WARRANTY",
     "Available": 1
@@ -52047,11 +52167,6 @@
   {
     "SKU": "30102GSX",
     "Description": "OVERHAUL KIT, TOYOTA K110 CVT",
-    "Available": 1
-  },
-  {
-    "SKU": "K79900HGX",
-    "Description": "OVERHAUL KIT 09G W/O PISTONS",
     "Available": 1
   },
   {
@@ -52135,11 +52250,6 @@
     "Available": 1
   },
   {
-    "SKU": "K37901KB-SP",
-    "Description": "RING KIT, FORD 6R80 (2015-2018)",
-    "Available": 1
-  },
-  {
     "SKU": "88715",
     "Description": "FILTER, HONDA B5RA, B5SA, M5LA, M5MA, B1JA, BBSA, BBTA, B1JA, BY9A, BZ0A, M8SA, MM2A (EXTERNAL) (2012-UP) (OEM# 25430-R5L-003)",
     "Available": 1
@@ -52162,11 +52272,6 @@
   {
     "SKU": "104520-15K",
     "Description": "PRESSURE REGULATOR VALVE KIT, GM 6L45, 6L50, 6L80, 6L90 (NO DRILLING REQUIRED) (CONTAINS: VALVE, SPRING AND CHECK BALL)",
-    "Available": 1
-  },
-  {
-    "SKU": "223710P",
-    "Description": "FILTER, FORD 10R80 MHT, PLUG IN HYBRIDS, FORD RANGER PHEV, 2020-UP FORD EXPLORER PHEV, 2020-UP FORD F150 PHEV, 2021-UP LINCOLN AVIATOR, 2020-UP (2020-ON) (OEM# L1MZ-7A098-B, L1MP-7G186-A, 2377588)",
     "Available": 1
   },
   {
@@ -52605,6 +52710,11 @@
     "Available": 1
   },
   {
+    "SKU": "000524",
+    "Description": "FR MODULE A500 88-UP COMPLETE",
+    "Available": 1
+  },
+  {
     "SKU": "FRMAISIN09",
     "Description": "FR MODULE, AW81-40LE 04+",
     "Available": 1
@@ -52672,11 +52782,6 @@
   {
     "SKU": "83288",
     "Description": "O RING FRONT  PUMP ZF4HP16",
-    "Available": 1
-  },
-  {
-    "SKU": "K75900F-99",
-    "Description": "PISTON KIT TOYOTA U240E",
     "Available": 1
   },
   {
@@ -52752,6 +52857,11 @@
   {
     "SKU": "90243",
     "Description": "MCS, FRONT PUMP 096, 097, 098, 01M, 01N, 01P, A4R, AD4, AD8",
+    "Available": 1
+  },
+  {
+    "SKU": "88311",
+    "Description": "MCS, EXTENSION HOUSING A340 SERIES, AW4/AW30-43LE, VA4W3, R4AW3, A650E, A750E, A750F, A960E (EXC. SUPRA, 86 CRESSIDA, LEXUS, VOLVO, JEEP2WD, JEEP4WD. MONTERO)",
     "Available": 1
   },
   {
@@ -52865,6 +52975,11 @@
     "Available": 1
   },
   {
+    "SKU": "77254",
+    "Description": "MCS, AXLE (CASE SIDE), HYUNDAI A6GF1(OEM# 45245-26200)",
+    "Available": 1
+  },
+  {
     "SKU": "512735",
     "Description": "FR PLATE, NISSAN RE4R01A OVERRUN",
     "Available": 1
@@ -52897,11 +53012,6 @@
   {
     "SKU": "512936",
     "Description": "FR PLATE, MERCEDES BENZ 722.4 (W4A020), 722.5 (W5A030) REVERSE (IND# 68110, A68110) (OEM# 201-272-0025) (BLACK- 30T- OD:6.010\"- 2MP)",
-    "Available": 1
-  },
-  {
-    "SKU": "K98900U",
-    "Description": "OVERHAUL KIT, HONDA G2AA, GYCA, M3WC, GTAA, JDJC, GPAA, SOMA, G2SA",
     "Available": 1
   },
   {
@@ -52983,16 +53093,6 @@
     "SKU": "511958",
     "Description": "ST PLATE, NISSAN RE4R03A LOW/REV STEEL 88-UP",
     "Available": 1
-  },
-  {
-    "SKU": "511051",
-    "Description": "ST PLATE, HONDA M4TA, MDMA, MDLA, S4XA, SKWA, LOW/HOLD (95-01) (OEM# 22543-PS5-013) (18T- ID:2.800\")",
-    "Available": 1
-  },
-  {
-    "SKU": "74960K",
-    "Description": "PISTON KIT, GM 4L60E (1997-UP) (3 PISTONS) (HI-PER BLUE)",
-    "Available": 0
   },
   {
     "SKU": "4L60E-LB2",
@@ -53195,6 +53295,11 @@
     "Available": 1
   },
   {
+    "SKU": "K79900TAX-MD",
+    "Description": "OVERHAUL KIT, TF-71SC, TF-72SC (AWFGF25), TF-73SC (AWF616) W/O PISTONS",
+    "Available": 1
+  },
+  {
     "SKU": "86430",
     "Description": "MCS, TOYOTA A750E, A760E, TRANSFER CASE ADAPTER (LEXUS 4WD) (OEM# 90311-43007)",
     "Available": 1
@@ -53280,11 +53385,6 @@
     "Available": 1
   },
   {
-    "SKU": "K77900T",
-    "Description": "OVERHAUL KIT, R4A51, V4A51, R5A51, V5A51",
-    "Available": 1
-  },
-  {
     "SKU": "X175700-166",
     "Description": "FR PLATE, SUZUKI 4AT,JF402E  C1 FRONT 97-ON",
     "Available": 1
@@ -53297,11 +53397,6 @@
   {
     "SKU": "39741-42K",
     "Description": "KIT, ACCUMULATOR PISTON 09D, TF-60SN, TF-80SC, TF-81SC, TR-60SN (INCLUDES: PISTON, SLEEVE, O-RING, SPRINGS)",
-    "Available": 1
-  },
-  {
-    "SKU": "000524",
-    "Description": "FR MODULE A500 88-UP COMPLETE",
     "Available": 1
   },
   {
@@ -53555,11 +53650,6 @@
     "Available": 1
   },
   {
-    "SKU": "K79900H-99",
-    "Description": "PISTON KIT 09G (TF60SN) 6 speed- FWD (04 PISTONS)",
-    "Available": 1
-  },
-  {
     "SKU": "K79900H-PK",
     "Description": "PISTON KIT VW 09G 4 PCS",
     "Available": 1
@@ -53612,6 +53702,11 @@
   {
     "SKU": "125710A",
     "Description": "FILTER, ZF8HP90, CHRYSLER, DODGE CHALLENGER 15-17, CHARGER 15-17 (OEM# 0501-217-650, 6826725AA, 68266725AB)",
+    "Available": 1
+  },
+  {
+    "SKU": "K7500Y-1F",
+    "Description": "FR MODULE, TOYOTA CVT K114",
     "Available": 1
   },
   {
@@ -53690,6 +53785,11 @@
     "Available": 1
   },
   {
+    "SKU": "98992C",
+    "Description": "PRESSURE SWITCH HONDA APXA, APX4, MPXA, MPWA, MPOA, AOYA, BOYA, BAXA, ,MAXA, MP1A, M6HA, MPJA, MDWA, PX4B BEIGE CONNECTOR , 27 PSI, 90-97 HONDA, ACURA, (OEM# 28600-P7W-003)",
+    "Available": 1
+  },
+  {
     "SKU": "120710Q",
     "Description": "FILTER, FORD 6F35 FUSION 2009-2012, ESCAPE 2009-2012 (OEM# 9L8Z-7A098-D, 9L8P-7G186-DC) PLASTIC (REPLACES 120710)",
     "Available": 1
@@ -53720,18 +53820,13 @@
     "Available": 1
   },
   {
-    "SKU": "309740",
-    "Description": "FILTER, SSANG YONG QR019CHA/CHB CVT",
-    "Available": 1
-  },
-  {
-    "SKU": "K7500Y-1F",
-    "Description": "FR MODULE, TOYOTA CVT K114",
-    "Available": 1
-  },
-  {
     "SKU": "42716",
     "Description": "FILTER, HYUNDAI GAMMA C0GF1 CVT (OEM# 48148-2H000)",
+    "Available": 1
+  },
+  {
+    "SKU": "RPST-198",
+    "Description": "PISTON KIT, FORD 10R80, GM 10L80, 10L90",
     "Available": 1
   },
   {
@@ -53940,6 +54035,11 @@
     "Available": 1
   },
   {
+    "SKU": "73287",
+    "Description": "MCS, CONVERTER HOUSING,  NISSAN JF011E, JF016E, RE0F10A, RE0F11A, JF017E 2WD (12-14) 4WD 13-14",
+    "Available": 1
+  },
+  {
     "SKU": "75490",
     "Description": "MSC, PUMP NISSAN JF010E, RE0F09A 9/02-06, TRANSFER CASE DIFFERENTIAL TOYOTA U340(OEM# 31375-1XD00, 90311-49002)",
     "Available": 1
@@ -54105,6 +54205,11 @@
     "Available": 1
   },
   {
+    "SKU": "180710",
+    "Description": "FILTER, TOYOTA UA80E, UA80F, UB80E, UB80F (OEM# 35330-48040 , 35330-06020)",
+    "Available": 1
+  },
+  {
     "SKU": "304702-160",
     "Description": "FR PLATE, DPO/AL4 BRAKE INT HEG 99+ (OEM# 7701-101-411) (OD: 6.720\" - 6T)",
     "Available": 1
@@ -54127,16 +54232,6 @@
   {
     "SKU": "511875",
     "Description": "ST PLATE, TOYOTA A46DE, FORWARD (OEM# 12397238, 31536-41X10, 35634-30070) (ID:4.039\" - 8T)",
-    "Available": 1
-  },
-  {
-    "SKU": "K79900TAX-MD",
-    "Description": "OVERHAUL KIT, TF-71SC, TF-72SC (AWFGF25), TF-73SC (AWF616) W/O PISTONS",
-    "Available": 1
-  },
-  {
-    "SKU": "RPST-198",
-    "Description": "PISTON KIT, FORD 10R80, GM 10L80, 10L90",
     "Available": 1
   },
   {
@@ -54195,8 +54290,8 @@
     "Available": 1
   },
   {
-    "SKU": "98992C",
-    "Description": "PRESSURE SWITCH HONDA APXA, APX4, MPXA, MPWA, MPOA, AOYA, BOYA, BAXA, ,MAXA, MP1A, M6HA, MPJA, MDWA, PX4B BEIGE CONNECTOR , 27 PSI, 90-97 HONDA, ACURA, (OEM# 28600-P7W-003)",
+    "SKU": "98992",
+    "Description": "PRESSURE SWITCH HONDA APXA, APX4, MPXA, MPWA, MPOA , AOYA , BOYA,BAXA, MAXA, , MP1A, M6HA, MPJA, MDWA, PX4B, GREEN CONNECTOR , 38 PSI, 90-97 (OEM# 28600-P6H-00328600-P6H-013, 28600-P6H-003, 28600-RCL-004, 28600-RCL-013)",
     "Available": 1
   },
   {
@@ -54275,6 +54370,11 @@
     "Available": 1
   },
   {
+    "SKU": "K86900CA",
+    "Description": "OVERHAUL KIT, TOYOTA  A750E W/ PISTON",
+    "Available": 1
+  },
+  {
     "SKU": "R36426",
     "Description": "RING GEAR, REVERSE PLANET, FORD C6",
     "Available": 1
@@ -54292,6 +54392,11 @@
   {
     "SKU": "85916-01U",
     "Description": "BUSHING, OVERSIZED PUMP BUSHING ZF5HP19 (WIDTH 0.533\", SHAFT DIAMETER 1.774\", HOUSING BORE 1.999\") (FINISH IN PLACE)",
+    "Available": 1
+  },
+  {
+    "SKU": "98992D",
+    "Description": "PRESSURE SWITCH HONDA 5 Spd Pressure Switch-27 PSI (BEIGE) Honda Odyssey (2007-2 in Unit) 05-07; Acura TL(2 in Unit) 07-08 ; Can Replace 50-1030 (OEM# 28600-RKE-004, 28600-RAY-003, 28600-RAY-013, 28600-RGR-004)",
     "Available": 1
   },
   {
@@ -54405,11 +54510,6 @@
     "Available": 1
   },
   {
-    "SKU": "98992",
-    "Description": "PRESSURE SWITCH HONDA APXA, APX4, MPXA, MPWA, MPOA , AOYA , BOYA,BAXA, MAXA, , MP1A, M6HA, MPJA, MDWA, PX4B, GREEN CONNECTOR , 38 PSI, 90-97 (OEM# 28600-P6H-00328600-P6H-013, 28600-P6H-003, 28600-RCL-004, 28600-RCL-013)",
-    "Available": 1
-  },
-  {
     "SKU": "24240156",
     "Description": "OIL BAFFLE, PLASTIC GM 6T40E LOWER",
     "Available": 1
@@ -54500,11 +54600,6 @@
     "Available": 1
   },
   {
-    "SKU": "K86900CA",
-    "Description": "OVERHAUL KIT, TOYOTA  A750E W/ PISTON",
-    "Available": 1
-  },
-  {
     "SKU": "X124708B183",
     "Description": "FR PLATE HYUNDAI / KIA A5HF1 2006-On",
     "Available": 1
@@ -54520,6 +54615,11 @@
     "Available": 1
   },
   {
+    "SKU": "FRMZF19",
+    "Description": "FR MODULE 6R80,  2006-ON",
+    "Available": 1
+  },
+  {
     "SKU": "69720H",
     "Description": "FILTER, JR405E HIGH TUBE (TUBE 40.30 MM HIGH)",
     "Available": 1
@@ -54527,11 +54627,6 @@
   {
     "SKU": "41710Q",
     "Description": "FILTER, GETRAG DCT470, SPS6, LANCER EVOLUTION (09-12), LANCER RALLY ART (11-12), OUTLANDER (10-12) (OEM# 7U3R-7G186-AB, 2-1016-010)",
-    "Available": 1
-  },
-  {
-    "SKU": "98992D",
-    "Description": "PRESSURE SWITCH HONDA 5 Spd Pressure Switch-27 PSI (BEIGE) Honda Odyssey (2007-2 in Unit) 05-07; Acura TL(2 in Unit) 07-08 ; Can Replace 50-1030 (OEM# 28600-RKE-004, 28600-RAY-003, 28600-RAY-013, 28600-RGR-004)",
     "Available": 1
   },
   {
@@ -54700,6 +54795,11 @@
     "Available": 1
   },
   {
+    "SKU": "K77764",
+    "Description": "PISTON KIT, GM 4L60E (03 PISTONS)",
+    "Available": 1
+  },
+  {
     "SKU": "4800171AA",
     "Description": "SOLENOID BLOCK 42RLE OEM (SUPERSEDED 5143151AA)",
     "Available": 1
@@ -54775,11 +54875,6 @@
     "Available": 1
   },
   {
-    "SKU": "36611A",
-    "Description": "LATHE CUT, FRONT PUMP E4OD, 4R100, 5R110W",
-    "Available": 1
-  },
-  {
     "SKU": "77994",
     "Description": "BUSHIING, FRONT PUMP HYUNDAI A6LF1",
     "Available": 1
@@ -54787,11 +54882,6 @@
   {
     "SKU": "77814",
     "Description": "ORING, FRONT PUMP, V4A51, R4A51, V4A51, V5A51 (OEM# MR176814)",
-    "Available": 1
-  },
-  {
-    "SKU": "88311",
-    "Description": "MCS, EXTENSION HOUSING A340 SERIES, AW4/AW30-43LE, VA4W3, R4AW3, A650E, A750E, A750F, A960E (EXC. SUPRA, 86 CRESSIDA, LEXUS, VOLVO, JEEP2WD, JEEP4WD. MONTERO)",
     "Available": 1
   },
   {
@@ -54880,11 +54970,6 @@
     "Available": 1
   },
   {
-    "SKU": "77254",
-    "Description": "MCS, AXLE (CASE SIDE), HYUNDAI A6GF1(OEM# 45245-26200)",
-    "Available": 1
-  },
-  {
     "SKU": "173031",
     "Description": "BUSHING, PUMP, ISUZU JR405, MAZDA RC4A-EL, NISSAN RE5R05, JR710E, JR711E (RE7RO1A)",
     "Available": 1
@@ -54955,6 +55040,11 @@
     "Available": 1
   },
   {
+    "SKU": "98992E",
+    "Description": "PRESSURE SWITCH HONDA 5 SPEED, GRAY CONNECTOR , 33 PSI, 03-UP (OEM# 28610-RKE-004, 28600-P7Z-003, 28600-P7Z-013, 28610-PCJ-004, 28610-PRH-003, 28610-RAY-003, 28610-RAY-013, 28610-RGR-004)",
+    "Available": 1
+  },
+  {
     "SKU": "119720",
     "Description": "FILTER, BW37TB (W/SEAL) SAAB, FWD 4 SPEED (81-93) (OEM# 4277455)",
     "Available": 1
@@ -54982,11 +55072,6 @@
   {
     "SKU": "98723C",
     "Description": "FILTER, HONDA ODYSSEY 2.4L (2014-UP), STEPWGN SPADA 2.0L (2010-2014) (OEM# 25420-RJ2-004)",
-    "Available": 1
-  },
-  {
-    "SKU": "180710",
-    "Description": "FILTER, TOYOTA UA80E, UA80F, UB80E, UB80F (OEM# 35330-48040 , 35330-06020)",
     "Available": 1
   },
   {
@@ -55035,6 +55120,11 @@
     "Available": 1
   },
   {
+    "SKU": "59710F",
+    "Description": "FILTER GM AF33 CHEVY EQUINOX 5 SPEED (OEM# 24240239) AW55-50SN",
+    "Available": 1
+  },
+  {
     "SKU": "69710U",
     "Description": "FILTER, SUBARU 5 SPEED TRANSMISSION, JR507E, 5EAT (PLASTIC) (09-UP)",
     "Available": 1
@@ -55067,11 +55157,6 @@
   {
     "SKU": "96720H",
     "Description": "FILTER, VW/AUDI 09E, ZF6HP26A, HEIGHT 113.06 MM, SUCTION 16.97 MM, PICK UP TUBE 91 MM (OEM# 0501-223-001, 2-4945-600, 0B6-325-429)",
-    "Available": 1
-  },
-  {
-    "SKU": "FRMZF19",
-    "Description": "FR MODULE 6R80,  2006-ON",
     "Available": 1
   },
   {
@@ -55135,11 +55220,6 @@
     "Available": 1
   },
   {
-    "SKU": "59710F",
-    "Description": "FILTER GM AF33 CHEVY EQUINOX 5 SPEED (OEM# 24240239) AW55-50SN",
-    "Available": 1
-  },
-  {
     "SKU": "59958E",
     "Description": "SENSOR, AW60-40LE OUTPUT SPEED (GRAY) (OEM#26141-60G10)",
     "Available": 1
@@ -55177,11 +55257,6 @@
   {
     "SKU": "077708-183",
     "Description": "FR PLATE, CHRYSLER 62TE, UNDERDRIVE LOW (HEG - 31T - OD: 4.773\" - SB)",
-    "Available": 1
-  },
-  {
-    "SKU": "98992E",
-    "Description": "PRESSURE SWITCH HONDA 5 SPEED, GRAY CONNECTOR , 33 PSI, 03-UP (OEM# 28610-RKE-004, 28600-P7Z-003, 28600-P7Z-013, 28610-PCJ-004, 28610-PRH-003, 28610-RAY-003, 28610-RAY-013, 28610-RGR-004)",
     "Available": 1
   },
   {
@@ -55467,11 +55542,6 @@
   {
     "SKU": "512788",
     "Description": "FR PLATE AUDI, VW FORWARD 89-ON 095, 096, 097, 098, 01M",
-    "Available": 1
-  },
-  {
-    "SKU": "73287",
-    "Description": "MCS, CONVERTER HOUSING,  NISSAN JF011E, JF016E, RE0F10A, RE0F11A, JF017E 2WD (12-14) 4WD 13-14",
     "Available": 1
   },
   {
@@ -55835,6 +55905,11 @@
     "Available": 1
   },
   {
+    "SKU": "98992B",
+    "Description": "PRESSURE SWITCH HONDA SOLENOID, 5 SP , 40 PSI GREEN, HONDA ACCORD, ELEMENT, CR-V 03-07 (OEM# 28600-PRP-004, 28600-PCJ-004)",
+    "Available": 1
+  },
+  {
     "SKU": "37842",
     "Description": "MCS FRONT PUMP, FORD 6R60, 6R75, 6R80, ZF6HP19/19X/21/21X (2000-13) ZF6HP19A (2002-10) ZF6HP26, ZF6SHP26 (2002-09), ZF6HP26A (2004-09), ZF6HP28/X (2004-12), ZF6HP32 (2001-12) (OEM# 6L2Z-7A248-AA)",
     "Available": 1
@@ -55852,6 +55927,11 @@
   {
     "SKU": "174704A180",
     "Description": "FR PLATE, KIA A5SR1/2, REVERSE 04+",
+    "Available": 1
+  },
+  {
+    "SKU": "56710TS",
+    "Description": "FILTER, CARTRIDGE, FORD 5R110W (03-UP) (OEM# 3C3Z-7B155-BA)",
     "Available": 1
   },
   {
@@ -56030,11 +56110,6 @@
     "Available": 1
   },
   {
-    "SKU": "98992B",
-    "Description": "PRESSURE SWITCH HONDA SOLENOID, 5 SP , 40 PSI GREEN, HONDA ACCORD, ELEMENT, CR-V 03-07 (OEM# 28600-PRP-004, 28600-PCJ-004)",
-    "Available": 1
-  },
-  {
     "SKU": "108704",
     "Description": "FR PLATE F4A33 LOW REVERSE 91-ON",
     "Available": 1
@@ -56185,6 +56260,11 @@
     "Available": 1
   },
   {
+    "SKU": "JF011E-FC",
+    "Description": "FLOW CONTROL VALVE REPAIR FOR JF011E AND JF015E CVT",
+    "Available": 1
+  },
+  {
     "SKU": "512907",
     "Description": "FR PLATE, TOYTA U340E, U341E 2ND BRAKE B2",
     "Available": 1
@@ -56290,11 +56370,6 @@
     "Available": 1
   },
   {
-    "SKU": "56710TS",
-    "Description": "FILTER, CARTRIDGE, FORD 5R110W (03-UP) (OEM# 3C3Z-7B155-BA)",
-    "Available": 1
-  },
-  {
     "SKU": "115954A",
     "Description": "SENSOR, INPUT SPEED, FORD 6F50 (07-UP) 3 PRONG CONNECTOR AND WIRE HARNESS 11-3/4\" LONG (OEM# AA5Z-7M101-B) (AFTERMARKET)",
     "Available": 1
@@ -56347,6 +56422,11 @@
   {
     "SKU": "97711Y",
     "Description": "FILTER, A650E TOYOTA, A47DE LEXUS IS200/300 (GXE10R) (OEM# 35330-22032) (01-UP)",
+    "Available": 1
+  },
+  {
+    "SKU": "94710F",
+    "Description": "FILTER TOYOTA LANDCRUISER A442F, AW450-43LE. 98-UP. (OEM# 35330-60040)",
     "Available": 1
   },
   {
@@ -56412,11 +56492,6 @@
   {
     "SKU": "048753AX",
     "Description": "SMOD GM 3T40 125 125C 1980-UP",
-    "Available": 1
-  },
-  {
-    "SKU": "049406",
-    "Description": "MCS AODE/4R70W/5R55W/S 2WD EXT HSG LONG BOOT",
     "Available": 1
   },
   {
@@ -56692,11 +56767,6 @@
   {
     "SKU": "89710S",
     "Description": "FILTER DAIHATSU / TOYOTA PASSO (ELONGATED HOLE) (OEM# 35303-97201)",
-    "Available": 1
-  },
-  {
-    "SKU": "94710F",
-    "Description": "FILTER TOYOTA LANDCRUISER A442F, AW450-43LE. 98-UP. (OEM# 35330-60040)",
     "Available": 1
   },
   {
@@ -57080,6 +57150,11 @@
     "Available": 1
   },
   {
+    "SKU": "77813",
+    "Description": "MCS, FRONT PUMP HYUNDAI A6LF1, A6GF1-2, A6MF1-2, A8LF1, A8TR1 (OEM# 46131-3B000)",
+    "Available": 1
+  },
+  {
     "SKU": "407708-160",
     "Description": "FR PLATE, GM 6T70,6T75; FORD 6F50, 6F55  6 SP 1-2-3-4 CLUTCH (OEM# 24236492, 24238272, 7T4Z-7B164B) (OD: 8.187\" - 36T)",
     "Available": 1
@@ -57212,6 +57287,16 @@
   {
     "SKU": "129707-240",
     "Description": "ST PLATE, VW TF70 C2, K2, 4TH 5TH 6TH 06-11",
+    "Available": 1
+  },
+  {
+    "SKU": "85972",
+    "Description": "CONNECTOR SLEEVE, BMW ZF6HP19, ZF6HP21, ZF6HP26, ZF6HP28, ZF6HP32, FORD 6R60, 6R75, 6R80, 6R100, TZV500010, GM 6L45, 6L50, 6L80, 6L90 (OEM# 0501-216-272, 24347-588-725, 24239878, 6L2Z-7G276-AA)",
+    "Available": 1
+  },
+  {
+    "SKU": "33510N-02",
+    "Description": "VALVE, PUMP FLOW CONTROL, NISSAN JF011E (RE0F10A), JF015E (RE0F11A), JF016E (RE0F10D), JF017E (RE0F10E)",
     "Available": 1
   },
   {
@@ -57492,16 +57577,6 @@
   {
     "SKU": "56710C",
     "Description": "FILTER, FORD 5R110W 06-UP (OEM# 7C3Z-7B155-B, 7C3P-7B155B) AFTERMARKET",
-    "Available": 1
-  },
-  {
-    "SKU": "85972",
-    "Description": "CONNECTOR SLEEVE, BMW ZF6HP19, ZF6HP21, ZF6HP26, ZF6HP28, ZF6HP32, FORD 6R60, 6R75, 6R80, 6R100, TZV500010, GM 6L45, 6L50, 6L80, 6L90 (OEM# 0501-216-272, 24347-588-725, 24239878, 6L2Z-7G276-AA)",
-    "Available": 1
-  },
-  {
-    "SKU": "33510N-02",
-    "Description": "VALVE, PUMP FLOW CONTROL, NISSAN JF011E (RE0F10A), JF015E (RE0F11A), JF016E (RE0F10D), JF017E (RE0F10E)",
     "Available": 1
   },
   {
@@ -57980,11 +58055,6 @@
     "Available": 1
   },
   {
-    "SKU": "77813",
-    "Description": "MCS, FRONT PUMP HYUNDAI A6LF1, A6GF1-2, A6MF1-2, A8LF1, A8TR1 (OEM# 46131-3B000)",
-    "Available": 1
-  },
-  {
     "SKU": "X054700",
     "Description": "FR PLATE, MERCEDES 722.0 ,722.1 ,722.2 K1,K2 clutch 722.0 & 722.2-wave 70-82",
     "Available": 1
@@ -58122,11 +58192,6 @@
   {
     "SKU": "96800",
     "Description": "BAND, FORD AX4N COAST 95-03 (1\" WIDE) (OEM# F4DP-7A162-A)",
-    "Available": 1
-  },
-  {
-    "SKU": "JF011E-FC",
-    "Description": "FLOW CONTROL VALVE REPAIR FOR JF011E AND JF015E CVT",
     "Available": 1
   },
   {
@@ -58920,6 +58985,11 @@
     "Available": 1
   },
   {
+    "SKU": "99700A",
+    "Description": "BAND RE4F04A/V, RE4F04B NISSAN  92-UP (IND#63700) (OEM# 31630-80X00, 31630-80X02, F3XY-7D034A)",
+    "Available": 1
+  },
+  {
     "SKU": "8604A015X",
     "Description": "NEUTRAL SWITCH, MITSUBISHI MONTERO, PAJERO V73 V75 V77 (AFTERMARKET) (OEM# MR263257, 8604A015)",
     "Available": 1
@@ -58942,11 +59012,6 @@
   {
     "SKU": "34417",
     "Description": "SPRAG, 4L80E ROLLER CLUTCH, OVERDRIVE 12 ROLLER (0.309\" ROLLER) (91-01) (IND: 34417)",
-    "Available": 1
-  },
-  {
-    "SKU": "99700A",
-    "Description": "BAND RE4F04A/V, RE4F04B NISSAN  92-UP (IND#63700) (OEM# 31630-80X00, 31630-80X02, F3XY-7D034A)",
     "Available": 1
   },
   {
@@ -59930,6 +59995,11 @@
     "Available": 1
   },
   {
+    "SKU": "75709ALXD",
+    "Description": "PAN GASKET, TOYOTA K310, K311, K313 FARPAK",
+    "Available": 1
+  },
+  {
     "SKU": "075707A",
     "Description": "ST PLATE, NISSAN RE4R01A, REVERSE - WIDE (93-ON)",
     "Available": 1
@@ -60462,11 +60532,6 @@
   {
     "SKU": "512898",
     "Description": "FR HONDA M6HA,MDWA 1ST GEAR HEG 97+ (OEM# 22544-P6H-003)",
-    "Available": 1
-  },
-  {
-    "SKU": "75709ALXD",
-    "Description": "PAN GASKET, TOYOTA K310, K311, K313 FARPAK",
     "Available": 1
   },
   {
@@ -61075,6 +61140,11 @@
     "Available": 1
   },
   {
+    "SKU": "47710A",
+    "Description": "FILTER R4A51, V4A51 (AWD) R5A51, V5A51 (4WD) 2000- UP DEEP PAN. (OEM# MR528836, MD673110, 46321-22040)",
+    "Available": 1
+  },
+  {
     "SKU": "407702-157",
     "Description": "FR PLATE, GM 6T70,6T75; FORD 6F50, 6F55, OVERDRIVE (4-5-6 CLUTCH) (OEM# 24236490, 7T4Z-7B164A) (2007-ON) (OD: 4.760\" - 24T)",
     "Available": 1
@@ -61135,6 +61205,11 @@
     "Available": 1
   },
   {
+    "SKU": "59705",
+    "Description": "BAND, AW55-50SN, AF33-5. 01-UP",
+    "Available": 1
+  },
+  {
     "SKU": "ATK405",
     "Description": "COOLER, 12\" X 10\" X 3/4\" PUSH ON UP TO 10,000 LBS CAPACITY (REF# 1405HTC)",
     "Available": 1
@@ -61152,11 +61227,6 @@
   {
     "SKU": "52710G",
     "Description": "FILTER, RENAULT & PEUGEOT, DPO, 98-UP (IND: 52710G)",
-    "Available": 1
-  },
-  {
-    "SKU": "59705",
-    "Description": "BAND, AW55-50SN, AF33-5. 01-UP",
     "Available": 1
   },
   {
@@ -61252,11 +61322,6 @@
   {
     "SKU": "211706-170",
     "Description": "FR PLATE, DAIHATSU A4LB-1, TOYOTA U540E CENTER SUPPORT 02-UP",
-    "Available": 1
-  },
-  {
-    "SKU": "47710A",
-    "Description": "FILTER R4A51, V4A51 (AWD) R5A51, V5A51 (4WD) 2000- UP DEEP PAN. (OEM# MR528836, MD673110, 46321-22040)",
     "Available": 1
   },
   {
@@ -61485,6 +61550,11 @@
     "Available": 1
   },
   {
+    "SKU": "57710",
+    "Description": "FILTER U140E/F,  U240 RAV4 TOYOTA METAL PLASTIC (OEM# 35330-0W010, 35330-06010, 35330-28010)",
+    "Available": 1
+  },
+  {
     "SKU": "98710P",
     "Description": "FILTER HONDA M7ZA B7XA B7TA B7VA B7ZA B7YA (Plastic) 1998-Up (OEM# 25420-P7X-003)",
     "Available": 1
@@ -61672,11 +61742,6 @@
   {
     "SKU": "42964A",
     "Description": "WAVE SPRING, MITSUBISHI KM 177, LOW/REVERSE CLUTCH, 89-UP (IND: MD719830)",
-    "Available": 1
-  },
-  {
-    "SKU": "57710",
-    "Description": "FILTER U140E/F,  U240 RAV4 TOYOTA METAL PLASTIC (OEM# 35330-0W010, 35330-06010, 35330-28010)",
     "Available": 1
   },
   {
@@ -62400,6 +62465,11 @@
     "Available": 1
   },
   {
+    "SKU": "LG19250",
+    "Description": "ASSEMBLEE GOO GREEN (16 OZ)",
+    "Available": 1
+  },
+  {
     "SKU": "209702-180",
     "Description": "FR PLATE, TOYOTA  U140E, U140F, U240, U240E, DIRECT 98-ON (OEM# 35667-21010) (OD: 6.180\" - 40T)",
     "Available": 1
@@ -62682,11 +62752,6 @@
   {
     "SKU": "92722",
     "Description": "FILTER, 42RLE, CHRYSLER, JEEP. 03-UP (IND: 92722). (OEM# 52852913AB, 68059549AA)",
-    "Available": 1
-  },
-  {
-    "SKU": "LG19250",
-    "Description": "ASSEMBLEE GOO GREEN (16 OZ)",
     "Available": 1
   },
   {
@@ -63485,6 +63550,11 @@
     "Available": 1
   },
   {
+    "SKU": "77763A",
+    "Description": "PISTON, 4L60E. 3rd-4th CLUTCH (OEM# 24200290)",
+    "Available": 1
+  },
+  {
     "SKU": "287700-170",
     "Description": "FR PLATE, AWF21, TF80-SC, AF40-6, AM6, AW6A-EL C1 Clutch - 1st, 2nd, 3rd & 4th (1st engine braking)",
     "Available": 1
@@ -63587,11 +63657,6 @@
   {
     "SKU": "241708-160",
     "Description": "FR PLATE, NISSAN RE4F03A, RL4F03A, OVERRUN 91-ON (OD: 4.608 - 18T)",
-    "Available": 1
-  },
-  {
-    "SKU": "77763A",
-    "Description": "PISTON, 4L60E. 3rd-4th CLUTCH (OEM# 24200290)",
     "Available": 1
   },
   {
@@ -63795,6 +63860,11 @@
     "Available": 1
   },
   {
+    "SKU": "77762A",
+    "Description": "PISTON, 4L60E OVERRUN CLUTCH 94+ (OE#24205273)",
+    "Available": 1
+  },
+  {
     "SKU": "12606",
     "Description": "WASHER, A904 FRONT CLUTCH - FRONT & REAR 60-69 (OE#2204369)",
     "Available": 1
@@ -63865,11 +63935,6 @@
     "Available": 1
   },
   {
-    "SKU": "77762A",
-    "Description": "PISTON, 4L60E OVERRUN CLUTCH 94+ (OE#24205273)",
-    "Available": 1
-  },
-  {
     "SKU": "273702-160",
     "Description": "FR PLATE, MAZDA - 4F27E, FS5A-EL 2006-On REVERSE (OD: 5.515 - 32T)",
     "Available": 1
@@ -63917,6 +63982,11 @@
   {
     "SKU": "X124401",
     "Description": "MCS PUMP, JF402E, JF405E",
+    "Available": 1
+  },
+  {
+    "SKU": "043400",
+    "Description": "MCS FP GM TH700R4, 200C,4L60E",
     "Available": 1
   },
   {
@@ -63982,11 +64052,6 @@
   {
     "SKU": "36528E",
     "Description": "PISTON, E40D, 4R100(BAND SERVO) INTERMEDIATE 89-04",
-    "Available": 1
-  },
-  {
-    "SKU": "043400",
-    "Description": "MCS FP GM TH700R4, 200C,4L60E",
     "Available": 1
   },
   {
@@ -64065,8 +64130,18 @@
     "Available": 1
   },
   {
+    "SKU": "LG19610",
+    "Description": "INSTANT SHUDDER FIXX, 2 OZ",
+    "Available": 1
+  },
+  {
     "SKU": "206700-150",
     "Description": "FR PLATE, TOYOTA A750E, A750F 5 SPEED RWD, REVERSE (C3) REAR 03-UP (OEM# 35667-60010) (OD: 6.372\" - 40T)",
+    "Available": 1
+  },
+  {
+    "SKU": "216724-150S",
+    "Description": "FR PLATE, TOYOTA K313, REVERSE (OD: 5.425\" - 50T)",
     "Available": 1
   },
   {
@@ -64077,11 +64152,6 @@
   {
     "SKU": "059401",
     "Description": "MCS MITS KM170/177 AXLE",
-    "Available": 1
-  },
-  {
-    "SKU": "LG19610",
-    "Description": "INSTANT SHUDDER FIXX, 2 OZ",
     "Available": 1
   },
   {
@@ -64112,11 +64182,6 @@
   {
     "SKU": "X031401",
     "Description": "MCS EH W/O BOOT C6,TH400 2.505\" OD",
-    "Available": 1
-  },
-  {
-    "SKU": "216724-150S",
-    "Description": "FR PLATE, TOYOTA K313, REVERSE (OD: 5.425\" - 50T)",
     "Available": 1
   },
   {
@@ -64185,6 +64250,11 @@
     "Available": 1
   },
   {
+    "SKU": "77764A",
+    "Description": "PISTON, 4L60E FWD CLUTCH 94+ (OEM# 24205272)",
+    "Available": 1
+  },
+  {
     "SKU": "216718-150S",
     "Description": "FR PLATE, TOYOTA K120, OVERDRIVE (OD: 6.024\" - 32T)",
     "Available": 1
@@ -64207,11 +64277,6 @@
   {
     "SKU": "92725S",
     "Description": "FILTER RE0F10A, JF011E CARTRIDGE 2007-UP W/SEAL (OEM# 31726-1XF00, 31726-1XZ0A, 2824A006, 2824A025)",
-    "Available": 1
-  },
-  {
-    "SKU": "77764A",
-    "Description": "PISTON, 4L60E FWD CLUTCH 94+ (OEM# 24205272)",
     "Available": 1
   },
   {
