@@ -6,6 +6,7 @@
     <title>ATK Products Catalog</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
+        /* ========== (TODO EL CSS SE MANTIENE IGUAL) ========== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
@@ -1130,6 +1131,7 @@
         let csvContent = 'SKU,Description,Available\n';
         for (const p of selectedProducts) {
             const sku = aString(p.SKU);
+            // EN LA EXPORTACIÓN: usar descripción en inglés (la original)
             const desc = aString(p.Description).replace(/,/g, ';');
             const avail = p.Available === 1 || p.Available === true ? 'Yes' : 'No';
             csvContent += `${sku},"${desc}",${avail}\n`;
@@ -1272,7 +1274,12 @@
         let html = '';
         for (const p of resultadosPaginados) {
             const sku = aString(p.SKU);
-            const desc = aString(p.Description);
+            // ========== CAMBIO AQUÍ: descripción según idioma ==========
+            let desc = aString(p.Description);
+            if (currentLang === 'es' && p.Description_ES) {
+                desc = aString(p.Description_ES);
+            }
+            // ==========================================================
             const disp = (p.Available === 1 || p.Available === true);
             html += `<div class="product-card">
                 <div class="product-sku">
