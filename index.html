@@ -6,7 +6,6 @@
     <title>ATK Products Catalog</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
-        /* ========== (TODO EL CSS SE MANTIENE IGUAL) ========== */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
@@ -1131,7 +1130,6 @@
         let csvContent = 'SKU,Description,Available\n';
         for (const p of selectedProducts) {
             const sku = aString(p.SKU);
-            // EN LA EXPORTACIÓN: usar descripción en inglés (la original)
             const desc = aString(p.Description).replace(/,/g, ';');
             const avail = p.Available === 1 || p.Available === true ? 'Yes' : 'No';
             csvContent += `${sku},"${desc}",${avail}\n`;
@@ -1230,7 +1228,12 @@
                 const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
                 resultados = resultados.filter(p => {
                     const sku = aString(p.SKU).toLowerCase();
-                    const desc = aString(p.Description).toLowerCase();
+                    // ========== BUSCAR SOLO EN EL IDIOMA ACTUAL ==========
+                    let desc = aString(p.Description).toLowerCase();
+                    if (currentLang === 'es' && p.Description_ES) {
+                        desc = aString(p.Description_ES).toLowerCase();
+                    }
+                    // ===================================================
                     const texto = sku + ' ' + desc;
                     return palabras.every(w => texto.includes(w));
                 });
@@ -1274,12 +1277,12 @@
         let html = '';
         for (const p of resultadosPaginados) {
             const sku = aString(p.SKU);
-            // ========== CAMBIO AQUÍ: descripción según idioma ==========
+            // ========== MOSTRAR DESCRIPCIÓN SEGÚN IDIOMA ==========
             let desc = aString(p.Description);
             if (currentLang === 'es' && p.Description_ES) {
                 desc = aString(p.Description_ES);
             }
-            // ==========================================================
+            // =====================================================
             const disp = (p.Available === 1 || p.Available === true);
             html += `<div class="product-card">
                 <div class="product-sku">
