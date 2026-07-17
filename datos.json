@@ -990,12 +990,6 @@
     "Description_ES": "MÓDULO ST, TOYOTA A42DL,44DL,45DL 84+"
   },
   {
-    "SKU": "044753J",
-    "Description": "ST MODULE, TOYOTA A46DE, DF 90+",
-    "Available": 0,
-    "Description_ES": "MÓDULO ST, TOYOTA A46DE, DF 90+"
-  },
-  {
     "SKU": "044901",
     "Description": "MASTER KIT A40,41,43, ALL 3SP 72-93",
     "Available": 0,
@@ -1834,12 +1828,6 @@
     "Description": "FR MODULE, TOYOTA A140 TOYOTA 90-ON",
     "Available": 0,
     "Description_ES": "MÓDULO FR, TOYOTA A140 TOYOTA 90-ON"
-  },
-  {
-    "SKU": "065752S",
-    "Description": "FR MODULE, TOYOTA A245 96-ON",
-    "Available": 0,
-    "Description_ES": "MÓDULO FR, TOYOTA A245 96-ON"
   },
   {
     "SKU": "065753B",
@@ -3498,6 +3486,12 @@
     "Description_ES": "SELLO"
   },
   {
+    "SKU": "1405HTC",
+    "Description": "HAYDEN TRANS. COOLER-3/4\"X10\"X15-1/2\" HEAVY DUTY",
+    "Available": 0,
+    "Description_ES": "HAYDEN TRANS.ENFRIADOR-3/4\"X10\"X15-1/2\" TRABAJO PESADO"
+  },
+  {
     "SKU": "14077157",
     "Description": "FLYWHEEL",
     "Available": 0,
@@ -4564,6 +4558,12 @@
     "Description": "ACCUMULATOR PISTON HD (CHRYSLER) A518/A500 T6/T8 88-UP",
     "Available": 0,
     "Description_ES": "ACUMULADOR PISTÓN HD (CHRYSLER) A518/A500 T6/T8 88-UP"
+  },
+  {
+    "SKU": "22900",
+    "Description": "BAND, A727: LOW/REVERSE (REAR) - FOR 6\" REVERSE DRUM (IND: 22900) (OEM# 1942133, 443185)",
+    "Available": 0,
+    "Description_ES": "BANDA, A727: BAJA/MARCHA ATRÁS (TRASERA) - PARA TAMBOR DE MARCHA ATRÁS DE 6\" (IND: 22900) (OEM# 1942133, 443185)"
   },
   {
     "SKU": "22955-OEM",
@@ -6862,6 +6862,12 @@
     "Description": "VANE TH125C,TH700-R4",
     "Available": 0,
     "Description_ES": "PALETA TH125C,TH700-R4"
+  },
+  {
+    "SKU": "33710",
+    "Description": "FILTER, GM 4T40E/4T45E (1995-ON) (OEM# 8685185 , 24203770)",
+    "Available": 0,
+    "Description_ES": "FILTRO, GM 4T40E/4T45E (1995-EN ADELANTE) (OEM# 8685185, 24203770)"
   },
   {
     "SKU": "33747",
@@ -11818,6 +11824,12 @@
     "Description": "FILTER ZF4HP20",
     "Available": 0,
     "Description_ES": "FILTRO ZF4HP20"
+  },
+  {
+    "SKU": "83710A",
+    "Description": "FILTER RN3F01A, RL3F01A 87-92 DEEP PAN SENTRA,",
+    "Available": 0,
+    "Description_ES": "FILTRO RN3F01A, RL3F01A 87-92 BANDEJA PROFUNDA SENTRA,"
   },
   {
     "SKU": "83714",
@@ -22680,6 +22692,12 @@
     "Description_ES": "BANDA A518, A-727.INTERMEDIO, FLEX (OEM).1962-2004 (MULTIFLEX)"
   },
   {
+    "SKU": "512652",
+    "Description": "FR PLATE, TH700R4/4L60 OVERUN HEG 82+",
+    "Available": 0,
+    "Description_ES": "PLACA FR, TH700R4/4L60 SOBREUNO HEG 82+"
+  },
+  {
     "SKU": "FRMHYUND01",
     "Description": "FR MODULE HYUNDAI A4BF3 ACCENT 99-ON",
     "Available": 0,
@@ -24340,12 +24358,6 @@
     "Description": "FR PLATE HONDA BYBA, BGHA, MGHA, 3RD 2001-UP GPX",
     "Available": 0,
     "Description_ES": "PLACA FR HONDA BYBA, BGHA, MGHA, 3.º 2001-UP GPX"
-  },
-  {
-    "SKU": "R571815",
-    "Description": "FR PLATE HONDA MZHA, BZHA, BZNA 2ND 06-09 MR9A 1ST, 2ND, 3RD, 91-UP GPX",
-    "Available": 0,
-    "Description_ES": "PLACA FR HONDA MZHA, BZHA, BZNA 2ND 06-09 MR9A 1ST, 2ND, 3RD, 91-UP GPX"
   },
   {
     "SKU": "R571830",
@@ -26014,6 +26026,12 @@
     "Description": "ST MODULE, GM  6L45E, 6L50 2007-ON",
     "Available": 0,
     "Description_ES": "MÓDULO ST, GM 6L45E, 6L50 2007-ON"
+  },
+  {
+    "SKU": "FRMHYUND04",
+    "Description": "FR MODULE HYUNDAI A4CF1 06-08",
+    "Available": 0,
+    "Description_ES": "MÓDULO FR HYUNDAI A4CF1 06-08"
   },
   {
     "SKU": "STMHYUND04",
@@ -29082,12 +29100,6 @@
     "Description_ES": "MÓDULO FR, FORD 6R80 07+"
   },
   {
-    "SKU": "183753B",
-    "Description": "ST MODULE, FORD 6R80 07+",
-    "Available": 0,
-    "Description_ES": "MÓDULO ST, FORD 6R80 07+"
-  },
-  {
     "SKU": "92933",
     "Description": "EXTERNAL HARNESS, REPAIR KIT A604, 40TE, 41TE, 41AE 42RLE CONNECTOR TO SOLENOID BLOCK 98-ON (OEM# 4419476) AFTERMARKET",
     "Available": 0,
@@ -30604,6 +30616,12 @@
     "Description": "VALVE BODY, NISSAN ALTIMA R4F04B",
     "Available": 0,
     "Description_ES": "CUERPO VÁLVULA, NISSAN ALTIMA R4F04B"
+  },
+  {
+    "SKU": "K63900F-2",
+    "Description": "RUBBER SEAL KIT, NISSAN RE4F03A/V, RL4F03A/V 90-95",
+    "Available": 0,
+    "Description_ES": "KIT DE JUNTAS DE GOMA, NISSAN RE4F03A/V, RL4F03A/V 90-95"
   },
   {
     "SKU": "03515077",
@@ -34350,6 +34368,12 @@
     "Description_ES": "KIT DE REVISIÓN, HYUNDAI KAPPA CVT (12 EN EL) CON PISTONES"
   },
   {
+    "SKU": "DP2680",
+    "Description": "OVERHAUL KIT, HYUNDAI KAPPA CVT (12-ON) W/O PISTONS",
+    "Available": 0,
+    "Description_ES": "KIT DE REVISIÓN, HYUNDAI KAPPA CVT (12 EN VELOCIDAD) SIN PISTONES"
+  },
+  {
     "SKU": "4476",
     "Description": "PISTON KIT, HYUNDAI KAPPA CVT (12-UP) (02 PCS)",
     "Available": 0,
@@ -35038,12 +35062,6 @@
     "Description": "TOP HAT SEAL DIPSTICK, GM 6L80E, 6L90E (OEM# 15796802)",
     "Available": 0,
     "Description_ES": "VARILLA DE MEDICIÓN DEL SELLO DE SOMBRERO SUPERIOR, GM 6L80E, 6L90E (OEM# 15796802)"
-  },
-  {
-    "SKU": "0K30B-21444",
-    "Description": "NEUTRAL SWITCH, KIA RIO 2001-2005, OEM (OEM# 0K30B-21444)",
-    "Available": 0,
-    "Description_ES": "INTERRUPTOR DE PUNTO MUERTO, KIA RIO 2001-2005, OEM (OEM# 0B30B-21444)"
   },
   {
     "SKU": "24291305",
@@ -36132,6 +36150,12 @@
     "Description_ES": "FILTRO, PANTALLA DE SOLENOIDE VB, 45RFE/545RFE (04-14)"
   },
   {
+    "SKU": "K7900Q-1S",
+    "Description": "ST MODULE, AISIN WARNER TW-40LS/E/R4A12 (00-14)",
+    "Available": 0,
+    "Description_ES": "MÓDULO ST, AISIN WARNER TW-40LS/E/R4A12 (00-14)"
+  },
+  {
     "SKU": "K9800BC",
     "Description": "MASTER KIT, HONDA BBTA (10-12), PN3A (11-15) HONDA PILOT (AWD) 2011-2015",
     "Available": 0,
@@ -36580,6 +36604,12 @@
     "Description": "GASKET, PUMP, WAGON R SR410-2 (99-03)",
     "Available": 0,
     "Description_ES": "JUNTA, BOMBA, VAGÓN R SR410-2 (99-03)"
+  },
+  {
+    "SKU": "46313-02290",
+    "Description": "SOLENOID, HYUNDAI KAPPA CVT (YELLOW) (USES 1 PER TRANSMISSION) (OEM# 46313-02290)",
+    "Available": 0,
+    "Description_ES": "SOLENOIDE, HYUNDAI KAPPA CVT (AMARILLO) (UTILIZA 1 POR TRANSMISIÓN) (OEM# 46313-02290)"
   },
   {
     "SKU": "208701-180",
@@ -37912,6 +37942,12 @@
     "Description": "SENSOR, OUTPUT SHAFT HONDA ACCORD, CRV 3.5L (AFTERMARKET) (3 PRONG CONNECTOR)",
     "Available": 0,
     "Description_ES": "SENSOR, EJE DE SALIDA HONDA ACCORD, CRV 3.5L (MERCADO DE POSTVENTA) (CONECTOR DE 3 PUNTAS)"
+  },
+  {
+    "SKU": "48150-02200",
+    "Description": "PUMP, HYUNDAI KAPPA CVT (OEM# 48150-02200)",
+    "Available": 0,
+    "Description_ES": "BOMBA, CVT HYUNDAI KAPPA (OEM# 48150-02200)"
   },
   {
     "SKU": "70576",
@@ -39258,6 +39294,12 @@
     "Description_ES": "PLACA ST, TOYOTA A750, FRENO N°4 (16T - ID: 4.92\")"
   },
   {
+    "SKU": "46212-4D020",
+    "Description": "SOLENOID, JR405E, RC4A-EL, EPC (OEM)",
+    "Available": 0,
+    "Description_ES": "SOLENOIDE, JR405E, RC4A-EL, EPC (OEM)"
+  },
+  {
     "SKU": "RCP96-208",
     "Description": "FR MODULE, AW TF81SC 05-UP FORD MAZDA",
     "Available": 0,
@@ -39472,6 +39514,12 @@
     "Description": "FR MODULE, TOYOTA K111, K112",
     "Available": 0,
     "Description_ES": "MÓDULO FR, TOYOTA K111, K112"
+  },
+  {
+    "SKU": "K5200AC-1F",
+    "Description": "FR MODULE, GM 9T65",
+    "Available": 0,
+    "Description_ES": "MÓDULOS FR, GM 9T65"
   },
   {
     "SKU": "MT-O-4V",
@@ -39960,12 +40008,6 @@
     "Description_ES": "FILTRO, FORD 10R140 (OEM# LC3Z-7G186-A, LC3P-7G186-AC)"
   },
   {
-    "SKU": "135752A",
-    "Description": "FR MODULE SUBARU 5 SPEED (5EAT) 2005-On",
-    "Available": 0,
-    "Description_ES": "MÓDULO FR SUBARU 5 VELOCIDADES (5EAT) 2005-On"
-  },
-  {
     "SKU": "000436",
     "Description": "ST MODULE, FORD AX4N (2000-ON)",
     "Available": 0,
@@ -40390,6 +40432,12 @@
     "Description": "SOLENOID, DUAL LINEAR, HONDA ACCORD, CR-V, ACURA (IND# 90428C) (OEM# 28260-PRP-014)(AFTERMARKET)",
     "Available": 0,
     "Description_ES": "SOLENOIDE, LINEAL DOBLE, HONDA ACCORD, CR-V, ACURA (IND# 90428C) (OEM# 28260-PRP-014)(MERCADO DE POSTVENTA)"
+  },
+  {
+    "SKU": "000636",
+    "Description": "ST MODULE CHRYSLER 48RE 03-UP (25 PLATES) (USE WITH 000639 (DOUBLE SIDED OD DIR MOD))",
+    "Available": 0,
+    "Description_ES": "MÓDULO ST CHRYSLER 48RE 03-UP (25 PLACAS) (UTILIZAR CON 000639 (DOBLE CARA OD DIR MOD))"
   },
   {
     "SKU": "511530",
@@ -42210,6 +42258,12 @@
     "Description_ES": "KIT DE HERRAMIENTAS, CHRYSLER 45RFE, 545RFE, 65RFE, 66RFE, 68RFE, PARA 44912-03K (CONTENIDO: ESCARIADOR DE DESBASTE, ESCRIADOR DE ACABADO, PLANTILLAS DE ESCARIADOR (2), PASADOR GUÍA)"
   },
   {
+    "SKU": "K5200AA-1S",
+    "Description": "ST MODULE, GM 9T45, 9T50, 9T60, 9T65",
+    "Available": 0,
+    "Description_ES": "MÓDULO ST, GM 9T45, 9T50, 9T60, 9T65"
+  },
+  {
     "SKU": "277584B",
     "Description": "PLANET, OUTPUT PLANET, TOYOTA U760E, RING GEAR, 30 TEETH SUN GEAR, SPRAG",
     "Available": 0,
@@ -43098,6 +43152,12 @@
     "Description_ES": "DIAFRAGMA, RESORTE DE RETORNO, FORD 6F35, EMBRAGUE 1-2-3-4 (16 DEDOS, 7-7/8\" DE DIÁMETRO EXTERIOR) (IND# D46972B) (OEM# DG9Z-7B070-B)"
   },
   {
+    "SKU": "48455-02230",
+    "Description": "SHAFT, INPUT SHAFT W/GEAR, HYUNDAI KAPPA (OEM# 48455-02230)",
+    "Available": 0,
+    "Description_ES": "EJE, EJE DE ENTRADA CON ENGRANAJE, HYUNDAI KAPPA (OEM# 48455-02230)"
+  },
+  {
     "SKU": "TO-90-13G",
     "Description": "HUB, TOYOTA A340H, 2.854\" BEARING POCKET O.D. (SPECS: PUMP DRIVE STYLE: SLOTS, MATERIAL: HARDENED STEEL, HUB MOUNT: FLANGED, ASSEMBLED HEIGHT: 1.875\", JOURNAL DIA.: 1.499\", FLANGE OUTER DIA.: 3.440\", HEIGHT: 2.060\")",
     "Available": 0,
@@ -43726,12 +43786,6 @@
     "Description": "MASTER KIT, VOLKSWAGEN 09G W/PISTONS (2014-2018)",
     "Available": 0,
     "Description_ES": "KIT MAESTRO, VOLKSWAGEN 09G CON PISTONES (2014-2018)"
-  },
-  {
-    "SKU": "202752B",
-    "Description": "FR MODULE, CHRSYLER AS69RC (2013-ON)",
-    "Available": 0,
-    "Description_ES": "MÓDULO FR, CHRSYLER AS69RC (2013-EN ADELANTE)"
   },
   {
     "SKU": "U84570A",
@@ -44874,6 +44928,36 @@
     "Description_ES": "KIT DE VÁLVULA, KIT DE VÁLVULA DE INTERRUPCIÓN TCC DE GRAN TAMAÑO, CHRYSLER 45RFE, 545RFE, 65RFE, 66RFE, 68RFE (REQUIERE: F-44912-TL8 Y VB-FIX)"
   },
   {
+    "SKU": "K77900PPX",
+    "Description": "OVERHAUL KIT HYUNDAI A6LF1, A6LF2, A6LF3 W/O PISTONS (2015-UP)",
+    "Available": 0,
+    "Description_ES": "KIT DE REPARACIÓN HYUNDAI A6LF1, A6LF2, A6LF3 SIN PISTONES (2015-UP)"
+  },
+  {
+    "SKU": "98416",
+    "Description": "MCS, AXLE (CONVERTER SIDE), HONDA PYKA, PYLA, PXYA, PT0A, PT0C, PT1A, PT1C, PB8A, MNXA, PMXA, PFDA, PFDC, PFEA, PFDC, P1EA, P1FA, P1DA (10 SPEED) (2018-2024) (OEM# 91205-5MX-A01)",
+    "Available": 0,
+    "Description_ES": "MCS, EJE (LADO DEL CONVERTIDOR), HONDA PYKA, PYLA, PXYA, PT0A, PT0C, PT1A, PT1C, PB8A, MNXA, PMXA, PFDA, PFDC, PFEA, PFDC, P1EA, P1FA, P1DA (10 VELOCIDADES) (2018-2024) (OEM#91205-5MX-A01)"
+  },
+  {
+    "SKU": "98482",
+    "Description": "MCS, AXLE (CASE SIDE), HONDA PYKA, PYLA, PXYA, PT0A, PT0C, PT1A, PT1C, PB8A, MNXA, PMXA, PFDA, PFDC, PFEA, PFDC, P1EA, P1FA, P1DA (10 SPEED) (2018-2024) (OEM# 91206-5MX-A01)",
+    "Available": 0,
+    "Description_ES": "MCS, EJE (LADO DE LA CAJA), HONDA PYKA, PYLA, PXYA, PT0A, PT0C, PT1A, PT1C, PB8A, MNXA, PMXA, PFDA, PFDC, PFEA, PFDC, P1EA, P1FA, P1DA (10 VELOCIDADES) (2018-2024) (OEM#91206-5MX-A01)"
+  },
+  {
+    "SKU": "B45950HTE",
+    "Description": "FRICTION RING, .045\" HTE, FORD 6R80, 260MM (LATE) (MATERIAL: HTE, THICKNESS: 0.045\", INNER DIA.: 8.750\", OUTER DIA.: 9.875\")",
+    "Available": 0,
+    "Description_ES": "ANILLO DE FRICCIÓN, .045\" HTE, FORD 6R80, 260MM (TARDE) (MATERIAL: HTE, GROSOR: 0.045\", DIÁMETRO INTERIOR: 8.750\", DIÁMETRO EXTERIOR: 9.875\")"
+  },
+  {
+    "SKU": "B45935HTE",
+    "Description": "FRICTION RING, .045\" HTE, FORD 6R80, 280MM (EARLY) (MATERIAL: HTE, THICKNESS: 0.045\", INNER DIA.: 8.250\", OUTER DIA.: 9.500\")",
+    "Available": 0,
+    "Description_ES": "ANILLO DE FRICCIÓN, .045\" HTE, FORD 6R80, 280MM (PRANCIO) (MATERIAL: HTE, GROSOR: 0.045\", DIA. INTERIOR: 8.250\", DIA. EXTERIOR: 9.500\")"
+  },
+  {
     "SKU": "026753",
     "Description": "ST MODULE, FORD C6 76-96",
     "Available": 1,
@@ -44902,12 +44986,6 @@
     "Description": "FR PLATE 4L30 3 RD CLUTCH 98-ON",
     "Available": 1,
     "Description_ES": "PLACA FR 4L30 3 RD EMBRAGUE 98-ON"
-  },
-  {
-    "SKU": "044753K",
-    "Description": "ST MODULE, TOYOTA 44DE (03-72LE) 92-ON",
-    "Available": 1,
-    "Description_ES": "MÓDULO ST, TOYOTA 44DE (03-72LE) 92-ON"
   },
   {
     "SKU": "046752",
@@ -45584,7 +45662,7 @@
   {
     "SKU": "39202GSX",
     "Description": "OVERHAUL KIT, KIA A6MF1",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "KIT DE REVISIÓN, KIA A6MF1"
   },
   {
@@ -45646,12 +45724,6 @@
     "Description": "FR PLATE, CHRYSLER A604/606 LOW/REVERSE 88+",
     "Available": 1,
     "Description_ES": "PLACA FR, CHRYSLER A604/606 BAJA/MARCHA ATRÁS 88+"
-  },
-  {
-    "SKU": "512652",
-    "Description": "FR PLATE, TH700R4/4L60 OVERUN HEG 82+",
-    "Available": 0,
-    "Description_ES": "PLACA FR, TH700R4/4L60 SOBREUNO HEG 82+"
   },
   {
     "SKU": "39741-14K",
@@ -45814,6 +45886,12 @@
     "Description": "PISTON KIT AX4N/4F50N  2004-2007",
     "Available": 1,
     "Description_ES": "KIT DE PISTÓN AX4N/4F50N 2004-2007"
+  },
+  {
+    "SKU": "R571815",
+    "Description": "FR PLATE HONDA MZHA, BZHA, BZNA 2ND 06-09 MR9A 1ST, 2ND, 3RD, 91-UP GPX",
+    "Available": 1,
+    "Description_ES": "PLACA FR HONDA MZHA, BZHA, BZNA 2ND 06-09 MR9A 1ST, 2ND, 3RD, 91-UP GPX"
   },
   {
     "SKU": "000892",
@@ -46114,6 +46192,12 @@
     "Description": "ST MODULE, FORD 6R140 11+",
     "Available": 1,
     "Description_ES": "MÓDULO ST, FORD 6R140 11+"
+  },
+  {
+    "SKU": "K7300L",
+    "Description": "MASTER KIT W/PISTONS SUZUKI JF414E SWIFT 12-15, NISSAN RE4F03C 12-15",
+    "Available": 1,
+    "Description_ES": "KIT MAESTRO CON PISTONES SUZUKI JF414E SWIFT 12-15, NISSAN RE4F03C 12-15"
   },
   {
     "SKU": "512532",
@@ -46542,12 +46626,6 @@
     "Description_ES": "KIT MAESTRO, HONDA MDKA, BDKA, MDPA, MDRA"
   },
   {
-    "SKU": "214708-173",
-    "Description": "FR PLATE, HYUNDAI A6MF1, CHRYSLER 6F24 LOW/REVERSE 09+",
-    "Available": 1,
-    "Description_ES": "PLACA FR, HYUNDAI A6MF1, CHRYSLER 6F24 BAJA/REVERSA 09+"
-  },
-  {
     "SKU": "U55550",
     "Description": "DRUM W/SHAFT, ZF6HP19",
     "Available": 1,
@@ -46734,12 +46812,6 @@
     "Description_ES": "KIT DE REPARACIÓN, U880E/F, U881E/F, TG81SC, AW8F35 CON PISTONES"
   },
   {
-    "SKU": "K7900Q-1S",
-    "Description": "ST MODULE, AISIN WARNER TW-40LS/E/R4A12 (00-14)",
-    "Available": 1,
-    "Description_ES": "MÓDULO ST, AISIN WARNER TW-40LS/E/R4A12 (00-14)"
-  },
-  {
     "SKU": "146753A",
     "Description": "ST MODULE, HONDA PV1A (11-13), PSFA (10-14), PN3A, PN4A (11-15)",
     "Available": 1,
@@ -46816,6 +46888,12 @@
     "Description": "HUB, FRONT PLANET SUNSHELL WITH GEAR, NISSAN JF015E (23 TEETH)",
     "Available": 1,
     "Description_ES": "BUJE, PARASOL DEL PLANETA DELANTERO CON ENGRANAJE, NISSAN JF015E (23 DIENTES)"
+  },
+  {
+    "SKU": "46313-02280",
+    "Description": "SOLENOID, HYUNDAI KAPPA CVT (RED) (USES 1 PER TRANSMISSION) (OEM# 46313-02280)",
+    "Available": 0,
+    "Description_ES": "SOLENOIDE, HYUNDAI KAPPA CVT (ROJO) (UTILIZA 1 POR TRANSMISIÓN) (OEM# 46313-02280)"
   },
   {
     "SKU": "46307-2F000",
@@ -47052,12 +47130,6 @@
     "Description_ES": "PLACA, PLACA DE RESPALDO, EMBRAGUE 1-2-3-4 (19 T)"
   },
   {
-    "SKU": "46212-4D020",
-    "Description": "SOLENOID, JR405E, RC4A-EL, EPC (OEM)",
-    "Available": 1,
-    "Description_ES": "SOLENOIDE, JR405E, RC4A-EL, EPC (OEM)"
-  },
-  {
     "SKU": "RCPS-48",
     "Description": "FR MODULE, HONDA C4, L4, M48A, ML4A (86-91) (STAGE-1 PERFORMANCE)",
     "Available": 1,
@@ -47088,12 +47160,6 @@
     "Description_ES": "KIT DE PISTÓN, HYUNDAI A8LF1"
   },
   {
-    "SKU": "K5200AC-1F",
-    "Description": "FR MODULE, GM 9T65",
-    "Available": 1,
-    "Description_ES": "MÓDULOS FR, GM 9T65"
-  },
-  {
     "SKU": "SBK-G80",
     "Description": "BEARING KIT, GM 6L80E, 6L90E (07 PCS)",
     "Available": 1,
@@ -47104,6 +47170,12 @@
     "Description": "FR MODULE, GM 9T40, 9T45",
     "Available": 1,
     "Description_ES": "MÓDULO FR, GM 9T40, 9T45"
+  },
+  {
+    "SKU": "77338",
+    "Description": "PISTON, UNDERDRIVE, HYUNDAI A6MF1 (OEM# 45613-3F800)",
+    "Available": 1,
+    "Description_ES": "PISTÓN, MARCHA BAJO, HYUNDAI A6MF1 (OEM# 45613-3F800)"
   },
   {
     "SKU": "K73900U-MD",
@@ -47218,12 +47290,6 @@
     "Description": "SPRAG, HYUNDAI A6MF1-2, A6MF2H (REPLACES OEM# 45689-3B600, 45689-3B800)",
     "Available": 1,
     "Description_ES": "SOPORTE, HYUNDAI A6MF1-2, A6MF2H (REEMPLAZA OEM# 45689-3B600, 45689-3B800)"
-  },
-  {
-    "SKU": "000636",
-    "Description": "ST MODULE CHRYSLER 48RE 03-UP (25 PLATES) (USE WITH 000639 (DOUBLE SIDED OD DIR MOD))",
-    "Available": 1,
-    "Description_ES": "MÓDULO ST CHRYSLER 48RE 03-UP (25 PLACAS) (UTILIZAR CON 000639 (DOBLE CARA OD DIR MOD))"
   },
   {
     "SKU": "K31900F-99",
@@ -47430,12 +47496,6 @@
     "Description_ES": "KIT DE ANILLO, PISTÓN DEL MOTOR"
   },
   {
-    "SKU": "K5200AA-1S",
-    "Description": "ST MODULE, GM 9T45, 9T50, 9T60, 9T65",
-    "Available": 1,
-    "Description_ES": "MÓDULO ST, GM 9T45, 9T50, 9T60, 9T65"
-  },
-  {
     "SKU": "K77300R",
     "Description": "RING KIT, F4A41, F4A42, F4A51, F5A51",
     "Available": 1,
@@ -47606,7 +47666,7 @@
   {
     "SKU": "48193-02200",
     "Description": "CHAIN, PUMP, HYUNDAI KAPPA CVT (OEM# 48193-02200)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "CADENA, BOMBA, CVT HYUNDAI KAPPA (OEM# 48193-02200)"
   },
   {
@@ -47620,12 +47680,6 @@
     "Description": "ST MODULE, NISSAN JF019E, RE0F10J",
     "Available": 1,
     "Description_ES": "MÓDULO ST, NISSAN JF019E, RE0F10J"
-  },
-  {
-    "SKU": "48455-02230",
-    "Description": "SHAFT, INPUT SHAFT W/GEAR, HYUNDAI KAPPA (OEM# 48455-02230)",
-    "Available": 0,
-    "Description_ES": "EJE, EJE DE ENTRADA CON ENGRANAJE, HYUNDAI KAPPA (OEM# 48455-02230)"
   },
   {
     "SKU": "BK-K310",
@@ -48482,13 +48536,13 @@
   {
     "SKU": "5189840AB",
     "Description": "SENSOR, SECONDARY REVOLUTION JF011E (REPLACES OEM# 5189840AA)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "SENSOR, REVOLUCIÓN SECUNDARIA JF011E (REEMPLAZA OEM# 5189840AA)"
   },
   {
     "SKU": "5189841AB",
     "Description": "SENSOR, PRYMARY REVOLUTION, JF011E (OEM# 5189841AB)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "SENSOR, REVOLUCIÓN PRIMARIA, JF011E (OEM# 5189841AB)"
   },
   {
@@ -48616,6 +48670,12 @@
     "Description": "OVERHAUL KIT, ACURA B6VA 2.3CL (1998-1999)",
     "Available": 1,
     "Description_ES": "KIT DE REPARACIÓN, ACURA B6VA 2.3CL (1998-1999)"
+  },
+  {
+    "SKU": "K48900J",
+    "Description": "OVERHAUL KIT, HONDA M4TA, MDMA,MDLA, SDLA, S4XA, SKWA, SP7A, MP7A",
+    "Available": 1,
+    "Description_ES": "KIT DE REVISIÓN, HONDA M4TA, MDMA,MDLA, SDLA, S4XA, SKWA, SP7A, MP7A"
   },
   {
     "SKU": "K48900LL",
@@ -48926,7 +48986,7 @@
   {
     "SKU": "K88900D",
     "Description": "OVERHAUL KIT, A340/E TOYOTA 2WD",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "KIT DE REPARACIÓN, A340/E TOYOTA 2WD"
   },
   {
@@ -49242,12 +49302,6 @@
     "Description_ES": "CONVERTIDOR DE PAR PARA HONDA ACCORD 90-99, PRELUDE 92-97, ODYSSEY 98, 8 AGUJEROS, 22 ESTRIAS"
   },
   {
-    "SKU": "FRMHYUND04",
-    "Description": "FR MODULE HYUNDAI A4CF1 06-08",
-    "Available": 1,
-    "Description_ES": "MÓDULO FR HYUNDAI A4CF1 06-08"
-  },
-  {
     "SKU": "186740K",
     "Description": "PULLEY SET TOYOTA CVT K310 2006-UP GOOD USED",
     "Available": 1,
@@ -49358,7 +49412,7 @@
   {
     "SKU": "24239618",
     "Description": "OIL BAFFLE 6T45E FRONT DIFF CARRIER/SUPPORT",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "DEFLECTOR DE ACEITE 6T45E PORTADOR/SOPORTE DIFERENCIAL DELANTERO"
   },
   {
@@ -49392,16 +49446,16 @@
     "Description_ES": "KIT DE REPARACIÓN, FORD 6R140 11+ SIN PISTONES"
   },
   {
+    "SKU": "SK-4T65E",
+    "Description": "SHIFT KIT 4T65E TRANSGO (1998-ON)",
+    "Available": 1,
+    "Description_ES": "KIT DE CAMBIO 4T65E TRANSGO (1998 EN ADELANTE)"
+  },
+  {
     "SKU": "77474B",
     "Description": "PLANET SET U140, U240, U241 4 GEARS 98-UP",
     "Available": 1,
     "Description_ES": "CONJUNTO PLANETA U140, U240, U241 4 MARCHAS 98-UP"
-  },
-  {
-    "SKU": "K7300L",
-    "Description": "MASTER KIT W/PISTONS SUZUKI JF414E SWIFT 12-15, NISSAN RE4F03C 12-15",
-    "Available": 1,
-    "Description_ES": "KIT MAESTRO CON PISTONES SUZUKI JF414E SWIFT 12-15, NISSAN RE4F03C 12-15"
   },
   {
     "SKU": "K75900KX",
@@ -49610,7 +49664,7 @@
   {
     "SKU": "K75900SX",
     "Description": "OVERHAUL KIT, TOYOTA U760 W/O PISTONS",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "KIT DE REPARACIÓN, TOYOTA U760 SIN PISTONES"
   },
   {
@@ -49752,12 +49806,6 @@
     "Description_ES": "KIT DE REPARACIÓN, 0AW SIN PISTONES"
   },
   {
-    "SKU": "K82900V-99",
-    "Description": "PISTON KIT, HYUNDAI, KIA A8TR1",
-    "Available": 1,
-    "Description_ES": "KIT DE PISTÓN, HYUNDAI, KIA A8TR1"
-  },
-  {
     "SKU": "SUB-K8281",
     "Description": "SUB KIT, SEALING SLEEVES ZF6HP19, ZF6HP19X",
     "Available": 1,
@@ -49846,12 +49894,6 @@
     "Description": "SOLENOID, TOYOTA A340E, A340H, A340F ON/OFF LOCK UP (OEM# 85420-30110, 85420-30120, 35250-50030)",
     "Available": 1,
     "Description_ES": "SOLENOIDE, BLOQUEO DE ENCENDIDO/APAGADO TOYOTA A340E, A340H, A340F (OEM# 85420-30110, 85420-30120, 35250-50030)"
-  },
-  {
-    "SKU": "DP2680",
-    "Description": "OVERHAUL KIT, HYUNDAI KAPPA CVT (12-ON) W/O PISTONS",
-    "Available": 0,
-    "Description_ES": "KIT DE REVISIÓN, HYUNDAI KAPPA CVT (12 EN VELOCIDAD) SIN PISTONES"
   },
   {
     "SKU": "STMHONDA49",
@@ -50052,10 +50094,10 @@
     "Description_ES": "KIT DE REVISIÓN, CHRYSLER 6F24 SIN PISTONES"
   },
   {
-    "SKU": "46313-02290",
-    "Description": "SOLENOID, HYUNDAI KAPPA CVT (YELLOW) (USES 1 PER TRANSMISSION) (OEM# 46313-02290)",
-    "Available": 0,
-    "Description_ES": "SOLENOIDE, HYUNDAI KAPPA CVT (AMARILLO) (UTILIZA 1 POR TRANSMISIÓN) (OEM# 46313-02290)"
+    "SKU": "K79900Q-99",
+    "Description": "PISTON KIT, TW-40LE/LS",
+    "Available": 1,
+    "Description_ES": "KIT DE PISTÓN, TW-40LE/LS"
   },
   {
     "SKU": "K62900TX-MD",
@@ -50298,16 +50340,16 @@
     "Description_ES": "KIT DE PISTÓN, ISUZU A460, TOYOTA A860E"
   },
   {
+    "SKU": "KP52900AAX",
+    "Description": "OVERHAUL KIT, GM 9T40, 9T45, 9T50, 9T65 W/O PISTONS",
+    "Available": 1,
+    "Description_ES": "KIT DE REPARACIÓN, GM 9T40, 9T45, 9T50, 9T65 SIN PISTONES"
+  },
+  {
     "SKU": "K5200AB-1F",
     "Description": "FR MODULE, GM 9T50",
     "Available": 1,
     "Description_ES": "MÓDULO FR, GM 9T50"
-  },
-  {
-    "SKU": "77338",
-    "Description": "PISTON, UNDERDRIVE, HYUNDAI A6MF1 (OEM# 45613-3F800)",
-    "Available": 1,
-    "Description_ES": "PISTÓN, MARCHA BAJO, HYUNDAI A6MF1 (OEM# 45613-3F800)"
   },
   {
     "SKU": "FRMHONDA20",
@@ -50574,6 +50616,12 @@
     "Description_ES": "SENSOR, VELOCIDAD DE ENTRADA, HYUNDAI A8LF1 (OEM)"
   },
   {
+    "SKU": "48250-02200",
+    "Description": "SHAFT, INPUT SHAFT SUPPORT, HYUNDAI KAPPA (OEM# 48250-02200)",
+    "Available": 1,
+    "Description_ES": "EJE, SOPORTE DEL EJE DE ENTRADA, HYUNDAI KAPPA (OEM# 48250-02200)"
+  },
+  {
     "SKU": "223752A",
     "Description": "FR MODULE, CHRYSLER 948TE 03/15-ON (INTERNAL TEETH B CLUTCH)",
     "Available": 1,
@@ -50581,7 +50629,7 @@
   },
   {
     "SKU": "RHT96-520",
-    "Description": "FR MODULE, FORD 6F35 (GEN 2 AND GEN 3) (2013-2019)",
+    "Description": "*** OBSOLETE *** FR MODULE, FORD 6F35 (GEN 2 AND GEN 3) (2013-2019)",
     "Available": 0,
     "Description_ES": "MÓDULO FR, FORD 6F35 (GEN 2 Y GEN 3) (2013-2019)"
   },
@@ -50738,7 +50786,7 @@
   {
     "SKU": "45822-3B550",
     "Description": "DIFFERENTIAL COVER, HYUNDAI A6LF1, A6MF1  4WD (12 HOLES) (47 SPLINE, HEIGHT: 133 MM) (OEM# 45822-3B550)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "CUBIERTA DE DIFERENCIAL, HYUNDAI A6LF1, A6MF1 4WD (12 AGUJEROS) (47 ESTRIAS, ALTURA: 133 MM) (OEM# 45822-3B550)"
   },
   {
@@ -50792,7 +50840,7 @@
   {
     "SKU": "K7700JJ-1S",
     "Description": "ST MODULE, HYUNDAI A4CF0",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MÓDULO ST, HYUNDAI A4CF0"
   },
   {
@@ -51162,12 +51210,6 @@
     "Description_ES": "SPRAG, 4L60E, TIPO SKF (29 ELEMENTOS) FABRICADO EN EE. UU. (JAULA ÚNICA)"
   },
   {
-    "SKU": "83710A",
-    "Description": "FILTER RN3F01A, RL3F01A 87-92 DEEP PAN SENTRA,",
-    "Available": 0,
-    "Description_ES": "FILTRO RN3F01A, RL3F01A 87-92 BANDEJA PROFUNDA SENTRA,"
-  },
-  {
     "SKU": "83886",
     "Description": "MOLDED PISTON, D CLUTCH, ZF4HP16",
     "Available": 1,
@@ -51444,6 +51486,18 @@
     "Description_ES": "MÓDULO FR CHRYSLER A413, A470, A670 81-ON"
   },
   {
+    "SKU": "000598",
+    "Description": "FR MODULE GM 4T65E 2003-UP",
+    "Available": 1,
+    "Description_ES": "MÓDULO FR GM 4T65E 2003-UP"
+  },
+  {
+    "SKU": "FRMTOYTA21",
+    "Description": "FR MODULE TOYOTA A340 85-UP",
+    "Available": 1,
+    "Description_ES": "MÓDULO FR TOYOTA A340 85-UP"
+  },
+  {
     "SKU": "RMRE-12",
     "Description": "TORQUE CONVERTER VW 09G (6 STUDS)",
     "Available": 1,
@@ -51636,10 +51690,10 @@
     "Description_ES": "MÓDULO ST FORD 5R110W 03-04"
   },
   {
-    "SKU": "SK-4T65E",
-    "Description": "SHIFT KIT 4T65E TRANSGO (1998-ON)",
+    "SKU": "K36900V-99",
+    "Description": "PISTON KIT, FORD 6R140 (2011-2021)",
     "Available": 1,
-    "Description_ES": "KIT DE CAMBIO 4T65E TRANSGO (1998 EN ADELANTE)"
+    "Description_ES": "KIT DE PISTÓN, FORD 6R140 (2011-2021)"
   },
   {
     "SKU": "TSK246",
@@ -51828,6 +51882,12 @@
     "Description_ES": "INTERRUPTOR DE PUNTO MUERTO, GM 6T40E, 6T45E (OEM# 24230719)"
   },
   {
+    "SKU": "K82900V-99",
+    "Description": "PISTON KIT, HYUNDAI, KIA A8TR1",
+    "Available": 1,
+    "Description_ES": "KIT DE PISTÓN, HYUNDAI, KIA A8TR1"
+  },
+  {
     "SKU": "123753E",
     "Description": "ST MODULE,  HYUND A5CF1/2 05-11",
     "Available": 1,
@@ -51930,6 +51990,18 @@
     "Description_ES": "RETENEDOR, ARRANQUE HYUNDAI (OEM) A6MF1/A6MF2/A6MF3"
   },
   {
+    "SKU": "0K30B-21444",
+    "Description": "NEUTRAL SWITCH, KIA RIO 2001-2005, OEM (OEM# 0K30B-21444)",
+    "Available": 1,
+    "Description_ES": "INTERRUPTOR DE PUNTO MUERTO, KIA RIO 2001-2005, OEM (OEM# 0B30B-21444)"
+  },
+  {
+    "SKU": "K79900QX-MD",
+    "Description": "OVERHAUL KIT, TW-40E/LS W/O PISTONS",
+    "Available": 1,
+    "Description_ES": "KIT DE REPARACIÓN, TW-40E/LS SIN PISTONES"
+  },
+  {
     "SKU": "STMNISSN25",
     "Description": "ST MODULE, NISSAN RE4F04A (92-ON)",
     "Available": 1,
@@ -52020,6 +52092,12 @@
     "Description_ES": "MÓDULO FR, HONDA B5RA, M5LA, B5SA CR-V 2.CL (12-14)"
   },
   {
+    "SKU": "K33900P-99",
+    "Description": "PISTON KIT, FORD 10R80, GM 10L80, 10L90",
+    "Available": 1,
+    "Description_ES": "KIT DE PISTÓN, FORD 10R80, GM 10L80, 10L90"
+  },
+  {
     "SKU": "57917E-08K",
     "Description": "OVERSIZED PRESSURE REGULTARO AND BOOST VALVE KIT, TOYOTA U140E, U240E, U241E",
     "Available": 1,
@@ -52030,18 +52108,6 @@
     "Description": "PISTON, HONDA B7XA, M7ZA (OEM# 22533-P7X-003)",
     "Available": 1,
     "Description_ES": "PISTÓN, HONDA B7XA, M7ZA (OEM# 22533-P7X-003)"
-  },
-  {
-    "SKU": "46313-02280",
-    "Description": "SOLENOID, HYUNDAI KAPPA CVT (RED) (USES 1 PER TRANSMISSION) (OEM# 46313-02280)",
-    "Available": 1,
-    "Description_ES": "SOLENOIDE, HYUNDAI KAPPA CVT (ROJO) (UTILIZA 1 POR TRANSMISIÓN) (OEM# 46313-02280)"
-  },
-  {
-    "SKU": "K79900Q-99",
-    "Description": "PISTON KIT, TW-40LE/LS",
-    "Available": 1,
-    "Description_ES": "KIT DE PISTÓN, TW-40LE/LS"
   },
   {
     "SKU": "116034",
@@ -52114,12 +52180,6 @@
     "Description": "SOLENOID KIT, NISSAN JF011E (04 PCS) , STEP MOTOR, HARNESS, CHIP AND PRESSURE SENSORS (USED)",
     "Available": 1,
     "Description_ES": "KIT SOLENOIDE, NISSAN JF011E (04 UNIDADES), MOTOR PASO, MAZO DE CABLES, CHIP Y SENSORES DE PRESIÓN (USADO)"
-  },
-  {
-    "SKU": "48150-02200",
-    "Description": "PUMP, HYUNDAI KAPPA CVT (OEM# 48150-02200)",
-    "Available": 1,
-    "Description_ES": "BOMBA, CVT HYUNDAI KAPPA (OEM# 48150-02200)"
   },
   {
     "SKU": "K82900UTX",
@@ -52224,10 +52284,10 @@
     "Description_ES": "MÓDULO FR VW 01M, AG4, 095/096 95-UP (RAYBESTOS)"
   },
   {
-    "SKU": "KP52900AAX",
-    "Description": "OVERHAUL KIT, GM 9T40, 9T45, 9T50, 9T65 W/O PISTONS",
+    "SKU": "K52900AA-99",
+    "Description": "PISTON KIT, GM 9T40, 9T45, 9T50, 9T65",
     "Available": 1,
-    "Description_ES": "KIT DE REPARACIÓN, GM 9T40, 9T45, 9T50, 9T65 SIN PISTONES"
+    "Description_ES": "KIT DE PISTÓN, GM 9T40, 9T45, 9T50, 9T65"
   },
   {
     "SKU": "K5200ZC-1F",
@@ -52368,12 +52428,6 @@
     "Description_ES": "KIT DE REPARACIÓN, FORD 10R140 (GAS Y DIESEL) SIN PISTONES"
   },
   {
-    "SKU": "48250-02200",
-    "Description": "SHAFT, INPUT SHAFT SUPPORT, HYUNDAI KAPPA (OEM# 48250-02200)",
-    "Available": 1,
-    "Description_ES": "EJE, SOPORTE DEL EJE DE ENTRADA, HYUNDAI KAPPA (OEM# 48250-02200)"
-  },
-  {
     "SKU": "4752951AAX",
     "Description": "OIL PAN, CHRYSLER 948TE (AFTERMARKET) (OEM# 4752951AA)",
     "Available": 1,
@@ -52492,6 +52546,12 @@
     "Description": "CHAIN AND SPROCKET KIT, GM 8L90E (OEM# 24280781)",
     "Available": 1,
     "Description_ES": "KIT DE CADENA Y PIÑÓN, GM 8L90E (OEM# 24280781)"
+  },
+  {
+    "SKU": "202752B",
+    "Description": "FR MODULE, CHRSYLER AS69RC (2013-ON)",
+    "Available": 0,
+    "Description_ES": "MÓDULO FR, CHRSYLER AS69RC (2013-EN ADELANTE)"
   },
   {
     "SKU": "202753B",
@@ -52674,12 +52734,6 @@
     "Description_ES": "SMOD W4A 722,409,10,13,16,18,24,9,33 83-97"
   },
   {
-    "SKU": "106752A",
-    "Description": "FR MODULE, ISUZU JR403E 1988-On",
-    "Available": 1,
-    "Description_ES": "MÓDULO FR, ISUZU JR403E 1988 en adelante"
-  },
-  {
     "SKU": "123753B",
     "Description": "ST MODULE, MITSUBISHI F1C1 CVT 07+",
     "Available": 1,
@@ -52702,12 +52756,6 @@
     "Description": "PISTON,  LOW/REVERSE 545RFE (07-14) (OEM# 52119505AA)",
     "Available": 1,
     "Description_ES": "PISTÓN, BAJA/MARCHA ATRÁS 545RFE (07-14) (OEM# 52119505AA)"
-  },
-  {
-    "SKU": "1405HTC",
-    "Description": "HAYDEN TRANS. COOLER-3/4\"X10\"X15-1/2\" HEAVY DUTY",
-    "Available": 1,
-    "Description_ES": "HAYDEN TRANS.ENFRIADOR-3/4\"X10\"X15-1/2\" TRABAJO PESADO"
   },
   {
     "SKU": "156750",
@@ -52770,12 +52818,6 @@
     "Description_ES": "KIT DE REPARACIÓN GM, 4L60E 93-ON"
   },
   {
-    "SKU": "42290BW",
-    "Description": "BAND 2ND AND 4TH INTERMEDIATE 95- UP TH700-4R, 4L60, 4L60E, 4L65E, 4L70E. (OEM# 8654144, 8673175, 24201131)",
-    "Available": 1,
-    "Description_ES": "BANDA 2DA Y 4TA INTERMEDIA 95- UP TH700-4R, 4L60, 4L60E, 4L65E, 4L70E.(OEM n.º 8654144, 8673175, 24201131)"
-  },
-  {
     "SKU": "45442-02701",
     "Description": "DRUM, HIGH JF405E",
     "Available": 1,
@@ -52836,6 +52878,12 @@
     "Description_ES": "FILTRO 4L60E LT TRUCK (TODO PLÁSTICO) BANDEJA PROFUNDA 97-UP.(OEM n.º 24208576, 24208813)"
   },
   {
+    "SKU": "77898E-4K",
+    "Description": "VALVE KIT, BOOST VALVE KIT, GM 4L60E, 4L65E, EARLY STYLE, .470\" DIA., OE RATIO, O-RING STYLE",
+    "Available": 1,
+    "Description_ES": "KIT DE VÁLVULA, KIT DE VÁLVULA DE IMPULSIÓN, GM 4L60E, 4L65E, ESTILO TEMPRANO, .470\" DE DIÁMETRO, RELACIÓN OE, ESTILO JUNTA TÓRICA"
+  },
+  {
     "SKU": "82710",
     "Description": "FILTER, BMW, PEUGEOT ZF3HP22 (1976-UP) (OEM# 1024-223-002, 24341-209-791, 24341-209-747)",
     "Available": 1,
@@ -52882,12 +52930,6 @@
     "Description": "OVERHAUL KIT, FORD E4OD, 4R100 96-04 W/MOLDED PAN GASKET W/O PISTONS.",
     "Available": 1,
     "Description_ES": "KIT DE REPARACIÓN, FORD E4OD, 4R100 96-04 CON JUNTA DE CARTER MOLDEADA SIN PISTONES."
-  },
-  {
-    "SKU": "K48900J",
-    "Description": "OVERHAUL KIT, HONDA M4TA, MDMA,MDLA, SDLA, S4XA, SKWA, SP7A, MP7A",
-    "Available": 1,
-    "Description_ES": "KIT DE REVISIÓN, HONDA M4TA, MDMA,MDLA, SDLA, S4XA, SKWA, SP7A, MP7A"
   },
   {
     "SKU": "K48900Z",
@@ -53038,12 +53080,6 @@
     "Description": "FR MODULE NISSAN RE4F04A MAXIMA 92-94/ ALTIMA 92-94/ QUEST 92-94",
     "Available": 1,
     "Description_ES": "MÓDULO FR NISSAN RE4F04A MAXIMA 92-94/ ALTIMA 92-94/ QUEST 92-94"
-  },
-  {
-    "SKU": "000598",
-    "Description": "FR MODULE GM 4T65E 2003-UP",
-    "Available": 1,
-    "Description_ES": "MÓDULO FR GM 4T65E 2003-UP"
   },
   {
     "SKU": "STMZF06",
@@ -53216,7 +53252,7 @@
   {
     "SKU": "97734",
     "Description": "FILTER, TR-80SD, 0C8 VW, AUDI, PORSCHE TOUAREG, Q7, CAYENNE, LAND CRUISER LX5780, MITSUBISHI MONTERO 20192009-ON (OEM# 0C8-325-435, 2804A032, 95832543500, 35330-60080)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "FILTRO, TR-80SD, 0C8 VW, AUDI, PORSCHE TOUAREG, Q7, CAYENNE, LAND CRUISER LX5780, MITSUBISHI MONTERO 20192009-ON (OEM# 0C8-325-435, 2804A032, 95832543500, 35330-60080)"
   },
   {
@@ -53466,12 +53502,6 @@
     "Description_ES": "KIT DE REVISIÓN, GM AW80-40LS (2012-UP) SIN PISTONES"
   },
   {
-    "SKU": "K79900QX-MD",
-    "Description": "OVERHAUL KIT, TW-40E/LS W/O PISTONS",
-    "Available": 1,
-    "Description_ES": "KIT DE REPARACIÓN, TW-40E/LS SIN PISTONES"
-  },
-  {
     "SKU": "STMAISIN03",
     "Description": "ST MODULE, AW60-40 92+",
     "Available": 1,
@@ -53512,12 +53542,6 @@
     "Description": "FILTER, HONDA SE5A CVT (OEM# 25420-RE5-N01)",
     "Available": 1,
     "Description_ES": "FILTRO, CVT HONDA SE5A (OEM# 25420-RE5-N01)"
-  },
-  {
-    "SKU": "K33900P-99",
-    "Description": "PISTON KIT, FORD 10R80, GM 10L80, 10L90",
-    "Available": 1,
-    "Description_ES": "KIT DE PISTÓN, FORD 10R80, GM 10L80, 10L90"
   },
   {
     "SKU": "STMHONDA68",
@@ -53564,7 +53588,7 @@
   {
     "SKU": "K77900JJ-MD",
     "Description": "OVERHAUL KIT, HYUNDAI A4CF0",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "KIT DE REVISIÓN, HYUNDAI A4CF0"
   },
   {
@@ -53620,12 +53644,6 @@
     "Description": "FR MODULE FN4A-EL 2003-UP SINGLE SIDED (RAYBESTOS)",
     "Available": 1,
     "Description_ES": "MÓDULO FR FN4A-EL 2003-UP UNA CARA (RAYBESTOS)"
-  },
-  {
-    "SKU": "K52900AA-99",
-    "Description": "PISTON KIT, GM 9T40, 9T45, 9T50, 9T65",
-    "Available": 1,
-    "Description_ES": "KIT DE PISTÓN, GM 9T40, 9T45, 9T50, 9T65"
   },
   {
     "SKU": "K77900MM-99",
@@ -53766,6 +53784,12 @@
     "Description_ES": "KIT DE ANILLOS, TOYOTA U140E/F"
   },
   {
+    "SKU": "144752X",
+    "Description": "FR MODULE, TOYOTA U340, U341",
+    "Available": 1,
+    "Description_ES": "MÓDULO FR, TOYOTA U340, U341"
+  },
+  {
     "SKU": "K7700JJ-1F",
     "Description": "FR MODULE, HYUNDAI A4CF0",
     "Available": 1,
@@ -53848,6 +53872,12 @@
     "Description": "SHIFT KIT, FORD 5R55W, 5R55S, 5R55N 1999-ON",
     "Available": 1,
     "Description_ES": "KIT DE CAMBIO, FORD 5R55W, 5R55S, 5R55N 1999 EN ADELANTE"
+  },
+  {
+    "SKU": "A47438",
+    "Description": "SENSOR, TOYOTA U660E, INPUT/OUTPUT (AFTERMARKET) (OEM# 89413-33030, 89413-0T010)",
+    "Available": 1,
+    "Description_ES": "SENSOR, TOYOTA U660E, ENTRADA/SALIDA (MERCADO DE POSTVENTA) (OEM# 89413-33030, 89413-0T010)"
   },
   {
     "SKU": "K79900HG",
@@ -53992,6 +54022,12 @@
     "Description": "FR MODULE, FORD E4OD 1989-95",
     "Available": 1,
     "Description_ES": "MÓDULO FR, FORD E4OD 1989-95"
+  },
+  {
+    "SKU": "044753J",
+    "Description": "ST MODULE, TOYOTA A46DE, DF 90+",
+    "Available": 0,
+    "Description_ES": "MÓDULO ST, TOYOTA A46DE, DF 90+"
   },
   {
     "SKU": "048753A",
@@ -54324,12 +54360,6 @@
     "Description_ES": "BOMBA MCS FT TOYOTA U660E, U760E, U880E/F, AF50-8, AWF8F45 (07-ON)"
   },
   {
-    "SKU": "77898E-4K",
-    "Description": "VALVE KIT, BOOST VALVE KIT, GM 4L60E, 4L65E, EARLY STYLE, .470\" DIA., OE RATIO, O-RING STYLE",
-    "Available": 1,
-    "Description_ES": "KIT DE VÁLVULA, KIT DE VÁLVULA DE IMPULSIÓN, GM 4L60E, 4L65E, ESTILO TEMPRANO, .470\" DE DIÁMETRO, RELACIÓN OE, ESTILO JUNTA TÓRICA"
-  },
-  {
     "SKU": "85710L",
     "Description": "*** WHEN OUT USE 119722 *** FILTER ZF5HP19 BMW 98-ON (32240B)",
     "Available": 1,
@@ -54618,12 +54648,6 @@
     "Description_ES": "SMOD HONDA/ACURA CON 110MM 84-90"
   },
   {
-    "SKU": "FRMTOYTA21",
-    "Description": "FR MODULE TOYOTA A340 85-UP",
-    "Available": 1,
-    "Description_ES": "MÓDULO FR TOYOTA A340 85-UP"
-  },
-  {
     "SKU": "FRMAISIN12",
     "Description": "FR MODULE 09G 2004-UP 2.0, 2.5, 3.6, V6",
     "Available": 1,
@@ -54738,6 +54762,12 @@
     "Description_ES": "KIT DE REPARACIÓN JR405E SIN PISTONES"
   },
   {
+    "SKU": "SK-48RE",
+    "Description": "SHIFT KIT 48RE DODGE RAM 2500 (2003-2008) (GAS ANN DIESEL)",
+    "Available": 1,
+    "Description_ES": "KIT DE CAMBIO 48RE DODGE RAM 2500"
+  },
+  {
     "SKU": "40095",
     "Description": "MCS, EXTENSION HOUSING. TOYOTA A40 SERIES, A43DE/DL 92-04 (SUZUKI 4WD), OUTPUT SHAFT 01M (50MM ID) SMALL (PINION) (OEM# 29792-57B01, 095-323-862A)",
     "Available": 1,
@@ -54752,7 +54782,7 @@
   {
     "SKU": "120001",
     "Description": "BUSHING, PUMP RENAULT DPO AL4",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "CASQUILLO, BOMBA RENAULT DPO AL4"
   },
   {
@@ -54870,12 +54900,6 @@
     "Description_ES": "KIT DE REVISIÓN, HONDA BZKA, MNZA SIN PISTONES"
   },
   {
-    "SKU": "K36900V-99",
-    "Description": "PISTON KIT, FORD 6R140 (2011-2021)",
-    "Available": 1,
-    "Description_ES": "KIT DE PISTÓN, FORD 6R140 (2011-2021)"
-  },
-  {
     "SKU": "29609AT",
     "Description": "PAN GASKET, NISSAN RE4F04A, RL4F04A 92-ON CORK & RUBBER",
     "Available": 1,
@@ -54948,6 +54972,12 @@
     "Description_ES": "KIT DE CAMBIO, TOYOTA A750E/F, A760E/F, LEXUS A761A/F, LEXUS A960E (NO INCLUYE HERRAMIENTAS)"
   },
   {
+    "SKU": "183753B",
+    "Description": "ST MODULE, FORD 6R80 07+",
+    "Available": 0,
+    "Description_ES": "MÓDULO ST, FORD 6R80 07+"
+  },
+  {
     "SKU": "252929",
     "Description": "SENSOR, INPUT SPEED RENAULT DPO/AL4",
     "Available": 1,
@@ -54978,10 +55008,10 @@
     "Description_ES": "JUNTA DE CARTERA, GOMA MERCEDES BENZ 722.4 (OEM# 201-271-0380)"
   },
   {
-    "SKU": "K63900F-2",
-    "Description": "RUBBER SEAL KIT, NISSAN RE4F03A/V, RL4F03A/V 90-95",
-    "Available": 0,
-    "Description_ES": "KIT DE JUNTAS DE GOMA, NISSAN RE4F03A/V, RL4F03A/V 90-95"
+    "SKU": "RCPS-49",
+    "Description": "FR MODULE, STAGE 1 CHRYSLER 48RE 2003-UP 03-UP GPZ (INCLUDEED DIESEL)",
+    "Available": 1,
+    "Description_ES": "MÓDULO FR, ETAPA 1 CHRYSLER 48RE 2003-UP 03-UP GPZ (INCLUIDO DIESEL)"
   },
   {
     "SKU": "73017",
@@ -55208,7 +55238,7 @@
   {
     "SKU": "33998A",
     "Description": "OIL COOLER, JF011E (NISSAN ROGUE, XTRAIL) 07-UP AFTERMARKET (4 HOSES, 2 LARGE IN THE TOP, 2 SMALL IN THE BOTTOM) (OEM# 21606-1XF0A)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "ENFRIADOR DE ACEITE, JF011E (NISSAN ROGUE, XTRAIL) 07-UP MERCADO DE POSTVENTA (4 MANGUERAS, 2 GRANDES EN LA PARTE SUPERIOR, 2 PEQUEÑAS EN LA PARTE INFERIOR) (OEM# 21606-1XF0A)"
   },
   {
@@ -55237,7 +55267,7 @@
   },
   {
     "SKU": "77162",
-    "Description": "MCS, AXLE (CONVERTER SIDE), HYUNDAI A6GF1 (OEM# 45245-26100)",
+    "Description": "MCS, AXLE (CONVERTER SIDE), HYUNDAI A6GF1, A6GF1-2, A6MF1-2, GAMMA (C0GF1) (OEM# 45245-26100)",
     "Available": 1,
     "Description_ES": "MCS, EJE (LADO DEL CONVERTIDOR), HYUNDAI A6GF1 (OEM# 45245-26100)"
   },
@@ -55734,6 +55764,12 @@
     "Description_ES": "SUBKIT, MITSUBISHI V4, R4, V5A51.2º PISTÓN DE FRENO"
   },
   {
+    "SKU": "135752A",
+    "Description": "FR MODULE SUBARU 5 SPEED (5EAT) 2005-On",
+    "Available": 0,
+    "Description_ES": "MÓDULO FR SUBARU 5 VELOCIDADES (5EAT) 2005-On"
+  },
+  {
     "SKU": "57958",
     "Description": "SOLENOID, TOYOTA U140, U240, U241, SLT EPC (OEM# 35290-32010)",
     "Available": 1,
@@ -55980,12 +56016,6 @@
     "Description_ES": "KIT DE CAMBIO, FORD 6R80 GEN2 2015-ON, 6R100 2017-ON"
   },
   {
-    "SKU": "A47438",
-    "Description": "SENSOR, TOYOTA U660E, INPUT/OUTPUT (AFTERMARKET) (OEM# 89413-33030, 89413-0T010)",
-    "Available": 1,
-    "Description_ES": "SENSOR, TOYOTA U660E, ENTRADA/SALIDA (MERCADO DE POSTVENTA) (OEM# 89413-33030, 89413-0T010)"
-  },
-  {
     "SKU": "75048",
     "Description": "PISTON, TOYOTA K410, FORWARD CLUTCH RETAINER",
     "Available": 1,
@@ -56008,6 +56038,12 @@
     "Description": "PAN GASKET, ZF VT1F, CVT (OEM# 24117518739)",
     "Available": 1,
     "Description_ES": "JUNTA DE CARTER, ZF VT1F, CVT (OEM# 24117518739)"
+  },
+  {
+    "SKU": "77702LXD",
+    "Description": "PAN GASKET, HYUNDAI GAMMA CVT, C0GF1 (2016-2020) (FARPAK)",
+    "Available": 1,
+    "Description_ES": "JUNTA DE CARTER, HYUNDAI GAMMA CVT, C0GF1 (2016-2020) (FARPAK)"
   },
   {
     "SKU": "73218",
@@ -56188,6 +56224,12 @@
     "Description": "FR PLATE, FORD C6 , E4OD REV 66-ON",
     "Available": 1,
     "Description_ES": "PLACA FR, FORD C6, E4OD REV 66-ON"
+  },
+  {
+    "SKU": "044753K",
+    "Description": "ST MODULE, TOYOTA 44DE (03-72LE) 92-ON",
+    "Available": 1,
+    "Description_ES": "MÓDULO ST, TOYOTA 44DE (03-72LE) 92-ON"
   },
   {
     "SKU": "045753",
@@ -56574,12 +56616,6 @@
     "Description_ES": "MÓDULO ST C-6 76-89"
   },
   {
-    "SKU": "SK-48RE",
-    "Description": "SHIFT KIT 48RE DODGE RAM 2500 (2003-2008) (GAS ANN DIESEL)",
-    "Available": 1,
-    "Description_ES": "KIT DE CAMBIO 48RE DODGE RAM 2500"
-  },
-  {
     "SKU": "68727",
     "Description": "SPRAG, REAR 722.6 (F2) 95-UP 20 ELEMENTS, 1 END CAP (0.844 INCH THICK) (METAL CAGE) (AFTERMARKET) (OEM# 220-270-0131)",
     "Available": 1,
@@ -56656,12 +56692,6 @@
     "Description": "SOLENOID, HYUNDAI/KIA A6GF1, A6MF1 W/STEEL PAN, A6LF1 (TCC) (RED CONNECTOR) (09-13) (OEM# 46313-3B673)",
     "Available": 1,
     "Description_ES": "SOLENOIDE, HYUNDAI/KIA A6GF1, A6MF1 CON BANDEJA DE ACERO, A6LF1 (TCC) (CONECTOR ROJO) (09-13) (OEM# 46313-3B673)"
-  },
-  {
-    "SKU": "RCPS-49",
-    "Description": "FR MODULE, STAGE 1 CHRYSLER 48RE 2003-UP 03-UP GPZ (INCLUDEED DIESEL)",
-    "Available": 1,
-    "Description_ES": "MÓDULO FR, ETAPA 1 CHRYSLER 48RE 2003-UP 03-UP GPZ (INCLUIDO DIESEL)"
   },
   {
     "SKU": "24252300X",
@@ -56848,6 +56878,12 @@
     "Description": "FR PLATE, MERCEDES BENZ 722.6 K1/B1 96-UP SINGLE SIDED, ID SPLINE (IND# 68105L) (OEM# 240-272-0025) (H.E.- 30T- OD:6.815\"- SP)",
     "Available": 1,
     "Description_ES": "PLACA DELANTERA, MERCEDES BENZ 722.6 K1/B1 96-UP DE UNA CARA, ESTRIA ID (IND# 68105L) (OEM# 240-272-0025) (H.E.- 30T- OD:6.815\"- SP)"
+  },
+  {
+    "SKU": "46313-02210",
+    "Description": "SOLENOID, HYUNDAI KAPPA CVT (BLACK) (USES 4 PER TRANSMISSION) (OEM# 46313-02210)",
+    "Available": 1,
+    "Description_ES": "SOLENOIDE, HYUNDAI KAPPA CVT (NEGRO) (UTILIZA 4 POR TRANSMISIÓN) (OEM# 46313-02210)"
   },
   {
     "SKU": "333264A",
@@ -57313,7 +57349,7 @@
   },
   {
     "SKU": "K77900EEX",
-    "Description": "OVERHAUL KIT HYUNDAI A6LF1, A6LF2, A6LF3 NO PISTONS",
+    "Description": "OVERHAUL KIT HYUNDAI A6LF1, A6LF2, A6LF3 W/O PISTONS (2009-2014)",
     "Available": 1,
     "Description_ES": "KIT DE REPARACIÓN HYUNDAI A6LF1, A6LF2, A6LF3 SIN PISTONES"
   },
@@ -57726,6 +57762,12 @@
     "Description_ES": "MÓDULO FR, CHRYSLER A604, A606 42RLE 90+"
   },
   {
+    "SKU": "106752A",
+    "Description": "FR MODULE, ISUZU JR403E 1988-On",
+    "Available": 1,
+    "Description_ES": "MÓDULO FR, ISUZU JR403E 1988 en adelante"
+  },
+  {
     "SKU": "110700",
     "Description": "FR 5040LE LM 2ND COA/DIR/UD 89+AF23-5 2ND COA 03+",
     "Available": 1,
@@ -58104,10 +58146,10 @@
     "Description_ES": "KIT DE CREMALLERA, GM 6L45, 6L50, 6L80, 6L90"
   },
   {
-    "SKU": "46313-02210",
-    "Description": "SOLENOID, HYUNDAI KAPPA CVT (BLACK) (USES 4 PER TRANSMISSION) (OEM# 46313-02210)",
-    "Available": 1,
-    "Description_ES": "SOLENOIDE, HYUNDAI KAPPA CVT (NEGRO) (UTILIZA 4 POR TRANSMISIÓN) (OEM# 46313-02210)"
+    "SKU": "48330-02200",
+    "Description": "FRST MODULE, HYUNDAI KAPPA CVT (PARTIAL MODULE) (SMALL) (OEM# 48330-02200)",
+    "Available": 0,
+    "Description_ES": "MÓDULO PRIMERO, HYUNDAI KAPPA CVT (MÓDULO PARCIAL) (PEQUEÑO) (OEM# 48330-02200)"
   },
   {
     "SKU": "28810-PWR-013X",
@@ -58168,12 +58210,6 @@
     "Description": "WIRE HARNESS, MITSUBISHI HYUNDAI F4A41, FA42, F4A51 & F4A4B (2005-UP) (OEM# 46308-3A050)",
     "Available": 1,
     "Description_ES": "MAZO DE CABLES, MITSUBISHI HYUNDAI F4A41, FA42, F4A51 Y F4A4B (2005-UP) (OEM# 46308-3A050)"
-  },
-  {
-    "SKU": "144752X",
-    "Description": "FR MODULE, TOYOTA U340, U341",
-    "Available": 1,
-    "Description_ES": "MÓDULO FR, TOYOTA U340, U341"
   },
   {
     "SKU": "214718-185S",
@@ -58836,6 +58872,12 @@
     "Description_ES": "MÓDULO FR, TOYOTA A245E, A246E, 4 VELOCIDADES FWD 93-95"
   },
   {
+    "SKU": "065752S",
+    "Description": "FR MODULE, TOYOTA A245 96-ON",
+    "Available": 0,
+    "Description_ES": "MÓDULO FR, TOYOTA A245 96-ON"
+  },
+  {
     "SKU": "073752C",
     "Description": "FR MODULE, TOYOTA A340 JEEP/TRUCK 85+, A343F 96-99",
     "Available": 1,
@@ -58900,12 +58942,6 @@
     "Description": "FR MODULE, GM 6L80E 06+",
     "Available": 1,
     "Description_ES": "MÓDULO FR, GM 6L80E 06+"
-  },
-  {
-    "SKU": "22900",
-    "Description": "BAND, A727: LOW/REVERSE (REAR) - FOR 6\" REVERSE DRUM (IND: 22900) (OEM# 1942133, 443185)",
-    "Available": 0,
-    "Description_ES": "BANDA, A727: BAJA/MARCHA ATRÁS (TRASERA) - PARA TAMBOR DE MARCHA ATRÁS DE 6\" (IND: 22900) (OEM# 1942133, 443185)"
   },
   {
     "SKU": "26319",
@@ -59462,7 +59498,7 @@
   {
     "SKU": "77613",
     "Description": "MCS, PUMP A6MF, A6MF2 09-14 , A6GF1 09-11, KAPPA CVT (OEM# 46131-3B600)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MCS, BOMBA A6MF, A6MF2 09-14, A6GF1 09-11, KAPPA CVT (OEM# 46131-3B600)"
   },
   {
@@ -59492,7 +59528,7 @@
   {
     "SKU": "77544",
     "Description": "MCS, AXLE (CASE SIDE) HYUNDAI A6MF1 (OEM# 45245-3B400)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MCS, EJE (LADO DE LA CAJA) HYUNDAI A6MF1 (OEM# 45245-3B400)"
   },
   {
@@ -59666,7 +59702,7 @@
   {
     "SKU": "48633",
     "Description": "MCS, HONDA B6VA, B7VA, B7XA, B7YA, B7TA, BAXA, MAXA, R0, MPRA, P1 AXLE (CONVERTER HSG SIDE). BZKA, MZKA, MCVA, MRVA, M7WA, B7WA, MGFA, BGFA, BAYA, MAYA, BDGA, MGHA, BYBA, BGHA, BVGA, BGRA, BCLA, MCLA, MRMA, MKYA, GPLA, MKZA, GPPA AXLE (DIFFERENTIAL HSG SIDE), HONDA / ACURA MDKA, BDKA, MDRA, MDPA, BVLA, PVLA, P35A, BVGA, P34A, BJFA, MJFA, PSFA AXLE (CASE SIDE) (OEM# 91205-P0X-005)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MCS, HONDA B6VA, B7VA, B7XA, B7YA, B7TA, BAXA, MAXA, R0, MPRA, P1 EJE (LADO CONVERTIDOR HSG).BZKA, MZKA, MCVA, MRVA, M7WA, B7WA, MGFA, BGFA, BAYA, MAYA, BDGA, MGHA, BYBA, BGHA, BVGA, BGRA, BCLA, MCLA, MRMA, MKYA, GPLA, MKZA, EJE GPPA (DIFERENCIAL LADO HSG), HONDA / ACURA MDKA, BDKA, MDRA, MDPA, BVLA,EJE PVLA, P35A, BVGA, P34A, BJFA, MJFA, PSFA (LADO DE LA CAJA) (OEM# 91205-P0X-005)"
   },
   {
@@ -59712,12 +59748,6 @@
     "Description_ES": "MCS, FORD 6R80, EXTENSIÓN 4WD (15-18) (OEM# FL3Z-7052-BA)"
   },
   {
-    "SKU": "48330-02200",
-    "Description": "FRST MODULE, HYUNDAI KAPPA CVT (PARTIAL MODULE) (SMALL) (OEM# 48330-02200)",
-    "Available": 1,
-    "Description_ES": "MÓDULO PRIMERO, HYUNDAI KAPPA CVT (MÓDULO PARCIAL) (PEQUEÑO) (OEM# 48330-02200)"
-  },
-  {
     "SKU": "52810A",
     "Description": "MCS, AXLE SEAL CONVERTER SIDE 6F50N, 6F55N (FORD ONLY) (07-14) (OEM# 7T4Z-1177-C) (EXCLUDES AWD 6F50)",
     "Available": 1,
@@ -59744,7 +59774,7 @@
   {
     "SKU": "98208",
     "Description": "MCS, CASE SIDE (AXLE), HONDA MT4A (2010-13), ARP6, M7PA (2010-13), PV2A, MV2A (2011-12), PJ8A (2014-15), M8EA (2011-12), MMHA (2012-14), PLXA (2016-17), PF4A (2017), B8BA, BZ0A, MMGA (2012-14), B8CA (2013-17), PJ7A (2014-15), M9RA (2014-17), BB7A (2013-17), BY9A (2013-15), BYKA (2011-13), PYRA (2014-17), PLWA (2016-17), PF5A (2017) DCT M9TF (OEM# 91205-RT4-003)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MCS, LADO DE LA CAJA (EJE), HONDA MT4A (2010-13), ARP6, M7PA (2010-13), PV2A, MV2A (2011-12), PJ8A (2014-15), M8EA (2011-12), MMHA (2012-14), PLXA (2016-17), PF4A (2017), B8BA, BZ0A, MMGA (2012-14), B8CA (2013-17), PJ7A (2014-15), M9RA (2014-17), BB7A (2013-17), BY9A (2013-15), BYKA (2011-13), PYRA (2014-17), PLWA (2016-17), PF5A (2017) DCT M9TF (OEM n.º 91205-RT4-003)."
   },
   {
@@ -59812,6 +59842,12 @@
     "Description": "SPRAG, BTR M11, 6 SPEED FWD (OE# 0511-506169)",
     "Available": 1,
     "Description_ES": "SOPORTE, BTR M11, 6 VELOCIDADES FWD (OE# 0511-506169)"
+  },
+  {
+    "SKU": "310802",
+    "Description": "PISTON TOYOTA CVT K310 FORWARD",
+    "Available": 1,
+    "Description_ES": "PISTÓN TOYOTA CVT K310 ADELANTE"
   },
   {
     "SKU": "69702X",
@@ -60002,7 +60038,7 @@
   {
     "SKU": "98854",
     "Description": "MCS, CONVERTER, HONDA BLJA, BLKA, BCGA, MCKA, BRGA, BRHA, BRJA, BRKA (OEM# 91207-5LJ-003)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MCS, CONVERTIDOR, HONDA BALJA, BALGA, BASAGA, MECCA, BARGA, BADA, ICE, BARKA (OEM# 91207-5LJ-003)"
   },
   {
@@ -60054,12 +60090,6 @@
     "Description_ES": "PISTÓN, ACUMULADOR, GM 4L60E, ACUMULADOR DELANTERO (93-09) (TRABAJO PESADO)"
   },
   {
-    "SKU": "77702LXD",
-    "Description": "PAN GASKET, HYUNDAI GAMMA CVT, C0GF1 (2016-2020) (FARPAK)",
-    "Available": 1,
-    "Description_ES": "JUNTA DE CARTER, HYUNDAI GAMMA CVT, C0GF1 (2016-2020) (FARPAK)"
-  },
-  {
     "SKU": "36510B",
     "Description": "SENSOR, VSS, OUTPUT SPEED SENSOR, FORD 5R110W (AFTERMARKET) (OEM# 3C3Z-7H103-AA, 7C3Z-7H103-A, 8C3Z-7H103-B)",
     "Available": 1,
@@ -60097,8 +60127,8 @@
   },
   {
     "SKU": "98423",
-    "Description": "MCS, CONVERTER, HONDA BC5A, MC4A (13-14) (OEM# 91207-RJ2-003)",
-    "Available": 1,
+    "Description": "MCS, CONVERTER, HONDA BC5A, MC4A (13-14), PYKA, PYLA, PXYA, PT0A, PT0C, PT1A, PT1C, PB8A, MNXA, PMXA, PFDA, PFDC, PFEA, PFDC,\nP1EA, P1FA, P1DA (OEM# 91207-RJ2-003)",
+    "Available": 0,
     "Description_ES": "MCS, CONVERTIDOR, HONDA BC5A, MC4A (13-14) (OEM# 91207-RJ2-003)"
   },
   {
@@ -60180,6 +60210,12 @@
     "Description_ES": "JUNTA DEL CUERPO DE VÁLVULA, GM 4L30E, SUPERIOR (EXC. EUROPA) (11/93-04) (OEM# 8-96018-338-0)"
   },
   {
+    "SKU": "058752N",
+    "Description": "FR MODULE, HONDA INTEGRA MDMA, MDLA,  M4TA, S4XA 96+",
+    "Available": 1,
+    "Description_ES": "MÓDULO FR, HONDA INTEGRADO MDMA, MDLA, M4TA, S4XA 96+"
+  },
+  {
     "SKU": "119753A",
     "Description": "ST MODULE, HONDA M6HA 97-01",
     "Available": 1,
@@ -60226,6 +60262,12 @@
     "Description": "OVERHAUL KIT, GM TH700-R4 (4L60) 4L60E, 4L65E 93-UP",
     "Available": 1,
     "Description_ES": "KIT DE REPARACIÓN, GM TH700-R4 (4L60) 4L60E, 4L65E 93-UP"
+  },
+  {
+    "SKU": "KP22950R",
+    "Description": "OVERHAUL KIT, A618 (48RE) 2003-2007 (METAL/RUBBER GASKET)",
+    "Available": 1,
+    "Description_ES": "KIT DE REPARACIÓN, A618 (48RE) 2003-2007 (JUNTA DE METAL/GOMA)"
   },
   {
     "SKU": "R35912T",
@@ -60492,6 +60534,12 @@
     "Description_ES": "GOBERNADOR TH400"
   },
   {
+    "SKU": "37312AGSX",
+    "Description": "OVERHAUL KIT, MITSUBISHI KIA A5HF1 2008-UP",
+    "Available": 1,
+    "Description_ES": "KIT DE REPARACIÓN, MITSUBISHI KIA A5HF1 2008-UP"
+  },
+  {
     "SKU": "41570",
     "Description": "WASHER KIT TH400,375,3L80 64-ON GM",
     "Available": 1,
@@ -60550,12 +60598,6 @@
     "Description": "OVERHAUL KIT,U440E,U441E",
     "Available": 1,
     "Description_ES": "KIT DE REVISIÓN,U440E,U441E"
-  },
-  {
-    "SKU": "KP22950R",
-    "Description": "OVERHAUL KIT, A618 (48RE) 2003-2007 (METAL/RUBBER GASKET)",
-    "Available": 1,
-    "Description_ES": "KIT DE REPARACIÓN, A618 (48RE) 2003-2007 (JUNTA DE METAL/GOMA)"
   },
   {
     "SKU": "KP37900G",
@@ -60786,12 +60828,6 @@
     "Description_ES": "KIT DE VÁLVULA, VÁLVULA DE SELECCIÓN DE EMBRAGUE Y VÁLVULA REGULADORA DE TCC, GM 6L45, 6L50, 6L80, 6L90"
   },
   {
-    "SKU": "058752N",
-    "Description": "FR MODULE, HONDA INTEGRA MDMA, MDLA,  M4TA, S4XA 96+",
-    "Available": 1,
-    "Description_ES": "MÓDULO FR, HONDA INTEGRADO MDMA, MDLA, M4TA, S4XA 96+"
-  },
-  {
     "SKU": "077753",
     "Description": "ST MODULE, CHRYSLER A604/606, 42RLE 90+",
     "Available": 1,
@@ -60966,6 +61002,12 @@
     "Description_ES": "BUJE, ZF6HP19, ZF6HP26, ZF6HP28, BUJE DE SOPORTE TRASERO (5 PIEZAS POR BOLSA, SE VENDE COMO BOLSA)"
   },
   {
+    "SKU": "48354-02300",
+    "Description": "FRST MODULE, HYUNDAI KAPPA CVT (PARTIAL MODULE) (LARGE) (OEM# 48354-02300)",
+    "Available": 1,
+    "Description_ES": "PRIMER MÓDULO, HYUNDAI KAPPA CVT (MÓDULO PARCIAL) (GRANDE) (OEM# 48354-02300)"
+  },
+  {
     "SKU": "113741-26",
     "Description": "VALVE, OVERSIZED PUMP FLOW CONTROL, JF010 )RE0F09A/RE0F09B)",
     "Available": 1,
@@ -61072,12 +61114,6 @@
     "Description": "ST C/P TH180/C,4L30E,4141, 2ND 1969-ON ID 4.30, 36THT, .083 THK, IND#54205A",
     "Available": 1,
     "Description_ES": "ST C/P TH180/C,4L30E,4141, 2ND 1969-ON ID 4.30, 36THT, .083 THK, IND#54205A"
-  },
-  {
-    "SKU": "37312AGSX",
-    "Description": "OVERHAUL KIT, MITSUBISHI KIA A5HF1 2008-UP",
-    "Available": 1,
-    "Description_ES": "KIT DE REPARACIÓN, MITSUBISHI KIA A5HF1 2008-UP"
   },
   {
     "SKU": "41730B",
@@ -61538,7 +61574,7 @@
   {
     "SKU": "77121",
     "Description": "MCS, AXLE (RIGHT) HYUNDAI F4A41, F4A42 (SANTA FE, ELANTRA 7/00-06, SONATA 6/01-06, TIBURON 10/01-06), A4CF1, A4CF2, A5CF1, A5CF2, A5GF1, A5GF2, A5HF1 (OEM# 43119-39020) (COLOR BLUE)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MCS, EJE (DERECHO) HYUNDAI F4A41, F4A42 (SANTA FE, ELANTRA 7/00-06, SONATA 6/01-06, TIBURON 10/01-06), A4CF1, A4CF2, A5CF1, A5CF2, A5GF1, A5GF2, A5HF1 (OEM#43119-39020) (COLOR AZUL)"
   },
   {
@@ -61638,6 +61674,36 @@
     "Description_ES": "MCS, CONVERTIDOR A CAJA NISSAN JF015E, CVT-7, RE0F11A (10-14)"
   },
   {
+    "SKU": "SUB-K821",
+    "Description": "SUB KIT, TOYOTA A130, A131, A132, A240, A241, A242, A244, A140, A141, MX17 FWD DIRECT CLUTCH, FROWARD CLUTCH SEALS",
+    "Available": 1,
+    "Description_ES": "KIT SECUNDARIO, TOYOTA A130, A131, A132, A240, A241, A242, A244, A140, A141, MX17 EMBRAGUE DIRECTO FWD, SELLOS DE EMBRAGUE DELANTERO"
+  },
+  {
+    "SKU": "SUB-K7522",
+    "Description": "SUB KIT, TOYOTA A240 SERIES FWD 2ND BRAKE SEALS",
+    "Available": 1,
+    "Description_ES": "SUBKIT, SELLOS DE FRENO 2.ª SERIE A240 FWD FWD"
+  },
+  {
+    "SKU": "SUB-K825A",
+    "Description": "SUB KIT, TOYOTA A240 O/D & UNDERDRIVE PISTON O-RINGS",
+    "Available": 1,
+    "Description_ES": "KIT SECUNDARIO, JUNTAS TÓRICAS DE PISTÓN DE TRANSMISIÓN Y EXTERIOR DE TOYOTA A240"
+  },
+  {
+    "SKU": "SUB-K824",
+    "Description": "SUB KIT, TOYOTA 4 A130, A131, A132, A240, A241, A242, A244, A140, A141, MX1 SPEED LOW/REV PISTON SEALS",
+    "Available": 1,
+    "Description_ES": "SUB KIT, TOYOTA 4 A130, A131, A132, A240, A241, A242, A244, A140, A141, SELLOS DE PISTÓN DE BAJA/REV DE VELOCIDAD MX1"
+  },
+  {
+    "SKU": "SUB-K830-AM",
+    "Description": "SUB KIT, TOYOTA A130, A131, A132, A240, A241, A242, A244 ACCUMULATOR ORINGS",
+    "Available": 1,
+    "Description_ES": "SUB KIT, JUNTAS TÓRICAS DEL ACUMULADOR TOYOTA A130, A131, A132, A240, A241, A242, A244"
+  },
+  {
     "SKU": "69700C",
     "Description": "BAND, NISSAN RE4R01A, RL4R01A, RE5R01A, R4A-EL (STRAP ENDS ARE THE SAME) (1.575\" WIDE) (OEM# 31630-41X08)",
     "Available": 1,
@@ -61664,7 +61730,7 @@
   {
     "SKU": "77533",
     "Description": "MCS, HYUNDAI A6MF1 (09-12), 6F24 (12-14), AXLE (CONVERTER SIDE) (OEM# 45245-3B300)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MCS, HYUNDAI A6MF1 (09-12), 6F24 (12-14), EJE (LADO DEL CONVERTIDOR) (OEM# 45245-3B300)"
   },
   {
@@ -61672,6 +61738,24 @@
     "Description": "FR PLATE, TOYOTA A142E, A540 DIRECT/OVERDRIVE HEG 86+",
     "Available": 1,
     "Description_ES": "PLACA FR, TOYOTA A142E, A540 DIRECTO/OVERDRIVE HEG 86+"
+  },
+  {
+    "SKU": "SUB-K6504",
+    "Description": "SUB KIT, A40 SERIES, FRONT CUTCH",
+    "Available": 1,
+    "Description_ES": "SUBKIT, SERIE A40, CORTE FRONTAL"
+  },
+  {
+    "SKU": "SUB-K6506",
+    "Description": "SUB KIT, A40 SERIES, REAR CLUTCH",
+    "Available": 1,
+    "Description_ES": "SUBKIT, SERIE A40, EMBRAGUE TRASERO"
+  },
+  {
+    "SKU": "SUB-K6509",
+    "Description": "SUB KIT, A40 SERIES, CENTER SUPPORT",
+    "Available": 1,
+    "Description_ES": "SUB KIT, SERIE A40, SOPORTE CENTRAL"
   },
   {
     "SKU": "075720-180",
@@ -61788,12 +61872,6 @@
     "Description_ES": "JUNTA DE CARTERA, ZF4HP22, ZF4HP24 (CAUCHO) (82-02) (OEM# 0750-112-003)"
   },
   {
-    "SKU": "48354-02300",
-    "Description": "FRST MODULE, HYUNDAI KAPPA CVT (PARTIAL MODULE) (LARGE) (OEM# 48354-02300)",
-    "Available": 1,
-    "Description_ES": "PRIMER MÓDULO, HYUNDAI KAPPA CVT (MÓDULO PARCIAL) (GRANDE) (OEM# 48354-02300)"
-  },
-  {
     "SKU": "SUB-K7520",
     "Description": "SUB KIT,",
     "Available": 1,
@@ -61870,6 +61948,24 @@
     "Description": "MCS PUMP, CONVERTER HOUSING, HONDAG4, L5, PL5X, B7ZA, M7ZA, B7VA, B7XA, B7YA, B7TA, MPZA, BZKA, MZKA, MCVA, MRVA, M7WA, B7WA, MGFA, BGFA, BAYA, MAYA, BDGA, MGHA, BYBA, BGHA, BVGA, BGRA, BCLA, MCLA, MRMA, MKYA, GPLA, MKZA, GPPA, MCTA, SPCA, MPCA, BRZA, SMMA, SPAA, SP5A, MP5A, MZ2A, BZKA, MNZA, BZNA, MZKA, MZJA, BZJA, MZHA, BZHA, MM7A, M91A, B90A, B5LA, B5MA, B5RA, B5SA, M8SA, BJ1A (OEM# 91207-P7Z-003, 91207-PG4-005)",
     "Available": 1,
     "Description_ES": "BOMBA MCS, CARCASA DEL CONVERTIDOR, HONDAG4, L5, PL5X, B7ZA, M7ZA, B7VA, B7XA, B7YA, B7TA, MPZA, BZKA, MZKA, MCVA, MRVA, M7WA, B7WA, MGFA, BGFA, BAYA, MAYA, BDGA, MGHA, BYBA, BGHA, BVGA, BGRA, BCLA, MCLA, MRMA, MKYA, GPLA, MKZA, GPPA, MCTA, SPCA, MPCA, BRZA, SMMA, SPAA, SP5A, MP5A, MZ2A, BZKA, MNZA, BZNA, MZKA, MZJA, BZJA, MZHA, BZHA, MM7A, M91A, B90A, B5LA, B5MA, B5RA, B5SA, M8SA, BJ1A (OEM n.º 91207-P7Z-003, 91207-PG4-005)"
+  },
+  {
+    "SKU": "SUB-K6518",
+    "Description": "SUB KIT, ACCUMULATOR ORINGS",
+    "Available": 1,
+    "Description_ES": "SUB KIT, JUNTAS TÓRICAS DEL ACUMULADOR"
+  },
+  {
+    "SKU": "SUB-K6512",
+    "Description": "SUB KIT, REAR BRAKE CLUTCH",
+    "Available": 1,
+    "Description_ES": "KIT SECUNDARIO, EMBRAGUE DE FRENO TRASERO"
+  },
+  {
+    "SKU": "SUB-K6516",
+    "Description": "SUB KIT, TOYOTA A40, OVERDRIVE CLUTCH",
+    "Available": 1,
+    "Description_ES": "KIT SECUNDARIO, TOYOTA A40, EMBRAGUE DE SOBREMARCHA"
   },
   {
     "SKU": "6L80-CLR-BYPASS",
@@ -62388,6 +62484,12 @@
     "Description_ES": "MÓDULO FR, 02E (DQ250) DSG DOBLE EMBRAGUE 6 VELOCIDADES FWD"
   },
   {
+    "SKU": "K7900Q-1F",
+    "Description": "FR MODULE, AISIN WARNER TW-40LS/E/R4A12 (00-14) (21 PLATES)",
+    "Available": 1,
+    "Description_ES": "MÓDULO FR, AISIN WARNER TW-40LS/E/R4A12 (00-14) (21 PLACAS)"
+  },
+  {
     "SKU": "214707-178",
     "Description": "ST PLATE, HYUNDAI A6MF1, CHRYSLER 6F24, UNDERDRIVE 09+",
     "Available": 1,
@@ -62598,16 +62700,16 @@
     "Description_ES": "KIT DE REVISIÓN, HYUNDA A5CF2, 5F23"
   },
   {
-    "SKU": "K7900Q-1F",
-    "Description": "FR MODULE, AISIN WARNER TW-40LS/E/R4A12 (00-14) (21 PLATES)",
-    "Available": 1,
-    "Description_ES": "MÓDULO FR, AISIN WARNER TW-40LS/E/R4A12 (00-14) (21 PLACAS)"
-  },
-  {
     "SKU": "34707",
     "Description": "PISTON, ACCUMULATOR TH-400 (ALUMINUM W/3 LEGS) (RING NOT INCLUDED)",
     "Available": 1,
     "Description_ES": "PISTON ACUMULADOR TH400 (ALUMINIO CON/3 PATAS) (ANILLO NO INCLUIDO)"
+  },
+  {
+    "SKU": "48382-02200",
+    "Description": "FRST MODULE, HYUNDAI KAPPA CVT (PARTIAL MODULE) (MEDIUM)",
+    "Available": 1,
+    "Description_ES": "PRIMER MÓDULO, HYUNDAI KAPPA CVT (MÓDULO PARCIAL) (MEDIO)"
   },
   {
     "SKU": "45337",
@@ -62748,6 +62850,12 @@
     "Description_ES": "BANDA, MERCEDES 722.3, 722.5 (2.ª ENGRANAJE) B1(OEM# 126-270-1862)"
   },
   {
+    "SKU": "68701B",
+    "Description": "BAND, O.E. MERCEDES 722.3, 722.5 REAR B2 OE#126-270-2062",
+    "Available": 1,
+    "Description_ES": "BANDA, O.E.MERCEDES 722.3, 722.5 TRASERO B2 OE#126-270-2062"
+  },
+  {
     "SKU": "69710U",
     "Description": "FILTER, SUBARU 5 SPEED TRANSMISSION, JR507E, 5EAT (PLASTIC) (09-UP)",
     "Available": 1,
@@ -62866,6 +62974,12 @@
     "Description": "SOLENOID, TOYOTA A343F, SHIFT 2WAY TACOMA 2002-2008, 4 RUNNER 2002 TUNDRA 2002-2004 (OEM# 35250-30070, 35250-30060, 85420-22170, 85420-24030, 85420-24040) (AFTERMARKET)",
     "Available": 1,
     "Description_ES": "SOLENOIDE, TOYOTA A343F, CAMBIO DE 2 VÍAS TACOMA 2002-2008, 4 RUNNER 2002 TUNDRA 2002-2004 (OEM# 35250-30070, 35250-30060, 85420-22170, 85420-24030,85420-24040) (MERCADO POSTVENTA)"
+  },
+  {
+    "SKU": "42716",
+    "Description": "FILTER, HYUNDAI GAMMA C0GF1 CVT (OEM# 48148-2H000)",
+    "Available": 1,
+    "Description_ES": "FILTRO, CVT HYUNDAI GAMMA C0GF1 (OEM# 48148-2H000)"
   },
   {
     "SKU": "304704-160",
@@ -63006,12 +63120,6 @@
     "Description_ES": "JUNTA, BOMBA DELANTERA, TH700-R4, 4L60E (L83-02)"
   },
   {
-    "SKU": "33710",
-    "Description": "FILTER, GM 4T40E/4T45E (1995-ON) (OEM# 8685185 , 24203770)",
-    "Available": 0,
-    "Description_ES": "FILTRO, GM 4T40E/4T45E (1995-EN ADELANTE) (OEM# 8685185, 24203770)"
-  },
-  {
     "SKU": "34109",
     "Description": "PAN GASKET 095, 096, 01M (NBR) 89-03 (RUBBER). (OEM#: 095-321-371, 096-321-370)",
     "Available": 1,
@@ -63088,12 +63196,6 @@
     "Description": "SOLENOID, LOCK UP AW50-40, AW50-42",
     "Available": 1,
     "Description_ES": "SOLENOIDE DE BLOQUEO AW50-40, AW50-42"
-  },
-  {
-    "SKU": "68701B",
-    "Description": "BAND, O.E. MERCEDES 722.3, 722.5 REAR B2 OE#126-270-2062",
-    "Available": 1,
-    "Description_ES": "BANDA, O.E.MERCEDES 722.3, 722.5 TRASERO B2 OE#126-270-2062"
   },
   {
     "SKU": "70239",
@@ -63200,7 +63302,7 @@
   {
     "SKU": "77547",
     "Description": "MCS, AXLE (CASE SIDE), HYUNDAI/KIA A6LF1, A6LF2, A6LF3 (OEM# 45245-3B200)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MCS, EJE (LADO DE LA CAJA), HYUNDAI/KIA A6LF1, A6LF2, A6LF3 (OEM# 45245-3B200)"
   },
   {
@@ -63328,6 +63430,12 @@
     "Description": "VALVE, OIL COOLER TRANSMISSION BYPASS A604 (40TE, 41TE, 41AE) 1989-ON",
     "Available": 1,
     "Description_ES": "VÁLVULA, DESVIACIÓN DE TRANSMISIÓN DEL ENFRIADOR DE ACEITE A604 (40TE, 41TE, 41AE) 1989-ON"
+  },
+  {
+    "SKU": "131711H",
+    "Description": "FILTER, TW-40LS SUZUKI JIMNY, JB23W, JB43W 2008 (OEM# 26570-76J10)",
+    "Available": 1,
+    "Description_ES": "FILTRO, TW-40LS SUZUKI JIMNY, JB23W, JB43W 2008 (OEM# 26570-76J10)"
   },
   {
     "SKU": "79704X",
@@ -63571,7 +63679,7 @@
   },
   {
     "SKU": "77254",
-    "Description": "MCS, AXLE (CASE SIDE), HYUNDAI A6GF1(OEM# 45245-26200)",
+    "Description": "MCS, AXLE (CASE SIDE), HYUNDAI A6GF1, A6GF1-2, A6MF1-2, GAMMA (C0GF1) (OEM# 45245-26200)",
     "Available": 1,
     "Description_ES": "MCS, EJE (LADO DE LA CAJA), HYUNDAI A6GF1(OEM# 45245-26200)"
   },
@@ -63646,12 +63754,6 @@
     "Description": "MCS, AXLE GM 5ET50, 6T30 (09-13), 6T40 LEFT (06-19), 6T35 (16-19), 9T40 AXLE CASE(OEM# 24230715)",
     "Available": 1,
     "Description_ES": "MCS, EJE GM 5ET50, 6T30 (09-13), 6T40 IZQUIERDO (06-19), 6T35 (16-19), 9T40 CAJA DEL EJE (OEM# 24230715)"
-  },
-  {
-    "SKU": "48382-02200",
-    "Description": "FRST MODULE, HYUNDAI KAPPA CVT (PARTIAL MODULE) (MEDIUM)",
-    "Available": 1,
-    "Description_ES": "PRIMER MÓDULO, HYUNDAI KAPPA CVT (MÓDULO PARCIAL) (MEDIO)"
   },
   {
     "SKU": "SUB-K7746A",
@@ -63974,7 +64076,7 @@
   {
     "SKU": "77253",
     "Description": "MCS, PUMP, HYUNDAI GAMMA CVT (2016-20)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "MCS, BOMBA, HYUNDAI GAMMA CVT (2016-20)"
   },
   {
@@ -64104,6 +64206,12 @@
     "Description_ES": "KIT DE REVISIÓN, KIA A6LF1"
   },
   {
+    "SKU": "K88900DL",
+    "Description": "OVERHAUL KIT, TOYOTA A340E, A340F 4SP 2/4WD, A343F 4SP 4WD (4-RUNNER 8/00-02, TACOMA 8/00-09, LAND CRUISER 99-03, TUNDRA 2/99-04, SEQUOIA 9/00-06)",
+    "Available": 1,
+    "Description_ES": "KIT DE REPARACIÓN, TOYOTA A340E, A340F 4SP 2/4WD, A343F 4SP 4WD (4-RUNNER 8/00-02, TACOMA 8/00-09, LAND CRUISER 99-03, TUNDRA 2/99-04, SEQUOIA 9/00-06)"
+  },
+  {
     "SKU": "39741-42K",
     "Description": "KIT, ACCUMULATOR PISTON 09D, TF-60SN, TF-80SC, TF-81SC, TR-60SN (INCLUDES: PISTON, SLEEVE, O-RING, SPRINGS)",
     "Available": 1,
@@ -64132,12 +64240,6 @@
     "Description": "ST GM 6T40E 3-5 REV WAVE INTL SPLINE",
     "Available": 1,
     "Description_ES": "ST GM 6T40E 3-5 REV ONDA ESTRIA INTERNACIONAL"
-  },
-  {
-    "SKU": "131711H",
-    "Description": "FILTER, TW-40LS SUZUKI JIMNY, JB23W, JB43W 2008 (OEM# 26570-76J10)",
-    "Available": 1,
-    "Description_ES": "FILTRO, TW-40LS SUZUKI JIMNY, JB23W, JB43W 2008 (OEM# 26570-76J10)"
   },
   {
     "SKU": "28912AGSX",
@@ -64398,12 +64500,6 @@
     "Description_ES": "KIT DE REVISIÓN, GM 6L90E"
   },
   {
-    "SKU": "K88900DL",
-    "Description": "OVERHAUL KIT, TOYOTA A340E, A340F 4SP 2/4WD, A343F 4SP 4WD (4-RUNNER 8/00-02, TACOMA 8/00-09, LAND CRUISER 99-03, TUNDRA 2/99-04, SEQUOIA 9/00-06)",
-    "Available": 1,
-    "Description_ES": "KIT DE REPARACIÓN, TOYOTA A340E, A340F 4SP 2/4WD, A343F 4SP 4WD (4-RUNNER 8/00-02, TACOMA 8/00-09, LAND CRUISER 99-03, TUNDRA 2/99-04, SEQUOIA 9/00-06)"
-  },
-  {
     "SKU": "88710S",
     "Description": "FILTER HONDA A24A, M24A, S24A, P24, 92-ON  (OEM# 25420-P24-J01)",
     "Available": 1,
@@ -64582,12 +64678,6 @@
     "Description": "PAN GASKET, FORD 6R140 (OEM# BC3Z-7A191-B)",
     "Available": 1,
     "Description_ES": "JUNTA DE CARTERA, FORD 6R140 (OEM# BC3Z-7A191-B)"
-  },
-  {
-    "SKU": "42716",
-    "Description": "FILTER, HYUNDAI GAMMA C0GF1 CVT (OEM# 48148-2H000)",
-    "Available": 1,
-    "Description_ES": "FILTRO, CVT HYUNDAI GAMMA C0GF1 (OEM# 48148-2H000)"
   },
   {
     "SKU": "RPST-198",
@@ -65646,6 +65736,12 @@
     "Description_ES": "JUNTA DE BOMBA, MITSUBISHI F4A21/F4A22"
   },
   {
+    "SKU": "84700E",
+    "Description": "BAND, 4T60E/4T65E, 2-1 COAST (CENTER), 91-UP (IND# 84702A) (OEM# 8651624, 8685155)",
+    "Available": 1,
+    "Description_ES": "BANDA, 4T60E/4T65E, 2-1 COSTA (CENTRO), 91-UP (IND# 84702A) (OEM# 8651624, 8685155)"
+  },
+  {
     "SKU": "85700",
     "Description": "BAND, ZF4HP14 (1986-ON) (IND: 85700) (OEM# 0501-204-331, 0501-208-833)",
     "Available": 1,
@@ -65732,7 +65828,7 @@
   {
     "SKU": "123708",
     "Description": "FR PLATE, F4A41/42 OVERDRIVE WAVED F1C1 MITSUBISHI CVT REV.",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "PLACA FR, F4A41/42 SOBREMARCHA ONDULADA F1C1 MITSUBISHI CVT REV."
   },
   {
@@ -65740,6 +65836,12 @@
     "Description": "FR PLATES BTR 1,2,3 CL 89--UP WAFFLE",
     "Available": 1,
     "Description_ES": "PLATOS FR BTR 1,2,3 CL 89--UP WAFFLE"
+  },
+  {
+    "SKU": "56710W",
+    "Description": "FILTER, FORD 5R110W 2008-UP (CURVED EDGE) (OEM# 8C3Z-7A098-D, 9C3P-7G186-AA, 9C3P-7C185-AA)",
+    "Available": 1,
+    "Description_ES": "FILTRO, FORD 5R110W 2008-UP (BORDE CURVO) (OEM# 8C3Z-7A098-D, 9C3P-7G186-AA, 9C3P-7C185-AA)"
   },
   {
     "SKU": "28697806",
@@ -65784,36 +65886,6 @@
     "Description_ES": "FRIC RNG, .075 TAN, FORD A4LD, TOYOTA A140"
   },
   {
-    "SKU": "SUB-K821",
-    "Description": "SUB KIT, TOYOTA A130, A131, A132, A240, A241, A242, A244, A140, A141, MX17 FWD DIRECT CLUTCH, FROWARD CLUTCH SEALS",
-    "Available": 1,
-    "Description_ES": "KIT SECUNDARIO, TOYOTA A130, A131, A132, A240, A241, A242, A244, A140, A141, MX17 EMBRAGUE DIRECTO FWD, SELLOS DE EMBRAGUE DELANTERO"
-  },
-  {
-    "SKU": "SUB-K7522",
-    "Description": "SUB KIT, TOYOTA A240 SERIES FWD 2ND BRAKE SEALS",
-    "Available": 1,
-    "Description_ES": "SUBKIT, SELLOS DE FRENO 2.ª SERIE A240 FWD FWD"
-  },
-  {
-    "SKU": "SUB-K825A",
-    "Description": "SUB KIT, TOYOTA A240 O/D & UNDERDRIVE PISTON O-RINGS",
-    "Available": 1,
-    "Description_ES": "KIT SECUNDARIO, JUNTAS TÓRICAS DE PISTÓN DE TRANSMISIÓN Y EXTERIOR DE TOYOTA A240"
-  },
-  {
-    "SKU": "SUB-K824",
-    "Description": "SUB KIT, TOYOTA 4 A130, A131, A132, A240, A241, A242, A244, A140, A141, MX1 SPEED LOW/REV PISTON SEALS",
-    "Available": 1,
-    "Description_ES": "SUB KIT, TOYOTA 4 A130, A131, A132, A240, A241, A242, A244, A140, A141, SELLOS DE PISTÓN DE BAJA/REV DE VELOCIDAD MX1"
-  },
-  {
-    "SKU": "SUB-K830-AM",
-    "Description": "SUB KIT, TOYOTA A130, A131, A132, A240, A241, A242, A244 ACCUMULATOR ORINGS",
-    "Available": 1,
-    "Description_ES": "SUB KIT, JUNTAS TÓRICAS DEL ACUMULADOR TOYOTA A130, A131, A132, A240, A241, A242, A244"
-  },
-  {
     "SKU": "45206B",
     "Description": "MCS, FRONT PUMP, NISSAN RL3F01A, RN3F01A (81-92) (OEM# 31197-01X01)",
     "Available": 1,
@@ -65836,24 +65908,6 @@
     "Description": "MCS, TOYOTA MX1 (AXLE), ECHO U340 (RING GEAR SIDE), K410 (AXLE CASE SIDE), K411 (AXLE)",
     "Available": 1,
     "Description_ES": "MCS, TOYOTA MX1 (EJE), ECHO U340 (LADO DEL ENGRANAJE DE ANILLO), K410 (LADO DE LA CAJA DEL EJE), K411 (EJE)"
-  },
-  {
-    "SKU": "SUB-K6504",
-    "Description": "SUB KIT, A40 SERIES, FRONT CUTCH",
-    "Available": 1,
-    "Description_ES": "SUBKIT, SERIE A40, CORTE FRONTAL"
-  },
-  {
-    "SKU": "SUB-K6506",
-    "Description": "SUB KIT, A40 SERIES, REAR CLUTCH",
-    "Available": 1,
-    "Description_ES": "SUBKIT, SERIE A40, EMBRAGUE TRASERO"
-  },
-  {
-    "SKU": "SUB-K6509",
-    "Description": "SUB KIT, A40 SERIES, CENTER SUPPORT",
-    "Available": 1,
-    "Description_ES": "SUB KIT, SERIE A40, SOPORTE CENTRAL"
   },
   {
     "SKU": "512242",
@@ -65920,24 +65974,6 @@
     "Description": "MCS, HYUNDAI A6LF, LEFT SHAFT (NON USA APPLICATION, DIESEL) (74 X 43 X 10) (OEM# 45245-3B610)",
     "Available": 1,
     "Description_ES": "MCS, HYUNDAI A6LF, EJE IZQUIERDO (APLICACIÓN FUERA DE EE. UU., DIESEL) (74 X 43 X 10) (OEM# 45245-3B610)"
-  },
-  {
-    "SKU": "SUB-K6518",
-    "Description": "SUB KIT, ACCUMULATOR ORINGS",
-    "Available": 1,
-    "Description_ES": "SUB KIT, JUNTAS TÓRICAS DEL ACUMULADOR"
-  },
-  {
-    "SKU": "SUB-K6512",
-    "Description": "SUB KIT, REAR BRAKE CLUTCH",
-    "Available": 1,
-    "Description_ES": "KIT SECUNDARIO, EMBRAGUE DE FRENO TRASERO"
-  },
-  {
-    "SKU": "SUB-K6516",
-    "Description": "SUB KIT, TOYOTA A40, OVERDRIVE CLUTCH",
-    "Available": 1,
-    "Description_ES": "KIT SECUNDARIO, TOYOTA A40, EMBRAGUE DE SOBREMARCHA"
   },
   {
     "SKU": "98992E",
@@ -66088,12 +66124,6 @@
     "Description": "FILTER, VOLKSWAGEN 010,087,090 77-94 (ROUND OFF SET) VW, AUDI,",
     "Available": 1,
     "Description_ES": "FILTRO, VOLKSWAGEN 010.087.090 77-94 (JUEGO REDONDEADO) VW, AUDI,"
-  },
-  {
-    "SKU": "84700E",
-    "Description": "BAND, 4T60E/4T65E, 2-1 COAST (CENTER), 91-UP (IND# 84702A) (OEM# 8651624, 8685155)",
-    "Available": 1,
-    "Description_ES": "BANDA, 4T60E/4T65E, 2-1 COSTA (CENTRO), 91-UP (IND# 84702A) (OEM# 8651624, 8685155)"
   },
   {
     "SKU": "98710J",
@@ -66272,7 +66302,7 @@
   {
     "SKU": "56200-03K",
     "Description": "VALVE ASSY, PUMP FLOW CONTROL 5R55N, 5R55S, 5R55W",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "CONJUNTO DE VÁLVULA, CONTROL DE FLUJO DE BOMBA 5R55N, 5R55S, 5R55W"
   },
   {
@@ -66624,6 +66654,12 @@
     "Description_ES": "*** USAR 70039 *** MCS, PALANCA MANUAL, TOYOTA A40/D, A41, A42D/DL, A43D/DE/DL, A44DE/DL, A45DL, A46DE/DF, A47DE, AW70/71/72, AW/BW55 (72-04) (22X11X7) (OEM#90311-11128)"
   },
   {
+    "SKU": "75248",
+    "Description": "MCS, TOYOTA K310, K311, CASE SIDE AXLE (06-13)",
+    "Available": 1,
+    "Description_ES": "MCS, TOYOTA K310, K311, EJE LATERAL DE LA CAJA (06-13)"
+  },
+  {
     "SKU": "183701-300",
     "Description": "ST PLATE, ZF6HP26, INUT, FORWARD (A), 2-6 BRAKE (C) 02+",
     "Available": 1,
@@ -66658,6 +66694,12 @@
     "Description": "ORING, PUMP, HYUNDAI F4A32, A4BF2, A4BF3, A4AF3 (OEM# 48158-36001)",
     "Available": 1,
     "Description_ES": "JUNTA TÓRICA, BOMBA, HYUNDAI F4A32, A4BF2, A4BF3, A4AF3 (OEM# 48158-36001)"
+  },
+  {
+    "SKU": "3170E-28X0B",
+    "Description": "VALVE BODY KIT, NISSAN JF017E (INCLUDES: FILTER 31728-29X0D, GASKET 31397-1XF0D, VALVE BODY 31705-29X6D)",
+    "Available": 1,
+    "Description_ES": "KIT DE CUERPO DE VÁLVULA, NISSAN JF017E (INCLUYE: FILTRO 31728-29X0D, JUNTA 31397-1XF0D, CUERPO DE VÁLVULA 31705-29X6D)"
   },
   {
     "SKU": "120710R",
@@ -66792,6 +66834,12 @@
     "Description_ES": "PLACA ST, KIA A5SR1/2 MARCHA ATRÁS 04+"
   },
   {
+    "SKU": "222710A",
+    "Description": "FILTER, GM 9T40, 9T50, 9T60, 9T65 (2017-UP) (REPLACES OEM# 24268085) (OEM# 24289324)",
+    "Available": 1,
+    "Description_ES": "FILTRO, GM 9T40, 9T50, 9T60, 9T65 (2017-UP) (REEMPLAZA OEM# 24268085) (OEM# 24289324)"
+  },
+  {
     "SKU": "172714",
     "Description": "FR PLATE, TORQUE CONVERTER, HONDA M4TA (SINGLE SIDED) (INTERNAL TEETH) (OD: 8.175\" - 40T)",
     "Available": 1,
@@ -66870,16 +66918,10 @@
     "Description_ES": "PLACA FR, FORD FIOD (AODE) DIRECTA (80-ON)"
   },
   {
-    "SKU": "3170E-28X0B",
-    "Description": "VALVE BODY KIT, NISSAN JF017E (INCLUDES: FILTER 31728-29X0D, GASKET 31397-1XF0D, VALVE BODY 31705-29X6D)",
+    "SKU": "42714H",
+    "Description": "FILTER, HYUNDAI ACCENT CVT (2017-UP) (OEM# 48148-02230)",
     "Available": 1,
-    "Description_ES": "KIT DE CUERPO DE VÁLVULA, NISSAN JF017E (INCLUYE: FILTRO 31728-29X0D, JUNTA 31397-1XF0D, CUERPO DE VÁLVULA 31705-29X6D)"
-  },
-  {
-    "SKU": "222710A",
-    "Description": "FILTER, GM 9T40, 9T50, 9T60, 9T65 (2017-UP) (REPLACES OEM# 24268085) (OEM# 24289324)",
-    "Available": 1,
-    "Description_ES": "FILTRO, GM 9T40, 9T50, 9T60, 9T65 (2017-UP) (REEMPLAZA OEM# 24268085) (OEM# 24289324)"
+    "Description_ES": "FILTRO, CVT HYUNDAI ACCENT (2017-UP) (OEM# 48148-02230)"
   },
   {
     "SKU": "57950P",
@@ -66998,7 +67040,7 @@
   {
     "SKU": "97762",
     "Description": "FILTER, TOYOTA AJA0E, AJA0F (10 SPEED) LEXUS GX550/550H, LEXUS LX600/500D, LAND CRUISER (2017-UP) (OEM# 35330-60120)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, TOYOTA AJA0E, AJA0F (10 VELOCIDADES) LEXUS GX550/550H, LEXUS LX600/500D, LAND CRUISER (2017-UP) (OEM# 35330-60120)"
   },
   {
@@ -67036,12 +67078,6 @@
     "Description": "FILTER, CHRSYLER 845RE, ZF8HP45 (12-ON) W/PAN (OEM# 52854834AA, 68233701AA,68233701AB, 0501-220-214, 0501-219-037 ) (AFTERMARKET)",
     "Available": 1,
     "Description_ES": "FILTRO, CHRSYLER 845RE, ZF8HP45 (12-ON) CON PAN (OEM# 52854834AA, 68233701AA,68233701AB, 0501-220-214, 0501-219-037) (MERCADO DE POSTVENTA)"
-  },
-  {
-    "SKU": "42714H",
-    "Description": "FILTER, HYUNDAI ACCENT CVT (2017-UP) (OEM# 48148-02230)",
-    "Available": 1,
-    "Description_ES": "FILTRO, CVT HYUNDAI ACCENT (2017-UP) (OEM# 48148-02230)"
   },
   {
     "SKU": "97750",
@@ -67290,12 +67326,6 @@
     "Description_ES": "PLACA FR, HYUNDAI/MITS F4A41/42 BAJA/REV 96-UP"
   },
   {
-    "SKU": "310802",
-    "Description": "PISTON TOYOTA CVT K310 FORWARD",
-    "Available": 1,
-    "Description_ES": "PISTÓN TOYOTA CVT K310 ADELANTE"
-  },
-  {
     "SKU": "61700LXD",
     "Description": "PAN GASKET, CHRYSLER A606 (FARPAK) (93-04)",
     "Available": 1,
@@ -67392,6 +67422,12 @@
     "Description_ES": "FILTRO BTR 85/ 91 / 95LE (88-UP) (MUESCA EN EL MEDIO DEL LADO DE PLÁSTICO) (OEM# TGM-10011, 0572-738004)"
   },
   {
+    "SKU": "131711",
+    "Description": "FILTER . TW-40LS SUZUKI EVERY WAGON DA64W 03-UP (OEM# 26570-66H10)",
+    "Available": 1,
+    "Description_ES": "FILTRO .TW-40LS SUZUKI CADA VAGÓN DA64W 03-UP (OEM# 26570-66H10)"
+  },
+  {
     "SKU": "RPS59861",
     "Description": "BAND FORD 5R55W, A4LD, A4LD-E, 4R44E, 4R55E, 5R44E, 5R55E INTERMEDIATE",
     "Available": 1,
@@ -67458,6 +67494,12 @@
     "Description_ES": "FILTER A42DL, 43DL, 44DL, 45DL, 45DF 82-ON TOYOTA, MITSUBISHI, ISUZU, VOLVO (OEM# 35303-14010)"
   },
   {
+    "SKU": "97711Y",
+    "Description": "FILTER, A650E TOYOTA, A47DE LEXUS IS200/300 (GXE10R) (OEM# 35330-22032) (01-UP)",
+    "Available": 1,
+    "Description_ES": "FILTRO, A650E TOYOTA, A47DE LEXUS IS200/300 (GXE10R) (OEM# 35330-22032) (01-UP)"
+  },
+  {
     "SKU": "LG95001",
     "Description": "TRANSMISSION FLUSH LUBEGUARD",
     "Available": 1,
@@ -67468,12 +67510,6 @@
     "Description": "FR MODULE GM 4L60 93-UP (W/TAN 3RD/4TH)",
     "Available": 1,
     "Description_ES": "MÓDULO FR GM 4L60 93-UP (W/TAN 3RD/4TH)"
-  },
-  {
-    "SKU": "131711",
-    "Description": "FILTER . TW-40LS SUZUKI EVERY WAGON DA64W 03-UP (OEM# 26570-66H10)",
-    "Available": 1,
-    "Description_ES": "FILTRO .TW-40LS SUZUKI CADA VAGÓN DA64W 03-UP (OEM# 26570-66H10)"
   },
   {
     "SKU": "FRMHYUND03",
@@ -67510,12 +67546,6 @@
     "Description": "INPUT SENSOR, AW60-40LE TURBINE SHAFT SENSOR (BLACK)",
     "Available": 1,
     "Description_ES": "SENSOR DE ENTRADA, SENSOR DE EJE DE TURBINA AW60-40LE (NEGRO)"
-  },
-  {
-    "SKU": "97711Y",
-    "Description": "FILTER, A650E TOYOTA, A47DE LEXUS IS200/300 (GXE10R) (OEM# 35330-22032) (01-UP)",
-    "Available": 1,
-    "Description_ES": "FILTRO, A650E TOYOTA, A47DE LEXUS IS200/300 (GXE10R) (OEM# 35330-22032) (01-UP)"
   },
   {
     "SKU": "K37900-1EKB",
@@ -67648,6 +67678,12 @@
     "Description": "FILTER, VW09G/TF60SN (FITS MINI COOPER) (OVAL SUCTION, HEIGHT41.05MM) (06-UP) (OEM# 2434-7-566-358)",
     "Available": 1,
     "Description_ES": "FILTRO, VW09G/TF60SN (SE ADAPTA A MINI COOPER) (SUCCIÓN OVALADA, ALTURA41.05MM) (06-UP) (OEM# 2434-7-566-358)"
+  },
+  {
+    "SKU": "SK-6L80",
+    "Description": "SHIFT KIT, GM 6L45, 6L50, 6L80, 6L90 (2006-2018)",
+    "Available": 1,
+    "Description_ES": "KIT DE CAMBIOS, GM 6L45, 6L50, 6L80, 6L90 (2006-2018)"
   },
   {
     "SKU": "69710S",
@@ -67902,12 +67938,6 @@
     "Description_ES": "MCS, EJE LATERAL DEL CONVERTIDOR, TF-81SC (VERA CRUZ, LAND ROVER) (OEM# 43119-24020)"
   },
   {
-    "SKU": "SK-6L80",
-    "Description": "SHIFT KIT, GM 6L45, 6L50, 6L80, 6L90 (2006-2018)",
-    "Available": 1,
-    "Description_ES": "KIT DE CAMBIOS, GM 6L45, 6L50, 6L80, 6L90 (2006-2018)"
-  },
-  {
     "SKU": "512102",
     "Description": "FR PLATE, HYUNDAI F4A41/42 UNDERDRIVE, OVERDRIVE (WAVED)  (96-UP) (OEM# 45422-39000, 45525-39000) (H.E.Blk- 30T- OD:5.360\"-2MP)",
     "Available": 1,
@@ -68052,6 +68082,12 @@
     "Description_ES": "PLACA FR, SUBARU 4 VELOCIDADES R4AX-EL, 4EAT, EC-8, ALTA (98-UP) (OEM# 1532-AA150) (NEGRO - 36T- OD:5.445\"- RADIAL)"
   },
   {
+    "SKU": "48372-02200",
+    "Description": "PISTON, HYUNDAI KAPPA CVT, UNDERDRIVE BRAKE PISTON (OEM) (OEM# 48372-02200)",
+    "Available": 1,
+    "Description_ES": "PISTÓN, CVT HYUNDAI KAPPA, PISTÓN DE FRENO DE ARRANQUE (OEM) (OEM# 48372-02200)"
+  },
+  {
     "SKU": "12905H",
     "Description": "BAND A500 FRONT MULTI-FLEX 1.600\" WIDE 88-UP (OEM# 4617849)",
     "Available": 1,
@@ -68148,6 +68184,12 @@
     "Description_ES": "PLACA FR, GM 6T70,6T75;FORD 6F50, 6F55, EMBRAGUE DE MARCHA ATRÁS BAJA (OEM# 24223700, 7T4Z-7B164-C) (2007-ON) (OD: 8.622\" - 48T)"
   },
   {
+    "SKU": "48326-02200",
+    "Description": "PISTON, HYUNDAI KAPPA CVT, BALANCE PISTON (OEM) (OEM# 48326-02200)",
+    "Available": 1,
+    "Description_ES": "PISTÓN, CVT HYUNDAI KAPPA, PISTÓN DE EQUILIBRIO (OEM) (OEM# 48326-02200)"
+  },
+  {
     "SKU": "97760",
     "Description": "FILTER, TOYOTA L310/L310F (E-CVT) (2017-UP) (OEM# 35330-11010)",
     "Available": 1,
@@ -68224,12 +68266,6 @@
     "Description": "FR PLATE, RENAULT DPO/AL-4#1 REV EXT SPL HEG 99+ (OEM# 7700-408-236) (ID:5.22\" - 12T)",
     "Available": 1,
     "Description_ES": "PLACA DELANTERA, RENAULT DPO/AL-4#1 REV EXT SPL HEG 99+ (OEM# 7700-408-236) (ID:5.22\" - 12T)"
-  },
-  {
-    "SKU": "48372-02200",
-    "Description": "PISTON, HYUNDAI KAPPA CVT, UNDERDRIVE BRAKE PISTON (OEM) (OEM# 48372-02200)",
-    "Available": 1,
-    "Description_ES": "PISTÓN, CVT HYUNDAI KAPPA, PISTÓN DE FRENO DE ARRANQUE (OEM) (OEM# 48372-02200)"
   },
   {
     "SKU": "114710",
@@ -68562,12 +68598,6 @@
     "Description_ES": "PLACA FR TOYOTA LEXUS U140E, U240E, U150 FWD 98-UP"
   },
   {
-    "SKU": "56710W",
-    "Description": "FILTER, FORD 5R110W 2008-UP (CURVED EDGE) (OEM# 8C3Z-7A098-D, 9C3P-7G186-AA, 9C3P-7C185-AA)",
-    "Available": 1,
-    "Description_ES": "FILTRO, FORD 5R110W 2008-UP (BORDE CURVO) (OEM# 8C3Z-7A098-D, 9C3P-7G186-AA, 9C3P-7C185-AA)"
-  },
-  {
     "SKU": "37842",
     "Description": "MCS FRONT PUMP, FORD 6R60, 6R75, 6R80, ZF6HP19/19X/21/21X (2000-13) ZF6HP19A (2002-10) ZF6HP26, ZF6SHP26 (2002-09), ZF6HP26A (2004-09), ZF6HP28/X (2004-12), ZF6HP32 (2001-12) (OEM# 6L2Z-7A248-AA)",
     "Available": 1,
@@ -68682,6 +68712,12 @@
     "Description_ES": "PLACA ST, NISSAN RE5R05A K1 ENTRADA 02+"
   },
   {
+    "SKU": "75428",
+    "Description": "MCS, TOYOTA K310, K311, CONVERTER SIDE AXLE (06-13)",
+    "Available": 1,
+    "Description_ES": "MCS, TOYOTA K310, K311, EJE LATERAL DEL CONVERTIDOR (06-13)"
+  },
+  {
     "SKU": "512693",
     "Description": "FR PLATE, MERCEDES 722.6 K2 (96-UP) SMALL ID (H.E.Blk- 36T- OD:6.480\"- 2MP)",
     "Available": 1,
@@ -68732,7 +68768,7 @@
   {
     "SKU": "97739A",
     "Description": "FILTER, TOYOTA CVT (OEM# 35330-12050A)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, CVT TOYOTA (OEM# 35330-12050A)"
   },
   {
@@ -68878,12 +68914,6 @@
     "Description": "O-RING, TORQUE CONVERTER, 6L80, 6L90 (300MM), A4CF1, A4CF2 (MATERIAL: FLUOROCARBON, CROSS SECTION: 0.103\", INNER DIA.: 2.300\")",
     "Available": 1,
     "Description_ES": "JUNTA TÓRICA, CONVERTIDOR DE TORSIÓN, 6L80, 6L90 (300MM), A4CF1, A4CF2 (MATERIAL: FLUOROCARBONO, SECCIÓN TRANSVERSAL: 0.103\", DIÁMETRO INTERIOR: 2.300\")"
-  },
-  {
-    "SKU": "48326-02200",
-    "Description": "PISTON, HYUNDAI KAPPA CVT, BALANCE PISTON (OEM) (OEM# 48326-02200)",
-    "Available": 1,
-    "Description_ES": "PISTÓN, CVT HYUNDAI KAPPA, PISTÓN DE EQUILIBRIO (OEM) (OEM# 48326-02200)"
   },
   {
     "SKU": "511034",
@@ -69294,12 +69324,6 @@
     "Description_ES": "PLACA DELANTERA, HYUNDAI A6LF2 6VELOCIDADES 2WD (09-ON) FRENO DE CONDUCCIÓN BAJO"
   },
   {
-    "SKU": "75248",
-    "Description": "MCS, TOYOTA K310, K311, CASE SIDE AXLE (06-13)",
-    "Available": 1,
-    "Description_ES": "MCS, TOYOTA K310, K311, EJE LATERAL DE LA CAJA (06-13)"
-  },
-  {
     "SKU": "059702",
     "Description": "FR PLATE, MITSUBISHI KM170 SERIES (REAR) 81+ (TAN - 10T - OD: 4.996\" - PL)",
     "Available": 1,
@@ -69334,6 +69358,12 @@
     "Description": "FR PLATE, HYUNDAI A8LF1, 3-7 REVERSE CLUTCH (OD: 7.331\" - 48T)",
     "Available": 1,
     "Description_ES": "PLACA FR, HYUNDAI A8LF1, 3-7 EMBRAGUE DE MARCHA ATRÁS (OD: 7.331\" - 48T)"
+  },
+  {
+    "SKU": "30801M",
+    "Description": "FILTER ALLISON 1000/2000/2400 SERIES METAL PLASTIC DEEP PAN (WHITE) (00-09, NO RIBS) (IND# 37710) (OEM# 29537617, 29537966)",
+    "Available": 1,
+    "Description_ES": "FILTRO ALLISON SERIE 1000/2000/2400 BANDEJA PROFUNDA DE PLÁSTICO DE METAL (BLANCO) (00-09, SIN COSTILLAS) (IND# 37710) (OEM# 29537617, 29537966)"
   },
   {
     "SKU": "75575V",
@@ -69632,7 +69662,7 @@
   {
     "SKU": "89710H",
     "Description": "FILTER TOYOTA A541E, A540 CAMRY V6 (OEM# 35330-33030)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO TOYOTA A541E, A540 CAMRY V6 (OEM# 35330-33030)"
   },
   {
@@ -69734,7 +69764,7 @@
   {
     "SKU": "34666P",
     "Description": "FILTER, GM 2ML70 (RPO M99) 2-MODE RWD (HYBRID) (08-11) (OEM# 19168277)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, GM 2ML70 (RPO M99) RWD DE 2 MODOS (HÍBRIDO) (08-11) (OEM# 19168277)"
   },
   {
@@ -69850,6 +69880,12 @@
     "Description": "FR 5L40E FORWARD EXT SPL HEG 1 SIDE 99+",
     "Available": 1,
     "Description_ES": "FR 5L40E ADELANTE EXT SPL HEG 1 LADO 99+"
+  },
+  {
+    "SKU": "42290BW",
+    "Description": "BAND 2ND AND 4TH INTERMEDIATE 95- UP TH700-4R, 4L60, 4L60E, 4L65E, 4L70E. (OEM# 8654144, 8673175, 24201131)",
+    "Available": 1,
+    "Description_ES": "BANDA 2DA Y 4TA INTERMEDIA 95- UP TH700-4R, 4L60, 4L60E, 4L65E, 4L70E.(OEM n.º 8654144, 8673175, 24201131)"
   },
   {
     "SKU": "K97817",
@@ -70266,12 +70302,6 @@
     "Description_ES": "FILTRO, ZF4HP22 RANGE ROVER 85-UP (OEM#1043-226-037)"
   },
   {
-    "SKU": "512787",
-    "Description": "FR PLATE, VW / AUDI 095-098 AG4 K3 3RD 4TH (90-94) (OEM# 095-323-941A)",
-    "Available": 1,
-    "Description_ES": "PLACA DELANTERA, VW / AUDI 095-098 AG4 K3 3.ª 4.ª (90-94) (OEM# 095-323-941A)"
-  },
-  {
     "SKU": "145708-180",
     "Description": "FR PLATE, TOYOTA U240, UNDERDRIVE #1 00+",
     "Available": 1,
@@ -70294,12 +70324,6 @@
     "Description": "ST PLATE,  CHRYSLER 45RFE REV OD 1.7MM 99+",
     "Available": 1,
     "Description_ES": "PLACA ST, CHRYSLER 45RFE REV OD 1.7MM 99+"
-  },
-  {
-    "SKU": "75428",
-    "Description": "MCS, TOYOTA K310, K311, CONVERTER SIDE AXLE (06-13)",
-    "Available": 1,
-    "Description_ES": "MCS, TOYOTA K310, K311, EJE LATERAL DEL CONVERTIDOR (06-13)"
   },
   {
     "SKU": "065712A",
@@ -70734,6 +70758,12 @@
     "Description_ES": "FILTRO, SUZUKI, DAEWOO TICO, HIUNDAY (OEM# 26570-55A01, 46321-02000)"
   },
   {
+    "SKU": "34661P",
+    "Description": "FILTER, GM 6L50E/6L80E/6L90E (EXC 08-09 PONTIAC) 07 CHEVY AND GMC TRUCKS 6SP 6.32\" TALL, 1.30\" TALL SPACER 07-ON (OEM# 24236933, 24236517)",
+    "Available": 1,
+    "Description_ES": "FILTRO, GM 6L50E/6L80E/6L90E (EXC 08-09 PONTIAC) ​​07 CAMIONES CHEVY Y GMC 6SP 6.32\" DE ALTO, ESPACIADOR DE 1.30\" DE ALTO 07-ON (OEM# 24236933, 24236517)"
+  },
+  {
     "SKU": "MR122305X",
     "Description": "SENSOR, SPEED SENSOR, MITSUBISHI MONTERO V6 (1994-2000) (OEM# MR122305) (AFTERMARKET)",
     "Available": 1,
@@ -70988,7 +71018,7 @@
   {
     "SKU": "264714-173",
     "Description": "FR PLATE, HYUNDAI A4CF0, UNDERDRIVE (OD: 4.880\" - 30T)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "PLACA DELANTERA, HYUNDAI A4CF0, TRANSMISIÓN (OD: 4.880\" - 30T)"
   },
   {
@@ -71104,12 +71134,6 @@
     "Description": "FILTER, ACURA/HONDA, 4 SPEED 94-99 INTEGRA, 3 SHAFT 96-98 CIVIC, 3 SHAFT 97-98 CR-V (OE# 25420-P56-003, 25420-P56-013) 2 HOLES, SINGLE TUBE",
     "Available": 1,
     "Description_ES": "FILTRO, ACURA/HONDA, 4 VELOCIDADES 94-99 INTEGRA, 3 EJES 96-98 CIVIC, 3 EJES 97-98 CR-V (OE# 25420-P56-003, 25420-P56-013) 2 AGUJEROS, TUBO ÚNICO"
-  },
-  {
-    "SKU": "34661P",
-    "Description": "FILTER, GM 6L50E/6L80E/6L90E (EXC 08-09 PONTIAC) 07 CHEVY AND GMC TRUCKS 6SP 6.32\" TALL, 1.30\" TALL SPACER 07-ON (OEM# 24236933, 24236517)",
-    "Available": 1,
-    "Description_ES": "FILTRO, GM 6L50E/6L80E/6L90E (EXC 08-09 PONTIAC) ​​07 CAMIONES CHEVY Y GMC 6SP 6.32\" DE ALTO, ESPACIADOR DE 1.30\" DE ALTO 07-ON (OEM# 24236933, 24236517)"
   },
   {
     "SKU": "206710-150",
@@ -71364,12 +71388,6 @@
     "Description_ES": "PLACA FR, FORD CD4E COSTA 93- UP"
   },
   {
-    "SKU": "30801M",
-    "Description": "FILTER ALLISON 1000/2000/2400 SERIES METAL PLASTIC DEEP PAN (WHITE) (00-09, NO RIBS) (IND# 37710) (OEM# 29537617, 29537966)",
-    "Available": 1,
-    "Description_ES": "FILTRO ALLISON SERIE 1000/2000/2400 BANDEJA PROFUNDA DE PLÁSTICO DE METAL (BLANCO) (00-09, SIN COSTILLAS) (IND# 37710) (OEM# 29537617, 29537966)"
-  },
-  {
     "SKU": "59801",
     "Description": "WASHER, GM, VOLVO TF-80SC, TF81SC, FRONT PLANET TO C3 DRUM (US VERSION) (5 HOLLOW LEG)",
     "Available": 1,
@@ -71410,6 +71428,12 @@
     "Description": "SOLENOID 4L80E SHIFT 1-2 (A) AFTERMARKET",
     "Available": 1,
     "Description_ES": "SOLENOIDE 4L80E CAMBIO 1-2 (A) AFTERMARKET"
+  },
+  {
+    "SKU": "512787",
+    "Description": "FR PLATE, VW / AUDI 095-098 AG4 K3 3RD 4TH (90-94) (OEM# 095-323-941A)",
+    "Available": 1,
+    "Description_ES": "PLACA DELANTERA, VW / AUDI 095-098 AG4 K3 3.ª 4.ª (90-94) (OEM# 095-323-941A)"
   },
   {
     "SKU": "97752",
@@ -71558,7 +71582,7 @@
   {
     "SKU": "97732H",
     "Description": "FILTER AB60E/F, A760 TOYOTA 07-UP W/1.00\" SUCTION TUBE (OEM# 35330-60060, 35330-34010)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO AB60E/F, A760 TOYOTA 07-UP CON TUBO DE SUCCIÓN DE 1.00\" (OEM# 35330-60060, 35330-34010)"
   },
   {
@@ -71572,12 +71596,6 @@
     "Description": "FR CVT(1996-On) MLYA,SLYA,SZCA,SMMA, SMVA, SWRA,MHTA,M4VA LOW",
     "Available": 1,
     "Description_ES": "FR CVT (1996 en adelante) MLYA,SLYA,SZCA,SMMA, SMVA, SWRA,MHTA,M4VA BAJA"
-  },
-  {
-    "SKU": "512657",
-    "Description": "FR PLATE, 4L60 L/R HEG 82+",
-    "Available": 1,
-    "Description_ES": "PLACA DELANTERA, 4L60 L/R HEG 82+"
   },
   {
     "SKU": "45335",
@@ -71772,10 +71790,22 @@
     "Description_ES": "FILTRO LEXUS A960 (OEM# 35330-30090)"
   },
   {
+    "SKU": "512657",
+    "Description": "FR PLATE, 4L60 L/R HEG 82+",
+    "Available": 1,
+    "Description_ES": "PLACA DELANTERA, 4L60 L/R HEG 82+"
+  },
+  {
     "SKU": "512970",
     "Description": "FR PLATE  F3A REVERSE  81+",
     "Available": 1,
     "Description_ES": "PLACA FR F3A REVERSA 81+"
+  },
+  {
+    "SKU": "JF011E-FC",
+    "Description": "FLOW CONTROL VALVE REPAIR FOR JF011E AND JF015E CVT",
+    "Available": 1,
+    "Description_ES": "REPARACIÓN DE VÁLVULA DE CONTROL DE FLUJO PARA JF011E Y JF015E CVT"
   },
   {
     "SKU": "G42700X",
@@ -71806,12 +71836,6 @@
     "Description": "FR PLATE TRIMATIC TH180 2ND TAN",
     "Available": 1,
     "Description_ES": "PLACA FR TRIMATIC TH180 2º TAN"
-  },
-  {
-    "SKU": "JF011E-FC",
-    "Description": "FLOW CONTROL VALVE REPAIR FOR JF011E AND JF015E CVT",
-    "Available": 1,
-    "Description_ES": "REPARACIÓN DE VÁLVULA DE CONTROL DE FLUJO PARA JF011E Y JF015E CVT"
   },
   {
     "SKU": "197701-180",
@@ -71918,7 +71942,7 @@
   {
     "SKU": "126710",
     "Description": "FILTER, FORD 6 SP 6R140, 6.7L TURBO DIESEL, 2011-UP, OE# BC3Z-7A098-B, BC3P-7G186-BE",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, FORD 6 SP 6R140, 6.7L TURBO DIESEL, 2011-UP, OE# BC3Z-7A098-B, BC3P-7G186-BE"
   },
   {
@@ -72218,7 +72242,7 @@
   {
     "SKU": "68710NL",
     "Description": "FILTER MERCEDES 722.9, RWD (W/55 MM NECK HEIGHT) (04-10) (OEM# 220-277-0395, 220-277-0695, 221-277-0095, 221-277-01950",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO MERCEDES 722.9, RWD (CON ALTURA DEL CUELLO DE 55 MM) (04-10) (OEM# 220-277-0395, 220-277-0695, 221-277-0095, 221-277-01950"
   },
   {
@@ -72380,7 +72404,7 @@
   {
     "SKU": "97735H",
     "Description": "FILTER, TOYOTA K410 VITX (CVT) NCP91/SCD90/KSP90 WISH 29A21E. (OEM# 35330-K4100, 30400-52040, 30400-52060, 30400-52061, 30400-52280, 30400-52281)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, TOYOTA K410 VITX (CVT) NCP91/SCD90/KSP90 WISH 29A21E.(OEM n.º 35330-K4100, 30400-52040, 30400-52060, 30400-52061, 30400-52280, 30400-52281)"
   },
   {
@@ -72900,6 +72924,12 @@
     "Description_ES": "PLACA FR MERCEDES 722.3 REV."
   },
   {
+    "SKU": "214708-173",
+    "Description": "FR PLATE, HYUNDAI A6MF1, CHRYSLER 6F24 LOW/REVERSE 09+",
+    "Available": 1,
+    "Description_ES": "PLACA FR, HYUNDAI A6MF1, CHRYSLER 6F24 BAJA/REVERSA 09+"
+  },
+  {
     "SKU": "67428A",
     "Description": "FILTER, A43D, TOYOTA TACOMA (03-04) (OEM# 35303-35020)",
     "Available": 1,
@@ -72910,6 +72940,12 @@
     "Description": "ST PLATE, C6 E4OD F/D 66+",
     "Available": 1,
     "Description_ES": "PLACA ST, C6 E4OD F/D 66+"
+  },
+  {
+    "SKU": "97731H",
+    "Description": "FILTER, TOYOTA K310 CVT ALTIS 1.8 (2009-UP) W/NOTCH IN THE SUCTION TUBE (OEM# 35330-0W060, 35330-0W080)",
+    "Available": 1,
+    "Description_ES": "FILTRO, TOYOTA K310 CVT ALTIS 1.8 (2009-UP) CON MUESTRA EN EL TUBO DE SUCCIÓN (OEM# 35330-0W060, 35330-0W080)"
   },
   {
     "SKU": "266703A200",
@@ -73034,13 +73070,13 @@
   {
     "SKU": "99700",
     "Description": "BAND, RL4F03A, RE4F03A 91-ON (SAME AS 29646) (OEM#31630-31X01, 31630-3CX00)",
-    "Available": 1,
+    "Available": 0,
     "Description_ES": "BAND, RL4F03A, RE4F03A 91-ON (SAME AS 29646) (OEM#31630-31X01, 31630-3CX00)"
   },
   {
     "SKU": "71726",
     "Description": "FILTER MAZDA JATCO FW6A-EL MAZDA 3/6/CX-5 SKYACTIVE-DRIVE, FZ TRANS 14-UP AFTERMARKET (OEM# FZ01-21-500)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO MAZDA JATCO FW6A-EL MAZDA 3/6/CX-5 SKYACTIVE-DRIVE, FZ TRANS 14-UP AFTERMARKET (OEM# FZ01-21-500)"
   },
   {
@@ -73454,7 +73490,7 @@
   {
     "SKU": "89712",
     "Description": "FILTER, U660E TOYOTA CAMRY 05-UP, AVALON 07-UP, PREVIA 07-UP (OEM# 35330-33050)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, U660E TOYOTA CAMRY 05-UP, AVALON 07-UP, ANTERIOR 07-UP (OEM# 35330-33050)"
   },
   {
@@ -73484,7 +73520,7 @@
   {
     "SKU": "223710A",
     "Description": "FILTER, FORD 10R80 (17-ON) (OEM# HL3Z-7A098A, HL3P-7G186CA, L1MZ-7A098-A)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, FORD 10R80 (17-ON) (OEM# HL3Z-7A098A, HL3P-7G186CA, L1MZ-7A098-A)"
   },
   {
@@ -73534,12 +73570,6 @@
     "Description": "FR PLATE, DAIHATSU A4LB-1, TOYOTA U540E CENTER SUPPORT 02-UP",
     "Available": 1,
     "Description_ES": "PLACA FR, DAIHATSU A4LB-1, SOPORTE CENTRAL TOYOTA U540E 02-UP"
-  },
-  {
-    "SKU": "97731H",
-    "Description": "FILTER, TOYOTA K310 CVT ALTIS 1.8 (2009-UP) W/NOTCH IN THE SUCTION TUBE (OEM# 35330-0W060, 35330-0W080)",
-    "Available": 1,
-    "Description_ES": "FILTRO, TOYOTA K310 CVT ALTIS 1.8 (2009-UP) CON MUESTRA EN EL TUBO DE SUCCIÓN (OEM# 35330-0W060, 35330-0W080)"
   },
   {
     "SKU": "511021",
@@ -74144,7 +74174,7 @@
   {
     "SKU": "118710",
     "Description": "FILTER, GM/FORD 6T70, 6T75, 6T76F, 6F50, 6F55, 8F57 (2007-UP) (OE# 24223670, 24264344, 7TAZ-7A098-B)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, GM/FORD 6T70, 6T75, 6T76F, 6F50, 6F55, 8F57 (2007-UP) (OE# 24223670, 24264344, 7TAZ-7A098-B)"
   },
   {
@@ -74216,7 +74246,7 @@
   {
     "SKU": "89714",
     "Description": "FILTER, TOYOTA U760 (2009-ON) (OEM #35330-73010)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, TOYOTA U760 (2009-EN ADELANTE) (OEM #35330-73010)"
   },
   {
@@ -74246,7 +74276,7 @@
   {
     "SKU": "97738H",
     "Description": "FILTER, TOYOTA AC60F 4WD 2015-ON (TUBE HEIGHT: 2.75 CM) (OE# 35330-71010)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, TOYOTA AC60F 4WD 2015-EN ADELANTE (ALTURA DEL TUBO: 2,75 CM) (OE# 35330-71010)"
   },
   {
@@ -74400,6 +74430,12 @@
     "Description_ES": "PLACA FR E4OD OVERDRIVE TAN 97-99"
   },
   {
+    "SKU": "84701A",
+    "Description": "BAND 4T60-E , 4T65E REVERSE(FRONT) 91-UP (OEM# 24202815)",
+    "Available": 1,
+    "Description_ES": "BANDA 4T60-E, 4T65E MARCHA ATRÁS (DELANTERO) 91-UP (OEM# 24202815)"
+  },
+  {
     "SKU": "X141709A211",
     "Description": "FR PLATE MERCEDES 722.9 04-ON K3 CLUTCH (1 SIDED) EXTERNAL SPLINE",
     "Available": 1,
@@ -74428,12 +74464,6 @@
     "Description": "SPRAG, 4T40E INPUT (22 ELEMENTS) 1995-UP, OE# 24203617",
     "Available": 1,
     "Description_ES": "SOPORTE, ENTRADA 4T40E (22 ELEMENTOS) 1995-UP, OE# 24203617"
-  },
-  {
-    "SKU": "84701A",
-    "Description": "BAND 4T60-E , 4T65E REVERSE(FRONT) 91-UP (OEM# 24202815)",
-    "Available": 1,
-    "Description_ES": "BANDA 4T60-E, 4T65E MARCHA ATRÁS (DELANTERO) 91-UP (OEM# 24202815)"
   },
   {
     "SKU": "94710C",
@@ -74512,6 +74542,12 @@
     "Description": "FR PLATE, HYUNDAI R4A51, V4A51, R5A51, V5A51 REVERSE 97-UP (IND# 37328AW)\t(OEM# 45445-39500) 1997-ON (OD: 6.535\" - 30T)",
     "Available": 1,
     "Description_ES": "PLACA FR, HYUNDAI R4A51, V4A51, R5A51, V5A51 REVERSA 97-UP (IND# 37328AW) (OEM# 45445-39500) 1997-ON (OD: 6.535\" - 30T)"
+  },
+  {
+    "SKU": "97711YH",
+    "Description": "FILTER, TOYOTA/SUZUKI ATX 03-72LS A44DE (OEM# 26570-65D10)",
+    "Available": 1,
+    "Description_ES": "FILTRO, TOYOTA/SUZUKI ATX 03-72LS A44DE (OEM# 26570-65D10)"
   },
   {
     "SKU": "40792",
@@ -74700,12 +74736,6 @@
     "Description_ES": "PLACA FR TOYOTA A40 PARA TAN"
   },
   {
-    "SKU": "97711YH",
-    "Description": "FILTER, TOYOTA/SUZUKI ATX 03-72LS A44DE (OEM# 26570-65D10)",
-    "Available": 1,
-    "Description_ES": "FILTRO, TOYOTA/SUZUKI ATX 03-72LS A44DE (OEM# 26570-65D10)"
-  },
-  {
     "SKU": "263700A250",
     "Description": "FR PLATE, HYUNDAI / KIA A5HF1 2006-UP OVERDRIVE (1 SIDED) INTERNAL SPLINE (OD: 5.827\" -  30T)",
     "Available": 1,
@@ -74816,7 +74846,7 @@
   {
     "SKU": "89710A",
     "Description": "FILTER, A240E/L, 241E, 243E, 244E 84-ON TOYOTA, GM MS7 (OEM# 35330-12011, 94844936, 35330-12010)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, A240E/L, 241E, 243E, 244E 84-ON TOYOTA, GM MS7 (OEM# 35330-12011, 94844936, 35330-12010)"
   },
   {
@@ -74898,6 +74928,12 @@
     "Description_ES": "PLACA FR, FORD 6R60, 6R80, SOBREMARCHA (GROSOR: 1.96MM) (OD:5.151\" - 30T) ( (OEM# 9L3Z-7B164-C)"
   },
   {
+    "SKU": "84700AH",
+    "Description": "BAND, 4T40E, 4T45E, LOW/REVERSE, 4T60E, 4T65E FORWARD (REAR), 91-ON (HIGH ENERGY LINING)",
+    "Available": 1,
+    "Description_ES": "BANDA, 4T40E, 4T45E, BAJA/RETROCESO, 4T60E, 4T65E ADELANTE (TRASERO), 91-ON (REVESTIMIENTO DE ALTA ENERGÍA)"
+  },
+  {
     "SKU": "512946",
     "Description": "FR PLATE, TOYOTA A440F OD 93-UP TAN",
     "Available": 1,
@@ -74920,12 +74956,6 @@
     "Description": "FR PLATES MAZDA- FN4A-EL 99-ON, FS5A-EL 06-UP OVERDRIVE BRAKE",
     "Available": 1,
     "Description_ES": "PLACAS FR MAZDA- FN4A-EL 99-ON, FS5A-EL 06-UP FRENO DE SOBREMARCHA"
-  },
-  {
-    "SKU": "84700AH",
-    "Description": "BAND, 4T40E, 4T45E, LOW/REVERSE, 4T60E, 4T65E FORWARD (REAR), 91-ON (HIGH ENERGY LINING)",
-    "Available": 1,
-    "Description_ES": "BANDA, 4T40E, 4T45E, BAJA/RETROCESO, 4T60E, 4T65E ADELANTE (TRASERO), 91-ON (REVESTIMIENTO DE ALTA ENERGÍA)"
   },
   {
     "SKU": "X964708-175",
@@ -75126,6 +75156,12 @@
     "Description_ES": "INTERRUPTOR DE SEGURIDAD DE PUNTO MUERTO 4L65E (04-UP) MERCADO DE POSTVENTA"
   },
   {
+    "SKU": "97738",
+    "Description": "FILTER, TOYOTA AC60F 2WD 2015-ON) (OE# 35330-26010)",
+    "Available": 1,
+    "Description_ES": "FILTRO, TOYOTA AC60F 2WD 2015-ON) (OE# 35330-26010)"
+  },
+  {
     "SKU": "97821",
     "Description": "PISTON, TOYOTA U240, U241, U250, UNDER DRIVE (BONDED RUBBER) 98-UP (1.945\" ID) (OEM# 34205-32010)",
     "Available": 1,
@@ -75294,12 +75330,6 @@
     "Description_ES": "PLACA FR, HONDA 4 VELOCIDADES 110mm HEG"
   },
   {
-    "SKU": "97738",
-    "Description": "FILTER, TOYOTA AC60F 2WD 2015-ON) (OE# 35330-26010)",
-    "Available": 1,
-    "Description_ES": "FILTRO, TOYOTA AC60F 2WD 2015-ON) (OE# 35330-26010)"
-  },
-  {
     "SKU": "284706-185",
     "Description": "FR PLATE, AW80-40LS, AW81-40LE, U440E/F, U441E/F 04-ON LOW/REVERSE BRAKE (B3) (OD: 6.062\" - 50T)",
     "Available": 1,
@@ -75458,7 +75488,7 @@
   {
     "SKU": "96722",
     "Description": "FILTER, FORD 6R80 (DEEP PAN 1.5\" INLET-SQUARE SHAPE) (OEM# 7L1P-7G186-AB, 7L1Z-7A098-A, 7L1P-7G186-AD)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, FORD 6R80 (BANDEJA PROFUNDA DE ENTRADA DE 1.5\" FORMA CUADRADA) (OEM# 7L1P-7G186-AB, 7L1Z-7A098-A, 7L1P-7G186-AD)"
   },
   {
@@ -75840,6 +75870,12 @@
     "Description_ES": "ARANDELA DE EMPUJE, AW60-40LE: IMPULSOR DE PLACA DE PRESIÓN DE EMBRAGUE DE MARCHA ATRÁS (.056\" DE GROSOR) PLÁSTICO (4 LENGÜETAS) (IND: 59313)"
   },
   {
+    "SKU": "210702-180",
+    "Description": "FR PLATE, TOYOTA U340, U341E, DIRECT 99+ (OEM# 35667-52020) (OD: 4.370\" - 40T)",
+    "Available": 1,
+    "Description_ES": "PLACA FR, TOYOTA U340, U341E, DIRECTA 99+ (OEM# 35667-52020) (OD: 4.370\" - 40T)"
+  },
+  {
     "SKU": "263702-170",
     "Description": "FR PLATE, HYUNDAI R4/V451, R5/V5A51, 2ND BRAKE (THICK PAPER) (IND# 37324AW) (OEM# 45625-39000) (THK: 7.030\" - 30T)",
     "Available": 1,
@@ -75976,12 +76012,6 @@
     "Description": "FR PLATE, HYUNDAI A6MF1/A6MF2, OVERDRIVE (SEGMENTED) (OEM# 45525-3B800)",
     "Available": 1,
     "Description_ES": "PLACA FR, HYUNDAI A6MF1/A6MF2, SOBREMARCHA (SEGMENTADA) (OEM# 45525-3B800)"
-  },
-  {
-    "SKU": "210702-180",
-    "Description": "FR PLATE, TOYOTA U340, U341E, DIRECT 99+ (OEM# 35667-52020) (OD: 4.370\" - 40T)",
-    "Available": 1,
-    "Description_ES": "PLACA FR, TOYOTA U340, U341E, DIRECTA 99+ (OEM# 35667-52020) (OD: 4.370\" - 40T)"
   },
   {
     "SKU": "216708-170",
@@ -76250,7 +76280,7 @@
   {
     "SKU": "97730",
     "Description": "FILTER, TOYOTA, A750E/F, 03-UP (IND: 97730) (OEM# 35330-60050, 26570-54J10)",
-    "Available": 0,
+    "Available": 1,
     "Description_ES": "FILTRO, TOYOTA, A750E/F, 03-UP (IND: 97730) (OEM# 35330-60050, 26570-54J10)"
   },
   {
@@ -77100,12 +77130,6 @@
     "Description_ES": "FR DAIHATSU MINI (GEELY) C2(4AT) 2007-EN"
   },
   {
-    "SKU": "044700A230",
-    "Description": "FR PLATE, A40 SER F/D/OR/INT/OD 73+(REPLACES 044700) (OD: 4.99\" - 24T)",
-    "Available": 1,
-    "Description_ES": "PLACA FR, A40 SER D/D/OR/INT/OD 73+(REEMPLAZA 044700) (OD: 4.99\" - 24T)"
-  },
-  {
     "SKU": "273704-160",
     "Description": "FR PLATE, MAZDA - 4F27E, FN4AEL 1999-On, FS5A-EL 06-UP LOW/REVERSE (OD: 6.079\" - 42T)",
     "Available": 1,
@@ -77116,6 +77140,12 @@
     "Description": "FR PLATE, TOYOTA U660E, C1 CLUTCH - 1ST, 2ND, 3RD, 4TH DRIVE; C2 CLUTCH - 4TH, 5TH, 6TH DRIVE (OD: 6.552\" - 40T) (OEM# 35683-07010)",
     "Available": 1,
     "Description_ES": "PLACA FR, TOYOTA U660E, EMBRAGUE C1 - 1ª, 2ª, 3ª, 4ª IMPULSIÓN;EMBRAGUE C2 - 4TA, 5TA, 6TA IMPULSIÓN (OD: 6.552\" - 40T) (OEM# 35683-07010)"
+  },
+  {
+    "SKU": "044700A230",
+    "Description": "FR PLATE, A40 SER F/D/OR/INT/OD 73+(REPLACES 044700) (OD: 4.99\" - 24T)",
+    "Available": 1,
+    "Description_ES": "PLACA FR, A40 SER D/D/OR/INT/OD 73+(REEMPLAZA 044700) (OD: 4.99\" - 24T)"
   },
   {
     "SKU": "216722-150S",
