@@ -218,6 +218,39 @@
             background: var(--card-bg);
         }
         
+        /* ========== AVISO DE FILTROS ACTIVOS ========== */
+        .filters-active {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 18px;
+            background: var(--primary-light);
+            border-radius: 40px;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-color);
+            font-size: 13px;
+            color: var(--text-dark);
+        }
+        .filters-active.visible {
+            display: flex;
+        }
+        .filters-active .btn-clear-filters {
+            background: none;
+            border: none;
+            color: #c62828;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 4px 8px;
+            border-radius: 20px;
+        }
+        .filters-active .btn-clear-filters:hover {
+            background: #ffebee;
+            color: #b71c1c;
+        }
+        
         /* ========== RESTO DEL CSS (se mantiene igual) ========== */
         .header {
             background: var(--card-bg);
@@ -714,6 +747,12 @@
             <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)">
         </div>
         
+        <!-- ========== AVISO DE FILTROS ACTIVOS ========== -->
+        <div id="filtersActive" class="filters-active">
+            <span id="filtersActiveMessage">🔍 Filtros activos: <span id="filtersActiveText"></span></span>
+            <button id="clearFiltersActiveBtn" class="btn-clear-filters">✕ Limpiar filtros</button>
+        </div>
+        
         <div id="searchHistory" class="search-history">
             <div class="history-row">
                 <span id="historyLabel" class="search-history-label">🔍 Recientes:</span>
@@ -947,7 +986,10 @@
             clearFilters: "Limpiar Todo",
             close: "Cerrar",
             loadingTransmissions: "⏳ Cargando transmisiones...",
-            filtersBtn: "🔍 Filtros"
+            filtersBtn: "🔍 Filtros",
+            filtersActive: "🔍 Filtros activos:",
+            noFiltersActive: "No hay filtros activos",
+            clearFiltersActive: "✕ Limpiar filtros"
         },
         en: {
             help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>📋 Click the 📋 button to copy the SKU and add it to your selection",
@@ -1008,7 +1050,10 @@
             clearFilters: "Clear All",
             close: "Close",
             loadingTransmissions: "⏳ Loading transmissions...",
-            filtersBtn: "🔍 Filters"
+            filtersBtn: "🔍 Filters",
+            filtersActive: "🔍 Active filters:",
+            noFiltersActive: "No active filters",
+            clearFiltersActive: "✕ Clear filters"
         }
     };
 
@@ -1018,6 +1063,35 @@
     function showShortcutsHelp() {
         const t = texts[currentLang];
         alert(`${t.shortcutsTitle}\n\n🔹 ESC: ${t.shortcutsEsc}\n🔹 ?: ${t.shortcutsQuestion}`);
+    }
+
+    function updateFiltersActive() {
+        const container = document.getElementById('filtersActive');
+        const textSpan = document.getElementById('filtersActiveText');
+        const t = texts[currentLang];
+        
+        const totalFilters = selectedFilters.transmission.length + selectedFilters.productType.length + selectedFilters.make.length;
+        
+        if (totalFilters === 0) {
+            container.classList.remove('visible');
+            return;
+        }
+        
+        container.classList.add('visible');
+        let parts = [];
+        if (selectedFilters.transmission.length > 0) {
+            parts.push(`Transmission (${selectedFilters.transmission.join(', ')})`);
+        }
+        if (selectedFilters.productType.length > 0) {
+            parts.push(`Product Type (${selectedFilters.productType.join(', ')})`);
+        }
+        if (selectedFilters.make.length > 0) {
+            parts.push(`Make (${selectedFilters.make.join(', ')})`);
+        }
+        textSpan.textContent = parts.join(' | ');
+        
+        // Actualizar texto del botón según idioma
+        document.getElementById('clearFiltersActiveBtn').innerHTML = t.clearFiltersActive;
     }
 
     function updateTexts() {
@@ -1064,6 +1138,10 @@
         document.getElementById('closeFiltersPanelBtn').innerHTML = t.close;
         document.getElementById('openFiltersBtn').innerHTML = t.filtersBtn;
         
+        // Aviso de filtros activos
+        document.getElementById('clearFiltersActiveBtn').innerHTML = t.clearFiltersActive;
+        updateFiltersActive();
+        
         updateSelectionButton();
         updateBackButton();
         renderHistory();
@@ -1076,7 +1154,7 @@
         const loadingDiv = document.getElementById('transmissionLoading');
         const contentDiv = document.getElementById('transmissionContent');
         
-        fetch('menu_transmisiones.json')
+        fetch('https://raw.githubusercontent.com/renzo-inventario/atkcatalog.github.io/main/menu_transmisiones.json')
             .then(r => {
                 if (!r.ok) throw new Error('HTTP error ' + r.status);
                 return r.json();
@@ -1161,8 +1239,7 @@
         const filters = getSelectedFilters();
         selectedFilters = filters;
         closeFilters();
-        
-        // Aplicar filtros a la vista
+        updateFiltersActive();
         actualizarVista();
     }
     
@@ -1171,6 +1248,7 @@
         document.querySelectorAll('#productTypeContent input:checked').forEach(cb => cb.checked = false);
         document.querySelectorAll('#makeContent input:checked').forEach(cb => cb.checked = false);
         selectedFilters = { transmission: [], productType: [], make: [] };
+        updateFiltersActive();
         closeFilters();
         actualizarVista();
     }
@@ -1769,6 +1847,7 @@
     const closeFiltersPanelBtn = document.getElementById('closeFiltersPanelBtn');
     const applyFiltersBtn = document.getElementById('applyFiltersBtn');
     const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+    const clearFiltersActiveBtn = document.getElementById('clearFiltersActiveBtn');
     const filtersOverlay = document.getElementById('filtersOverlay');
 
     searchInput.addEventListener('input', e => {
@@ -1832,6 +1911,7 @@
     closeFiltersPanelBtn.addEventListener('click', closeFilters);
     applyFiltersBtn.addEventListener('click', applyAdvancedFilters);
     clearFiltersBtn.addEventListener('click', clearAdvancedFilters);
+    clearFiltersActiveBtn.addEventListener('click', clearAdvancedFilters);
     
     // Cerrar overlay al hacer clic fuera del panel
     filtersOverlay.addEventListener('click', function(e) {
