@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATK Products Catalog</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary-color: #0056b3;
+            --primary-dark: #003d80;
+            --primary-light: #e8f0fe;
+            --secondary-color: #28a745;
+            --text-dark: #1a1a2e;
+            --text-gray: #555;
+            --text-light: #888;
+            --border-color: #e0e0e0;
+            --bg-light: #f8f9fa;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+            --transition: all 0.2s ease;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; 
+            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f7 100%);
+            padding: 20px; 
+            min-height: 100vh;
+        }
+        
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        .header {
+            background: linear-gradient(90deg, #e8f0fe 0%, #d4e4fc 100%);
+            border-radius: 20px;
+            padding: 20px 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-md);
+            border: none;
+        }
+        
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        .brand {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .brand-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.3px;
+        }
+        
+        .brand-slogan {
+            font-size: 13px;
+            color: var(--text-gray);
+            font-style: italic;
+        }
+        
+        .contact-info {
+            text-align: right;
+        }
+        
+        .contact-phone {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+        
+        .contact-phone::before {
+            content: "📞 ";
+            font-size: 14px;
+        }
+        
+        .contact-address {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+        
+        .lang-switch {
+            text-align: right;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0,86,179,0.15);
+        }
+        
+        .lang-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 6px 18px;
+            font-size: 13px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .lang-btn:hover {
+            background-color: #1e7e34;
+            transform: translateY(-1px);
+        }
+        
+        h1 { display: none; }
+        
+        .ayuda { 
+            text-align: center; 
+            color: var(--text-gray); 
+            font-size: 13px; 
+            margin-bottom: 25px; 
+            background: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            display: inline-block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .search-box { margin-bottom: 15px; }
+        
+        input { 
+            width: 100%; 
+            padding: 14px 20px; 
+            font-size: 16px; 
+            border: 2px solid var(--border-color); 
+            border-radius: 50px; 
+            outline: none; 
+            transition: var(--transition);
+            background: white;
+        }
+        input:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0,86,179,0.1); }
+        
+        /* HISTORIAL DE BÚSQUEDAS - DOS FILAS */
+        .search-history {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 40px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 20px;
+        }
+        
+        .history-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .history-row:first-child {
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .selection-row {
+            padding-top: 4px;
+        }
+        
+        .search-history-label {
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        .history-tag {
+            background: var(--primary-light);
+            border: 1px solid var(--primary-color);
+            border-radius: 30px;
+            padding: 4px 14px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .history-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+        
+        .history-tag.selection-tag {
+            background: #e8f5e9;
+            border-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+        
+        .history-tag.selection-tag:hover {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+        
+        .history-clear {
+            font-size: 11px;
+            color: var(--text-light);
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 2px 8px;
+            border-radius: 20px;
+            transition: var(--transition);
+        }
+        
+        .history-clear:hover {
+            background: #ffebee;
+            color: #c62828;
+        }
+        
+        /* Botón "Ver Selección" */
+        .btn-selection {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 4px 16px;
+            font-size: 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            margin-right: 8px;
+        }
+        
+        .btn-selection:hover {
+            background: #1e7e34;
+            transform: translateY(-1px);
+        }
+        
+        .btn-selection.active {
+            background: #ff6f00;
+        }
+        
+        .btn-selection.active:hover {
+            background: #e65100;
+        }
+        
+        .btn-back {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 4px 16px;
+            font-size: 12px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .btn-back:hover {
+            background-color: #5a6268;
+            transform: translateY(-1px);
+        }
+        
+        .controls-row { 
+            background: white; 
+            padding: 15px 20px; 
+            border-radius: 50px; 
+            margin-bottom: 25px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 15px; 
+            align-items: center; 
+            justify-content: space-between;
+            box-shadow: var(--shadow-sm);
+        }
+        .controls-left { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; }
+        .controls-right { display: flex; gap: 10px; align-items: center; }
+        .controls-group { display: flex; align-items: center; gap: 8px; background: var(--bg-light); padding: 5px 14px; border-radius: 40px; }
+        .controls-group label { font-size: 13px; color: var(--text-gray); font-weight: 500; }
+        
+        .selection-badge {
+            background: var(--primary-color);
+            color: white;
+            border-radius: 20px;
+            padding: 2px 10px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        
+        select, button { 
+            padding: 6px 12px; 
+            font-size: 13px; 
+            border: 1px solid var(--border-color); 
+            border-radius: 30px; 
+            background: white; 
+            cursor: pointer; 
+            transition: var(--transition);
+        }
+        select:hover { border-color: var(--primary-color); }
+        
+        button { 
+            background-color: var(--primary-color); 
+            color: white; 
+            border: none;
+            font-weight: 500;
+        }
+        button:hover { background-color: var(--primary-dark); transform: translateY(-1px); }
+        
+        .checkbox-group { display: flex; align-items: center; gap: 8px; background: var(--bg-light); padding: 5px 14px; border-radius: 40px; }
+        .checkbox-group label { font-size: 13px; color: var(--text-gray); cursor: pointer; }
+        .checkbox-group input { width: 16px; height: 16px; margin: 0; cursor: pointer; }
+        
+        .results-info { 
+            margin-bottom: 20px; 
+            color: var(--text-gray); 
+            font-size: 13px; 
+            background: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            display: inline-block;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .search-terms { background-color: var(--primary-light); padding: 8px 18px; border-radius: 40px; margin-bottom: 20px; font-size: 13px; color: var(--primary-color); display: inline-block; }
+        
+        .product-grid.grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+        
+        .product-grid.list-view { display: flex; flex-direction: column; gap: 12px; }
+        .product-grid.list-view .product-card { display: flex; align-items: center; gap: 15px; padding: 12px 20px; border-radius: 14px; }
+        .product-grid.list-view .product-card .product-photos { margin-top: 0; flex-shrink: 0; }
+        .product-grid.list-view .product-card .product-photos img { width: 50px; height: 50px; margin: 0; }
+        .product-grid.list-view .product-card .product-sku { font-size: 12px; margin-bottom: 0; min-width: 100px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .product-grid.list-view .product-card .product-description { flex: 1; margin-bottom: 0; font-size: 14px; }
+        .product-grid.list-view .product-card .product-stock { margin-bottom: 0; margin-left: auto; text-align: center; min-width: 110px; }
+        
+        .product-grid.list-view.hide-photos .product-photos { display: none; }
+        
+        .product-card { 
+            background: white; 
+            border-radius: 20px; 
+            padding: 20px; 
+            box-shadow: var(--shadow-sm); 
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .product-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-light);
+        }
+        
+        .product-sku { 
+            color: var(--primary-color); 
+            font-size: 14px; 
+            font-weight: 700; 
+            margin-bottom: 8px; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            flex-wrap: wrap; 
+        }
+        
+        .copy-sku-btn {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 30px;
+            transition: var(--transition);
+            color: var(--text-gray);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .copy-sku-btn::before {
+            content: "📋";
+            font-size: 11px;
+        }
+        .copy-sku-btn:hover { 
+            background-color: var(--primary-light); 
+            border-color: var(--primary-color); 
+        }
+        .copy-sku-btn.copied { 
+            background-color: #28a745; 
+            color: white; 
+            border-color: #28a745; 
+        }
+        .copy-sku-btn.copied::before {
+            content: "✅";
+        }
+        
+        .product-description { font-size: 15px; margin-bottom: 12px; color: var(--text-dark); line-height: 1.4; }
+        
+        .product-stock { 
+            font-size: 13px; 
+            font-weight: 600; 
+            margin-bottom: 15px; 
+            padding: 4px 14px; 
+            border-radius: 30px; 
+            display: inline-block; 
+        }
+        .stock-1 { color: #2e7d32; background-color: #e8f5e9; }
+        .stock-0 { color: #c62828; background-color: #ffebee; }
+        
+        .product-photos { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+        .product-photos img { width: 75px; height: 75px; object-fit: cover; border-radius: 12px; border: 1px solid var(--border-color); cursor: pointer; transition: var(--transition); }
+        .product-photos img:hover { transform: scale(1.05); box-shadow: var(--shadow-sm); }
+        
+        .no-results { text-align: center; padding: 60px; color: var(--text-gray); font-size: 18px; background: white; border-radius: 24px; }
+        
+        .pagination { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 35px 0 25px; flex-wrap: wrap; }
+        .pagination button { background-color: white; color: var(--primary-color); border: 1px solid var(--border-color); padding: 8px 20px; border-radius: 40px; font-weight: 500; }
+        .pagination button:hover:not(:disabled) { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
+        .pagination button:disabled { background-color: var(--bg-light); color: #ccc; cursor: not-allowed; }
+        .pagination .page-info { color: var(--text-gray); font-size: 13px; background: white; padding: 6px 20px; border-radius: 40px; }
+        
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        .scroll-top-btn:hover { background-color: var(--primary-dark); transform: scale(1.1); }
+        
+        .footer {
+            margin-top: 50px;
+            padding: 25px 20px;
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            box-shadow: var(--shadow-sm);
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        .footer a { color: var(--primary-color); text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        .shortcuts-hint { margin-top: 10px; font-size: 11px; color: var(--text-light); }
+        .shortcuts-hint kbd { background-color: #f0f0f0; border: 1px solid #ccc; border-radius: 4px; padding: 2px 6px; font-family: monospace; font-size: 10px; }
+        
+        @media (max-width: 768px) { 
+            .product-grid.grid-view { grid-template-columns: 1fr; }
+            .product-grid.list-view .product-card { flex-wrap: wrap; }
+            .product-grid.list-view .product-card .product-stock { margin-left: 0; }
+            .controls-row { flex-direction: column; align-items: stretch; border-radius: 20px; }
+            .controls-left { flex-direction: column; align-items: stretch; }
+            .controls-group { justify-content: space-between; }
+            .header-top { flex-direction: column; text-align: center; }
+            .logo-area { justify-content: center; }
+            .contact-info { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div class="logo-area">
+                    <img src="logo.png" alt="ATK Logo" class="logo" onerror="this.style.display='none'">
+                    <div class="brand">
+                        <span class="brand-name">ATK Products</span>
+                        <span class="brand-slogan">Better Parts, Great Solutions</span>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-phone">(305) 593-0980</div>
+                    <div class="contact-address">6311 NW 99th Avenue, Unit 28<br>Doral, FL 33172 USA</div>
+                </div>
+            </div>
+            <div class="lang-switch">
+                <button id="langToggle" class="lang-btn">🇺🇸 English</button>
+            </div>
+        </div>
+        
+        <div id="helpText" class="ayuda"></div>
+        
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar por SKU o descripción... (Enter para todos)">
+        </div>
+        
+        <!-- HISTORIAL DE BÚSQUEDAS - DOS FILAS -->
+        <div id="searchHistory" class="search-history">
+            <!-- Fila 1: Historial de búsquedas + SKUs copiados -->
+            <div class="history-row">
+                <span id="historyLabel" class="search-history-label">🔍 Recientes:</span>
+                <span id="historyTags"></span>
+                <button id="clearHistory" class="history-clear">✕ Limpiar</button>
+            </div>
+            <!-- Fila 2: Botón de selección -->
+            <div class="history-row selection-row">
+                <button id="btnSelection" class="btn-selection">📋 Ver Selección (0)</button>
+                <button id="btnBackToAll" class="btn-back" style="display: none;">⬅️ Volver</button>
+            </div>
+        </div>
+        
+        <div id="searchTermsDisplay" class="search-terms" style="display: none;"></div>
+        
+        <div class="controls-row">
+            <div class="controls-left">
+                <div class="controls-group">
+                    <label id="showLabel">📊 Mostrar:</label>
+                    <select id="filterStock">
+                        <option value="all" id="optAll">Todos</option>
+                        <option value="available" id="optAvailable">Disponibles</option>
+                        <option value="unavailable" id="optUnavailable">No disponibles</option>
+                    </select>
+                </div>
+                <div class="controls-group">
+                    <label id="sortLabel">🔄 Ordenar:</label>
+                    <select id="sortBy">
+                        <option value="sku_asc" id="optSkuAsc">SKU (A-Z)</option>
+                        <option value="sku_desc" id="optSkuDesc">SKU (Z-A)</option>
+                        <option value="desc_asc" id="optDescAsc">Descripción (A-Z)</option>
+                        <option value="desc_desc" id="optDescDesc">Descripción (Z-A)</option>
+                    </select>
+                </div>
+                <div class="controls-group">
+                    <label id="viewLabel">📐 Vista:</label>
+                    <select id="viewMode">
+                        <option value="grid" id="optGrid">📦 Matriz</option>
+                        <option value="list" id="optList">📋 Lista</option>
+                    </select>
+                </div>
+                <div class="controls-group">
+                    <label id="perPageLabel">📄 Por página:</label>
+                    <select id="perPage">
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200" selected>200</option>
+                    </select>
+                </div>
+                <div class="checkbox-group" id="hidePhotosGroup" style="display: none;">
+                    <input type="checkbox" id="hidePhotosCheckbox">
+                    <label id="hidePhotosLabel">🖼️ Ocultar fotos</label>
+                </div>
+            </div>
+            <div class="controls-right">
+                <button id="applyFilters">Aplicar</button>
+            </div>
+        </div>
+        
+        <div id="results" class="results-info"></div>
+        <div id="productGrid" class="product-grid grid-view"></div>
+        <div id="pagination" class="pagination" style="display: none;"></div>
+        
+        <div class="footer">
+            <p>© 2025 ATK Products - All Rights Reserved</p>
+            <p>📞 (305) 593-0980 | 📧 <a href="mailto:sales@atkits.com">sales@atkits.com</a> | 📍 6311 NW 99th Avenue, Unit 28, Doral, FL 33172 USA</p>
+            <div class="shortcuts-hint">💡 <kbd>ESC</kbd> Clear search | <kbd>?</kbd> Show shortcuts | 📋 Click to copy SKU</div>
+        </div>
+    </div>
+    
+    <button id="scrollTopBtn" class="scroll-top-btn" title="Subir arriba">⬆️</button>
+
+    <script>
+    // VARIABLES GLOBALES
+    let productos = [];
+    let currentFilter = 'all';
+    let currentSort = 'sku_asc';
+    let currentSearchTerm = '';
+    let currentPage = 1;
+    let totalPages = 1;
+    let currentLang = 'es';
+    let currentView = 'grid';
+    let itemsPerPage = 200;
+    let hidePhotosInList = false;
+    let history = [];
+    let selectionMode = false;
+
+    const STORAGE_LANG = 'atk_lang';
+    const STORAGE_FILTER = 'atk_filter';
+    const STORAGE_SORT = 'atk_sort';
+    const STORAGE_VIEW = 'atk_view';
+    const STORAGE_PER_PAGE = 'atk_per_page';
+    const STORAGE_HIDE_PHOTOS = 'atk_hide_photos';
+    const STORAGE_HISTORY = 'atk_history';
+    const STORAGE_SELECTION = 'atk_selection';
+
+    // TRADUCCIONES
+    const texts = {
+        es: {
+            help: "💡 Para ver las fotos de una nueva búsqueda, presiona <strong>F5</strong> o actualiza la página.<br>🔎 Búsqueda múltiple: escribe palabras separadas por espacios (ej: \"overhaul bmw\")<br>🖱️ Haz clic en las fotos para verlas en tamaño completo<br>📋 Haz clic en el botón 📋 para copiar el SKU y agregarlo a tu selección",
+            placeholder: "Buscar por SKU o descripción... (Enter para todos)",
+            showLabel: "📊 Mostrar:",
+            optAll: "Todos",
+            optAvailable: "Disponibles",
+            optUnavailable: "No disponibles",
+            sortLabel: "🔄 Ordenar:",
+            optSkuAsc: "SKU (A-Z)",
+            optSkuDesc: "SKU (Z-A)",
+            optDescAsc: "Descripción (A-Z)",
+            optDescDesc: "Descripción (Z-A)",
+            viewLabel: "📐 Vista:",
+            optGrid: "📦 Matriz",
+            optList: "📋 Lista",
+            perPageLabel: "📄 Por página:",
+            hidePhotosLabel: "🖼️ Ocultar fotos",
+            applyBtn: "Aplicar",
+            backBtn: "⬅️ Volver a todos",
+            selectionTitle: "📋 Productos Seleccionados",
+            selectionEmpty: "No has seleccionado ningún SKU aún. Copia SKUs para agregarlos.",
+            selectionBtn: "📋 Ver Selección ({count})",
+            clearHistory: "✕ Limpiar",
+            loading: "⏳ Cargando productos...",
+            loaded: "📦 {count} productos cargados",
+            found: "🔍 Encontrados: {total} productos",
+            showing: "Mostrando {start}-{end} de {total}",
+            page: "Página {current} de {total}",
+            prev: "◀ Anterior",
+            next: "Siguiente ▶",
+            noResults: "😕 No se encontraron productos",
+            error: "❌ Error cargando datos.json",
+            searching: "🔎 Buscando: <strong>{words}</strong>",
+            stockAvailable: "✅ Disponible",
+            stockUnavailable: "❌ No disponible",
+            noDesc: "Sin descripción",
+            noPhotos: "📁 Sin fotos para {sku}",
+            loadingPhotos: "⏳ Buscando fotos...",
+            copyButton: "Copiar SKU",
+            copiedMsg: "✅ SKU copiado",
+            langEs: "🇪🇸 Español",
+            langEn: "🇺🇸 English",
+            shortcutsTitle: "🎯 Atajos de teclado",
+            shortcutsEsc: "Limpiar búsqueda y mostrar todos los productos",
+            shortcutsQuestion: "Mostrar esta ayuda",
+            historyLabel: "🔍 Recientes:"
+        },
+        en: {
+            help: "💡 To see photos for a new search, press <strong>F5</strong> or reload the page.<br>🔎 Multiple word search: type words separated by spaces (e.g., \"overhaul bmw\")<br>🖱️ Click photos to view full size<br>📋 Click the 📋 button to copy the SKU and add it to your selection",
+            placeholder: "Search by SKU or description... (Enter for all)",
+            showLabel: "📊 Show:",
+            optAll: "All",
+            optAvailable: "In stock",
+            optUnavailable: "Out of stock",
+            sortLabel: "🔄 Sort:",
+            optSkuAsc: "SKU (A-Z)",
+            optSkuDesc: "SKU (Z-A)",
+            optDescAsc: "Description (A-Z)",
+            optDescDesc: "Description (Z-A)",
+            viewLabel: "📐 View:",
+            optGrid: "📦 Grid",
+            optList: "📋 List",
+            perPageLabel: "📄 Per page:",
+            hidePhotosLabel: "🖼️ Hide photos",
+            applyBtn: "Apply",
+            backBtn: "⬅️ Back to all",
+            selectionTitle: "📋 Selected Products",
+            selectionEmpty: "You haven't selected any SKU yet. Copy SKUs to add them.",
+            selectionBtn: "📋 View Selection ({count})",
+            clearHistory: "✕ Clear",
+            loading: "⏳ Loading products...",
+            loaded: "📦 {count} products loaded",
+            found: "🔍 Found: {total} products",
+            showing: "Showing {start}-{end} of {total}",
+            page: "Page {current} of {total}",
+            prev: "◀ Previous",
+            next: "Next ▶",
+            noResults: "😕 No products found",
+            error: "❌ Error loading datos.json",
+            searching: "🔎 Searching: <strong>{words}</strong>",
+            stockAvailable: "✅ In stock",
+            stockUnavailable: "❌ Out of stock",
+            noDesc: "No description",
+            noPhotos: "📁 No photos for {sku}",
+            loadingPhotos: "⏳ Loading photos...",
+            copyButton: "Copy SKU",
+            copiedMsg: "✅ SKU copied",
+            langEs: "🇪🇸 Spanish",
+            langEn: "🇺🇸 English",
+            shortcutsTitle: "🎯 Keyboard shortcuts",
+            shortcutsEsc: "Clear search and show all products",
+            shortcutsQuestion: "Show this help",
+            historyLabel: "🔍 Recent:"
+        }
+    };
+
+    // FUNCIONES
+    function showShortcutsHelp() {
+        const t = texts[currentLang];
+        alert(`${t.shortcutsTitle}\n\n🔹 ESC: ${t.shortcutsEsc}\n🔹 ?: ${t.shortcutsQuestion}`);
+    }
+
+    function updateTexts() {
+        const t = texts[currentLang];
+        document.getElementById('helpText').innerHTML = t.help;
+        document.getElementById('searchInput').placeholder = t.placeholder;
+        document.getElementById('showLabel').innerHTML = t.showLabel;
+        document.getElementById('optAll').innerHTML = t.optAll;
+        document.getElementById('optAvailable').innerHTML = t.optAvailable;
+        document.getElementById('optUnavailable').innerHTML = t.optUnavailable;
+        document.getElementById('sortLabel').innerHTML = t.sortLabel;
+        document.getElementById('optSkuAsc').innerHTML = t.optSkuAsc;
+        document.getElementById('optSkuDesc').innerHTML = t.optSkuDesc;
+        document.getElementById('optDescAsc').innerHTML = t.optDescAsc;
+        document.getElementById('optDescDesc').innerHTML = t.optDescDesc;
+        document.getElementById('viewLabel').innerHTML = t.viewLabel;
+        document.getElementById('optGrid').innerHTML = t.optGrid;
+        document.getElementById('optList').innerHTML = t.optList;
+        document.getElementById('perPageLabel').innerHTML = t.perPageLabel;
+        document.getElementById('hidePhotosLabel').innerHTML = t.hidePhotosLabel;
+        document.getElementById('applyFilters').innerHTML = t.applyBtn;
+        document.getElementById('langToggle').innerHTML = currentLang === 'es' ? texts.en.langEn : texts.es.langEs;
+        
+        document.getElementById('historyLabel').innerHTML = t.historyLabel;
+        document.getElementById('clearHistory').innerHTML = t.clearHistory;
+        
+        updateSelectionButton();
+        updateBackButton();
+        renderHistory();
+    }
+
+    function savePreferences() {
+        localStorage.setItem(STORAGE_LANG, currentLang);
+        localStorage.setItem(STORAGE_FILTER, currentFilter);
+        localStorage.setItem(STORAGE_SORT, currentSort);
+        localStorage.setItem(STORAGE_VIEW, currentView);
+        localStorage.setItem(STORAGE_PER_PAGE, itemsPerPage);
+        localStorage.setItem(STORAGE_HIDE_PHOTOS, hidePhotosInList);
+        const selectionSKUs = history.filter(sku => sku.startsWith('SKU_SEL_')).map(sku => sku.replace('SKU_SEL_', ''));
+        localStorage.setItem(STORAGE_SELECTION, JSON.stringify(selectionSKUs));
+    }
+
+    function loadPreferences() {
+        const savedLang = localStorage.getItem(STORAGE_LANG);
+        if (savedLang === 'es' || savedLang === 'en') currentLang = savedLang;
+        
+        const savedFilter = localStorage.getItem(STORAGE_FILTER);
+        if (savedFilter === 'all' || savedFilter === 'available' || savedFilter === 'unavailable') {
+            currentFilter = savedFilter;
+            document.getElementById('filterStock').value = currentFilter;
+        }
+        
+        const savedSort = localStorage.getItem(STORAGE_SORT);
+        if (savedSort === 'sku_asc' || savedSort === 'sku_desc' || savedSort === 'desc_asc' || savedSort === 'desc_desc') {
+            currentSort = savedSort;
+            document.getElementById('sortBy').value = currentSort;
+        }
+        
+        const savedView = localStorage.getItem(STORAGE_VIEW);
+        if (savedView === 'grid' || savedView === 'list') {
+            currentView = savedView;
+            document.getElementById('viewMode').value = currentView;
+        }
+        
+        const savedPerPage = localStorage.getItem(STORAGE_PER_PAGE);
+        if (savedPerPage && [25,50,100,200].includes(parseInt(savedPerPage))) {
+            itemsPerPage = parseInt(savedPerPage);
+            document.getElementById('perPage').value = itemsPerPage;
+        }
+        
+        const savedHidePhotos = localStorage.getItem(STORAGE_HIDE_PHOTOS);
+        hidePhotosInList = savedHidePhotos === 'true';
+        document.getElementById('hidePhotosCheckbox').checked = hidePhotosInList;
+        
+        const savedSelection = localStorage.getItem(STORAGE_SELECTION);
+        if (savedSelection) {
+            try {
+                const selectionSKUs = JSON.parse(savedSelection);
+                for (const sku of selectionSKUs) {
+                    if (!history.includes('SKU_SEL_' + sku)) {
+                        history.push('SKU_SEL_' + sku);
+                    }
+                }
+            } catch(e) {}
+        }
+        
+        const savedHistory = localStorage.getItem(STORAGE_HISTORY);
+        if (savedHistory) {
+            try {
+                const hist = JSON.parse(savedHistory);
+                for (const item of hist) {
+                    if (!history.includes(item)) {
+                        history.push(item);
+                    }
+                }
+            } catch(e) {}
+        }
+    }
+
+    function renderHistory() {
+        const container = document.getElementById('historyTags');
+        const clearBtn = document.getElementById('clearHistory');
+        
+        // Mostrar TODOS los tags (búsquedas + SKUs copiados)
+        const allTags = history.filter(item => !item.startsWith('SKU_SEL_'));
+        const selectionTags = history.filter(item => item.startsWith('SKU_SEL_')).map(item => item.replace('SKU_SEL_', ''));
+        const selectionCount = selectionTags.length;
+        
+        if (allTags.length === 0 && selectionCount === 0) {
+            container.innerHTML = '<span style="color: #ccc; font-size: 12px; padding: 4px 10px;">Sin búsquedas recientes</span>';
+            clearBtn.style.display = 'none';
+            updateSelectionButton();
+            return;
+        }
+        
+        let html = '';
+        // Mostrar tags de búsqueda (azules)
+        for (const term of allTags) {
+            html += `<span class="history-tag" data-term="${term.replace(/"/g, '&quot;')}">${term}</span>`;
+        }
+        // Mostrar tags de SKUs copiados (verdes)
+        for (const sku of selectionTags) {
+            html += `<span class="history-tag selection-tag" data-term="${sku.replace(/"/g, '&quot;')}">📋 ${sku}</span>`;
+        }
+        container.innerHTML = html;
+        clearBtn.style.display = 'inline-block';
+        
+        document.querySelectorAll('.history-tag').forEach(tag => {
+            tag.addEventListener('click', function() {
+                const term = this.dataset.term;
+                document.getElementById('searchInput').value = term;
+                currentSearchTerm = term;
+                currentPage = 1;
+                selectionMode = false;
+                actualizarVista();
+            });
+        });
+        
+        updateSelectionButton();
+    }
+
+    function updateSelectionButton() {
+        const t = texts[currentLang];
+        const selectionCount = history.filter(item => item.startsWith('SKU_SEL_')).length;
+        const btn = document.getElementById('btnSelection');
+        btn.innerHTML = t.selectionBtn.replace('{count}', selectionCount);
+        if (selectionMode) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+        savePreferences();
+    }
+
+    function updateBackButton() {
+        const t = texts[currentLang];
+        const backBtn = document.getElementById('btnBackToAll');
+        if (selectionMode) {
+            backBtn.style.display = 'inline-block';
+            backBtn.innerHTML = t.backBtn;
+        } else {
+            backBtn.style.display = 'none';
+        }
+    }
+
+    function addToHistory(term) {
+        if (!term || term.trim() === '') return;
+        const cleanTerm = term.trim();
+        if (selectionMode) return;
+        // Eliminar si ya existe (para moverlo al frente)
+        history = history.filter(t => t !== cleanTerm && !t.startsWith('SKU_SEL_'));
+        history.unshift(cleanTerm);
+        if (history.length > 10) history = history.slice(0, 10);
+        localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
+        renderHistory();
+    }
+
+    function addToSelection(sku) {
+        if (!sku || sku.trim() === '') return;
+        const cleanSku = sku.trim();
+        const selectionKey = 'SKU_SEL_' + cleanSku;
+        // Eliminar si ya existe para moverlo al frente
+        history = history.filter(item => item !== selectionKey);
+        history.unshift(selectionKey);
+        localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
+        renderHistory();
+        updateSelectionButton();
+        if (selectionMode) {
+            actualizarVista();
+        }
+    }
+
+    function clearHistory() {
+        history = [];
+        localStorage.setItem(STORAGE_HISTORY, JSON.stringify(history));
+        renderHistory();
+        updateSelectionButton();
+        if (selectionMode) {
+            selectionMode = false;
+            actualizarVista();
+        }
+    }
+
+    function applyViewMode() {
+        const grid = document.getElementById('productGrid');
+        const hidePhotosGroup = document.getElementById('hidePhotosGroup');
+        
+        if (currentView === 'grid') {
+            grid.classList.remove('list-view');
+            grid.classList.add('grid-view');
+            grid.classList.remove('hide-photos');
+            hidePhotosGroup.style.display = 'none';
+        } else {
+            grid.classList.remove('grid-view');
+            grid.classList.add('list-view');
+            hidePhotosGroup.style.display = 'flex';
+            if (hidePhotosInList) {
+                grid.classList.add('hide-photos');
+            } else {
+                grid.classList.remove('hide-photos');
+            }
+        }
+    }
+
+    function applyHidePhotos() {
+        const grid = document.getElementById('productGrid');
+        if (currentView === 'list') {
+            if (hidePhotosInList) {
+                grid.classList.add('hide-photos');
+            } else {
+                grid.classList.remove('hide-photos');
+            }
+        }
+    }
+
+    function copyToClipboard(sku, buttonElement) {
+        const t = texts[currentLang];
+        const originalText = buttonElement.textContent;
+        navigator.clipboard.writeText(sku).then(() => {
+            buttonElement.textContent = '✅ ' + (currentLang === 'es' ? 'Copiado' : 'Copied');
+            buttonElement.classList.add('copied');
+            setTimeout(() => {
+                buttonElement.textContent = originalText;
+                buttonElement.classList.remove('copied');
+            }, 1500);
+            // ✅ Agregar a la selección (se mostrará en el historial)
+            addToSelection(sku);
+            const notification = document.createElement('div');
+            notification.textContent = t.copiedMsg + ': ' + sku;
+            notification.style.cssText = 'position:fixed; bottom:100px; right:30px; background:#28a745; color:white; padding:10px 20px; border-radius:8px; z-index:1001; font-size:14px; box-shadow:0 2px 10px rgba(0,0,0,0.2);';
+            document.body.appendChild(notification);
+            setTimeout(() => notification.remove(), 2000);
+        }).catch(err => {
+            console.error('Error al copiar: ', err);
+        });
+    }
+
+    function aString(v) { return (v === null || v === undefined) ? '' : String(v); }
+
+    function cargarFotos(sku, contenedor) {
+        const t = texts[currentLang];
+        contenedor.innerHTML = `<div style="font-size:12px;color:#999;">${t.loadingPhotos}</div>`;
+        let fotos = [];
+        let total = 9;
+        let cargadas = 0;
+        
+        function mostrarGaleria() {
+            let html = '';
+            let hay = false;
+            for (let i = 1; i <= total; i++) {
+                if (fotos[i]) {
+                    hay = true;
+                    html += `<a href="${fotos[i]}" target="_blank" style="text-decoration:none;"><img src="${fotos[i]}" style="width:80px;height:80px;object-fit:cover;margin:5px;border:1px solid #ddd;border-radius:4px;cursor:pointer;"></a>`;
+                }
+            }
+            contenedor.innerHTML = hay ? html : `<div style="font-size:12px;color:#999;">${t.noPhotos.replace('{sku}', sku)}</div>`;
+        }
+        
+        for (let i = 1; i <= total; i++) {
+            const num = i.toString().padStart(2, '0');
+            const url = `https://www.atkits.com/assets/images/gallery/OT/${sku}/${sku}_${num}.png`;
+            const img = new Image();
+            const idx = i;
+            let respondido = false;
+            const tid = setTimeout(() => {
+                if (!respondido) { respondido = true; cargadas++; if (cargadas === total) mostrarGaleria(); }
+            }, 3000);
+            img.onload = () => {
+                if (!respondido) { respondido = true; clearTimeout(tid); fotos[idx] = url; cargadas++; if (cargadas === total) mostrarGaleria(); }
+            };
+            img.onerror = () => {
+                if (!respondido) { respondido = true; clearTimeout(tid); cargadas++; if (cargadas === total) mostrarGaleria(); }
+            };
+            img.src = url;
+        }
+        setTimeout(mostrarGaleria, 5000);
+    }
+
+    function ordenarProductos(productosArray) {
+        const sorted = [...productosArray];
+        switch(currentSort) {
+            case 'sku_asc': sorted.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU))); break;
+            case 'sku_desc': sorted.sort((a, b) => aString(b.SKU).localeCompare(aString(a.SKU))); break;
+            case 'desc_asc': sorted.sort((a, b) => aString(a.Description).localeCompare(aString(b.Description))); break;
+            case 'desc_desc': sorted.sort((a, b) => aString(b.Description).localeCompare(aString(a.Description))); break;
+            default: sorted.sort((a, b) => aString(a.SKU).localeCompare(aString(b.SKU)));
+        }
+        return sorted;
+    }
+
+    function actualizarVista() {
+        if (!productos.length) return;
+        
+        const t = texts[currentLang];
+        let resultados = [];
+        
+        if (selectionMode) {
+            const selectionSKUs = history
+                .filter(item => item.startsWith('SKU_SEL_'))
+                .map(item => item.replace('SKU_SEL_', ''));
+            
+            if (selectionSKUs.length === 0) {
+                const grid = document.getElementById('productGrid');
+                grid.innerHTML = `<div class="no-results">${t.selectionEmpty}</div>`;
+                document.getElementById('results').innerHTML = `📋 0 ${t.found.split(' ')[1] || 'resultados'}`;
+                document.getElementById('pagination').style.display = 'none';
+                document.getElementById('searchTermsDisplay').style.display = 'none';
+                updateBackButton();
+                return;
+            }
+            
+            resultados = productos.filter(p => {
+                const sku = aString(p.SKU);
+                return selectionSKUs.includes(sku);
+            });
+        } else {
+            resultados = [...productos];
+            
+            if (currentSearchTerm && currentSearchTerm.trim()) {
+                const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
+                resultados = resultados.filter(p => {
+                    const sku = aString(p.SKU).toLowerCase();
+                    const desc = aString(p.Description).toLowerCase();
+                    const texto = sku + ' ' + desc;
+                    return palabras.every(w => texto.includes(w));
+                });
+            }
+        }
+        
+        if (currentFilter === 'available') resultados = resultados.filter(p => p.Available === 1 || p.Available === true);
+        else if (currentFilter === 'unavailable') resultados = resultados.filter(p => p.Available === 0 || p.Available === false);
+        
+        resultados = ordenarProductos(resultados);
+        
+        totalPages = Math.ceil(resultados.length / itemsPerPage);
+        if (currentPage < 1) currentPage = 1;
+        if (currentPage > totalPages && totalPages > 0) currentPage = totalPages;
+        
+        const start = (currentPage - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const resultadosPaginados = resultados.slice(start, end);
+        
+        const termsDiv = document.getElementById('searchTermsDisplay');
+        if (!selectionMode && currentSearchTerm && currentSearchTerm.trim()) {
+            const palabras = currentSearchTerm.toLowerCase().split(/\s+/).filter(w => w);
+            termsDiv.style.display = 'block';
+            termsDiv.innerHTML = t.searching.replace('{words}', palabras.join(' + '));
+        } else if (selectionMode) {
+            termsDiv.style.display = 'block';
+            termsDiv.innerHTML = t.selectionTitle;
+        } else {
+            termsDiv.style.display = 'none';
+        }
+        
+        const grid = document.getElementById('productGrid');
+        if (!resultadosPaginados || !resultadosPaginados.length) {
+            grid.innerHTML = `<div class="no-results">${t.noResults}</div>`;
+            document.getElementById('results').innerHTML = `🔍 0 ${t.found.split(' ')[1] || 'resultados'}`;
+            document.getElementById('pagination').style.display = 'none';
+            updateBackButton();
+            return;
+        }
+        
+        let html = '';
+        for (const p of resultadosPaginados) {
+            const sku = aString(p.SKU);
+            const desc = aString(p.Description);
+            const disp = (p.Available === 1 || p.Available === true);
+            html += `<div class="product-card">
+                <div class="product-sku">
+                    <button class="copy-sku-btn" data-sku="${sku.replace(/'/g, "\\'")}" onclick="copyToClipboard('${sku.replace(/'/g, "\\'")}', this)">${t.copyButton}</button>
+                    ${sku}
+                </div>
+                <div class="product-description">📝 ${desc || t.noDesc}</div>
+                <div class="product-stock stock-${disp?1:0}">${disp ? t.stockAvailable : t.stockUnavailable}</div>
+                <div class="product-photos" id="fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}"></div>
+            </div>`;
+        }
+        grid.innerHTML = html;
+        applyViewMode();
+        
+        const totalEncontrados = resultados.length;
+        document.getElementById('results').innerHTML = `${t.found.replace('{total}', totalEncontrados)} | ${t.showing.replace('{start}', start+1).replace('{end}', Math.min(end, totalEncontrados)).replace('{total}', totalEncontrados)}`;
+        
+        const paginationDiv = document.getElementById('pagination');
+        if (totalPages > 1) {
+            paginationDiv.style.display = 'flex';
+            paginationDiv.innerHTML = `
+                <button id="prevPage" ${currentPage === 1 ? 'disabled' : ''}>${t.prev}</button>
+                <span class="page-info">${t.page.replace('{current}', currentPage).replace('{total}', totalPages)}</span>
+                <button id="nextPage" ${currentPage === totalPages ? 'disabled' : ''}>${t.next}</button>
+            `;
+            document.getElementById('prevPage')?.addEventListener('click', () => { if (currentPage > 1) { currentPage--; actualizarVista(); } });
+            document.getElementById('nextPage')?.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; actualizarVista(); } });
+        } else paginationDiv.style.display = 'none';
+        
+        setTimeout(() => {
+            for (const p of resultadosPaginados) {
+                const sku = aString(p.SKU);
+                const id = `fotos-${sku.replace(/[^a-zA-Z0-9]/g, '')}`;
+                const c = document.getElementById(id);
+                if (c) cargarFotos(sku, c);
+            }
+        }, 100);
+        
+        updateBackButton();
+    }
+
+    function toggleSelectionMode() {
+        const t = texts[currentLang];
+        selectionMode = !selectionMode;
+        if (selectionMode) {
+            const count = history.filter(item => item.startsWith('SKU_SEL_')).length;
+            if (count === 0) {
+                alert(t.selectionEmpty);
+                selectionMode = false;
+                updateSelectionButton();
+                return;
+            }
+        }
+        currentPage = 1;
+        updateSelectionButton();
+        actualizarVista();
+    }
+
+    function backToAll() {
+        selectionMode = false;
+        currentPage = 1;
+        updateSelectionButton();
+        actualizarVista();
+    }
+
+    function init() {
+        loadPreferences();
+        updateTexts();
+        applyViewMode();
+        
+        const t = texts[currentLang];
+        document.getElementById('results').innerHTML = t.loading;
+        fetch('https://raw.githubusercontent.com/renzo-inventario/atkcatalog.github.io/main/datos.json')
+            .then(r => {
+                if (!r.ok) throw new Error('HTTP error ' + r.status);
+                return r.json();
+            })
+            .then(data => {
+                productos = data;
+                document.getElementById('results').innerHTML = t.loaded.replace('{count}', productos.length);
+                actualizarVista();
+            })
+            .catch(e => {
+                console.error('Error:', e);
+                document.getElementById('productGrid').innerHTML = `<div class="no-results">${t.error}</div>`;
+            });
+    }
+
+    // EVENTOS
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) scrollBtn.style.display = 'flex';
+        else scrollBtn.style.display = 'none';
+    });
+    scrollBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    let timer;
+    const searchInput = document.getElementById('searchInput');
+    const filterStock = document.getElementById('filterStock');
+    const sortBy = document.getElementById('sortBy');
+    const viewMode = document.getElementById('viewMode');
+    const perPage = document.getElementById('perPage');
+    const hidePhotosCheckbox = document.getElementById('hidePhotosCheckbox');
+    const applyBtn = document.getElementById('applyFilters');
+    const langToggle = document.getElementById('langToggle');
+    const clearHistoryBtn = document.getElementById('clearHistory');
+    const btnSelection = document.getElementById('btnSelection');
+    const btnBackToAll = document.getElementById('btnBackToAll');
+
+    searchInput.addEventListener('input', e => {
+        if (timer) clearTimeout(timer);
+        timer = setTimeout(() => {
+            currentSearchTerm = e.target.value.trim();
+            currentPage = 1;
+            selectionMode = false;
+            updateSelectionButton();
+            actualizarVista();
+        }, 300);
+    });
+    
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const term = e.target.value.trim();
+            if (term !== '') {
+                addToHistory(term);
+                selectionMode = false;
+                updateSelectionButton();
+                actualizarVista();
+            }
+        }
+    });
+    
+    applyBtn.addEventListener('click', () => {
+        currentFilter = filterStock.value;
+        currentSort = sortBy.value;
+        currentView = viewMode.value;
+        itemsPerPage = parseInt(perPage.value);
+        currentPage = 1;
+        savePreferences();
+        actualizarVista();
+    });
+    
+    hidePhotosCheckbox.addEventListener('change', () => {
+        hidePhotosInList = hidePhotosCheckbox.checked;
+        savePreferences();
+        applyHidePhotos();
+    });
+    
+    langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        savePreferences();
+        updateTexts();
+        actualizarVista();
+    });
+    
+    clearHistoryBtn.addEventListener('click', clearHistory);
+    
+    btnSelection.addEventListener('click', toggleSelectionMode);
+    btnBackToAll.addEventListener('click', backToAll);
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            currentSearchTerm = '';
+            currentPage = 1;
+            searchInput.value = '';
+            selectionMode = false;
+            updateSelectionButton();
+            actualizarVista();
+        }
+        if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+            e.preventDefault();
+            showShortcutsHelp();
+        }
+    });
+    
+    init();
+    </script>
+</body>
+</html>
