@@ -1184,29 +1184,78 @@
     }
 
     function buildProductTypeMenu() {
-        const contentDiv = document.getElementById('productTypeContent');
-        const productTypes = [
-            "BAND", "BANNER KIT", "BEARING", "BOXE", "BUSHING KIT", "BUSHING",
-            "CABLE", "CHAIN", "CLUTCH ASSEMBLIE", "COVER", "DIAPHRAGM SPRING",
-            "ELECTRICAL", "FILLER TUBE", "FILTER KIT", "FLEX PLATE", "FLYWHEEL",
-            "FRICTION AND STEEL MODULE", "FRICTION PLATE", "GASKET SEAL KIT",
-            "GASKET", "GEAR", "GOVERNOR", "HARD PART", "LUBEGARD", "MODULATOR",
-            "NUT", "OEM", "OIL BAFFLE", "OIL COOLERS", "OIL PAN", "OIL SEAL",
-            "OVERHAUL KIT", "PAN GASKETS", "PISTON KIT", "PISTON", "POWER PACK",
-            "PRESSURE PLATE", "PUMP GASKET", "RING KIT", "RING", "RUBBER COMPONENT",
-            "SENSOR", "SHIFT KIT", "SNAP RINGS", "SONNAX", "SPRAG",
-            "SPRING", "STEEL MODULE", "STEEL PLATE", "SUB KIT", "TOOL",
-            "TORQUE CONVERTER PART", "TORQUE CONVERTER", "TRANSGO",
-            "VALVE BODY", "VALVE BODY GASKET", "VALVE BODY PLATE", "WASHER KITS",
-            "WASHER", "ZIP KIT"
-        ];
-        
-        let html = '';
-        for (const type of productTypes.sort()) {
-            html += `<div class="filter-item"><input type="checkbox" class="product-type-item" value="${type}"><label>${type}</label></div>`;
-        }
-        contentDiv.innerHTML = html;
+    const contentDiv = document.getElementById('productTypeContent');
+    const productTypes = [
+        "BAND",
+        "BANNER KIT",
+        "BEARING",
+        "BOX",
+        "BUSHING KIT",
+        "BUSHING",
+        "CABLE",
+        "CHAIN",
+        "CLUTCH ASSEMBLY",
+        "COVER",
+        "DIAPHRAGM SPRING",
+        "ELECTRICAL",
+        "FILLER TUBE",
+        "FILTER",
+        "FILTER KIT",
+        "FLEX PLATE",
+        "FLYWHEEL",
+        "FRICTION AND STEEL MODULE",
+        "FRICTION MODULE",
+        "FRICTION PLATE",
+        "GASKET",
+        "GASKET SEAL KIT",
+        "GEAR",
+        "GOVERNOR",
+        "HARD PART",
+        "LUBEGARD",
+        "MODULATOR",
+        "NUT",
+        "OEM",
+        "OIL BAFFLE",
+        "OIL COOLER",
+        "OIL PAN",
+        "OIL SEAL",
+        "OVERHAUL KIT",
+        "PAN GASKET",
+        "PISTON",
+        "PISTON KIT",
+        "POWER PACK",
+        "PRESSURE PLATE",
+        "PUMP GASKET",
+        "RING",
+        "RING KIT",
+        "RUBBER COMPONENT",
+        "SENSOR",
+        "SHIFT KIT",
+        "SNAP RING",
+        "SONNAX PRODUCT",
+        "SPRAG",
+        "SPRING",
+        "STEEL MODULE",
+        "STEEL PLATE",
+        "SUB KIT",
+        "TOOL",
+        "TORQUE CONVERTER",
+        "TORQUE CONVERTER PART",
+        "TRANSGO PRODUCT",
+        "VALVE BODY",
+        "VALVE BODY GASKET",
+        "VALVE BODY PLATE",
+        "WASHER",
+        "WASHER KIT",
+        "ZIP KIT"
+    ];
+    
+    let html = '';
+    for (const type of productTypes.sort()) {
+        html += `<div class="filter-item"><input type="checkbox" class="product-type-item" value="${type}"><label>${type}</label></div>`;
     }
+    contentDiv.innerHTML = html;
+}
 
     function openFilters() {
         document.getElementById('filtersOverlay').classList.add('active');
